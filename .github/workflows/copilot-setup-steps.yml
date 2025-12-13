@@ -1,0 +1,48 @@
+name: "Copilot Setup Steps"
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+  pull_request:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install stealth-browser-mcp (creator recommended method)
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          INSTALL_DIR="$HOME/.mcp/stealth-browser-mcp"
+          mkdir -p "$HOME/.mcp"
+
+          if [ -d "$INSTALL_DIR/.git" ]; then
+            cd "$INSTALL_DIR"
+            git fetch --depth 1 origin master
+            git reset --hard origin/master
+          else
+            git clone --depth 1 https://github.com/vibheksoni/stealth-browser-mcp.git "$INSTALL_DIR"
+            cd "$INSTALL_DIR"
+          fi
+
+          python -m venv venv
+          "$INSTALL_DIR/venv/bin/python" -m pip install --upgrade pip
+          "$INSTALL_DIR/venv/bin/pip" install -r requirements.txt
+
+          # 可选：快速冒烟（不启动常驻 server）
+          "$INSTALL_DIR/venv/bin/python" src/server.py --list-sections || true

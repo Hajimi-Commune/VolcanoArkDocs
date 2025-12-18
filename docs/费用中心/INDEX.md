@@ -144,7 +144,7 @@
 - [ListInvitation](API参考/企业财务/ListInvitation.md) - 查询企业财务邀约
 - [DeleteFinancialRelation](API参考/企业财务/DeleteFinancialRelation.md) - 解除财务关系
 - [UpdateAuth](API参考/企业财务/UpdateAuth.md) - 变更财务管理授权点
-- CleanUpFinancialRelation - 删除企业财务关联记录
+- [CleanUpFinancialRelation](API参考/企业财务/CleanUpFinancialRelation.md) - 删除企业财务关联记录
 
 #### 订单
 - [ListOrders](API参考/订单/ListOrders.md) - 批量查询订单信息
@@ -156,7 +156,7 @@
 
 #### 资源包
 - [ListResourcePackages](API参考/资源包/ListResourcePackages.md) - 查询资源包列表
-- ListPackageUsageDetails - 查询资源包抵扣明细列表
+- [ListPackageUsageDetails](API参考/资源包/ListPackageUsageDetails.md) - 查询资源包抵扣明细列表
 
 #### 代金券
 - [ListCoupons](API参考/代金券/ListCoupons.md) - 查询代金券信息

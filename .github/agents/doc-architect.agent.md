@@ -19,19 +19,34 @@ description: 将在线文档站转换为本地 Markdown 知识库的智能体。
 
 **页面访问工具优先级**：
 
-1. **stealth-browser-mcp**（首选且几乎唯一需要的工具）
+1. **playwright**（首选）
 
-   - 功能强大，能处理绝大多数（99.9999%）场景
-   - 支持动态渲染、JavaScript 执行、反爬绕过等
-   - **必须**作为访问网页的默认选择
+   - 官方 MCP 工具，稳定性高
+   - 支持动态渲染、JavaScript 执行
+   - 作为访问网页的**默认选择**
+   - 常用工具：`browser_navigate`, `browser_snapshot`, `browser_click`, `browser_type`
 
-2. **curl / Python 等**（最后手段）
-   - 仅当 stealth-browser-mcp 确实无法完成时才考虑
+2. **stealth-browser-mcp**（备选，当 Playwright 受限时使用）
+
+   - 适用于目标网站有反爬机制导致 Playwright 被阻断的场景
+   - 支持更隐蔽的浏览器指纹
+   - 切换条件：Playwright 遇到 `ERR_BLOCKED_BY_CLIENT` 或明确的反爬拦截
+
+3. **curl / Python 等**（最后手段）
+   - 仅当两种浏览器工具都无法完成时才考虑
    - 适用于纯静态页面或 API 请求等极端简单场景
 
-**禁止使用**：
+**工具切换策略**：
 
-- ❌ **playwright** — 不得使用，无例外
+```
+Playwright 访问失败（被阻断/反爬）
+    ↓
+切换到 stealth-browser-mcp 重试
+    ↓
+仍然失败 → 尝试 curl/Python 获取静态内容
+    ↓
+仍然失败 → 记录并跳过，继续其他页面
+```
 
 # User Input (用户输入规范)
 

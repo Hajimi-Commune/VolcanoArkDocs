@@ -133,7 +133,7 @@
 - [UnsubscribeInstance](API参考/UnsubscribeInstance.md) - 退订实例
 - ListAvailableInstances - 批量查询可用实例
 - SetRenewalType - 设置实例续费类型
-- RenewInstance - 实例续费
+- [RenewInstance](API参考/RenewInstance.md) - 实例续费
 
 #### 企业财务
 - CreateFinancialRelation - 建立财务关系

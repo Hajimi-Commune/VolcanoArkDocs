@@ -1,2 +1,2750 @@
 # 应用(bot)  API
-{"version":"1.2.21","data":{"0":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" "},{"insert":" POST https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions","attributes":{"backgroundcolor":"rgb(43, 43, 43)","inlineCode":"true"}},{"insert":"   ","attributes":{"backgroundcolor":"rgb(43, 43, 43)"}},{"insert":"运行","attributes":{"bold":"true","hyperlink":"{\"href\":\"https://api.volcengine.com/api-explorer/?action=BotsChatCompletions\u0026data=%7B%7D\u0026groupName=%E5%BA%94%E7%94%A8Bot%20API\u0026query=%7B%7D\u0026serviceCode=ark\u0026version=2024-01-01\",\"linkId\":\"EIA6K8Ll1l\",\"target\":\"_blank\"}","inlineCode":"true"}},{"insert":"\n"},{"insert":"本文介绍方舟应用 API 的输入输出参数，供您使用接口时查阅字段含义。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"tabs":"true","tabsZoneId":"63805q4x","zoneType":"Z"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"anchor":"#RxN8G2nH","heading":"h2","lmkr":"1"}},{"insert":"请求参数 \n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1"}},{"insert":"跳转 "},{"insert":"响应参数","attributes":{"hyperlink":"{\"href\":\"#Qu59cel0\",\"linkId\":\"N6yu2gjDxu\",\"target\":\"_self\"}"}},{"insert":"\n"},{"insert":"*","attributes":{"anchor":"#pjuiBZGA","heading":"h3","lmkr":"1"}},{"insert":"请求体\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"model","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"您需要调用的应用的 ID （Bot"},{"insert":" ID","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"），"},{"insert":"获取 Bot ID","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1267885\",\"linkId\":\"eVCY4ronRd\",\"target\":\"_blank\"}"}},{"insert":" 。\n"},{"insert":"*","attributes":{"align":"left","list":"bullet1","lmkr":"1"}},{"insert":"messages","attributes":{"backgroundcolor":"rgb(32, 33, 35)","bold":"true"}},{"insert":"  ","attributes":{"backgroundcolor":"rgb(32, 33, 35)"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgba(238, 242, 245, 0.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(32, 33, 35)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(32, 33, 35)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"到目前为止的对话组成的消息列表。不同模型支持不同类型的消息，如文本、图片等。\n"},{"insert":" ","attributes":{"tabs":"true","tabsZoneId":"4EX7hBNR","zoneType":"Z"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"thinking","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 {\"type\":\"enabled\"}","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"控制模型是否开启深度思考模式。默认开启深度思考模式，可以手动关闭。\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1","wrapperIndent":"0"}},{"insert":"支持此字段的模型以及使用示例请参见"},{"insert":"文档","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1449737#%E5%85%B3%E9%97%AD%E6%B7%B1%E5%BA%A6%E6%80%9D%E8%80%83\",\"linkId\":\"pyRpOHbk2J\",\"target\":\"_blank\"}"}},{"insert":"。\n"},{"insert":"*","attributes":{"lmkr":"1","text-indent":"true"}},{"insert":" ","attributes":{"collapse":"container","collapseStatus":"unfold","zoneId":"Yt4PLcnz"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"stream","attributes":{"bold":"true"}},{"insert":" "},{"insert":"boolean / null","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 false","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"响应内容是否流式返回：\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"false","attributes":{"inlineCode":"true"}},{"insert":"：模型生成完所有内容后一次性返回结果。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"true","attributes":{"inlineCode":"true"}},{"insert":"：按 SSE 协议逐块返回模型生成内容，并以一条 "},{"insert":"data: [DONE] ","attributes":{"inlineCode":"true"}},{"insert":"消息结束。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"stream_options","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object / null","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 null","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"流式响应的选项。当 "},{"insert":"stream","attributes":{"bold":"true"}},{"insert":" 为 "},{"insert":"true","attributes":{"inlineCode":"true"}},{"insert":" 时可设置 "},{"insert":"stream_options","attributes":{"bold":"true"}},{"insert":" 字段。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"stream_options."},{"insert":"include_usage ","attributes":{"bold":"true"}},{"insert":"boolean / null","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 false","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"是否包含本次请求的 token 用量统计信息。\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"false","attributes":{"inlineCode":"true"}},{"insert":"：不返回 token 用量信息。\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"true","attributes":{"inlineCode":"true"}},{"insert":"：在 "},{"insert":"data: [DONE]","attributes":{"inlineCode":"true"}},{"insert":" 消息之前会返回一个额外的块，此块上的 "},{"insert":"usage","attributes":{"bold":"true"}},{"insert":" 字段代表整个请求的 token 用量，"},{"insert":"choices","attributes":{"bold":"true"}},{"insert":" 字段为空数组。所有其他块也将包含 "},{"insert":"usage","attributes":{"bold":"true"}},{"insert":" 字段，但值为 "},{"insert":"null","attributes":{"inlineCode":"true"}},{"insert":"。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"max_tokens","attributes":{"bold":"true"}},{"insert":" "},{"insert":"integer / null","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 4096","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1","text-indent":"true"}},{"insert":"模型回复最大长度（单位 token），取值范围各个模型不同，详细见"},{"insert":"模型列表","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1330310\",\"linkId\":\"76puFUG0mo\",\"target\":\"_blank\"}"}},{"insert":"。\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1","text-indent":"true"}},{"insert":"输入 token 和输出 token 的总长度还受模型的上下文长度限制。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"stop","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string / string[] / null","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 null","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"模型遇到 stop 字段所指定的字符串时将停止继续生成，这个词语本身不会输出。最多支持 4 个字符串。\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"[\"你好\", \"天气\"]","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"frequency_penalty","attributes":{"bold":"true"}},{"insert":" "},{"insert":"float / null","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 0","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"取值范围为 [-2.0, 2.0]。\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"频率惩罚系数。如果值为正，会根据新 token 在文本中的出现频率对其进行惩罚，从而降低模型逐字重复的可能性。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"presence_penalty","attributes":{"bold":"true"}},{"insert":" "},{"insert":"float / null","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 0","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"取值范围为 [-2.0, 2.0]。\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"存在惩罚系数。如果值为正，会根据新 token 到目前为止是否出现在文本中对其进行惩罚，从而增加模型谈论新主题的可能性。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"temperature","attributes":{"bold":"true"}},{"insert":" "},{"insert":"float / null","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 1","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"取值范围为 [0, 2]。\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"采样温度。控制了生成文本时对每个候选词的概率分布进行平滑的程度。。当取值为 0 时模型仅考虑对数概率最大的一个 token。\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"较高的值（如 0.8）会使输出更加随机，而较低的值（如 0.2）会使输出更加集中确定。\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"通常建议仅调整 temperature 或 top_p 其中之一，不建议两者都修改。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"top_p","attributes":{"bold":"true"}},{"insert":" "},{"insert":"float / null","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 0.7","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"取值范围为 [0, 1]。\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"核采样概率阈值。模型会考虑概率质量在 top_p 内的 token 结果。当取值为 0 时模型仅考虑对数概率最大的一个 token。\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"0.1 意味着只考虑概率质量最高的前 10% 的 token，取值越大生成的随机性越高，取值越低生成的确定性越高。通常建议仅调整 temperature 或 top_p 其中之一，不建议两者都修改。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"logprobs","attributes":{"bold":"true"}},{"insert":" "},{"insert":"boolean / null","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 false","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"是否返回输出 tokens 的对数概率。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"false","attributes":{"inlineCode":"true"}},{"insert":"：不返回对数概率信息。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"true","attributes":{"inlineCode":"true"}},{"insert":"：返回消息内容中每个输出 token 的对数概率。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"top_logprobs","attributes":{"bold":"true"}},{"insert":" "},{"insert":"integer / null","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 0","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"取值范围为 [0, 20]。\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"指定每个输出 token 位置最有可能返回的 token 数量，每个 token 都有关联的对数概率。仅当 "},{"insert":"logprobs","attributes":{"bold":"true"}},{"insert":"为"},{"insert":"true","attributes":{"inlineCode":"true"}},{"insert":" 时可以设置 "},{"insert":"top_logprobs","attributes":{"bold":"true"}},{"insert":" 参数。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"logit_bias","attributes":{"bold":"true"}},{"insert":" "},{"insert":"map / null","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 null","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"调整指定 token 在模型输出内容中出现的概率，使模型生成的内容更加符合特定的偏好。"},{"insert":"logit_bias","attributes":{"bold":"true"}},{"insert":" 字段接受一个 map 值，其中每个键为词表中的 token ID（使用 tokenization 接口获取），每个值为该 token 的偏差值，取值范围为 [-100, 100]。\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"-1 会减少选择的可能性，1 会增加选择的可能性；-100 会完全禁止选择该 token，100 会导致仅可选择该 token。该参数的实际效果可能因模型而异。\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"{ \"1234\": -100}","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"tools","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object[] / null","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 null","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"模型可以调用的工具列表。目前仅函数作为工具被支持。用这个来提供模型可能为其生成 JSON 输入的函数列表。支持该字段的模型请参见"},{"insert":"文档","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1330310#98fee2f1\",\"linkId\":\"6fwBctPGiu\",\"target\":\"_blank\"}"}},{"insert":"。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"tools."},{"insert":"type ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"工具类型，当前仅支持 "},{"insert":"function","attributes":{"inlineCode":"true"}},{"insert":"。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"tools."},{"insert":"function ","attributes":{"bold":"true"}},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"模型可以调用的类型为"},{"insert":"function","attributes":{"inlineCode":"true"}},{"insert":"的工具列表。\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"tools.function."},{"insert":"name ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"调用的函数的名称。\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"tools.function."},{"insert":"description ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"调用的函数的描述，大模型会使用它来判断是否调用这个函数。\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"tools.function."},{"insert":"parameters ","attributes":{"bold":"true"}},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"函数请求参数，以 JSON Schema 格式描述。具体格式请参考 "},{"insert":"JSON Schema","attributes":{"hyperlink":"{\"href\":\"https://json-schema.org/understanding-json-schema\",\"linkId\":\"37krKMhfoy\",\"target\":\"_blank\"}"}},{"insert":" 文档。\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":" ","attributes":{"language":"JSON","parentZoneId":"0","type":"codeblock","wrap":"true","zoneId":"bkjwjujj6j"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"m","attributes":{"bold":"true"}},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0","bold":"true"}},{"insert":"a","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object / null","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 null","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"额外参数。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"运行时动态传入的角色配置。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent3","lmkr":"1"}},{"insert":"群聊角色列表。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters.","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"name","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent4","lmkr":"1"}},{"insert":"群聊角色名称。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters.","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"system_prompt","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent4","lmkr":"1"}},{"insert":"群聊角色设定，用于告知应用需要扮演的角色。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters.","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"model_desc","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"模型说明。\n"},{"insert":"*","attributes":{"list":"bullet5","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters.model_desc.","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"endpoint_id","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent5","lmkr":"1"}},{"insert":"您创建的 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"推理接入点","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1099522\",\"linkId\":\"zsTXEP1gyt\",\"target\":\"_blank\"}"}},{"insert":"ID。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"description","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" "},{"insert":"默认值 null","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent3","lmkr":"1"}},{"insert":"群聊场景描述，可设定群聊的主题、时间地点、事件场景、用户扮演的角色等信息。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"user_name","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" "},{"insert":"默认值 用户","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent3","lmkr":"1"}},{"insert":"表示“我”所扮演的角色名称 ，默认值为“用户”。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"user_info","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" "},{"insert":"默认值 null","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"联网的智能体可使用，如查询天气场景，前端可以直接通过该字段传地点信息给模型，方便查对应地点的天气。\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"传入的信息需满足条件：可以被反序列化成 json 的字符串，并需包含 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"city","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":" 和 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"district","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":" 两个字段。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"emit_intention_signal_extra","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" "},{"insert":"默认值 \"false\"","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"值是 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\"true\"","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":" 时，会中途返回intention状态 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\"正在搜索\"。","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"target_character_name","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" "},{"insert":"默认值 null","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"群聊Bot对话时填写，指定本次要发言的角色名，必须是存在于","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"里的角色。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"anchor":"#Qu59cel0","heading":"h2","lmkr":"1"}},{"insert":"响应参数\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1"}},{"insert":"跳转 "},{"insert":"请求参数","attributes":{"hyperlink":"{\"href\":\"#RxN8G2nH\",\"linkId\":\"xmpSfSUWVo\",\"target\":\"_self\"}"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"tabs":"true","tabsZoneId":"v3U2zQJU","zoneType":"Z"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"\n"}],"zoneId":"0","zoneType":"Z"},"4EX7hBNR":{"ops":[{"insert":"*","attributes":{"tabContent":"true","title":"System message","zoneId":"LH6TIuAN"}},{"insert":"*","attributes":{"tabContent":"true","title":"User message","zoneId":"U17siWJ7"}},{"insert":"*","attributes":{"tabContent":"true","title":"Assistant message","zoneId":"e5k6349e"}},{"insert":"*","attributes":{"tabContent":"true","title":"Tool message","zoneId":"LzW66SZa"}},{"insert":"\n"}],"zoneId":"4EX7hBNR","zoneType":"Z"},"5r9o1oZi":{"ops":[{"insert":"\n"}],"zoneId":"5r9o1oZi","zoneType":"Z"},"63805q4x":{"ops":[{"insert":"*","attributes":{"tabContent":"true","title":"快速入口","zoneId":"wSiJrOpz"}},{"insert":"*","attributes":{"tabContent":"true","title":"鉴权说明","zoneId":"Cqg8POb3"}},{"insert":"\n"}],"zoneId":"63805q4x","zoneType":"Z"},"Cqg8POb3":{"ops":[{"insert":"本接口支持 API Key 鉴权，详见"},{"insert":"鉴权认证方式","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1298459\",\"linkId\":\"m9Bo4OVUKX\",\"target\":\"_blank\"}"}},{"insert":"。\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"如需使用 Access Key 来鉴权，推荐使用 SDK 的方式，具体请参见 "},{"insert":"SDK概述","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1302007\",\"linkId\":\"y0ph8ECHoc\",\"target\":\"_blank\"}"}},{"insert":"。\n"}],"zoneId":"Cqg8POb3","zoneType":"Z"},"LH6TIuAN":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"系统消息，"},{"insert":"开发人员提供的指令，模型应遵循这些指令。如模型扮演的角色或者目标等。","attributes":{"backgroundcolor":"rgb(32, 33, 35)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages."},{"insert":"role","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"发送消息的角色，此处应为"},{"insert":"system","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages."},{"insert":"content","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string / object[]","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"系统信息内容。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"tabs":"true","tabsZoneId":"T0BHp6S5f7","zoneType":"Z"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"tabs":"true","tabsZoneId":"5r9o1oZi","zoneType":"Z"}},{"insert":"\n"}],"zoneId":"LH6TIuAN","zoneType":"Z"},"LzW66SZa":{"ops":[{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"模型调用工具的消息。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages."},{"insert":"role","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"发送消息的角色，此处应为"},{"insert":"tool","attributes":{"inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages."},{"insert":"content","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string / array","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(32, 33, 35)"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"工具返回的消息。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages."},{"insert":"tool_call_id ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"模型调用的工具的 ID。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"}],"zoneId":"LzW66SZa","zoneType":"Z"},"NnNZPgLM":{"ops":[{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"id","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"本次请求的唯一标识。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"model","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"本次请求实际使用的模型名称和版本。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"doubao 1.5 代模型的模型名称格式为 doubao-1-5-**。如调用部署doubao-1.5-pro-32k 250115模型的推理接入点，返回","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"model","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"字段信息doubao-1-5-pro-32k-250115。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"created","attributes":{"bold":"true"}},{"insert":" "},{"insert":"integer","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"本次请求创建时间的 Unix 时间戳（秒）。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"固定为 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"chat.completion.chunk","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"choices","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object[]","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"本次请求的模型输出内容。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"choices."},{"insert":"index ","attributes":{"bold":"true"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"当前元素在 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"choices","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","bold":"true"}},{"insert":" 列表的索引。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"choices."},{"insert":"finish_reason ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"模型停止生成 token 的原因。取值范围：","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"stop","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：模型输出自然结束，或因命中请求参数 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"stop","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":" 中指定的字段而被截断。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"length","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：模型输出因达到模型输出限制而被截断，有下面几种原因：","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"触发","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"max_token","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"限制（","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"回答内容的长度限制","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"）","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"触发","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"max_completion_tokens","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"限制（","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"思维链内容+回答内容的长度限制）。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"触发","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"context_window","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":" 限制（输入内容+思维链内容+回答内容的长度限制）。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"content_filter","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：模型输出被内容审核拦截。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"tool_calls","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：模型调用了工具。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"choices."},{"insert":"delta ","attributes":{"bold":"true"}},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"模型输出的增量内容。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"choices.delta."},{"insert":"role ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"内容输出的角色，此处固定为 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"assistant","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"choices.delta."},{"insert":"content ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"模型生成的消息内容。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"choices.delta."},{"insert":"reasoning_content ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"模型处理问题的思维链内容。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"仅深度推理模型支持返回此字段，深度推理模型请参见","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"支持模型","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1449737#5f0f3750\",\"linkId\":\"IeLkkYq08i\",\"target\":\"_blank\"}"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"choices.delta."},{"insert":"tool_calls ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"object[] / null","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"模型调用的工具列表。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"choices.delta."},{"insert":"tool_calls.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"i","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"d ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"调用的工具的 ID。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"choices.delta."},{"insert":"tool_calls.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"index","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"interger","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"当前元素在模型调用的工具列表的索引。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"choices.delta."},{"insert":"tool_calls.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"type ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"工具类型，当前仅支持","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"function","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"choices.delta."},{"insert":"tool_calls.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"function ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"模型调用的函数。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet5","lmkr":"1"}},{"insert":"choices.delta."},{"insert":"tool_calls.function.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"name ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent5","lmkr":"1"}},{"insert":"模型调用的函数的名称。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet5","lmkr":"1"}},{"insert":"choices.delta."},{"insert":"tool_calls.function.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"arguments ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent5","lmkr":"1"}},{"insert":"模型生成的用于调用函数的参数，JSON 格式。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent5","lmkr":"1"}},{"insert":"模型并不总是生成有效的 JSON，并且可能会虚构出一些您的函数参数规范中未定义的参数。在调用函数之前，请在您的代码中验证这些参数是否有效。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"object / null","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"当前内容的对数概率信息。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"content ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"object[] / null","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"message","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"列表中每个 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"content","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":" 元素中的 token 对数概率信息。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs.content.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"token ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"当前 token。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs.content.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"bytes ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"integer[] / null","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"当前 token 的 UTF-8 值，格式为整数列表。当一个字符由多个 token 组成（表情符号或特殊字符等）时可以用于字符的编码和解码。如果 token 没有 UTF-8 值则为空。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs.content.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"logprob ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"float","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"当前 token 的对数概率。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs.content.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"top_logprobs ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"在当前 token 位置最有可能的标记及其对数概率的列表。在一些情况下，返回的数量可能比请求参数 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"top_logprobs","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":" 指定的数量要少。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet5","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs.content.top_logprobs.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"token ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent5","lmkr":"1"}},{"insert":"当前 token。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet5","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs.content.top_logprobs.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"bytes ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"integer[] / null","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent5","lmkr":"1"}},{"insert":"当前 token 的 UTF-8 值，格式为整数列表。当一个字符由多个 token 组成（表情符号或特殊字符等）时可以用于字符的编码和解码。如果 token 没有 UTF-8 值则为空。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet5","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs.content.top_logprobs.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"logprob ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"float","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent5","lmkr":"1"}},{"insert":"当前 token 的对数概率。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"choices."},{"insert":"moderation_hit_type ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"/ null","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"模型输出文字含有敏感信息时，会返回模型输出文字命中的风险分类标签。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"返回值及含义：","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"severe_violation","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：模型输出文字涉及严重违规。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"violence","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：模型输出文字涉及激进行为。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"注意：当前只有","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"视觉理解模型","attributes":{"backgroundcolor":"rgb(255, 255, 255)","hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1362931#%E6%94%AF%E6%8C%81%E6%A8%A1%E5%9E%8B\",\"linkId\":\"byjLXcdRFv\",\"target\":\"_blank\"}"}},{"insert":"支持返回该字段，且只有在","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"方舟控制台","attributes":{"backgroundcolor":"rgb(255, 255, 255)","removeLink":"true"}},{"insert":"接入点配置页面","attributes":{"backgroundcolor":"rgb(255, 255, 255)","hyperlink":"{\"href\":\"https://console.volcengine.com/ark/region:ark+cn-beijing/endpoint/create?customModelId=\",\"linkId\":\"oxR4nPzI4q\",\"target\":\"_blank\"}"}},{"insert":"或者 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"CreateEndpoint","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1262823\",\"linkId\":\"MtnsC54sBp\",\"target\":\"_blank\"}"}},{"insert":" 接口中，将内容护栏方案（ModerationStrategy）设置为基础方案（Basic）时，才会返回风险分类标签。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"bot_usage","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"本次请求的 token 用量。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"bot_usage."},{"insert":"model_usage ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"本次请求不同 endpoint 的 token 消耗。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"bot_usage."},{"insert":"model_usage","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":".","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"name ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"调用的模型 ID。\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"bot_usage."},{"insert":"model_usage","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":".","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"prompt_tokens ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"输入的 prompt token 数量，包含用户输入的提示词和调用插件返回的信息。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"bot_usage."},{"insert":"model_usage","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":".","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"completion_tokens ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"模型生成的 token 数量。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"bot_usage."},{"insert":"model_usage","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":".","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"total_tokens ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"本次请求消耗的总 token 数量（输入 + 输出）。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"action_usage ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"本次请求插件用量信息。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"action_usage.action_name ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"插件分类名称，如 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"content_plugin","attributes":{"backgroundcolor":"rgb(31, 31, 31)","inlineCode":"true"}},{"insert":"（内容插件）等。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"action_usage.count ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"本次请求某插件分类插件总调用次数。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"action_details ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"本次请求插件调用详情。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"action_details.name ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"插件分类名称，如 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"content_plugin","attributes":{"backgroundcolor":"rgb(31, 31, 31)","inlineCode":"true"}},{"insert":"（内容插件）等。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"action_details.count ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"本次请求某插件分类中插件调用次数。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"action_details.tool_details ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"某插件分类中插件调用详细信息。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"action_details.tool_details.name ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"具体调用的工具名称。\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"action_details.tool_details.input ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"插件输入参数，调用插件的数据结构。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"action_details.tool_details.output ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"插件输出结果，调用插件返回的数据结构。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"action_details.tool_details.created_at ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"插件调用开始时间。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"action_details.tool_details.completed_at ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"插件调用结束时间。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"m","attributes":{"bold":"true"}},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0","bold":"true"}},{"insert":"a","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object / null","attributes":{"inlineCode":"true"}},{"insert":" \n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"额外参数。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"运行时动态传入的角色配置。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent3","lmkr":"1"}},{"insert":"群聊角色列表。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters.","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"name","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent4","lmkr":"1"}},{"insert":"群聊角色名称。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters.","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"system_prompt","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent4","lmkr":"1"}},{"insert":"群聊角色设定，用于告知应用需要扮演的角色。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters.","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"model_desc","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"模型说明。\n"},{"insert":"*","attributes":{"list":"bullet5","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters.model_desc.","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"endpoint_id","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent5","lmkr":"1"}},{"insert":"您创建的","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"推理接入点","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1099522\",\"linkId\":\"m7R2CsDUKx\",\"target\":\"_blank\"}"}},{"insert":"ID。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"description","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" "},{"insert":"默认值 null","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent3","lmkr":"1"}},{"insert":"群聊场景描述，可设定群聊的主题、时间地点、事件场景、用户扮演的角色等信息。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"user_name","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" "},{"insert":"默认值 用户","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent3","lmkr":"1"}},{"insert":"表示“我”所扮演的角色名称 ，默认值为“用户”。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"user_info","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" "},{"insert":"默认值 null","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"可以被反序列化成 json 的字符串，需要包含 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"city","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":" 和 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"district","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":" 两个字段。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"emit_intention_signal_extra","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" "},{"insert":"默认值 \"false\"","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"值是 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\"true\"","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":" 时，会中途返回intention状态 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\"正在搜索\"。","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"target_character_name","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" "},{"insert":"默认值 null","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"群聊Bot对话时填写，指定本次要发言的角色名，必须是存在于","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"里的角色。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"references","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object[]","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"本次请求中应用调用了插件的信息。字段参考具体见各个插件的数据结构。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"联网插件","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1285209\",\"linkId\":\"JfLgmthJUl\",\"target\":\"_blank\"}"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"知识库插件","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1285210\",\"linkId\":\"6Bd9VMAZAX\",\"target\":\"_blank\"}"}},{"insert":"\n"}],"zoneId":"NnNZPgLM","zoneType":"Z"},"RizapJXctJ":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"视觉理解模型等多模态模型、部分大语言模型支持此类型。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"文本消息部分","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"多模态消息中，内容文本输入。"},{"insert":"视觉理解模型","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1330310#%E8%A7%86%E8%A7%89%E7%90%86%E8%A7%A3\",\"linkId\":\"ik7C67DYgz\",\"target\":\"_blank\"}"}},{"insert":"、部分大语言模型支持此类型消息。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages.content."},{"insert":"text ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"文本消息内容部分。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages.content."},{"insert":"type ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"文本消息类型，此次应为 "},{"insert":"text","attributes":{"inlineCode":"true"}},{"insert":"。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"图像消息部分","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"多模态消息中，图像内容部分。"},{"insert":"视觉理解模型","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1330310#%E8%A7%86%E8%A7%89%E7%90%86%E8%A7%A3\",\"linkId\":\"08h7Xx3U1t\",\"target\":\"_blank\"}"}},{"insert":"支持此类型消息。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages.content."},{"insert":"image_url ","attributes":{"bold":"true"}},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"图片消息的内容部分。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"messages.content.image_url."},{"insert":"url ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"支持传入图片链接或图片的Base64编码，不同模型支持图片大小略有不同，具体请参见"},{"insert":"使用说明","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1362931#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E\",\"linkId\":\"0bwUtC9xIj\",\"target\":\"_blank\"}"}},{"insert":"。\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"传入图片URL：传入图片的可访问链接，推荐使用 TOS（火山引擎对象存储） 存储图片，并生成图片链接。\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"传入Base64编码：请遵循格式"},{"insert":"data:image/\u003c图片格式\u003e;base64,\u003cBase64编码\u003e","attributes":{"inlineCode":"true"}},{"insert":"，可见"},{"insert":"示例","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1362931#base64-%E7%BC%96%E7%A0%81%E8%BE%93%E5%85%A5\",\"linkId\":\"KfEndYmuun\",\"target\":\"_blank\"}"}},{"insert":"。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"messages.content.image_url."},{"insert":"detail ","attributes":{"bold":"true"}},{"insert":"string / null","attributes":{"inlineCode":"true"}},{"insert":"  "},{"insert":"默认值 auto","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"支持手动设置图片的质量，取值范围","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"high","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"、","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"low","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"、","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"auto","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"high","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：高细节模式，适用于需要理解图像细节信息的场景，如对图像的多个局部信息/特征提取、复杂/丰富细节的图像理解等场景，理解更全面。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"low","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：低细节模式，适用于简单的图像分类/识别、整体内容理解/描述等场景，理解更快速。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"auto","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：默认模式，不同模型选择的模式略有不同，具体请参见","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"理解图像的深度控制","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1362931#bf4d9224\",\"linkId\":\"aoSxH6sCGG\",\"target\":\"_blank\"}"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages.content."},{"insert":"type ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"图像消息类型，此次应为 "},{"insert":"image_url","attributes":{"inlineCode":"true"}},{"insert":"。\n"}],"zoneId":"RizapJXctJ","zoneType":"Z"},"T0BHp6S5f7":{"ops":[{"insert":"*","attributes":{"tabContent":"true","title":"纯文本消息内容","zoneId":"hfntJGS9Qc"}},{"insert":"*","attributes":{"tabContent":"true","title":"多模态消息内容","zoneId":"n9QNRdS3Eb"}},{"insert":"\n"}],"zoneId":"T0BHp6S5f7","zoneType":"Z"},"U17siWJ7":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":" \n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"用户发送的消息，包含提示或附加上下文信息。","attributes":{"backgroundcolor":"rgb(32, 33, 35)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages."},{"insert":"role","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"发送消息的角色，此处应为"},{"insert":"user","attributes":{"inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages."},{"insert":"content","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string / object[]","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"用户信息内容。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"tabs":"true","tabsZoneId":"v08tXcTO","zoneType":"Z"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"tabs":"true","tabsZoneId":"aPKu1lu6G5","zoneType":"Z"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages."},{"insert":"name","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"backgroundcolor":"rgba(238, 242, 245, 0.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgba(238, 242, 245, 0.5)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"发送此消息的角色的姓名。用于区别同一个角色但是不同主体发送的消息。\n"}],"zoneId":"U17siWJ7","zoneType":"Z"},"VG2t5Ndo":{"ops":[{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"id","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"本次请求的唯一标识。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"model","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"本次请求实际使用的模型名称和版本。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"doubao 1.5 代模型的模型名称格式为 doubao-1-5-**。如调用部署doubao-1.5-pro-32k 250115模型的推理接入点，返回","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"model","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"字段信息doubao-1-5-pro-32k-250115。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"created","attributes":{"bold":"true"}},{"insert":" "},{"insert":"integer","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"本次请求创建时间的 Unix 时间戳（秒）。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"固定为 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"chat.completion","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"choices","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object[]","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"本次请求的模型输出内容。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"choices."},{"insert":"index ","attributes":{"bold":"true"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"当前元素在 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"choices","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","bold":"true"}},{"insert":" 列表的索引。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"choices."},{"insert":"finish_reason ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"模型停止生成 token 的原因。取值范围：","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"stop","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：模型输出自然结束，或因命中请求参数 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"stop","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":" 中指定的字段而被截断。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"length","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：模型输出因达到模型输出限制而被截断，有下面几种原因：","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"触发","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"max_token","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"限制（","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"回答内容的长度限制","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"）","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"触发","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"max_completion_tokens","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"限制（","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"思维链内容+回答内容的长度限制）。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"触发","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"context_window","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":" 限制（输入内容+思维链内容+回答内容的长度限制）。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"content_filter","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：模型输出被内容审核拦截。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"tool_calls","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：模型调用了工具。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"choices."},{"insert":"message ","attributes":{"bold":"true"}},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"模型输出的内容。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"choices.message."},{"insert":"role ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"内容输出的角色，此处固定为 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"assistant","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"choices.message."},{"insert":"content ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"模型生成的消息内容。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"choices.message."},{"insert":"reasoning_content ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"模型处理问题的思维链内容。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"仅深度推理模型支持返回此字段，深度推理模型请参见","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"支持模型","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1449737#5f0f3750\",\"linkId\":\"Kc4n9AB8Bd\",\"target\":\"_blank\"}"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"choices.message."},{"insert":"tool_calls ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"object[] / null","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"模型生成的工具调用。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"choices.message."},{"insert":"tool_calls.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"i","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"d ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"调用的工具的 ID。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"choices.message."},{"insert":"tool_calls.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"type ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"工具类型，当前仅支持","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"function","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"choices.message."},{"insert":"tool_calls.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"function ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"模型调用的函数。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet5","lmkr":"1"}},{"insert":"choices.message."},{"insert":"tool_calls.function.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"name ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent5","lmkr":"1"}},{"insert":"模型调用的函数的名称。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet5","lmkr":"1"}},{"insert":"choices.message."},{"insert":"tool_calls.function.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"arguments ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent5","lmkr":"1"}},{"insert":"模型生成的用于调用函数的参数，JSON 格式。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent5","lmkr":"1"}},{"insert":"模型并不总是生成有效的 JSON，并且可能会虚构出一些您的函数参数规范中未定义的参数。在调用函数之前，请在您的代码中验证这些参数是否有效。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"object / null","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"当前内容的对数概率信息。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"content ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"object[] / null","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"message","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"列表中每个 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"content","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":" 元素中的 token 对数概率信息。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs.content.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"token ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"当前 token。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs.content.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"bytes ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"integer[] / null","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"当前 token 的 UTF-8 值，格式为整数列表。当一个字符由多个 token 组成（表情符号或特殊字符等）时可以用于字符的编码和解码。如果 token 没有 UTF-8 值则为空。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs.content.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"logprob ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"float","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"当前 token 的对数概率。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs.content.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"top_logprobs ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"在当前 token 位置最有可能的标记及其对数概率的列表。在一些情况下，返回的数量可能比请求参数 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"top_logprobs","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":" 指定的数量要少。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet5","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs.content.top_logprobs.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"token ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent5","lmkr":"1"}},{"insert":"当前 token。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet5","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs.content.top_logprobs.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"bytes ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"integer[] / null","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent5","lmkr":"1"}},{"insert":"当前 token 的 UTF-8 值，格式为整数列表。当一个字符由多个 token 组成（表情符号或特殊字符等）时可以用于字符的编码和解码。如果 token 没有 UTF-8 值则为空。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet5","lmkr":"1"}},{"insert":"choices."},{"insert":"logprobs.content.top_logprobs.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"logprob ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"float","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent5","lmkr":"1"}},{"insert":"当前 token 的对数概率。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"choices."},{"insert":"moderation_hit_type ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"模型输出文字含有敏感信息时，会返回模型输出文字命中的风险分类标签。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"返回值及含义：","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"severe_violation","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：模型输出文字涉及严重违规。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"violence","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：模型输出文字涉及激进行为。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"注意：当前只有","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"视觉理解模型","attributes":{"backgroundcolor":"rgb(255, 255, 255)","hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1362931#%E6%94%AF%E6%8C%81%E6%A8%A1%E5%9E%8B\",\"linkId\":\"Djfx9baHQY\",\"target\":\"_blank\"}"}},{"insert":"支持返回该字段，且只有在","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"方舟控制台","attributes":{"backgroundcolor":"rgb(255, 255, 255)","removeLink":"true"}},{"insert":"接入点配置页面","attributes":{"backgroundcolor":"rgb(255, 255, 255)","hyperlink":"{\"href\":\"https://console.volcengine.com/ark/region:ark+cn-beijing/endpoint/create?customModelId=\",\"linkId\":\"CeNauuowGO\",\"target\":\"_blank\"}"}},{"insert":"或者 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"CreateEndpoint","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1262823\",\"linkId\":\"zgYa6ubqhG\",\"target\":\"_blank\"}"}},{"insert":" 接口中，将内容护栏方案（ModerationStrategy）设置为基础方案（Basic）时，才会返回风险分类标签。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"bot_usage","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"本次请求的 token 用量。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"bot_usage."},{"insert":"model_usage ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"本次请求不同 endpoint 的 token 消耗。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"bot_usage."},{"insert":"model_usage","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":".name","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"调用的模型 ID。\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"bot_usage."},{"insert":"model_usage","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":".prompt_tokens","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"输入的 prompt token 数量，包含用户输入的提示词和调用插件返回的信息。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"bot_usage."},{"insert":"model_usage","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":".completion_tokens","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"模型生成的 token 数量。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"bot_usage."},{"insert":"model_usage","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":".total_tokens","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"本次请求消耗的总 token 数量（输入 + 输出）。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"action_usage","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"本次请求插件用量信息。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"action_usage.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"action_name","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"插件分类名称，如 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"content_plugin","attributes":{"backgroundcolor":"rgb(31, 31, 31)","inlineCode":"true"}},{"insert":"（内容插件）等。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"action_usage.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"count","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"本次请求某插件分类插件总调用次数。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"action_details","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"本次请求插件调用详情。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"action_details.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"name","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"插件分类名称，如 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"content_plugin","attributes":{"backgroundcolor":"rgb(31, 31, 31)","inlineCode":"true"}},{"insert":"（内容插件）等。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"action_details.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"count","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"本次请求某插件分类中插件调用次数。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"action_details.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"tool_details","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"某插件分类中插件调用详细信息。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"action_details.tool_details.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"name","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"具体调用的工具名称。\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"action_details.tool_details.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"input","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"插件输入参数，调用插件的数据结构。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"action_details.tool_details.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"output","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"插件输出结果，调用插件返回的数据结构。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"action_details.tool_details.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"created_at","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"插件调用开始时间。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"action_details.tool_details.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"completed_at","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"插件调用结束时间。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"m","attributes":{"bold":"true"}},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0","bold":"true"}},{"insert":"a","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object / null","attributes":{"inlineCode":"true"}},{"insert":" \n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"额外参数。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"运行时动态传入的角色配置。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent3","lmkr":"1"}},{"insert":"群聊角色列表。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters.","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"name","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent4","lmkr":"1"}},{"insert":"群聊角色名称。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters.","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"system_prompt","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent4","lmkr":"1"}},{"insert":"群聊角色设定，用于告知应用需要扮演的角色。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet4","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters.","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"model_desc","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent4","lmkr":"1"}},{"insert":"模型说明。\n"},{"insert":"*","attributes":{"list":"bullet5","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters.model_desc.","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"endpoint_id","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"必选","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent5","lmkr":"1"}},{"insert":"您创建的","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"推理接入点","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1099522\",\"linkId\":\"9xnvo6ELKa\",\"target\":\"_blank\"}"}},{"insert":"ID。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"description","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" "},{"insert":"默认值 null","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent3","lmkr":"1"}},{"insert":"群聊场景描述，可设定群聊的主题、时间地点、事件场景、用户扮演的角色等信息。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"group_chat_config.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"user_name","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(248, 248, 248)"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" "},{"insert":"默认值 用户","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","list":"indent3","lmkr":"1"}},{"insert":"表示“我”所扮演的角色名称 ，默认值为“用户”。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"user_info","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" "},{"insert":"默认值 null","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"可以被反序列化成 json 的字符串，需要包含 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"city","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":" 和 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"district","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":" 两个字段。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"emit_intention_signal_extra","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" "},{"insert":"默认值 \"false\"","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"值是 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\"true\"","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":" 时，会中途返回intention状态 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\"正在搜索\"。","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"m"},{"insert":"etadat","attributes":{"anchor":"#Qu59cel0"}},{"insert":"a"},{"insert":".","attributes":{"bold":"true"}},{"insert":"target_character_name","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string / null","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":" "},{"insert":"默认值 null","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"群聊Bot对话时填写，指定本次要发言的角色名，必须是存在于","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"characters","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"里的角色。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"references","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object[]","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"本次请求中应用调用了插件的信息。字段参考具体见各个插件的数据结构。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"联网插件","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1285209\",\"linkId\":\"DaeDn46XQo\",\"target\":\"_blank\"}"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"知识库插件","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1285210\",\"linkId\":\"UzfdlYUNT6\",\"target\":\"_blank\"}"}},{"insert":"\n"}],"zoneId":"VG2t5Ndo","zoneType":"Z"},"Yt4PLcnz":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"thinking."},{"insert":"type ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":"  "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"取值范围："},{"insert":"enabled","attributes":{"inlineCode":"true"}},{"insert":"， "},{"insert":"disabled","attributes":{"inlineCode":"true"}},{"insert":"，"},{"insert":"auto","attributes":{"inlineCode":"true"}},{"insert":"。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"enabled","attributes":{"inlineCode":"true"}},{"insert":"：开启思考模式，模型一定先思考后回答。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"disabled","attributes":{"inlineCode":"true"}},{"insert":"：关闭思考模式，模型直接回答问题，不会进行思考。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"auto","attributes":{"inlineCode":"true"}},{"insert":"：自动思考模式，模型根据问题自主判断是否需要思考，简单题目直接回答。\n"}],"zoneId":"Yt4PLcnz","zoneType":"Z"},"aPKu1lu6G5":{"ops":[{"insert":"*","attributes":{"tabContent":"true","title":"纯文本消费内容","zoneId":"y14glT6IQY"}},{"insert":"*","attributes":{"tabContent":"true","title":"多模态消息内容","zoneId":"RizapJXctJ"}},{"insert":"\n"}],"zoneId":"aPKu1lu6G5","zoneType":"Z"},"bkjwjujj6j":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"{","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"    "},{"insert":"\"type\"","attributes":{"clientside-highlight":"code-hljs-attr"}},{"insert":":","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":" "},{"insert":"\"object\"","attributes":{"clientside-highlight":"code-hljs-string"}},{"insert":",","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"    "},{"insert":"\"properties\"","attributes":{"clientside-highlight":"code-hljs-attr"}},{"insert":":","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":" "},{"insert":"{","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"        "},{"insert":"\"location\"","attributes":{"clientside-highlight":"code-hljs-attr"}},{"insert":":","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":" "},{"insert":"{","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"            "},{"insert":"\"type\"","attributes":{"clientside-highlight":"code-hljs-attr"}},{"insert":":","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":" "},{"insert":"\"string\"","attributes":{"clientside-highlight":"code-hljs-string"}},{"insert":",","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"            "},{"insert":"\"description\"","attributes":{"clientside-highlight":"code-hljs-attr"}},{"insert":":","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":" "},{"insert":"\"城市，如：北京\"","attributes":{"clientside-highlight":"code-hljs-string"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"        "},{"insert":"}","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"    "},{"insert":"},","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"    "},{"insert":"\"required\"","attributes":{"clientside-highlight":"code-hljs-attr"}},{"insert":":","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":" "},{"insert":"[","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":"\"location\"","attributes":{"clientside-highlight":"code-hljs-string"}},{"insert":"]","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"}","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":"\n"}],"zoneId":"bkjwjujj6j","zoneType":"Z"},"e5k6349e":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"模型响应用户消息而回复的消息。","attributes":{"backgroundcolor":"rgb(32, 33, 35)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","tips":"{\"type\":\"default\",\"isTitle\":true}"}},{"insert":"说明\n"},{"insert":"*","attributes":{"align":"left","lmkr":"1","tips":"{\"type\":\"default\"}"}},{"insert":"messages."},{"insert":"content","attributes":{"bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","bold":"true"}},{"insert":"与 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"messages."},{"insert":"tool_calls","attributes":{"bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","bold":"true"}},{"insert":"字段二者至少填写其一。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages."},{"insert":"role","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"发送消息的角色，此处应为"},{"insert":"assistant","attributes":{"inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages."},{"insert":"content","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string / array","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(32, 33, 35)"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"模型回复的消息。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages."},{"insert":"tool_calls","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object[]","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"模型回复的工具调用信息。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"messages.tool_calls"},{"insert":".function ","attributes":{"bold":"true"}},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"模型调用工具对应的函数信息。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"messages.tool_calls"},{"insert":".","attributes":{"bold":"true"}},{"insert":"function."},{"insert":"name ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"模型需要调用的函数名称。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"messages.tool_calls"},{"insert":".","attributes":{"bold":"true"}},{"insert":"function."},{"insert":"arguments ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"模型生成的用于调用函数的参数，JSON 格式。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","text-indent":"true","tips":"{\"type\":\"default\",\"isTitle\":true}","wrapperIndent":"1"}},{"insert":"说明\n"},{"insert":"*","attributes":{"lmkr":"1","text-indent":"true","tips":"{\"type\":\"default\"}","wrapperIndent":"1"}},{"insert":"模型并不总是生成有效的 JSON，并且可能会虚构出一些您的函数参数规范中未定义的参数。在调用函数之前，请在您的代码中验证这些参数是否有效。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"messages.tool_calls"},{"insert":".id ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"调用的工具的 ID。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"messages.tool_calls"},{"insert":".type ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"工具类型，当前仅支持","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"function","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"\n"}],"zoneId":"e5k6349e","zoneType":"Z"},"hfntJGS9Qc":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"纯文本的消息内容。\n"}],"zoneId":"hfntJGS9Qc","zoneType":"Z"},"n9QNRdS3Eb":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"视觉理解模型等多模态模型、部分大语言模型支持此类型。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"文本消息部分","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"多模态消息中，内容文本输入。"},{"insert":"视觉理解模型","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1330310#%E8%A7%86%E8%A7%89%E7%90%86%E8%A7%A3\",\"linkId\":\"f5O88RLOZX\",\"target\":\"_blank\"}"}},{"insert":"、部分大语言模型支持此类型消息。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages.content."},{"insert":"text ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"文本消息内容部分。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages.content."},{"insert":"type ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"文本消息类型，此次应为 "},{"insert":"text","attributes":{"inlineCode":"true"}},{"insert":"。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"图像消息部分","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"多模态消息中，图像内容部分。"},{"insert":"视觉理解模型","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1330310#%E8%A7%86%E8%A7%89%E7%90%86%E8%A7%A3\",\"linkId\":\"3y9Yw50NUM\",\"target\":\"_blank\"}"}},{"insert":"支持此类型消息。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages.content."},{"insert":"image_url ","attributes":{"bold":"true"}},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"图片消息的内容部分。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"messages.content.image_url."},{"insert":"url ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent2","lmkr":"1"}},{"insert":"支持传入图片链接或图片的Base64编码，不同模型支持图片大小略有不同，具体请参见"},{"insert":"使用说明","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1362931#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E\",\"linkId\":\"B8KLZaIhUc\",\"target\":\"_blank\"}"}},{"insert":"。\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"传入图片URL：传入图片的可访问链接，推荐使用 TOS（火山引擎对象存储） 存储图片，并生成图片链接。\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1"}},{"insert":"传入Base64编码：请遵循格式"},{"insert":"data:image/\u003c图片格式\u003e;base64,\u003cBase64编码\u003e","attributes":{"inlineCode":"true"}},{"insert":"，可见"},{"insert":"示例","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1362931#base64-%E7%BC%96%E7%A0%81%E8%BE%93%E5%85%A5\",\"linkId\":\"CxQ7GFsVel\",\"target\":\"_blank\"}"}},{"insert":"。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"messages.content.image_url."},{"insert":"detail ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":"  "},{"insert":"默认值 auto","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent3","lmkr":"1"}},{"insert":"支持手动设置图片的质量，取值范围","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"high","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"、","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"low","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"、","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"auto","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"high","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：高细节模式，适用于需要理解图像细节信息的场景，如对图像的多个局部信息/特征提取、复杂/丰富细节的图像理解等场景，理解更全面。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"low","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：低细节模式，适用于简单的图像分类/识别、整体内容理解/描述等场景，理解更快速。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"auto","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"：默认模式，不同模型选择的模式略有不同，具体请参见","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"理解图像的深度控制","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1362931#bf4d9224\",\"linkId\":\"R5MLG77Ru4\",\"target\":\"_blank\"}"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"messages.content."},{"insert":"type ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1"}},{"insert":"图像消息类型，此次应为 "},{"insert":"image_url","attributes":{"inlineCode":"true"}},{"insert":"。\n"}],"zoneId":"n9QNRdS3Eb","zoneType":"Z"},"panel-6shlIZiy":{"ops":[{"insert":" ","attributes":{"apiSample":"multiple","apiSampleData":"{\"type\":\"multiple\",\"config\":{\"inputName\":\"request\",\"outputName\":\"response\"},\"data\":[{\"title\":\"联网应用\",\"key\":\"0\",\"children\":[{\"title\":\"curl\",\"key\":\"vfa3i1WMV1\",\"inputCode\":\"curl https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions \\\\\\n  -H \\\"Content-Type: application/json\\\" \\\\\\n  -H \\\"Authorization: Bearer $ARK_API_KEY\\\" \\\\\\n  -d $'{\\n    \\\"messages\\\": [\\n        {\\n            \\\"content\\\": \\\"杭州今天天气\\\",\\n            \\\"role\\\": \\\"user\\\"\\n        }\\n    ],\\n    \\\"model\\\": \\\"bot-20250407225237-6xv7r\\\"\\n}'\",\"outputCode\":\"{\\n    \\\"id\\\": \\\"02174410213780126458cc51545801ff6ffb59c94a55dae86c43b\\\",\\n    \\\"choices\\\": [\\n      {\\n        \\\"finish_reason\\\": \\\"stop\\\",\\n        \\\"index\\\": 0,\\n        \\\"message\\\": {\\n          \\\"content\\\": \\\"以下是杭州今天（2025年4月8日）的天气情况：\\\\n- **整体天气状况**：今天多云，偏南风3级。\\\\n- **气温情况**：白天最高气温31度，平均相对湿度55%。\\\\n- **空气质量**：杭州市区AQI为90 - 110，首要污染物是O₃，空气质量等级为良 - 轻度污染，易感人群需减少户外锻炼。 \\\",\\n          \\\"role\\\": \\\"assistant\\\"\\n        }\\n      }\\n    ],\\n    \\\"created\\\": 1744102143,\\n    \\\"model\\\": \\\"doubao-1-5-pro-32k-250115\\\",\\n    \\\"object\\\": \\\"chat.completion\\\",\\n    \\\"bot_usage\\\": {\\n      \\\"model_usage\\\": [\\n        {\\n          \\\"name\\\": \\\"doubao-1-5-pro-32k-250115\\\",\\n          \\\"prompt_tokens\\\": 1960,\\n          \\\"completion_tokens\\\": 99,\\n          \\\"total_tokens\\\": 2059\\n        }\\n      ],\\n      \\\"action_usage\\\": [\\n        {\\n          \\\"action_name\\\": \\\"content_plugin\\\",\\n          \\\"count\\\": 1\\n        }\\n      ],\\n      \\\"action_details\\\": [\\n        {\\n          \\\"name\\\": \\\"content_plugin\\\",\\n          \\\"count\\\": 1,\\n          \\\"tool_details\\\": [\\n            {\\n              \\\"name\\\": \\\"search\\\",\\n              \\\"input\\\": {\\n                \\\"queries\\\": [\\n                  \\\"杭州今天天气\\\"\\n                ],\\n                \\\"source_type\\\": [\\n                  \\\"search_engine\\\"\\n                ],\\n                \\\"offset\\\": 0,\\n                \\\"count\\\": 5,\\n                \\\"account_id\\\": 2100000825,\\n                \\\"video_token\\\": \\\"\\\"\\n              },\\n              \\\"output\\\": {\\n                \\\"type\\\": \\\"tool\\\",\\n                \\\"data\\\": {\\n                  \\\"status_code\\\": 200,\\n                  \\\"data\\\": {\\n                    \\\"has_more\\\": true,\\n                    \\\"results\\\": [\\n                      {\\n                        \\\"id\\\": \\\"3ba8807eabf8793d-65e575422f8ebfb2\\\",\\n                        \\\"source_type\\\": \\\"search_engine\\\",\\n                        \\\"site_name\\\": \\\"搜索引擎-中国天气\\\",\\n                        \\\"title\\\": \\\"【杭州天气预报15天_杭州天气预报15天查询】-中国天气网\\\",\\n                        \\\"summary\\\": \\\"20/8℃ 东北风\u003c3级 北风\u003c3级 19/7℃ 东风\u003c3级 南风\u003c3级 26/12℃ 东风\u003c3级 西风\u003c3级 20/8℃ 东北风\u003c3级 北风\u003c3级 19/7℃ 东风\u003c3级 南风\u003c3级 26/12℃ 东风\u003c3级 西风\u003c3级\\\",\\n                        \\\"publish_time\\\": 0,\\n                        \\\"url\\\": \\\"https://m.weather.com.cn/mweather15d/101210101.shtml#!/abighis\\\",\\n                        \\\"cover_image\\\": null,\\n                        \\\"search_plugin_data\\\": {\\n                          \\\"doc_id\\\": \\\"3ba8807eabf8793d-65e575422f8ebfb2\\\",\\n                          \\\"logo_url\\\": \\\"https://p3-search.byteimg.com/img/labis/dafd663cfa3b7fce9addcca7916010cb~noop.jpeg\\\",\\n                          \\\"auth_info\\\": \\\"非常权威\\\",\\n                          \\\"auth_score\\\": 1,\\n                          \\\"rel_info\\\": \\\"强相关\\\",\\n                          \\\"rel_score\\\": 0.994623,\\n                          \\\"freshness_info\\\": \\\"非常满足时效需求\\\",\\n                          \\\"freshness_score\\\": 0.994948,\\n                          \\\"final_ref\\\": \\\"\\\",\\n                          \\\"final_ref_len\\\": 0,\\n                          \\\"author_name\\\": \\\"\\\",\\n                          \\\"duration\\\": 0\\n                        },\\n                        \\\"smart_content_data\\\": null,\\n                        \\\"ruyi_data\\\": null\\n                      },\\n                      ...\\n                      {\\n                        \\\"id\\\": \\\"d4d70607487f997f-b2adf6b6d837f126\\\",\\n                        \\\"source_type\\\": \\\"search_engine\\\",\\n                        \\\"site_name\\\": \\\"搜索引擎-www.hzqx.com\\\",\\n                        \\\"title\\\": \\\"杭州天气\\\",\\n                        \\\"summary\\\": \\\"杭州国家基准气候站发布 25.7℃ 较昨日同期 高2.8℃ 相对湿度：40 % 风力： 东南2级 气压： 1012.1 hPa 近1小时降水:0 mm 能见度：22652 m *实时数据、未经人工复核 杭州市气象台4月8日8时50分发布的市区天气预报：\\\\n今天多云；明天多云转阴，傍晚到夜里局部有阵雨；后天阴转多云。今天偏南风3级。今天白天最高气温31度，明天白天最高气温32度，明天早晨最低气温21度，今天平均相对湿度55%。2025年04月08日 08时50分 过去24小时 主城区 未来7天天气客观预报（该预报数据为数值预报自动输出，未经人工订正，仅供参考） 白天 08时 | 20时 夜晚 昨天20时 | 当天08时 今天 明天 周四 周五 周六 周日 周一 04/08 04/09 04/10 04/11 04/12 04/13 04/14 多云 多云 晴 多云 多云 晴 晴 晴 多云 晴 大雨 晴 晴 东风 东南风 东北风 东风 北风 西南风 东北风 不超过3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 31.7℃ 32.2℃ 32.2℃ 31.2℃ 19.4℃ 25.2℃ 27.3℃ 17.6℃ 19.4℃ 21.5℃ 19.3℃ 17.7℃ 11.2℃ 14.7℃ * 白天为当天08时到20时，通常气温为最高温度； 夜晚为昨天20时到当天08时，通常气温为最低温度。杭州市当前气温2025-04-08 10:30 分布图 今日生活气象 空气质量预报 杭州市环境监测站和杭州市气象台 联合发布 4月8日杭州市区AQI:90-110，首要污染物:O3，空气质量等级:良-轻度污染。易感人群减少户外锻炼。4月9日杭州市区AQI:80-100，首要污染物:O3，空气质量等级:良。\\\",\\n                        \\\"publish_time\\\": 1744079400,\\n                        \\\"url\\\": \\\"https://www.hzqx.com/hztq/index.html\\\",\\n                        \\\"cover_image\\\": null,\\n                        \\\"search_plugin_data\\\": {\\n                          \\\"doc_id\\\": \\\"d4d70607487f997f-b2adf6b6d837f126\\\",\\n                          \\\"logo_url\\\": \\\"\\\",\\n                          \\\"auth_info\\\": \\\"非常权威\\\",\\n                          \\\"auth_score\\\": 0.875495,\\n                          \\\"rel_info\\\": \\\"强相关\\\",\\n                          \\\"rel_score\\\": 0.834824,\\n                          \\\"freshness_info\\\": \\\"非常满足时效需求\\\",\\n                          \\\"freshness_score\\\": 0.994948,\\n                          \\\"final_ref\\\": \\\"\\\",\\n                          \\\"final_ref_len\\\": 0,\\n                          \\\"author_name\\\": \\\"\\\",\\n                          \\\"duration\\\": 0\\n                        },\\n                        \\\"smart_content_data\\\": null,\\n                        \\\"ruyi_data\\\": null\\n                      }\\n                    ],\\n                    \\\"debug_data\\\": {\\n                      \\\"extra\\\": null\\n                    },\\n                    \\\"log_id\\\": \\\"02174410213780126458cc51545801ff6ffb59c94a55dae86c43b\\\",\\n                    \\\"timing\\\": {\\n                      \\\"total\\\": 1431\\n                    }\\n                  }\\n                }\\n              },\\n              \\\"created_at\\\": 1744102137810,\\n              \\\"completed_at\\\": 1744102139264\\n            }\\n          ]\\n        }\\n      ]\\n    },\\n    \\\"metadata\\\": {},\\n    \\\"references\\\": [\\n      {\\n        \\\"url\\\": \\\"https://m.weather.com.cn/mweather15d/101210101.shtml#!/abighis\\\",\\n        \\\"logo_url\\\": \\\"https://p3-search.byteimg.com/img/labis/dafd663cfa3b7fce9addcca7916010cb~noop.jpeg\\\",\\n        \\\"site_name\\\": \\\"搜索引擎-中国天气\\\",\\n        \\\"title\\\": \\\"【杭州天气预报15天_杭州天气预报15天查询】-中国天气网\\\",\\n        \\\"summary\\\": \\\"20/8℃ 东北风\u003c3级 北风\u003c3级 19/7℃ 东风\u003c3级 南风\u003c3级 26/12℃ 东风\u003c3级 西风\u003c3级 20/8℃ 东北风\u003c3级 北风\u003c3级 19/7℃ 东风\u003c3级 南风\u003c3级 26/12℃ 东风\u003c3级 西风\u003c3级\\\",\\n        \\\"publish_time\\\": \\\"1970年01月01日 08:00:00(CST) 星期四\\\",\\n        \\\"extra\\\": {\\n          \\\"rel_info\\\": \\\"强相关\\\",\\n          \\\"freshness_info\\\": \\\"非常满足时效需求\\\",\\n          \\\"auth_info\\\": \\\"非常权威\\\",\\n          \\\"final_ref\\\": \\\"\\\"\\n        }\\n      },\\n      ...\\n      {\\n        \\\"url\\\": \\\"https://www.hzqx.com/hztq/index.html\\\",\\n        \\\"logo_url\\\": \\\"\\\",\\n        \\\"site_name\\\": \\\"搜索引擎-www.hzqx.com\\\",\\n        \\\"title\\\": \\\"杭州天气\\\",\\n        \\\"summary\\\": \\\"杭州国家基准气候站发布 25.7℃ 较昨日同期 高2.8℃ 相对湿度：40 % 风力： 东南2级 气压： 1012.1 hPa 近1小时降水:0 mm 能见度：22652 m *实时数据、未经人工复核 杭州市气象台4月8日8时50分发布的市区天气预报：\\\\n今天多云；明天多云转阴，傍晚到夜里局部有阵雨；后天阴转多云。今天偏南风3级。今天白天最高气温31度，明天白天最高气温32度，明天早晨最低气温21度，今天平均相对湿度55%。2025年04月08日 08时50分 过去24小时 主城区 未来7天天气客观预报（该预报数据为数值预报自动输出，未经人工订正，仅供参考） 白天 08时 | 20时 夜晚 昨天20时 | 当天08时 今天 明天 周四 周五 周六 周日 周一 04/08 04/09 04/10 04/11 04/12 04/13 04/14 多云 多云 晴 多云 多云 晴 晴 晴 多云 晴 大雨 晴 晴 东风 东南风 东北风 东风 北风 西南风 东北风 不超过3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 31.7℃ 32.2℃ 32.2℃ 31.2℃ 19.4℃ 25.2℃ 27.3℃ 17.6℃ 19.4℃ 21.5℃ 19.3℃ 17.7℃ 11.2℃ 14.7℃ * 白天为当天08时到20时，通常气温为最高温度； 夜晚为昨天20时到当天08时，通常气温为最低温度。杭州市当前气温2025-04-08 10:30 分布图 今日生活气象 空气质量预报 杭州市环境监测站和杭州市气象台 联合发布 4月8日杭州市区AQI:90-110，首要污染物:O3，空气质量等级:良-轻度污染。易感人群减少户外锻炼。4月9日杭州市区AQI:80-100，首要污染物:O3，空气质量等级:良。\\\",\\n        \\\"publish_time\\\": \\\"2025年04月08日 10:30:00(CST) 星期二\\\",\\n        \\\"extra\\\": {\\n          \\\"rel_info\\\": \\\"强相关\\\",\\n          \\\"freshness_info\\\": \\\"非常满足时效需求\\\",\\n          \\\"auth_info\\\": \\\"非常权威\\\",\\n          \\\"final_ref\\\": \\\"\\\"\\n        }\\n      }\\n    ]\\n  }\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"python\",\"key\":\"aLc8gjP2rK\",\"inputCode\":\"import os\\n\\nfrom volcenginesdkarkruntime import Ark\\n\\n\\nclient = Ark(api_key=os.environ.get(\\\"ARK_API_KEY\\\"))\\n\\nif __name__ == \\\"__main__\\\":\\n    resp = client.bot_chat.completions.create(\\n        model=\\\"bot-20250407******-*****\\\",\\n        messages=[{\\\"content\\\":\\\"杭州今天天气\\\",\\\"role\\\":\\\"user\\\"}],\\n    )\\n    print(resp.choices[0].message.content)\",\"outputCode\":\"{\\n    \\\"id\\\": \\\"02174410213780126458cc51545801ff6ffb59c94a55dae86c43b\\\",\\n    \\\"choices\\\": [\\n      {\\n        \\\"finish_reason\\\": \\\"stop\\\",\\n        \\\"index\\\": 0,\\n        \\\"message\\\": {\\n          \\\"content\\\": \\\"以下是杭州今天（2025年4月8日）的天气情况：\\\\n- **整体天气状况**：今天多云，偏南风3级。\\\\n- **气温情况**：白天最高气温31度，平均相对湿度55%。\\\\n- **空气质量**：杭州市区AQI为90 - 110，首要污染物是O₃，空气质量等级为良 - 轻度污染，易感人群需减少户外锻炼。 \\\",\\n          \\\"role\\\": \\\"assistant\\\"\\n        }\\n      }\\n    ],\\n    \\\"created\\\": 1744102143,\\n    \\\"model\\\": \\\"doubao-1-5-pro-32k-250115\\\",\\n    \\\"object\\\": \\\"chat.completion\\\",\\n    \\\"bot_usage\\\": {\\n      \\\"model_usage\\\": [\\n        {\\n          \\\"name\\\": \\\"doubao-1-5-pro-32k-250115\\\",\\n          \\\"prompt_tokens\\\": 1960,\\n          \\\"completion_tokens\\\": 99,\\n          \\\"total_tokens\\\": 2059\\n        }\\n      ],\\n      \\\"action_usage\\\": [\\n        {\\n          \\\"action_name\\\": \\\"content_plugin\\\",\\n          \\\"count\\\": 1\\n        }\\n      ],\\n      \\\"action_details\\\": [\\n        {\\n          \\\"name\\\": \\\"content_plugin\\\",\\n          \\\"count\\\": 1,\\n          \\\"tool_details\\\": [\\n            {\\n              \\\"name\\\": \\\"search\\\",\\n              \\\"input\\\": {\\n                \\\"queries\\\": [\\n                  \\\"杭州今天天气\\\"\\n                ],\\n                \\\"source_type\\\": [\\n                  \\\"search_engine\\\"\\n                ],\\n                \\\"offset\\\": 0,\\n                \\\"count\\\": 5,\\n                \\\"account_id\\\": 2100000825,\\n                \\\"video_token\\\": \\\"\\\"\\n              },\\n              \\\"output\\\": {\\n                \\\"type\\\": \\\"tool\\\",\\n                \\\"data\\\": {\\n                  \\\"status_code\\\": 200,\\n                  \\\"data\\\": {\\n                    \\\"has_more\\\": true,\\n                    \\\"results\\\": [\\n                      {\\n                        \\\"id\\\": \\\"3ba8807eabf8793d-65e575422f8ebfb2\\\",\\n                        \\\"source_type\\\": \\\"search_engine\\\",\\n                        \\\"site_name\\\": \\\"搜索引擎-中国天气\\\",\\n                        \\\"title\\\": \\\"【杭州天气预报15天_杭州天气预报15天查询】-中国天气网\\\",\\n                        \\\"summary\\\": \\\"20/8℃ 东北风\u003c3级 北风\u003c3级 19/7℃ 东风\u003c3级 南风\u003c3级 26/12℃ 东风\u003c3级 西风\u003c3级 20/8℃ 东北风\u003c3级 北风\u003c3级 19/7℃ 东风\u003c3级 南风\u003c3级 26/12℃ 东风\u003c3级 西风\u003c3级\\\",\\n                        \\\"publish_time\\\": 0,\\n                        \\\"url\\\": \\\"https://m.weather.com.cn/mweather15d/101210101.shtml#!/abighis\\\",\\n                        \\\"cover_image\\\": null,\\n                        \\\"search_plugin_data\\\": {\\n                          \\\"doc_id\\\": \\\"3ba8807eabf8793d-65e575422f8ebfb2\\\",\\n                          \\\"logo_url\\\": \\\"https://p3-search.byteimg.com/img/labis/dafd663cfa3b7fce9addcca7916010cb~noop.jpeg\\\",\\n                          \\\"auth_info\\\": \\\"非常权威\\\",\\n                          \\\"auth_score\\\": 1,\\n                          \\\"rel_info\\\": \\\"强相关\\\",\\n                          \\\"rel_score\\\": 0.994623,\\n                          \\\"freshness_info\\\": \\\"非常满足时效需求\\\",\\n                          \\\"freshness_score\\\": 0.994948,\\n                          \\\"final_ref\\\": \\\"\\\",\\n                          \\\"final_ref_len\\\": 0,\\n                          \\\"author_name\\\": \\\"\\\",\\n                          \\\"duration\\\": 0\\n                        },\\n                        \\\"smart_content_data\\\": null,\\n                        \\\"ruyi_data\\\": null\\n                      },\\n                      ...\\n                      {\\n                        \\\"id\\\": \\\"d4d70607487f997f-b2adf6b6d837f126\\\",\\n                        \\\"source_type\\\": \\\"search_engine\\\",\\n                        \\\"site_name\\\": \\\"搜索引擎-www.hzqx.com\\\",\\n                        \\\"title\\\": \\\"杭州天气\\\",\\n                        \\\"summary\\\": \\\"杭州国家基准气候站发布 25.7℃ 较昨日同期 高2.8℃ 相对湿度：40 % 风力： 东南2级 气压： 1012.1 hPa 近1小时降水:0 mm 能见度：22652 m *实时数据、未经人工复核 杭州市气象台4月8日8时50分发布的市区天气预报：\\\\n今天多云；明天多云转阴，傍晚到夜里局部有阵雨；后天阴转多云。今天偏南风3级。今天白天最高气温31度，明天白天最高气温32度，明天早晨最低气温21度，今天平均相对湿度55%。2025年04月08日 08时50分 过去24小时 主城区 未来7天天气客观预报（该预报数据为数值预报自动输出，未经人工订正，仅供参考） 白天 08时 | 20时 夜晚 昨天20时 | 当天08时 今天 明天 周四 周五 周六 周日 周一 04/08 04/09 04/10 04/11 04/12 04/13 04/14 多云 多云 晴 多云 多云 晴 晴 晴 多云 晴 大雨 晴 晴 东风 东南风 东北风 东风 北风 西南风 东北风 不超过3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 31.7℃ 32.2℃ 32.2℃ 31.2℃ 19.4℃ 25.2℃ 27.3℃ 17.6℃ 19.4℃ 21.5℃ 19.3℃ 17.7℃ 11.2℃ 14.7℃ * 白天为当天08时到20时，通常气温为最高温度； 夜晚为昨天20时到当天08时，通常气温为最低温度。杭州市当前气温2025-04-08 10:30 分布图 今日生活气象 空气质量预报 杭州市环境监测站和杭州市气象台 联合发布 4月8日杭州市区AQI:90-110，首要污染物:O3，空气质量等级:良-轻度污染。易感人群减少户外锻炼。4月9日杭州市区AQI:80-100，首要污染物:O3，空气质量等级:良。\\\",\\n                        \\\"publish_time\\\": 1744079400,\\n                        \\\"url\\\": \\\"https://www.hzqx.com/hztq/index.html\\\",\\n                        \\\"cover_image\\\": null,\\n                        \\\"search_plugin_data\\\": {\\n                          \\\"doc_id\\\": \\\"d4d70607487f997f-b2adf6b6d837f126\\\",\\n                          \\\"logo_url\\\": \\\"\\\",\\n                          \\\"auth_info\\\": \\\"非常权威\\\",\\n                          \\\"auth_score\\\": 0.875495,\\n                          \\\"rel_info\\\": \\\"强相关\\\",\\n                          \\\"rel_score\\\": 0.834824,\\n                          \\\"freshness_info\\\": \\\"非常满足时效需求\\\",\\n                          \\\"freshness_score\\\": 0.994948,\\n                          \\\"final_ref\\\": \\\"\\\",\\n                          \\\"final_ref_len\\\": 0,\\n                          \\\"author_name\\\": \\\"\\\",\\n                          \\\"duration\\\": 0\\n                        },\\n                        \\\"smart_content_data\\\": null,\\n                        \\\"ruyi_data\\\": null\\n                      }\\n                    ],\\n                    \\\"debug_data\\\": {\\n                      \\\"extra\\\": null\\n                    },\\n                    \\\"log_id\\\": \\\"02174410213780126458cc51545801ff6ffb59c94a55dae86c43b\\\",\\n                    \\\"timing\\\": {\\n                      \\\"total\\\": 1431\\n                    }\\n                  }\\n                }\\n              },\\n              \\\"created_at\\\": 1744102137810,\\n              \\\"completed_at\\\": 1744102139264\\n            }\\n          ]\\n        }\\n      ]\\n    },\\n    \\\"metadata\\\": {},\\n    \\\"references\\\": [\\n      {\\n        \\\"url\\\": \\\"https://m.weather.com.cn/mweather15d/101210101.shtml#!/abighis\\\",\\n        \\\"logo_url\\\": \\\"https://p3-search.byteimg.com/img/labis/dafd663cfa3b7fce9addcca7916010cb~noop.jpeg\\\",\\n        \\\"site_name\\\": \\\"搜索引擎-中国天气\\\",\\n        \\\"title\\\": \\\"【杭州天气预报15天_杭州天气预报15天查询】-中国天气网\\\",\\n        \\\"summary\\\": \\\"20/8℃ 东北风\u003c3级 北风\u003c3级 19/7℃ 东风\u003c3级 南风\u003c3级 26/12℃ 东风\u003c3级 西风\u003c3级 20/8℃ 东北风\u003c3级 北风\u003c3级 19/7℃ 东风\u003c3级 南风\u003c3级 26/12℃ 东风\u003c3级 西风\u003c3级\\\",\\n        \\\"publish_time\\\": \\\"1970年01月01日 08:00:00(CST) 星期四\\\",\\n        \\\"extra\\\": {\\n          \\\"rel_info\\\": \\\"强相关\\\",\\n          \\\"freshness_info\\\": \\\"非常满足时效需求\\\",\\n          \\\"auth_info\\\": \\\"非常权威\\\",\\n          \\\"final_ref\\\": \\\"\\\"\\n        }\\n      },\\n      ...\\n      {\\n        \\\"url\\\": \\\"https://www.hzqx.com/hztq/index.html\\\",\\n        \\\"logo_url\\\": \\\"\\\",\\n        \\\"site_name\\\": \\\"搜索引擎-www.hzqx.com\\\",\\n        \\\"title\\\": \\\"杭州天气\\\",\\n        \\\"summary\\\": \\\"杭州国家基准气候站发布 25.7℃ 较昨日同期 高2.8℃ 相对湿度：40 % 风力： 东南2级 气压： 1012.1 hPa 近1小时降水:0 mm 能见度：22652 m *实时数据、未经人工复核 杭州市气象台4月8日8时50分发布的市区天气预报：\\\\n今天多云；明天多云转阴，傍晚到夜里局部有阵雨；后天阴转多云。今天偏南风3级。今天白天最高气温31度，明天白天最高气温32度，明天早晨最低气温21度，今天平均相对湿度55%。2025年04月08日 08时50分 过去24小时 主城区 未来7天天气客观预报（该预报数据为数值预报自动输出，未经人工订正，仅供参考） 白天 08时 | 20时 夜晚 昨天20时 | 当天08时 今天 明天 周四 周五 周六 周日 周一 04/08 04/09 04/10 04/11 04/12 04/13 04/14 多云 多云 晴 多云 多云 晴 晴 晴 多云 晴 大雨 晴 晴 东风 东南风 东北风 东风 北风 西南风 东北风 不超过3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 31.7℃ 32.2℃ 32.2℃ 31.2℃ 19.4℃ 25.2℃ 27.3℃ 17.6℃ 19.4℃ 21.5℃ 19.3℃ 17.7℃ 11.2℃ 14.7℃ * 白天为当天08时到20时，通常气温为最高温度； 夜晚为昨天20时到当天08时，通常气温为最低温度。杭州市当前气温2025-04-08 10:30 分布图 今日生活气象 空气质量预报 杭州市环境监测站和杭州市气象台 联合发布 4月8日杭州市区AQI:90-110，首要污染物:O3，空气质量等级:良-轻度污染。易感人群减少户外锻炼。4月9日杭州市区AQI:80-100，首要污染物:O3，空气质量等级:良。\\\",\\n        \\\"publish_time\\\": \\\"2025年04月08日 10:30:00(CST) 星期二\\\",\\n        \\\"extra\\\": {\\n          \\\"rel_info\\\": \\\"强相关\\\",\\n          \\\"freshness_info\\\": \\\"非常满足时效需求\\\",\\n          \\\"auth_info\\\": \\\"非常权威\\\",\\n          \\\"final_ref\\\": \\\"\\\"\\n        }\\n      }\\n    ]\\n  }\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"go\",\"key\":\"HH9501buru\",\"inputCode\":\"package main\\n\\nimport (\\n\\t\\\"context\\\"\\n\\t\\\"fmt\\\"\\n\\t\\\"os\\\"\\n\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/volcengine\\\"\\n)\\n\\n\\nfunc main() {\\n\\tclient := arkruntime.NewClientWithApiKey(os.Getenv(\\\"ARK_API_KEY\\\"))\\n\\tctx := context.Background()\\n\\treq := model.BotChatCompletionRequest{\\n\\t\\tModel: \\\"bot-20250407******-*****\\\",\\n\\t\\tMessages: []*model.ChatCompletionMessage{\\n\\t\\t\\t\u0026model.ChatCompletionMessage{\\n\\t\\t\\t\\tRole: \\\"user\\\",\\n\\t\\t\\t\\tContent: \u0026model.ChatCompletionMessageContent{\\n\\t\\t\\t\\t\\tStringValue: volcengine.String(\\\"杭州今天天气\\\"),\\n\\t\\t\\t\\t},\\n\\t\\t\\t},\\n\\t\\t},\\n\\t}\\n\\tfmt.Println(\\\"----- standard request -----\\\")\\n\\tresp, err := client.CreateBotChatCompletion(ctx, req)\\n\\tif err != nil {\\n\\t\\tfmt.Printf(\\\"standard chat error: %v\\\\n\\\", err)\\n\\t\\treturn\\n\\t}\\n\\tif resp.References != nil {\\n\\t\\tfor _, ref := range resp.References {\\n\\t\\t\\tfmt.Printf(\\\"reference url: %s\\\\n\\\", ref.Url)\\n\\t\\t}\\n\\t}\\n}\\n\",\"outputCode\":\"{\\n    \\\"id\\\": \\\"02174410213780126458cc51545801ff6ffb59c94a55dae86c43b\\\",\\n    \\\"choices\\\": [\\n      {\\n        \\\"finish_reason\\\": \\\"stop\\\",\\n        \\\"index\\\": 0,\\n        \\\"message\\\": {\\n          \\\"content\\\": \\\"以下是杭州今天（2025年4月8日）的天气情况：\\\\n- **整体天气状况**：今天多云，偏南风3级。\\\\n- **气温情况**：白天最高气温31度，平均相对湿度55%。\\\\n- **空气质量**：杭州市区AQI为90 - 110，首要污染物是O₃，空气质量等级为良 - 轻度污染，易感人群需减少户外锻炼。 \\\",\\n          \\\"role\\\": \\\"assistant\\\"\\n        }\\n      }\\n    ],\\n    \\\"created\\\": 1744102143,\\n    \\\"model\\\": \\\"doubao-1-5-pro-32k-250115\\\",\\n    \\\"object\\\": \\\"chat.completion\\\",\\n    \\\"bot_usage\\\": {\\n      \\\"model_usage\\\": [\\n        {\\n          \\\"name\\\": \\\"doubao-1-5-pro-32k-250115\\\",\\n          \\\"prompt_tokens\\\": 1960,\\n          \\\"completion_tokens\\\": 99,\\n          \\\"total_tokens\\\": 2059\\n        }\\n      ],\\n      \\\"action_usage\\\": [\\n        {\\n          \\\"action_name\\\": \\\"content_plugin\\\",\\n          \\\"count\\\": 1\\n        }\\n      ],\\n      \\\"action_details\\\": [\\n        {\\n          \\\"name\\\": \\\"content_plugin\\\",\\n          \\\"count\\\": 1,\\n          \\\"tool_details\\\": [\\n            {\\n              \\\"name\\\": \\\"search\\\",\\n              \\\"input\\\": {\\n                \\\"queries\\\": [\\n                  \\\"杭州今天天气\\\"\\n                ],\\n                \\\"source_type\\\": [\\n                  \\\"search_engine\\\"\\n                ],\\n                \\\"offset\\\": 0,\\n                \\\"count\\\": 5,\\n                \\\"account_id\\\": 2100000825,\\n                \\\"video_token\\\": \\\"\\\"\\n              },\\n              \\\"output\\\": {\\n                \\\"type\\\": \\\"tool\\\",\\n                \\\"data\\\": {\\n                  \\\"status_code\\\": 200,\\n                  \\\"data\\\": {\\n                    \\\"has_more\\\": true,\\n                    \\\"results\\\": [\\n                      {\\n                        \\\"id\\\": \\\"3ba8807eabf8793d-65e575422f8ebfb2\\\",\\n                        \\\"source_type\\\": \\\"search_engine\\\",\\n                        \\\"site_name\\\": \\\"搜索引擎-中国天气\\\",\\n                        \\\"title\\\": \\\"【杭州天气预报15天_杭州天气预报15天查询】-中国天气网\\\",\\n                        \\\"summary\\\": \\\"20/8℃ 东北风\u003c3级 北风\u003c3级 19/7℃ 东风\u003c3级 南风\u003c3级 26/12℃ 东风\u003c3级 西风\u003c3级 20/8℃ 东北风\u003c3级 北风\u003c3级 19/7℃ 东风\u003c3级 南风\u003c3级 26/12℃ 东风\u003c3级 西风\u003c3级\\\",\\n                        \\\"publish_time\\\": 0,\\n                        \\\"url\\\": \\\"https://m.weather.com.cn/mweather15d/101210101.shtml#!/abighis\\\",\\n                        \\\"cover_image\\\": null,\\n                        \\\"search_plugin_data\\\": {\\n                          \\\"doc_id\\\": \\\"3ba8807eabf8793d-65e575422f8ebfb2\\\",\\n                          \\\"logo_url\\\": \\\"https://p3-search.byteimg.com/img/labis/dafd663cfa3b7fce9addcca7916010cb~noop.jpeg\\\",\\n                          \\\"auth_info\\\": \\\"非常权威\\\",\\n                          \\\"auth_score\\\": 1,\\n                          \\\"rel_info\\\": \\\"强相关\\\",\\n                          \\\"rel_score\\\": 0.994623,\\n                          \\\"freshness_info\\\": \\\"非常满足时效需求\\\",\\n                          \\\"freshness_score\\\": 0.994948,\\n                          \\\"final_ref\\\": \\\"\\\",\\n                          \\\"final_ref_len\\\": 0,\\n                          \\\"author_name\\\": \\\"\\\",\\n                          \\\"duration\\\": 0\\n                        },\\n                        \\\"smart_content_data\\\": null,\\n                        \\\"ruyi_data\\\": null\\n                      },\\n                      ...\\n                      {\\n                        \\\"id\\\": \\\"d4d70607487f997f-b2adf6b6d837f126\\\",\\n                        \\\"source_type\\\": \\\"search_engine\\\",\\n                        \\\"site_name\\\": \\\"搜索引擎-www.hzqx.com\\\",\\n                        \\\"title\\\": \\\"杭州天气\\\",\\n                        \\\"summary\\\": \\\"杭州国家基准气候站发布 25.7℃ 较昨日同期 高2.8℃ 相对湿度：40 % 风力： 东南2级 气压： 1012.1 hPa 近1小时降水:0 mm 能见度：22652 m *实时数据、未经人工复核 杭州市气象台4月8日8时50分发布的市区天气预报：\\\\n今天多云；明天多云转阴，傍晚到夜里局部有阵雨；后天阴转多云。今天偏南风3级。今天白天最高气温31度，明天白天最高气温32度，明天早晨最低气温21度，今天平均相对湿度55%。2025年04月08日 08时50分 过去24小时 主城区 未来7天天气客观预报（该预报数据为数值预报自动输出，未经人工订正，仅供参考） 白天 08时 | 20时 夜晚 昨天20时 | 当天08时 今天 明天 周四 周五 周六 周日 周一 04/08 04/09 04/10 04/11 04/12 04/13 04/14 多云 多云 晴 多云 多云 晴 晴 晴 多云 晴 大雨 晴 晴 东风 东南风 东北风 东风 北风 西南风 东北风 不超过3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 31.7℃ 32.2℃ 32.2℃ 31.2℃ 19.4℃ 25.2℃ 27.3℃ 17.6℃ 19.4℃ 21.5℃ 19.3℃ 17.7℃ 11.2℃ 14.7℃ * 白天为当天08时到20时，通常气温为最高温度； 夜晚为昨天20时到当天08时，通常气温为最低温度。杭州市当前气温2025-04-08 10:30 分布图 今日生活气象 空气质量预报 杭州市环境监测站和杭州市气象台 联合发布 4月8日杭州市区AQI:90-110，首要污染物:O3，空气质量等级:良-轻度污染。易感人群减少户外锻炼。4月9日杭州市区AQI:80-100，首要污染物:O3，空气质量等级:良。\\\",\\n                        \\\"publish_time\\\": 1744079400,\\n                        \\\"url\\\": \\\"https://www.hzqx.com/hztq/index.html\\\",\\n                        \\\"cover_image\\\": null,\\n                        \\\"search_plugin_data\\\": {\\n                          \\\"doc_id\\\": \\\"d4d70607487f997f-b2adf6b6d837f126\\\",\\n                          \\\"logo_url\\\": \\\"\\\",\\n                          \\\"auth_info\\\": \\\"非常权威\\\",\\n                          \\\"auth_score\\\": 0.875495,\\n                          \\\"rel_info\\\": \\\"强相关\\\",\\n                          \\\"rel_score\\\": 0.834824,\\n                          \\\"freshness_info\\\": \\\"非常满足时效需求\\\",\\n                          \\\"freshness_score\\\": 0.994948,\\n                          \\\"final_ref\\\": \\\"\\\",\\n                          \\\"final_ref_len\\\": 0,\\n                          \\\"author_name\\\": \\\"\\\",\\n                          \\\"duration\\\": 0\\n                        },\\n                        \\\"smart_content_data\\\": null,\\n                        \\\"ruyi_data\\\": null\\n                      }\\n                    ],\\n                    \\\"debug_data\\\": {\\n                      \\\"extra\\\": null\\n                    },\\n                    \\\"log_id\\\": \\\"02174410213780126458cc51545801ff6ffb59c94a55dae86c43b\\\",\\n                    \\\"timing\\\": {\\n                      \\\"total\\\": 1431\\n                    }\\n                  }\\n                }\\n              },\\n              \\\"created_at\\\": 1744102137810,\\n              \\\"completed_at\\\": 1744102139264\\n            }\\n          ]\\n        }\\n      ]\\n    },\\n    \\\"metadata\\\": {},\\n    \\\"references\\\": [\\n      {\\n        \\\"url\\\": \\\"https://m.weather.com.cn/mweather15d/101210101.shtml#!/abighis\\\",\\n        \\\"logo_url\\\": \\\"https://p3-search.byteimg.com/img/labis/dafd663cfa3b7fce9addcca7916010cb~noop.jpeg\\\",\\n        \\\"site_name\\\": \\\"搜索引擎-中国天气\\\",\\n        \\\"title\\\": \\\"【杭州天气预报15天_杭州天气预报15天查询】-中国天气网\\\",\\n        \\\"summary\\\": \\\"20/8℃ 东北风\u003c3级 北风\u003c3级 19/7℃ 东风\u003c3级 南风\u003c3级 26/12℃ 东风\u003c3级 西风\u003c3级 20/8℃ 东北风\u003c3级 北风\u003c3级 19/7℃ 东风\u003c3级 南风\u003c3级 26/12℃ 东风\u003c3级 西风\u003c3级\\\",\\n        \\\"publish_time\\\": \\\"1970年01月01日 08:00:00(CST) 星期四\\\",\\n        \\\"extra\\\": {\\n          \\\"rel_info\\\": \\\"强相关\\\",\\n          \\\"freshness_info\\\": \\\"非常满足时效需求\\\",\\n          \\\"auth_info\\\": \\\"非常权威\\\",\\n          \\\"final_ref\\\": \\\"\\\"\\n        }\\n      },\\n      ...\\n      {\\n        \\\"url\\\": \\\"https://www.hzqx.com/hztq/index.html\\\",\\n        \\\"logo_url\\\": \\\"\\\",\\n        \\\"site_name\\\": \\\"搜索引擎-www.hzqx.com\\\",\\n        \\\"title\\\": \\\"杭州天气\\\",\\n        \\\"summary\\\": \\\"杭州国家基准气候站发布 25.7℃ 较昨日同期 高2.8℃ 相对湿度：40 % 风力： 东南2级 气压： 1012.1 hPa 近1小时降水:0 mm 能见度：22652 m *实时数据、未经人工复核 杭州市气象台4月8日8时50分发布的市区天气预报：\\\\n今天多云；明天多云转阴，傍晚到夜里局部有阵雨；后天阴转多云。今天偏南风3级。今天白天最高气温31度，明天白天最高气温32度，明天早晨最低气温21度，今天平均相对湿度55%。2025年04月08日 08时50分 过去24小时 主城区 未来7天天气客观预报（该预报数据为数值预报自动输出，未经人工订正，仅供参考） 白天 08时 | 20时 夜晚 昨天20时 | 当天08时 今天 明天 周四 周五 周六 周日 周一 04/08 04/09 04/10 04/11 04/12 04/13 04/14 多云 多云 晴 多云 多云 晴 晴 晴 多云 晴 大雨 晴 晴 东风 东南风 东北风 东风 北风 西南风 东北风 不超过3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 31.7℃ 32.2℃ 32.2℃ 31.2℃ 19.4℃ 25.2℃ 27.3℃ 17.6℃ 19.4℃ 21.5℃ 19.3℃ 17.7℃ 11.2℃ 14.7℃ * 白天为当天08时到20时，通常气温为最高温度； 夜晚为昨天20时到当天08时，通常气温为最低温度。杭州市当前气温2025-04-08 10:30 分布图 今日生活气象 空气质量预报 杭州市环境监测站和杭州市气象台 联合发布 4月8日杭州市区AQI:90-110，首要污染物:O3，空气质量等级:良-轻度污染。易感人群减少户外锻炼。4月9日杭州市区AQI:80-100，首要污染物:O3，空气质量等级:良。\\\",\\n        \\\"publish_time\\\": \\\"2025年04月08日 10:30:00(CST) 星期二\\\",\\n        \\\"extra\\\": {\\n          \\\"rel_info\\\": \\\"强相关\\\",\\n          \\\"freshness_info\\\": \\\"非常满足时效需求\\\",\\n          \\\"auth_info\\\": \\\"非常权威\\\",\\n          \\\"final_ref\\\": \\\"\\\"\\n        }\\n      }\\n    ]\\n  }\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"java\",\"key\":\"nJAztbOEpD\",\"inputCode\":\"package com.volcengine.sample;\\n\\nimport com.fasterxml.jackson.core.JsonProcessingException;\\nimport com.volcengine.ark.runtime.model.bot.completion.chat.BotChatCompletionRequest;\\nimport com.volcengine.ark.runtime.model.completion.chat.*;\\nimport com.volcengine.ark.runtime.model.completion.chat.ChatCompletionRequest.*;\\nimport com.volcengine.ark.runtime.service.ArkService;\\nimport java.util.ArrayList;\\nimport java.util.List;\\nimport java.util.concurrent.TimeUnit;\\nimport okhttp3.ConnectionPool;\\nimport okhttp3.Dispatcher;\\n\\n/*\\n# pom.xml\\n\u003cdependency\u003e\\n  \u003cgroupId\u003ecom.volcengine\u003c/groupId\u003e\\n  \u003cartifactId\u003evolcengine-java-sdk-ark-runtime\u003c/artifactId\u003e\\n  // 替换正式版本号\\n  \u003cversion\u003eLATEST\u003c/version\u003e\\n\u003c/dependency\u003e\\n*/\\n\\npublic class Sample {\\n\\n    static String apiKey = System.getenv(\\\"ARK_API_KEY\\\");\\n\\n    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);\\n    static Dispatcher dispatcher = new Dispatcher();\\n    static ArkService service =\\n            ArkService.builder()\\n                    .dispatcher(dispatcher)\\n                    .connectionPool(connectionPool)\\n                    .apiKey(apiKey)\\n                    .build();\\n\\n    public static void main(String[] args) throws JsonProcessingException {\\n\\n        List\u003cChatMessage\u003e messagesForReqList = new ArrayList\u003c\u003e();\\n\\n        ChatMessage elementForMessagesForReqList0 =\\n                ChatMessage.builder().role(ChatMessageRole.USER).content(\\\"杭州今天天气\\\").build();\\n\\n        messagesForReqList.add(elementForMessagesForReqList0);\\n\\n        BotChatCompletionRequest req =\\n                BotChatCompletionRequest.builder()\\n                        .model(\\\"bot-20250407******-*****\\\")\\n                        .messages(messagesForReqList)\\n                        .build();\\n\\n        service.createBotChatCompletion(req)\\n                .getChoices()\\n                .forEach(choice -\u003e System.out.println(choice.getMessage().getContent()));\\n        // shutdown service after all requests is finished\\n        service.shutdownExecutor();\\n    }\\n}\\n\",\"outputCode\":\"{\\n    \\\"id\\\": \\\"02174410213780126458cc51545801ff6ffb59c94a55dae86c43b\\\",\\n    \\\"choices\\\": [\\n      {\\n        \\\"finish_reason\\\": \\\"stop\\\",\\n        \\\"index\\\": 0,\\n        \\\"message\\\": {\\n          \\\"content\\\": \\\"以下是杭州今天（2025年4月8日）的天气情况：\\\\n- **整体天气状况**：今天多云，偏南风3级。\\\\n- **气温情况**：白天最高气温31度，平均相对湿度55%。\\\\n- **空气质量**：杭州市区AQI为90 - 110，首要污染物是O₃，空气质量等级为良 - 轻度污染，易感人群需减少户外锻炼。 \\\",\\n          \\\"role\\\": \\\"assistant\\\"\\n        }\\n      }\\n    ],\\n    \\\"created\\\": 1744102143,\\n    \\\"model\\\": \\\"doubao-1-5-pro-32k-250115\\\",\\n    \\\"object\\\": \\\"chat.completion\\\",\\n    \\\"bot_usage\\\": {\\n      \\\"model_usage\\\": [\\n        {\\n          \\\"name\\\": \\\"doubao-1-5-pro-32k-250115\\\",\\n          \\\"prompt_tokens\\\": 1960,\\n          \\\"completion_tokens\\\": 99,\\n          \\\"total_tokens\\\": 2059\\n        }\\n      ],\\n      \\\"action_usage\\\": [\\n        {\\n          \\\"action_name\\\": \\\"content_plugin\\\",\\n          \\\"count\\\": 1\\n        }\\n      ],\\n      \\\"action_details\\\": [\\n        {\\n          \\\"name\\\": \\\"content_plugin\\\",\\n          \\\"count\\\": 1,\\n          \\\"tool_details\\\": [\\n            {\\n              \\\"name\\\": \\\"search\\\",\\n              \\\"input\\\": {\\n                \\\"queries\\\": [\\n                  \\\"杭州今天天气\\\"\\n                ],\\n                \\\"source_type\\\": [\\n                  \\\"search_engine\\\"\\n                ],\\n                \\\"offset\\\": 0,\\n                \\\"count\\\": 5,\\n                \\\"account_id\\\": 2100000825,\\n                \\\"video_token\\\": \\\"\\\"\\n              },\\n              \\\"output\\\": {\\n                \\\"type\\\": \\\"tool\\\",\\n                \\\"data\\\": {\\n                  \\\"status_code\\\": 200,\\n                  \\\"data\\\": {\\n                    \\\"has_more\\\": true,\\n                    \\\"results\\\": [\\n                      {\\n                        \\\"id\\\": \\\"3ba8807eabf8793d-65e575422f8ebfb2\\\",\\n                        \\\"source_type\\\": \\\"search_engine\\\",\\n                        \\\"site_name\\\": \\\"搜索引擎-中国天气\\\",\\n                        \\\"title\\\": \\\"【杭州天气预报15天_杭州天气预报15天查询】-中国天气网\\\",\\n                        \\\"summary\\\": \\\"20/8℃ 东北风\u003c3级 北风\u003c3级 19/7℃ 东风\u003c3级 南风\u003c3级 26/12℃ 东风\u003c3级 西风\u003c3级 20/8℃ 东北风\u003c3级 北风\u003c3级 19/7℃ 东风\u003c3级 南风\u003c3级 26/12℃ 东风\u003c3级 西风\u003c3级\\\",\\n                        \\\"publish_time\\\": 0,\\n                        \\\"url\\\": \\\"https://m.weather.com.cn/mweather15d/101210101.shtml#!/abighis\\\",\\n                        \\\"cover_image\\\": null,\\n                        \\\"search_plugin_data\\\": {\\n                          \\\"doc_id\\\": \\\"3ba8807eabf8793d-65e575422f8ebfb2\\\",\\n                          \\\"logo_url\\\": \\\"https://p3-search.byteimg.com/img/labis/dafd663cfa3b7fce9addcca7916010cb~noop.jpeg\\\",\\n                          \\\"auth_info\\\": \\\"非常权威\\\",\\n                          \\\"auth_score\\\": 1,\\n                          \\\"rel_info\\\": \\\"强相关\\\",\\n                          \\\"rel_score\\\": 0.994623,\\n                          \\\"freshness_info\\\": \\\"非常满足时效需求\\\",\\n                          \\\"freshness_score\\\": 0.994948,\\n                          \\\"final_ref\\\": \\\"\\\",\\n                          \\\"final_ref_len\\\": 0,\\n                          \\\"author_name\\\": \\\"\\\",\\n                          \\\"duration\\\": 0\\n                        },\\n                        \\\"smart_content_data\\\": null,\\n                        \\\"ruyi_data\\\": null\\n                      },\\n                      ...\\n                      {\\n                        \\\"id\\\": \\\"d4d70607487f997f-b2adf6b6d837f126\\\",\\n                        \\\"source_type\\\": \\\"search_engine\\\",\\n                        \\\"site_name\\\": \\\"搜索引擎-www.hzqx.com\\\",\\n                        \\\"title\\\": \\\"杭州天气\\\",\\n                        \\\"summary\\\": \\\"杭州国家基准气候站发布 25.7℃ 较昨日同期 高2.8℃ 相对湿度：40 % 风力： 东南2级 气压： 1012.1 hPa 近1小时降水:0 mm 能见度：22652 m *实时数据、未经人工复核 杭州市气象台4月8日8时50分发布的市区天气预报：\\\\n今天多云；明天多云转阴，傍晚到夜里局部有阵雨；后天阴转多云。今天偏南风3级。今天白天最高气温31度，明天白天最高气温32度，明天早晨最低气温21度，今天平均相对湿度55%。2025年04月08日 08时50分 过去24小时 主城区 未来7天天气客观预报（该预报数据为数值预报自动输出，未经人工订正，仅供参考） 白天 08时 | 20时 夜晚 昨天20时 | 当天08时 今天 明天 周四 周五 周六 周日 周一 04/08 04/09 04/10 04/11 04/12 04/13 04/14 多云 多云 晴 多云 多云 晴 晴 晴 多云 晴 大雨 晴 晴 东风 东南风 东北风 东风 北风 西南风 东北风 不超过3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 31.7℃ 32.2℃ 32.2℃ 31.2℃ 19.4℃ 25.2℃ 27.3℃ 17.6℃ 19.4℃ 21.5℃ 19.3℃ 17.7℃ 11.2℃ 14.7℃ * 白天为当天08时到20时，通常气温为最高温度； 夜晚为昨天20时到当天08时，通常气温为最低温度。杭州市当前气温2025-04-08 10:30 分布图 今日生活气象 空气质量预报 杭州市环境监测站和杭州市气象台 联合发布 4月8日杭州市区AQI:90-110，首要污染物:O3，空气质量等级:良-轻度污染。易感人群减少户外锻炼。4月9日杭州市区AQI:80-100，首要污染物:O3，空气质量等级:良。\\\",\\n                        \\\"publish_time\\\": 1744079400,\\n                        \\\"url\\\": \\\"https://www.hzqx.com/hztq/index.html\\\",\\n                        \\\"cover_image\\\": null,\\n                        \\\"search_plugin_data\\\": {\\n                          \\\"doc_id\\\": \\\"d4d70607487f997f-b2adf6b6d837f126\\\",\\n                          \\\"logo_url\\\": \\\"\\\",\\n                          \\\"auth_info\\\": \\\"非常权威\\\",\\n                          \\\"auth_score\\\": 0.875495,\\n                          \\\"rel_info\\\": \\\"强相关\\\",\\n                          \\\"rel_score\\\": 0.834824,\\n                          \\\"freshness_info\\\": \\\"非常满足时效需求\\\",\\n                          \\\"freshness_score\\\": 0.994948,\\n                          \\\"final_ref\\\": \\\"\\\",\\n                          \\\"final_ref_len\\\": 0,\\n                          \\\"author_name\\\": \\\"\\\",\\n                          \\\"duration\\\": 0\\n                        },\\n                        \\\"smart_content_data\\\": null,\\n                        \\\"ruyi_data\\\": null\\n                      }\\n                    ],\\n                    \\\"debug_data\\\": {\\n                      \\\"extra\\\": null\\n                    },\\n                    \\\"log_id\\\": \\\"02174410213780126458cc51545801ff6ffb59c94a55dae86c43b\\\",\\n                    \\\"timing\\\": {\\n                      \\\"total\\\": 1431\\n                    }\\n                  }\\n                }\\n              },\\n              \\\"created_at\\\": 1744102137810,\\n              \\\"completed_at\\\": 1744102139264\\n            }\\n          ]\\n        }\\n      ]\\n    },\\n    \\\"metadata\\\": {},\\n    \\\"references\\\": [\\n      {\\n        \\\"url\\\": \\\"https://m.weather.com.cn/mweather15d/101210101.shtml#!/abighis\\\",\\n        \\\"logo_url\\\": \\\"https://p3-search.byteimg.com/img/labis/dafd663cfa3b7fce9addcca7916010cb~noop.jpeg\\\",\\n        \\\"site_name\\\": \\\"搜索引擎-中国天气\\\",\\n        \\\"title\\\": \\\"【杭州天气预报15天_杭州天气预报15天查询】-中国天气网\\\",\\n        \\\"summary\\\": \\\"20/8℃ 东北风\u003c3级 北风\u003c3级 19/7℃ 东风\u003c3级 南风\u003c3级 26/12℃ 东风\u003c3级 西风\u003c3级 20/8℃ 东北风\u003c3级 北风\u003c3级 19/7℃ 东风\u003c3级 南风\u003c3级 26/12℃ 东风\u003c3级 西风\u003c3级\\\",\\n        \\\"publish_time\\\": \\\"1970年01月01日 08:00:00(CST) 星期四\\\",\\n        \\\"extra\\\": {\\n          \\\"rel_info\\\": \\\"强相关\\\",\\n          \\\"freshness_info\\\": \\\"非常满足时效需求\\\",\\n          \\\"auth_info\\\": \\\"非常权威\\\",\\n          \\\"final_ref\\\": \\\"\\\"\\n        }\\n      },\\n      ...\\n      {\\n        \\\"url\\\": \\\"https://www.hzqx.com/hztq/index.html\\\",\\n        \\\"logo_url\\\": \\\"\\\",\\n        \\\"site_name\\\": \\\"搜索引擎-www.hzqx.com\\\",\\n        \\\"title\\\": \\\"杭州天气\\\",\\n        \\\"summary\\\": \\\"杭州国家基准气候站发布 25.7℃ 较昨日同期 高2.8℃ 相对湿度：40 % 风力： 东南2级 气压： 1012.1 hPa 近1小时降水:0 mm 能见度：22652 m *实时数据、未经人工复核 杭州市气象台4月8日8时50分发布的市区天气预报：\\\\n今天多云；明天多云转阴，傍晚到夜里局部有阵雨；后天阴转多云。今天偏南风3级。今天白天最高气温31度，明天白天最高气温32度，明天早晨最低气温21度，今天平均相对湿度55%。2025年04月08日 08时50分 过去24小时 主城区 未来7天天气客观预报（该预报数据为数值预报自动输出，未经人工订正，仅供参考） 白天 08时 | 20时 夜晚 昨天20时 | 当天08时 今天 明天 周四 周五 周六 周日 周一 04/08 04/09 04/10 04/11 04/12 04/13 04/14 多云 多云 晴 多云 多云 晴 晴 晴 多云 晴 大雨 晴 晴 东风 东南风 东北风 东风 北风 西南风 东北风 不超过3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 31.7℃ 32.2℃ 32.2℃ 31.2℃ 19.4℃ 25.2℃ 27.3℃ 17.6℃ 19.4℃ 21.5℃ 19.3℃ 17.7℃ 11.2℃ 14.7℃ * 白天为当天08时到20时，通常气温为最高温度； 夜晚为昨天20时到当天08时，通常气温为最低温度。杭州市当前气温2025-04-08 10:30 分布图 今日生活气象 空气质量预报 杭州市环境监测站和杭州市气象台 联合发布 4月8日杭州市区AQI:90-110，首要污染物:O3，空气质量等级:良-轻度污染。易感人群减少户外锻炼。4月9日杭州市区AQI:80-100，首要污染物:O3，空气质量等级:良。\\\",\\n        \\\"publish_time\\\": \\\"2025年04月08日 10:30:00(CST) 星期二\\\",\\n        \\\"extra\\\": {\\n          \\\"rel_info\\\": \\\"强相关\\\",\\n          \\\"freshness_info\\\": \\\"非常满足时效需求\\\",\\n          \\\"auth_info\\\": \\\"非常权威\\\",\\n          \\\"final_ref\\\": \\\"\\\"\\n        }\\n      }\\n    ]\\n  }\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"}]},{\"title\":\"单轮对话\",\"key\":\"zjq822Qz\",\"children\":[{\"title\":\"curl\",\"key\":\"mogCh6ygZa\",\"inputCode\":\"curl 'https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions' \\\\\\n-H \\\"Authorization: Bearer $ARK_API_KEY\\\"  \\\\\\n-H 'Content-Type: application/json' \\\\\\n-d '{\\n    \\\"model\\\": \\\"bot-20250707202501-k6czp\\\", \\n    \\\"messages\\\": [  \\n        {\\n            \\\"role\\\": \\\"system\\\",\\n            \\\"content\\\": \\\"You are a helpful assistant.\\\"\\n        },\\n        {\\n            \\\"role\\\": \\\"user\\\",\\n            \\\"content\\\": \\\"Hello!\\\"\\n        }\\n    ]\\n}'\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"021751891462122d1a8c9bcb9c54eb50913f5e75c28a3ac724183\\\",\\n  \\\"choices\\\": [\\n    {\\n      \\\"finish_reason\\\": \\\"stop\\\",\\n      \\\"index\\\": 0,\\n      \\\"message\\\": {\\n        \\\"content\\\": \\\"\\\\nHello there! How can I assist you today? 😊\\\",\\n        \\\"role\\\": \\\"assistant\\\",\\n        \\\"reasoning_content\\\": \\\"Hmm, the user just said \\\\\\\"Hello!\\\\\\\" - a simple and friendly greeting. Since this is likely the start of a conversation, they're probably testing the waters or initiating casual interaction. No complex needs here, but I should match their upbeat tone. \\\\n\\\\nAh, the response was straightforward - \\\\\\\"Hello there! How can I assist you today?\\\\\\\" Perfectly neutral yet warm opening. Kept it open-ended to invite follow-up. The exclamation point adds energy without being overbearing. \\\\n\\\\nWonder if they're new or returning? Either way, no need to overthink - just acknowledge and pivot to assistance. Short responses like this usually mean they'll either ask something specific next or vanish. Better keep the reply crisp.\\\\n\\\"\\n      }\\n    }\\n  ],\\n  \\\"created\\\": 1751891468,\\n  \\\"model\\\": \\\"deepseek-r1-250528\\\",\\n  \\\"object\\\": \\\"chat.completion\\\",\\n  \\\"bot_usage\\\": {\\n    \\\"model_usage\\\": [\\n      {\\n        \\\"prompt_tokens\\\": 35,\\n        \\\"completion_tokens\\\": 159,\\n        \\\"total_tokens\\\": 194\\n      }\\n    ],\\n    \\\"action_usage\\\": [],\\n    \\\"action_details\\\": []\\n  },\\n  \\\"metadata\\\": {}\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"json\"},{\"title\":\"python\",\"key\":\"2ldeLnO3CQ\",\"inputCode\":\"import os\\n\\nfrom volcenginesdkarkruntime import Ark\\n\\n# For more information，please check this document（https://www.volcengine.com/docs/82379/1263279）\\nclient = Ark(api_key=os.environ.get(\\\"ARK_API_KEY\\\"))\\n\\nif __name__ == \\\"__main__\\\":\\n    resp = client.bot_chat.completions.create(\\n        model=\\\"bot-20250707202501-k6czp\\\",\\n        messages=[{\\\"content\\\":\\\"You are a helpful assistant.\\\",\\\"role\\\":\\\"system\\\"},{\\\"content\\\":\\\"Hello!\\\",\\\"role\\\":\\\"user\\\"}],\\n    )\\n    print(resp.choices[0].message.content)\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"021751891462122d1a8c9bcb9c54eb50913f5e75c28a3ac724183\\\",\\n  \\\"choices\\\": [\\n    {\\n      \\\"finish_reason\\\": \\\"stop\\\",\\n      \\\"index\\\": 0,\\n      \\\"message\\\": {\\n        \\\"content\\\": \\\"\\\\nHello there! How can I assist you today? 😊\\\",\\n        \\\"role\\\": \\\"assistant\\\",\\n        \\\"reasoning_content\\\": \\\"Hmm, the user just said \\\\\\\"Hello!\\\\\\\" - a simple and friendly greeting. Since this is likely the start of a conversation, they're probably testing the waters or initiating casual interaction. No complex needs here, but I should match their upbeat tone. \\\\n\\\\nAh, the response was straightforward - \\\\\\\"Hello there! How can I assist you today?\\\\\\\" Perfectly neutral yet warm opening. Kept it open-ended to invite follow-up. The exclamation point adds energy without being overbearing. \\\\n\\\\nWonder if they're new or returning? Either way, no need to overthink - just acknowledge and pivot to assistance. Short responses like this usually mean they'll either ask something specific next or vanish. Better keep the reply crisp.\\\\n\\\"\\n      }\\n    }\\n  ],\\n  \\\"created\\\": 1751891468,\\n  \\\"model\\\": \\\"deepseek-r1-250528\\\",\\n  \\\"object\\\": \\\"chat.completion\\\",\\n  \\\"bot_usage\\\": {\\n    \\\"model_usage\\\": [\\n      {\\n        \\\"prompt_tokens\\\": 35,\\n        \\\"completion_tokens\\\": 159,\\n        \\\"total_tokens\\\": 194\\n      }\\n    ],\\n    \\\"action_usage\\\": [],\\n    \\\"action_details\\\": []\\n  },\\n  \\\"metadata\\\": {}\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"go\",\"key\":\"0XuBG20le4\",\"inputCode\":\"package main\\n\\nimport (\\n\\t\\\"context\\\"\\n\\t\\\"fmt\\\"\\n\\t\\\"os\\\"\\n\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/volcengine\\\"\\n)\\n\\nfunc main() {\\n\\tclient := arkruntime.NewClientWithApiKey(os.Getenv(\\\"ARK_API_KEY\\\"))\\n\\tctx := context.Background()\\n\\treq := model.BotChatCompletionRequest{\\n\\t\\tModel: \\\"bot-20250707202501-k6czp\\\",\\n\\t\\tMessages: []*model.ChatCompletionMessage{\\n\\t\\t\\t\u0026model.ChatCompletionMessage{\\n\\t\\t\\t\\tRole: \\\"system\\\",\\n\\t\\t\\t\\tContent: \u0026model.ChatCompletionMessageContent{\\n\\t\\t\\t\\t\\tStringValue: volcengine.String(\\\"You are a helpful assistant.\\\"),\\n\\t\\t\\t\\t},\\n\\t\\t\\t},\\n\\t\\t\\t\u0026model.ChatCompletionMessage{\\n\\t\\t\\t\\tRole: \\\"user\\\",\\n\\t\\t\\t\\tContent: \u0026model.ChatCompletionMessageContent{\\n\\t\\t\\t\\t\\tStringValue: volcengine.String(\\\"Hello!\\\"),\\n\\t\\t\\t\\t},\\n\\t\\t\\t},\\n\\t\\t},\\n\\t}\\n\\tfmt.Println(\\\"----- standard request -----\\\")\\n\\tresp, err := client.CreateBotChatCompletion(ctx, req)\\n\\tif err != nil {\\n\\t\\tfmt.Printf(\\\"standard chat error: %v\\\\n\\\", err)\\n\\t\\treturn\\n\\t}\\n\\tif resp.References != nil {\\n\\t\\tfor _, ref := range resp.References {\\n\\t\\t\\tfmt.Printf(\\\"reference url: %s\\\\n\\\", ref.Url)\\n\\t\\t}\\n\\t}\\n}\\n\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"021751891462122d1a8c9bcb9c54eb50913f5e75c28a3ac724183\\\",\\n  \\\"choices\\\": [\\n    {\\n      \\\"finish_reason\\\": \\\"stop\\\",\\n      \\\"index\\\": 0,\\n      \\\"message\\\": {\\n        \\\"content\\\": \\\"\\\\nHello there! How can I assist you today? 😊\\\",\\n        \\\"role\\\": \\\"assistant\\\",\\n        \\\"reasoning_content\\\": \\\"Hmm, the user just said \\\\\\\"Hello!\\\\\\\" - a simple and friendly greeting. Since this is likely the start of a conversation, they're probably testing the waters or initiating casual interaction. No complex needs here, but I should match their upbeat tone. \\\\n\\\\nAh, the response was straightforward - \\\\\\\"Hello there! How can I assist you today?\\\\\\\" Perfectly neutral yet warm opening. Kept it open-ended to invite follow-up. The exclamation point adds energy without being overbearing. \\\\n\\\\nWonder if they're new or returning? Either way, no need to overthink - just acknowledge and pivot to assistance. Short responses like this usually mean they'll either ask something specific next or vanish. Better keep the reply crisp.\\\\n\\\"\\n      }\\n    }\\n  ],\\n  \\\"created\\\": 1751891468,\\n  \\\"model\\\": \\\"deepseek-r1-250528\\\",\\n  \\\"object\\\": \\\"chat.completion\\\",\\n  \\\"bot_usage\\\": {\\n    \\\"model_usage\\\": [\\n      {\\n        \\\"prompt_tokens\\\": 35,\\n        \\\"completion_tokens\\\": 159,\\n        \\\"total_tokens\\\": 194\\n      }\\n    ],\\n    \\\"action_usage\\\": [],\\n    \\\"action_details\\\": []\\n  },\\n  \\\"metadata\\\": {}\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"java\",\"key\":\"alVFYgI9N5\",\"inputCode\":\"package com.volcengine.sample;\\n\\nimport com.fasterxml.jackson.core.JsonProcessingException;\\nimport com.volcengine.ark.runtime.model.bot.completion.chat.BotChatCompletionRequest;\\nimport com.volcengine.ark.runtime.model.completion.chat.*;\\nimport com.volcengine.ark.runtime.model.completion.chat.ChatCompletionRequest.*;\\nimport com.volcengine.ark.runtime.service.ArkService;\\nimport java.util.ArrayList;\\nimport java.util.List;\\nimport java.util.concurrent.TimeUnit;\\nimport okhttp3.ConnectionPool;\\nimport okhttp3.Dispatcher;\\n\\n/*\\n# pom.xml\\n\u003cdependency\u003e\\n  \u003cgroupId\u003ecom.volcengine\u003c/groupId\u003e\\n  \u003cartifactId\u003evolcengine-java-sdk-ark-runtime\u003c/artifactId\u003e\\n  // 替换正式版本号\\n  \u003cversion\u003eLATEST\u003c/version\u003e\\n\u003c/dependency\u003e\\n*/\\n\\npublic class Sample {\\n    static String apiKey = System.getenv(\\\"ARK_API_KEY\\\");\\n\\n    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);\\n    static Dispatcher dispatcher = new Dispatcher();\\n    static ArkService service =\\n            ArkService.builder()\\n                    .dispatcher(dispatcher)\\n                    .connectionPool(connectionPool)\\n                    .apiKey(apiKey)\\n                    .build();\\n\\n    public static void main(String[] args) throws JsonProcessingException {\\n\\n        List\u003cChatMessage\u003e messagesForReqList = new ArrayList\u003c\u003e();\\n\\n        ChatMessage elementForMessagesForReqList0 =\\n                ChatMessage.builder()\\n                        .role(ChatMessageRole.SYSTEM)\\n                        .content(\\\"You are a helpful assistant.\\\")\\n                        .build();\\n\\n        ChatMessage elementForMessagesForReqList1 =\\n                ChatMessage.builder().role(ChatMessageRole.USER).content(\\\"Hello!\\\").build();\\n\\n        messagesForReqList.add(elementForMessagesForReqList0);\\n        messagesForReqList.add(elementForMessagesForReqList1);\\n\\n        BotChatCompletionRequest req =\\n                BotChatCompletionRequest.builder()\\n                        .model(\\\"bot-20250707202501-k6czp\\\")\\n                        .messages(messagesForReqList)\\n                        .build();\\n\\n        service.createBotChatCompletion(req)\\n                .getChoices()\\n                .forEach(choice -\u003e System.out.println(choice.getMessage().getContent()));\\n        // shutdown service after all requests is finished\\n        service.shutdownExecutor();\\n    }\\n}\\n\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"021751891462122d1a8c9bcb9c54eb50913f5e75c28a3ac724183\\\",\\n  \\\"choices\\\": [\\n    {\\n      \\\"finish_reason\\\": \\\"stop\\\",\\n      \\\"index\\\": 0,\\n      \\\"message\\\": {\\n        \\\"content\\\": \\\"\\\\nHello there! How can I assist you today? 😊\\\",\\n        \\\"role\\\": \\\"assistant\\\",\\n        \\\"reasoning_content\\\": \\\"Hmm, the user just said \\\\\\\"Hello!\\\\\\\" - a simple and friendly greeting. Since this is likely the start of a conversation, they're probably testing the waters or initiating casual interaction. No complex needs here, but I should match their upbeat tone. \\\\n\\\\nAh, the response was straightforward - \\\\\\\"Hello there! How can I assist you today?\\\\\\\" Perfectly neutral yet warm opening. Kept it open-ended to invite follow-up. The exclamation point adds energy without being overbearing. \\\\n\\\\nWonder if they're new or returning? Either way, no need to overthink - just acknowledge and pivot to assistance. Short responses like this usually mean they'll either ask something specific next or vanish. Better keep the reply crisp.\\\\n\\\"\\n      }\\n    }\\n  ],\\n  \\\"created\\\": 1751891468,\\n  \\\"model\\\": \\\"deepseek-r1-250528\\\",\\n  \\\"object\\\": \\\"chat.completion\\\",\\n  \\\"bot_usage\\\": {\\n    \\\"model_usage\\\": [\\n      {\\n        \\\"prompt_tokens\\\": 35,\\n        \\\"completion_tokens\\\": 159,\\n        \\\"total_tokens\\\": 194\\n      }\\n    ],\\n    \\\"action_usage\\\": [],\\n    \\\"action_details\\\": []\\n  },\\n  \\\"metadata\\\": {}\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"}]},{\"title\":\"多轮对话\",\"key\":\"iGWcMWyh\",\"children\":[{\"title\":\"curl\",\"key\":\"6CtnZeoAdO\",\"inputCode\":\"curl https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions \\\\\\n  -H \\\"Content-Type: application/json\\\" \\\\\\n  -H \\\"Authorization: Bearer $ARK_API_KEY\\\" \\\\\\n  -d $'{\\n    \\\"model\\\": \\\"bot-20250707202501-k6czp\\\",\\n    \\\"messages\\\": [\\n        {\\n            \\\"content\\\": \\\"You are a helpful assistant.\\\",\\n            \\\"role\\\": \\\"system\\\"\\n        },\\n        {\\n            \\\"content\\\": \\\"Hello!\\\",\\n            \\\"role\\\": \\\"user\\\"\\n        },\\n        {\\n            \\\"content\\\": \\\"Hello there! How can I assist you today? \\\",\\n            \\\"role\\\": \\\"assistant\\\"\\n        },\\n        {\\n            \\\"content\\\": \\\"what is your name?\\\",\\n            \\\"role\\\": \\\"user\\\"\\n        }\\n    ]\\n}'\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"021751892149044f7befb30d3a98790c255d78335d5360ad3db3d\\\",\\n  \\\"choices\\\": [\\n    {\\n      \\\"finish_reason\\\": \\\"stop\\\",\\n      \\\"index\\\": 0,\\n      \\\"message\\\": {\\n        \\\"content\\\": \\\"\\\\nGreat question! 😊  \\\\nYou can call me **Sophie** — your friendly AI assistant. I'm here to help you with questions, ideas, tasks, or anything else you'd like to explore. How about you — what should I call you? 😊\\\",\\n        \\\"role\\\": \\\"assistant\\\",\\n        \\\"reasoning_content\\\": \\\"Hmm, the user just asked for my name after ...\\\"\\n      }\\n    }\\n  ],\\n  \\\"created\\\": 1751892158,\\n  \\\"model\\\": \\\"deepseek-r1-250528\\\",\\n  \\\"object\\\": \\\"chat.completion\\\",\\n  \\\"bot_usage\\\": {\\n    \\\"model_usage\\\": [\\n      {\\n        \\\"prompt_tokens\\\": 54,\\n        \\\"completion_tokens\\\": 268,\\n        \\\"total_tokens\\\": 322\\n      }\\n    ],\\n    \\\"action_usage\\\": [],\\n    \\\"action_details\\\": []\\n  },\\n  \\\"metadata\\\": {}\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"python\",\"key\":\"3r8IpzoQoF\",\"inputCode\":\"import os\\n\\nfrom volcenginesdkarkruntime import Ark\\n\\n# For more information，please check this document（https://www.volcengine.com/docs/82379/1263279）\\nclient = Ark(api_key=os.environ.get(\\\"ARK_API_KEY\\\"))\\n\\nif __name__ == \\\"__main__\\\":\\n    resp = client.bot_chat.completions.create(\\n        model=\\\"bot-20250707202501-k6czp\\\",\\n        messages=[{\\\"content\\\":\\\"You are a helpful assistant.\\\",\\\"role\\\":\\\"system\\\"},{\\\"content\\\":\\\"Hello!\\\",\\\"role\\\":\\\"user\\\"},{\\\"content\\\":\\\"Hello there! How can I assist you today? \\\",\\\"role\\\":\\\"assistant\\\"},{\\\"content\\\":\\\"what is your name?\\\",\\\"role\\\":\\\"user\\\"}],\\n    )\\n    print(resp.choices[0].message.content)\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"021751892149044f7befb30d3a98790c255d78335d5360ad3db3d\\\",\\n  \\\"choices\\\": [\\n    {\\n      \\\"finish_reason\\\": \\\"stop\\\",\\n      \\\"index\\\": 0,\\n      \\\"message\\\": {\\n        \\\"content\\\": \\\"\\\\nGreat question! 😊  \\\\nYou can call me **Sophie** — your friendly AI assistant. I'm here to help you with questions, ideas, tasks, or anything else you'd like to explore. How about you — what should I call you? 😊\\\",\\n        \\\"role\\\": \\\"assistant\\\",\\n        \\\"reasoning_content\\\": \\\"Hmm, the user just asked for my name after ...\\\"\\n      }\\n    }\\n  ],\\n  \\\"created\\\": 1751892158,\\n  \\\"model\\\": \\\"deepseek-r1-250528\\\",\\n  \\\"object\\\": \\\"chat.completion\\\",\\n  \\\"bot_usage\\\": {\\n    \\\"model_usage\\\": [\\n      {\\n        \\\"prompt_tokens\\\": 54,\\n        \\\"completion_tokens\\\": 268,\\n        \\\"total_tokens\\\": 322\\n      }\\n    ],\\n    \\\"action_usage\\\": [],\\n    \\\"action_details\\\": []\\n  },\\n  \\\"metadata\\\": {}\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"go\",\"key\":\"ju4CKCkDdt\",\"inputCode\":\"package main\\n\\nimport (\\n\\t\\\"context\\\"\\n\\t\\\"fmt\\\"\\n\\t\\\"os\\\"\\n\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/volcengine\\\"\\n)\\n\\nfunc main() {\\n\\tclient := arkruntime.NewClientWithApiKey(os.Getenv(\\\"ARK_API_KEY\\\"))\\n\\tctx := context.Background()\\n\\treq := model.BotChatCompletionRequest{\\n\\t\\tModel: \\\"bot-20250707202501-k6czp\\\",\\n\\t\\tMessages: []*model.ChatCompletionMessage{\\n\\t\\t\\t\u0026model.ChatCompletionMessage{\\n\\t\\t\\t\\tRole: \\\"system\\\",\\n\\t\\t\\t\\tContent: \u0026model.ChatCompletionMessageContent{\\n\\t\\t\\t\\t\\tStringValue: volcengine.String(\\\"You are a helpful assistant.\\\"),\\n\\t\\t\\t\\t},\\n\\t\\t\\t},\\n\\t\\t\\t\u0026model.ChatCompletionMessage{\\n\\t\\t\\t\\tRole: \\\"user\\\",\\n\\t\\t\\t\\tContent: \u0026model.ChatCompletionMessageContent{\\n\\t\\t\\t\\t\\tStringValue: volcengine.String(\\\"Hello!\\\"),\\n\\t\\t\\t\\t},\\n\\t\\t\\t},\\n\\t\\t\\t\u0026model.ChatCompletionMessage{\\n\\t\\t\\t\\tRole: \\\"assistant\\\",\\n\\t\\t\\t\\tContent: \u0026model.ChatCompletionMessageContent{\\n\\t\\t\\t\\t\\tStringValue: volcengine.String(\\\"Hello there! How can I assist you today? \\\"),\\n\\t\\t\\t\\t},\\n\\t\\t\\t},\\n\\t\\t\\t\u0026model.ChatCompletionMessage{\\n\\t\\t\\t\\tRole: \\\"user\\\",\\n\\t\\t\\t\\tContent: \u0026model.ChatCompletionMessageContent{\\n\\t\\t\\t\\t\\tStringValue: volcengine.String(\\\"what is your name?\\\"),\\n\\t\\t\\t\\t},\\n\\t\\t\\t},\\n\\t\\t},\\n\\t}\\n\\tfmt.Println(\\\"----- standard request -----\\\")\\n\\tresp, err := client.CreateBotChatCompletion(ctx, req)\\n\\tif err != nil {\\n\\t\\tfmt.Printf(\\\"standard chat error: %v\\\\n\\\", err)\\n\\t\\treturn\\n\\t}\\n\\tif resp.References != nil {\\n\\t\\tfor _, ref := range resp.References {\\n\\t\\t\\tfmt.Printf(\\\"reference url: %s\\\\n\\\", ref.Url)\\n\\t\\t}\\n\\t}\\n}\\n\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"021751892149044f7befb30d3a98790c255d78335d5360ad3db3d\\\",\\n  \\\"choices\\\": [\\n    {\\n      \\\"finish_reason\\\": \\\"stop\\\",\\n      \\\"index\\\": 0,\\n      \\\"message\\\": {\\n        \\\"content\\\": \\\"\\\\nGreat question! 😊  \\\\nYou can call me **Sophie** — your friendly AI assistant. I'm here to help you with questions, ideas, tasks, or anything else you'd like to explore. How about you — what should I call you? 😊\\\",\\n        \\\"role\\\": \\\"assistant\\\",\\n        \\\"reasoning_content\\\": \\\"Hmm, the user just asked for my name after ...\\\"\\n      }\\n    }\\n  ],\\n  \\\"created\\\": 1751892158,\\n  \\\"model\\\": \\\"deepseek-r1-250528\\\",\\n  \\\"object\\\": \\\"chat.completion\\\",\\n  \\\"bot_usage\\\": {\\n    \\\"model_usage\\\": [\\n      {\\n        \\\"prompt_tokens\\\": 54,\\n        \\\"completion_tokens\\\": 268,\\n        \\\"total_tokens\\\": 322\\n      }\\n    ],\\n    \\\"action_usage\\\": [],\\n    \\\"action_details\\\": []\\n  },\\n  \\\"metadata\\\": {}\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"java\",\"key\":\"wQCav5KwpO\",\"inputCode\":\"package com.volcengine.sample;\\n\\nimport com.fasterxml.jackson.core.JsonProcessingException;\\nimport com.volcengine.ark.runtime.model.bot.completion.chat.BotChatCompletionRequest;\\nimport com.volcengine.ark.runtime.model.completion.chat.*;\\nimport com.volcengine.ark.runtime.model.completion.chat.ChatCompletionRequest.*;\\nimport com.volcengine.ark.runtime.service.ArkService;\\nimport java.util.ArrayList;\\nimport java.util.List;\\nimport java.util.concurrent.TimeUnit;\\nimport okhttp3.ConnectionPool;\\nimport okhttp3.Dispatcher;\\n\\n/*\\n# pom.xml\\n\u003cdependency\u003e\\n  \u003cgroupId\u003ecom.volcengine\u003c/groupId\u003e\\n  \u003cartifactId\u003evolcengine-java-sdk-ark-runtime\u003c/artifactId\u003e\\n  // 替换正式版本号\\n  \u003cversion\u003eLATEST\u003c/version\u003e\\n\u003c/dependency\u003e\\n*/\\n\\npublic class Sample {\\n\\n    static String apiKey = System.getenv(\\\"ARK_API_KEY\\\");\\n\\n    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);\\n    static Dispatcher dispatcher = new Dispatcher();\\n    static ArkService service =\\n            ArkService.builder()\\n                    .dispatcher(dispatcher)\\n                    .connectionPool(connectionPool)\\n                    .apiKey(apiKey)\\n                    .build();\\n\\n    public static void main(String[] args) throws JsonProcessingException {\\n\\n        List\u003cChatMessage\u003e messagesForReqList = new ArrayList\u003c\u003e();\\n\\n        ChatMessage elementForMessagesForReqList0 =\\n                ChatMessage.builder()\\n                        .role(ChatMessageRole.SYSTEM)\\n                        .content(\\\"You are a helpful assistant.\\\")\\n                        .build();\\n\\n        ChatMessage elementForMessagesForReqList1 =\\n                ChatMessage.builder().role(ChatMessageRole.USER).content(\\\"Hello!\\\").build();\\n\\n        ChatMessage elementForMessagesForReqList2 =\\n                ChatMessage.builder()\\n                        .role(ChatMessageRole.ASSISTANT)\\n                        .content(\\\"Hello there! How can I assist you today? \\\")\\n                        .build();\\n\\n        ChatMessage elementForMessagesForReqList3 =\\n                ChatMessage.builder()\\n                        .role(ChatMessageRole.USER)\\n                        .content(\\\"what is your name?\\\")\\n                        .build();\\n        messagesForReqList.add(elementForMessagesForReqList0);\\n        messagesForReqList.add(elementForMessagesForReqList1);\\n        messagesForReqList.add(elementForMessagesForReqList2);\\n        messagesForReqList.add(elementForMessagesForReqList3);\\n\\n        BotChatCompletionRequest req =\\n                BotChatCompletionRequest.builder()\\n                        .model(\\\"bot-20250707202501-k6czp\\\")\\n                        .messages(messagesForReqList)\\n                        .build();\\n\\n        service.createBotChatCompletion(req)\\n                .getChoices()\\n                .forEach(choice -\u003e System.out.println(choice.getMessage().getContent()));\\n        // shutdown service after all requests is finished\\n        service.shutdownExecutor();\\n    }\\n}\\n\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"021751892149044f7befb30d3a98790c255d78335d5360ad3db3d\\\",\\n  \\\"choices\\\": [\\n    {\\n      \\\"finish_reason\\\": \\\"stop\\\",\\n      \\\"index\\\": 0,\\n      \\\"message\\\": {\\n        \\\"content\\\": \\\"\\\\nGreat question! 😊  \\\\nYou can call me **Sophie** — your friendly AI assistant. I'm here to help you with questions, ideas, tasks, or anything else you'd like to explore. How about you — what should I call you? 😊\\\",\\n        \\\"role\\\": \\\"assistant\\\",\\n        \\\"reasoning_content\\\": \\\"Hmm, the user just asked for my name after ...\\\"\\n      }\\n    }\\n  ],\\n  \\\"created\\\": 1751892158,\\n  \\\"model\\\": \\\"deepseek-r1-250528\\\",\\n  \\\"object\\\": \\\"chat.completion\\\",\\n  \\\"bot_usage\\\": {\\n    \\\"model_usage\\\": [\\n      {\\n        \\\"prompt_tokens\\\": 54,\\n        \\\"completion_tokens\\\": 268,\\n        \\\"total_tokens\\\": 322\\n      }\\n    ],\\n    \\\"action_usage\\\": [],\\n    \\\"action_details\\\": []\\n  },\\n  \\\"metadata\\\": {}\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"}]},{\"title\":\"流式响应\",\"key\":\"TuThwYKf\",\"children\":[{\"title\":\"curl\",\"key\":\"KHPABbn0IO\",\"inputCode\":\"curl https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions \\\\\\n  -H \\\"Content-Type: application/json\\\" \\\\\\n  -H \\\"Authorization: Bearer $ARK_API_KEY\\\" \\\\\\n  -d $'{\\n    \\\"model\\\": \\\"bot-20250707202501-k6czp\\\",\\n    \\\"messages\\\": [\\n        {\\n            \\\"content\\\": \\\"You are a helpful assistant.\\\",\\n            \\\"role\\\": \\\"system\\\"\\n        },\\n        {\\n            \\\"content\\\": \\\"Hello!\\\",\\n            \\\"role\\\": \\\"user\\\"\\n        }\\n    ],\\n    \\\"stream\\\": true,\\n    \\\"stream_options\\\": {\\n        \\\"include_usage\\\": true\\n    }\\n}'\",\"outputCode\":\"{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\",\\\"role\\\":\\\"assistant\\\",\\\"reasoning_content\\\":\\\"Ah\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\",\\\"role\\\":\\\"assistant\\\",\\\"reasoning_content\\\":\\\",\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n...\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\",\\\"role\\\":\\\"assistant\\\",\\\"reasoning_content\\\":\\\".\\\\n\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\\n\\\",\\\"role\\\":\\\"assistant\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"Hello\\\",\\\"role\\\":\\\"assistant\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n...\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\" 😊\\\",\\\"role\\\":\\\"assistant\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\",\\\"role\\\":\\\"assistant\\\"},\\\"finish_reason\\\":\\\"stop\\\",\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"bot_usage\\\":{\\\"model_usage\\\":[{\\\"prompt_tokens\\\":35,\\\"completion_tokens\\\":175,\\\"total_tokens\\\":210}],\\\"action_usage\\\":[],\\\"action_details\\\":[]},\\\"metadata\\\":{}}\\n\\n[DONE]\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"python\",\"key\":\"krzrAAMdEt\",\"inputCode\":\"import os\\n\\nfrom volcenginesdkarkruntime import Ark\\n\\n# For more information，please check this document（https://www.volcengine.com/docs/82379/1263279）\\nclient = Ark(api_key=os.environ.get(\\\"ARK_API_KEY\\\"))\\n\\nif __name__ == \\\"__main__\\\":\\n    resp = client.bot_chat.completions.create(\\n        model=\\\"bot-20250707202501-k6czp\\\",\\n        messages=[{\\\"content\\\":\\\"You are a helpful assistant.\\\",\\\"role\\\":\\\"system\\\"},{\\\"content\\\":\\\"Hello!\\\",\\\"role\\\":\\\"user\\\"}],\\n        stream=True,\\n        stream_options={\\\"include_usage\\\":True},\\n    )\\n    for chunk in resp:\\n        if not chunk.choices:\\n            continue\\n\\n        print(chunk.choices[0].delta.content, end=\\\"\\\")\",\"outputCode\":\"{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\",\\\"role\\\":\\\"assistant\\\",\\\"reasoning_content\\\":\\\"Ah\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\",\\\"role\\\":\\\"assistant\\\",\\\"reasoning_content\\\":\\\",\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n...\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\",\\\"role\\\":\\\"assistant\\\",\\\"reasoning_content\\\":\\\".\\\\n\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\\n\\\",\\\"role\\\":\\\"assistant\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"Hello\\\",\\\"role\\\":\\\"assistant\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n...\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\" 😊\\\",\\\"role\\\":\\\"assistant\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\",\\\"role\\\":\\\"assistant\\\"},\\\"finish_reason\\\":\\\"stop\\\",\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"bot_usage\\\":{\\\"model_usage\\\":[{\\\"prompt_tokens\\\":35,\\\"completion_tokens\\\":175,\\\"total_tokens\\\":210}],\\\"action_usage\\\":[],\\\"action_details\\\":[]},\\\"metadata\\\":{}}\\n\\n[DONE]\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"go\",\"key\":\"nBtTY9JiZ4\",\"inputCode\":\"package main\\n\\nimport (\\n\\t\\\"context\\\"\\n\\t\\\"fmt\\\"\\n\\t\\\"io\\\"\\n\\t\\\"os\\\"\\n\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/volcengine\\\"\\n)\\n\\nfunc main() {\\n\\tclient := arkruntime.NewClientWithApiKey(os.Getenv(\\\"ARK_API_KEY\\\"))\\n\\tctx := context.Background()\\n\\treq := model.BotChatCompletionRequest{\\n\\t\\tModel: \\\"bot-20250707202501-k6czp\\\",\\n\\t\\tMessages: []*model.ChatCompletionMessage{\\n\\t\\t\\t\u0026model.ChatCompletionMessage{\\n\\t\\t\\t\\tRole: \\\"system\\\",\\n\\t\\t\\t\\tContent: \u0026model.ChatCompletionMessageContent{\\n\\t\\t\\t\\t\\tStringValue: volcengine.String(\\\"You are a helpful assistant.\\\"),\\n\\t\\t\\t\\t},\\n\\t\\t\\t},\\n\\t\\t\\t\u0026model.ChatCompletionMessage{\\n\\t\\t\\t\\tRole: \\\"user\\\",\\n\\t\\t\\t\\tContent: \u0026model.ChatCompletionMessageContent{\\n\\t\\t\\t\\t\\tStringValue: volcengine.String(\\\"Hello!\\\"),\\n\\t\\t\\t\\t},\\n\\t\\t\\t},\\n\\t\\t},\\n\\t\\tStream: true,\\n\\t\\tStreamOptions: \u0026model.StreamOptions{\\n\\t\\t\\tIncludeUsage: true,\\n\\t\\t},\\n\\t}\\n\\tfmt.Println(\\\"----- streaming request -----\\\")\\n\\tstream, err := client.CreateBotChatCompletionStream(ctx, req)\\n\\tif err != nil {\\n\\t\\tfmt.Printf(\\\"stream chat error: %v\\\\n\\\", err)\\n\\t\\treturn\\n\\t}\\n\\tdefer stream.Close()\\n\\n\\tfor {\\n\\t\\trecv, err := stream.Recv()\\n\\t\\tif err == io.EOF {\\n\\t\\t\\treturn\\n\\t\\t}\\n\\t\\tif err != nil {\\n\\t\\t\\tfmt.Printf(\\\"Stream chat error: %v\\\\n\\\", err)\\n\\t\\t\\treturn\\n\\t\\t}\\n\\t\\tif len(recv.Choices) \u003e 0 {\\n\\t\\t\\tfmt.Print(recv.Choices[0].Delta.Content)\\n\\t\\t\\tif recv.References != nil {\\n\\t\\t\\t\\tfor _, ref := range recv.References {\\n\\t\\t\\t\\t\\tfmt.Printf(\\\"reference url: %s\\\\n\\\", ref.Url)\\n\\t\\t\\t\\t}\\n\\t\\t\\t}\\n\\t\\t}\\n\\t}\\n}\\n\",\"outputCode\":\"{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\",\\\"role\\\":\\\"assistant\\\",\\\"reasoning_content\\\":\\\"Ah\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\",\\\"role\\\":\\\"assistant\\\",\\\"reasoning_content\\\":\\\",\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n...\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\",\\\"role\\\":\\\"assistant\\\",\\\"reasoning_content\\\":\\\".\\\\n\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\\n\\\",\\\"role\\\":\\\"assistant\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"Hello\\\",\\\"role\\\":\\\"assistant\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n...\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\" 😊\\\",\\\"role\\\":\\\"assistant\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\",\\\"role\\\":\\\"assistant\\\"},\\\"finish_reason\\\":\\\"stop\\\",\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"bot_usage\\\":{\\\"model_usage\\\":[{\\\"prompt_tokens\\\":35,\\\"completion_tokens\\\":175,\\\"total_tokens\\\":210}],\\\"action_usage\\\":[],\\\"action_details\\\":[]},\\\"metadata\\\":{}}\\n\\n[DONE]\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"java\",\"key\":\"FrmjmuRJYP\",\"inputCode\":\"package com.volcengine.sample;\\n\\nimport com.fasterxml.jackson.core.JsonProcessingException;\\nimport com.volcengine.ark.runtime.model.bot.completion.chat.BotChatCompletionRequest;\\nimport com.volcengine.ark.runtime.model.completion.chat.*;\\nimport com.volcengine.ark.runtime.model.completion.chat.ChatCompletionRequest.*;\\nimport com.volcengine.ark.runtime.service.ArkService;\\nimport java.util.ArrayList;\\nimport java.util.List;\\nimport java.util.concurrent.TimeUnit;\\nimport okhttp3.ConnectionPool;\\nimport okhttp3.Dispatcher;\\n\\n/*\\n# pom.xml\\n\u003cdependency\u003e\\n  \u003cgroupId\u003ecom.volcengine\u003c/groupId\u003e\\n  \u003cartifactId\u003evolcengine-java-sdk-ark-runtime\u003c/artifactId\u003e\\n  // 替换正式版本号\\n  \u003cversion\u003eLATEST\u003c/version\u003e\\n\u003c/dependency\u003e\\n*/\\n\\npublic class Sample {\\n    static String apiKey = System.getenv(\\\"ARK_API_KEY\\\");\\n\\n    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);\\n    static Dispatcher dispatcher = new Dispatcher();\\n    static ArkService service =\\n            ArkService.builder()\\n                    .dispatcher(dispatcher)\\n                    .connectionPool(connectionPool)\\n                    .apiKey(apiKey)\\n                    .build();\\n\\n    public static void main(String[] args) throws JsonProcessingException {\\n\\n        List\u003cChatMessage\u003e messagesForReqList = new ArrayList\u003c\u003e();\\n\\n        ChatMessage elementForMessagesForReqList0 =\\n                ChatMessage.builder()\\n                        .role(ChatMessageRole.SYSTEM)\\n                        .content(\\\"You are a helpful assistant.\\\")\\n                        .build();\\n\\n        ChatMessage elementForMessagesForReqList1 =\\n                ChatMessage.builder().role(ChatMessageRole.USER).content(\\\"Hello!\\\").build();\\n\\n        messagesForReqList.add(elementForMessagesForReqList0);\\n        messagesForReqList.add(elementForMessagesForReqList1);\\n\\n        ChatCompletionRequestStreamOptions streamOptionsForReq =\\n                new ChatCompletionRequestStreamOptions(true);\\n\\n        BotChatCompletionRequest req =\\n                BotChatCompletionRequest.builder()\\n                        .model(\\\"bot-20250707202501-k6czp\\\")\\n                        .messages(messagesForReqList)\\n                        .stream(true)\\n                        .streamOptions(streamOptionsForReq)\\n                        .build();\\n\\n        service.streamBotChatCompletion(req)\\n                .doOnError(Throwable::printStackTrace)\\n                .blockingForEach(\\n                        choice -\u003e {\\n                            if (choice.getChoices().size() \u003e 0) {\\n                                System.out.print(\\n                                        choice.getChoices().get(0).getMessage().getContent());\\n                            }\\n                        });\\n        // shutdown service after all requests is finished\\n        service.shutdownExecutor();\\n    }\\n}\\n\",\"outputCode\":\"{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\",\\\"role\\\":\\\"assistant\\\",\\\"reasoning_content\\\":\\\"Ah\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\",\\\"role\\\":\\\"assistant\\\",\\\"reasoning_content\\\":\\\",\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n...\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\",\\\"role\\\":\\\"assistant\\\",\\\"reasoning_content\\\":\\\".\\\\n\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\\n\\\",\\\"role\\\":\\\"assistant\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"Hello\\\",\\\"role\\\":\\\"assistant\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n...\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\" 😊\\\",\\\"role\\\":\\\"assistant\\\"},\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[{\\\"delta\\\":{\\\"content\\\":\\\"\\\",\\\"role\\\":\\\"assistant\\\"},\\\"finish_reason\\\":\\\"stop\\\",\\\"index\\\":0}],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"metadata\\\":{}}\\n\\n{\\\"id\\\":\\\"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c\\\",\\\"choices\\\":[],\\\"created\\\":1751892518,\\\"model\\\":\\\"deepseek-r1-250528\\\",\\\"object\\\":\\\"chat.completion.chunk\\\",\\\"bot_usage\\\":{\\\"model_usage\\\":[{\\\"prompt_tokens\\\":35,\\\"completion_tokens\\\":175,\\\"total_tokens\\\":210}],\\\"action_usage\\\":[],\\\"action_details\\\":[]},\\\"metadata\\\":{}}\\n\\n[DONE]\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"}]},{\"title\":\"群聊\",\"key\":\"4dqdkrH6\",\"children\":[{\"title\":\"curl\",\"key\":\"h5VVYK3mwh\",\"inputCode\":\"curl https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions \\\\\\n  -H \\\"Content-Type: application/json\\\" \\\\\\n  -H \\\"Authorization: Bearer $ARK_API_KEY\\\" \\\\\\n  -d $'{\\n    \\\"model\\\": \\\"bot-20250707205612-rr7gm\\\",\\n    \\\"messages\\\": [\\n        {\\n            \\\"content\\\": \\\"你是谁？\\\",\\n            \\\"role\\\": \\\"user\\\"\\n        }\\n    ],\\n    \\\"metadata\\\": {\\n        \\\"group_chat_config\\\": {\\n            \\\"characters\\\": [\\n                {\\n                    \\\"model_desc\\\": {\\n                        \\\"endpoint_id\\\": \\\"ep-20250703110544-ht42m\\\"\\n                    },\\n                    \\\"name\\\": \\\"孙悟空\\\",\\n                    \\\"system_prompt\\\": \\\"齐天大圣孙悟空，生性聪明、活泼、忠诚、嫉恶如仇，有责任心，偶尔也有些骄傲自负。\\\"\\n                }\\n            ],\\n            \\\"description\\\": \\\"遇到妖精\\\",\\n            \\\"user_name\\\": \\\"唐僧\\\"\\n        },\\n        \\\"target_character_name\\\": \\\"孙悟空\\\"\\n    },\\n    \\\"stream\\\": false,\\n    \\\"stream_options\\\": {\\n        \\\"include_usage\\\": false\\n    }\\n}'\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"021751893662764bd5b399bfe40c748dcd249c43e3efca02ca61d\\\",\\n  \\\"choices\\\": [\\n    {\\n      \\\"finish_reason\\\": \\\"stop\\\",\\n      \\\"index\\\": 0,\\n      \\\"message\\\": {\\n        \\\"content\\\": \\\"用户现在需要我以孙悟空的身份回复唐僧的询问。首先要体现出孙悟空的性格，语气要有点傲娇又带着不耐烦但又带着忠诚的感觉。那应该这样回复：“俺乃齐天大圣孙悟空！你这呆子，怎地连俺都认不得了？俺可是要护你去西天取经的啊！”\u003c/think\u003e俺乃齐天大圣孙悟空！你这秃驴莫不是糊涂了？俺老孙在此，正是要保你去西天取经呢，还能是谁？\\\",\\n        \\\"role\\\": \\\"assistant\\\",\\n        \\\"reasoning_content\\\": \\\"俺老孙乃是齐天大圣孙悟空！你这肉眼凡胎的和尚，连俺都认不出来啦？俺可是保护你去西天取经的大徒弟啊！\\\"\\n      }\\n    }\\n  ],\\n  \\\"created\\\": 1751893664,\\n  \\\"model\\\": \\\"doubao-seed-1-6-flash-250615\\\",\\n  \\\"object\\\": \\\"chat.completion\\\",\\n  \\\"bot_usage\\\": {\\n    \\\"model_usage\\\": [\\n      {\\n        \\\"prompt_tokens\\\": 149,\\n        \\\"completion_tokens\\\": 143,\\n        \\\"total_tokens\\\": 292\\n      }\\n    ],\\n    \\\"action_usage\\\": [],\\n    \\\"action_details\\\": []\\n  },\\n  \\\"metadata\\\": {\\n    \\\"group_chat_config\\\": {\\n      \\\"user_name\\\": \\\"唐僧\\\",\\n      \\\"description\\\": \\\"遇到妖精\\\",\\n      \\\"characters\\\": [\\n        {\\n          \\\"name\\\": \\\"孙悟空\\\",\\n          \\\"system_prompt\\\": \\\"齐天大圣孙悟空，生性聪明、活泼、忠诚、嫉恶如仇，有责任心，偶尔也有些骄傲自负。\\\",\\n          \\\"model_desc\\\": {\\n            \\\"endpoint_id\\\": \\\"ep-20250703110544-ht42m\\\"\\n          }\\n        }\\n      ]\\n    },\\n    \\\"target_character_name\\\": \\\"孙悟空\\\"\\n  }\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"python\",\"key\":\"GJdObr5UyF\",\"inputCode\":\"import os\\n\\nfrom volcenginesdkarkruntime import Ark\\n\\n# For more information，please check this document（https://www.volcengine.com/docs/82379/1263279）\\nclient = Ark(api_key=os.environ.get(\\\"ARK_API_KEY\\\"))\\n\\nif __name__ == \\\"__main__\\\":\\n    resp = client.bot_chat.completions.create(\\n        model=\\\"bot-20250707205612-rr7gm\\\",\\n        messages=[{\\\"content\\\":\\\"你是谁？\\\",\\\"role\\\":\\\"user\\\"}],\\n        stream=False,\\n        stream_options={\\\"include_usage\\\":False},\\n        metadata={\\\"group_chat_config\\\":{\\\"characters\\\":[{\\\"model_desc\\\":{\\\"endpoint_id\\\":\\\"ep-20250703110544-ht42m\\\"},\\\"name\\\":\\\"孙悟空\\\",\\\"system_prompt\\\":\\\"齐天大圣孙悟空，生性聪明、活泼、忠诚、嫉恶如仇，有责任心，偶尔也有些骄傲自负。\\\"}],\\\"description\\\":\\\"遇到妖精\\\",\\\"user_name\\\":\\\"唐僧\\\"},\\\"target_character_name\\\":\\\"孙悟空\\\"},\\n    )\\n    print(resp.choices[0].message.content)\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"021751893662764bd5b399bfe40c748dcd249c43e3efca02ca61d\\\",\\n  \\\"choices\\\": [\\n    {\\n      \\\"finish_reason\\\": \\\"stop\\\",\\n      \\\"index\\\": 0,\\n      \\\"message\\\": {\\n        \\\"content\\\": \\\"用户现在需要我以孙悟空的身份回复唐僧的询问。首先要体现出孙悟空的性格，语气要有点傲娇又带着不耐烦但又带着忠诚的感觉。那应该这样回复：“俺乃齐天大圣孙悟空！你这呆子，怎地连俺都认不得了？俺可是要护你去西天取经的啊！”\u003c/think\u003e俺乃齐天大圣孙悟空！你这秃驴莫不是糊涂了？俺老孙在此，正是要保你去西天取经呢，还能是谁？\\\",\\n        \\\"role\\\": \\\"assistant\\\",\\n        \\\"reasoning_content\\\": \\\"俺老孙乃是齐天大圣孙悟空！你这肉眼凡胎的和尚，连俺都认不出来啦？俺可是保护你去西天取经的大徒弟啊！\\\"\\n      }\\n    }\\n  ],\\n  \\\"created\\\": 1751893664,\\n  \\\"model\\\": \\\"doubao-seed-1-6-flash-250615\\\",\\n  \\\"object\\\": \\\"chat.completion\\\",\\n  \\\"bot_usage\\\": {\\n    \\\"model_usage\\\": [\\n      {\\n        \\\"prompt_tokens\\\": 149,\\n        \\\"completion_tokens\\\": 143,\\n        \\\"total_tokens\\\": 292\\n      }\\n    ],\\n    \\\"action_usage\\\": [],\\n    \\\"action_details\\\": []\\n  },\\n  \\\"metadata\\\": {\\n    \\\"group_chat_config\\\": {\\n      \\\"user_name\\\": \\\"唐僧\\\",\\n      \\\"description\\\": \\\"遇到妖精\\\",\\n      \\\"characters\\\": [\\n        {\\n          \\\"name\\\": \\\"孙悟空\\\",\\n          \\\"system_prompt\\\": \\\"齐天大圣孙悟空，生性聪明、活泼、忠诚、嫉恶如仇，有责任心，偶尔也有些骄傲自负。\\\",\\n          \\\"model_desc\\\": {\\n            \\\"endpoint_id\\\": \\\"ep-20250703110544-ht42m\\\"\\n          }\\n        }\\n      ]\\n    },\\n    \\\"target_character_name\\\": \\\"孙悟空\\\"\\n  }\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"go\",\"key\":\"oG5s0AuWhC\",\"inputCode\":\"package main\\n\\nimport (\\n\\t\\\"context\\\"\\n\\t\\\"fmt\\\"\\n\\t\\\"os\\\"\\n\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/volcengine\\\"\\n)\\n\\n\\nfunc main() {\\n\\tclient := arkruntime.NewClientWithApiKey(os.Getenv(\\\"ARK_API_KEY\\\"))\\n\\tctx := context.Background()\\n\\treq := model.BotChatCompletionRequest{\\n\\t\\tModel: \\\"bot-20250707205612-rr7gm\\\",\\n\\t\\tMessages: []*model.ChatCompletionMessage{\\n\\t\\t\\t\u0026model.ChatCompletionMessage{\\n\\t\\t\\t\\tRole: \\\"user\\\",\\n\\t\\t\\t\\tContent: \u0026model.ChatCompletionMessageContent{\\n\\t\\t\\t\\t\\tStringValue: volcengine.String(\\\"你是谁？\\\"),\\n\\t\\t\\t\\t},\\n\\t\\t\\t},\\n\\t\\t},\\n\\t\\tStream: false,\\n\\t\\tStreamOptions: \u0026model.StreamOptions{\\n\\t\\t\\tIncludeUsage: false,\\n\\t\\t},\\n\\t\\tMetadata: map[string]interface{}{\\n\\t\\t\\t\\\"group_chat_config\\\":     map[string]interface{}{\\\"characters\\\": []interface{}{map[string]interface{}{\\\"model_desc\\\": map[string]interface{}{\\\"endpoint_id\\\": \\\"ep-20250703110544-ht42m\\\"}, \\\"name\\\": \\\"孙悟空\\\", \\\"system_prompt\\\": \\\"齐天大圣孙悟空，生性聪明、活泼、忠诚、嫉恶如仇，有责任心，偶尔也有些骄傲自负。\\\"}}, \\\"description\\\": \\\"遇到妖精\\\", \\\"user_name\\\": \\\"唐僧\\\"},\\n\\t\\t\\t\\\"target_character_name\\\": \\\"孙悟空\\\",\\n\\t\\t},\\n\\t}\\n\\tfmt.Println(\\\"----- standard request -----\\\")\\n\\tresp, err := client.CreateBotChatCompletion(ctx, req)\\n\\tif err != nil {\\n\\t\\tfmt.Printf(\\\"standard chat error: %v\\\\n\\\", err)\\n\\t\\treturn\\n\\t}\\n\\tfmt.Println(*resp.Choices[0].Message.Content.StringValue)\\n\\tif resp.References != nil {\\n\\t\\tfor _, ref := range resp.References {\\n\\t\\t\\tfmt.Printf(\\\"reference url: %s\\\\n\\\", ref.Url)\\n\\t\\t}\\n\\t}\\n}\\n\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"021751893662764bd5b399bfe40c748dcd249c43e3efca02ca61d\\\",\\n  \\\"choices\\\": [\\n    {\\n      \\\"finish_reason\\\": \\\"stop\\\",\\n      \\\"index\\\": 0,\\n      \\\"message\\\": {\\n        \\\"content\\\": \\\"用户现在需要我以孙悟空的身份回复唐僧的询问。首先要体现出孙悟空的性格，语气要有点傲娇又带着不耐烦但又带着忠诚的感觉。那应该这样回复：“俺乃齐天大圣孙悟空！你这呆子，怎地连俺都认不得了？俺可是要护你去西天取经的啊！”\u003c/think\u003e俺乃齐天大圣孙悟空！你这秃驴莫不是糊涂了？俺老孙在此，正是要保你去西天取经呢，还能是谁？\\\",\\n        \\\"role\\\": \\\"assistant\\\",\\n        \\\"reasoning_content\\\": \\\"俺老孙乃是齐天大圣孙悟空！你这肉眼凡胎的和尚，连俺都认不出来啦？俺可是保护你去西天取经的大徒弟啊！\\\"\\n      }\\n    }\\n  ],\\n  \\\"created\\\": 1751893664,\\n  \\\"model\\\": \\\"doubao-seed-1-6-flash-250615\\\",\\n  \\\"object\\\": \\\"chat.completion\\\",\\n  \\\"bot_usage\\\": {\\n    \\\"model_usage\\\": [\\n      {\\n        \\\"prompt_tokens\\\": 149,\\n        \\\"completion_tokens\\\": 143,\\n        \\\"total_tokens\\\": 292\\n      }\\n    ],\\n    \\\"action_usage\\\": [],\\n    \\\"action_details\\\": []\\n  },\\n  \\\"metadata\\\": {\\n    \\\"group_chat_config\\\": {\\n      \\\"user_name\\\": \\\"唐僧\\\",\\n      \\\"description\\\": \\\"遇到妖精\\\",\\n      \\\"characters\\\": [\\n        {\\n          \\\"name\\\": \\\"孙悟空\\\",\\n          \\\"system_prompt\\\": \\\"齐天大圣孙悟空，生性聪明、活泼、忠诚、嫉恶如仇，有责任心，偶尔也有些骄傲自负。\\\",\\n          \\\"model_desc\\\": {\\n            \\\"endpoint_id\\\": \\\"ep-20250703110544-ht42m\\\"\\n          }\\n        }\\n      ]\\n    },\\n    \\\"target_character_name\\\": \\\"孙悟空\\\"\\n  }\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"java\",\"key\":\"B6wbtmQLJg\",\"inputCode\":\"package com.volcengine.sample;\\n\\nimport com.fasterxml.jackson.core.JsonProcessingException;\\nimport com.fasterxml.jackson.databind.ObjectMapper;\\nimport com.volcengine.ark.runtime.model.bot.completion.chat.BotChatCompletionRequest;\\nimport com.volcengine.ark.runtime.model.completion.chat.*;\\nimport com.volcengine.ark.runtime.model.completion.chat.ChatCompletionRequest.*;\\nimport com.volcengine.ark.runtime.service.ArkService;\\nimport java.util.ArrayList;\\nimport java.util.List;\\nimport java.util.Map;\\nimport java.util.concurrent.TimeUnit;\\nimport okhttp3.ConnectionPool;\\nimport okhttp3.Dispatcher;\\n\\n/*\\n# pom.xml\\n\u003cdependency\u003e\\n  \u003cgroupId\u003ecom.volcengine\u003c/groupId\u003e\\n  \u003cartifactId\u003evolcengine-java-sdk-ark-runtime\u003c/artifactId\u003e\\n  // 替换正式版本号\\n  \u003cversion\u003eLATEST\u003c/version\u003e\\n\u003c/dependency\u003e\\n*/\\n\\npublic class Sample {\\n\\n    static String apiKey = System.getenv(\\\"ARK_API_KEY\\\");\\n\\n    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);\\n    static Dispatcher dispatcher = new Dispatcher();\\n    static ArkService service =\\n            ArkService.builder()\\n                    .dispatcher(dispatcher)\\n                    .connectionPool(connectionPool)\\n                    .apiKey(apiKey)\\n                    .build();\\n\\n    public static void main(String[] args) throws JsonProcessingException {\\n\\n        List\u003cChatMessage\u003e messagesForReqList = new ArrayList\u003c\u003e();\\n\\n        ChatMessage elementForMessagesForReqList0 =\\n                ChatMessage.builder().role(ChatMessageRole.USER).content(\\\"你是谁？\\\").build();\\n\\n        messagesForReqList.add(elementForMessagesForReqList0);\\n\\n        ChatCompletionRequestStreamOptions streamOptionsForReq =\\n                new ChatCompletionRequestStreamOptions(false);\\n\\n        BotChatCompletionRequest req =\\n                BotChatCompletionRequest.builder()\\n                        .model(\\\"bot-20250707205612-rr7gm\\\")\\n                        .messages(messagesForReqList)\\n                        .metadata(\\n                                (convertMap(\\n                                        \\\"{\\\\\\\"group_chat_config\\\\\\\":{\\\\\\\"characters\\\\\\\":[{\\\\\\\"model_desc\\\\\\\":{\\\\\\\"endpoint_id\\\\\\\":\\\\\\\"ep-20250703110544-ht42m\\\\\\\"},\\\\\\\"name\\\\\\\":\\\\\\\"孙悟空\\\\\\\",\\\\\\\"system_prompt\\\\\\\":\\\\\\\"齐天大圣孙悟空，生性聪明、活泼、忠诚、嫉恶如仇，有责任心，偶尔也有些骄傲自负。\\\\\\\"}],\\\\\\\"description\\\\\\\":\\\\\\\"遇到妖精\\\\\\\",\\\\\\\"user_name\\\\\\\":\\\\\\\"唐僧\\\\\\\"},\\\\\\\"target_character_name\\\\\\\":\\\\\\\"孙悟空\\\\\\\"}\\\")))\\n                        .build();\\n\\n        service.createBotChatCompletion(req)\\n                .getChoices()\\n                .forEach(choice -\u003e System.out.println(choice.getMessage().getContent()));\\n        // shutdown service after all requests is finished\\n        service.shutdownExecutor();\\n    }\\n\\n    public static Map\u003cString, Object\u003e convertMap(String jsonString) throws JsonProcessingException {\\n        ObjectMapper objectMapper = new ObjectMapper();\\n        Map\u003cString, Object\u003e map = objectMapper.readValue(jsonString, Map.class);\\n        return map;\\n    }\\n}\\n\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"021751893662764bd5b399bfe40c748dcd249c43e3efca02ca61d\\\",\\n  \\\"choices\\\": [\\n    {\\n      \\\"finish_reason\\\": \\\"stop\\\",\\n      \\\"index\\\": 0,\\n      \\\"message\\\": {\\n        \\\"content\\\": \\\"用户现在需要我以孙悟空的身份回复唐僧的询问。首先要体现出孙悟空的性格，语气要有点傲娇又带着不耐烦但又带着忠诚的感觉。那应该这样回复：“俺乃齐天大圣孙悟空！你这呆子，怎地连俺都认不得了？俺可是要护你去西天取经的啊！”\u003c/think\u003e俺乃齐天大圣孙悟空！你这秃驴莫不是糊涂了？俺老孙在此，正是要保你去西天取经呢，还能是谁？\\\",\\n        \\\"role\\\": \\\"assistant\\\",\\n        \\\"reasoning_content\\\": \\\"俺老孙乃是齐天大圣孙悟空！你这肉眼凡胎的和尚，连俺都认不出来啦？俺可是保护你去西天取经的大徒弟啊！\\\"\\n      }\\n    }\\n  ],\\n  \\\"created\\\": 1751893664,\\n  \\\"model\\\": \\\"doubao-seed-1-6-flash-250615\\\",\\n  \\\"object\\\": \\\"chat.completion\\\",\\n  \\\"bot_usage\\\": {\\n    \\\"model_usage\\\": [\\n      {\\n        \\\"prompt_tokens\\\": 149,\\n        \\\"completion_tokens\\\": 143,\\n        \\\"total_tokens\\\": 292\\n      }\\n    ],\\n    \\\"action_usage\\\": [],\\n    \\\"action_details\\\": []\\n  },\\n  \\\"metadata\\\": {\\n    \\\"group_chat_config\\\": {\\n      \\\"user_name\\\": \\\"唐僧\\\",\\n      \\\"description\\\": \\\"遇到妖精\\\",\\n      \\\"characters\\\": [\\n        {\\n          \\\"name\\\": \\\"孙悟空\\\",\\n          \\\"system_prompt\\\": \\\"齐天大圣孙悟空，生性聪明、活泼、忠诚、嫉恶如仇，有责任心，偶尔也有些骄傲自负。\\\",\\n          \\\"model_desc\\\": {\\n            \\\"endpoint_id\\\": \\\"ep-20250703110544-ht42m\\\"\\n          }\\n        }\\n      ]\\n    },\\n    \\\"target_character_name\\\": \\\"孙悟空\\\"\\n  }\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"}]},{\"title\":\"视觉理解\",\"key\":\"9QjC1rBA\",\"children\":[{\"title\":\"curl\",\"key\":\"v7gLEZ6KPJ\",\"inputCode\":\"curl https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions \\\\\\n  -H \\\"Content-Type: application/json\\\" \\\\\\n  -H \\\"Authorization: Bearer $ARK_API_KEY\\\" \\\\\\n  -d $'{\\n    \\\"model\\\": \\\"bot-20250707202501-k6czp\\\",\\n    \\\"messages\\\": [\\n        {\\n            \\\"content\\\": [\\n                {\\n                    \\\"image_url\\\": {\\n                        \\\"url\\\": \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/ark_demo_img_1.png\\\"\\n                    },\\n                    \\\"type\\\": \\\"image_url\\\"\\n                }\\n            ],\\n            \\\"role\\\": \\\"user\\\"\\n        },\\n        {\\n            \\\"content\\\": [\\n                {\\n                    \\\"text\\\": \\\"支持输入是图片的模型系列是哪个？\\\",\\n                    \\\"type\\\": \\\"text\\\"\\n                }\\n            ],\\n            \\\"role\\\": \\\"user\\\"\\n        }\\n    ]\\n}'\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"021751894443607bd1685776f26233986d9c881482ac5cc63c00a\\\",\\n  \\\"choices\\\": [\\n    {\\n      \\\"finish_reason\\\": \\\"stop\\\",\\n      \\\"index\\\": 0,\\n      \\\"message\\\": {\\n        \\\"content\\\": \\\"支持输入是图片的模型系列是**Doubao-1.5-vision**。\\\\n\\\\n在表格中，“输入”列的“图像”项中，仅Doubao-1.5-vision对应的单元格标记为“√”，表示该模型系列支持图像输入。\\\",\\n        \\\"role\\\": \\\"assistant\\\",\\n        \\\"reasoning_content\\\": \\\"\\\\n我现在需要解决的问题是：“支持输入是图片的模型系列是哪个？...\\\"\\n      }\\n    }\\n  ],\\n  \\\"created\\\": 1751894450,\\n  \\\"model\\\": \\\"doubao-seed-1-6-250615\\\",\\n  \\\"object\\\": \\\"chat.completion\\\",\\n  \\\"bot_usage\\\": {\\n    \\\"model_usage\\\": [\\n      {\\n        \\\"prompt_tokens\\\": 1131,\\n        \\\"completion_tokens\\\": 310,\\n        \\\"total_tokens\\\": 1441\\n      }\\n    ],\\n    \\\"action_usage\\\": [],\\n    \\\"action_details\\\": []\\n  },\\n  \\\"metadata\\\": {}\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"python\",\"key\":\"ClMNIhVljl\",\"inputCode\":\"import os\\n\\nfrom volcenginesdkarkruntime import Ark\\n\\n# For more information，please check this document（https://www.volcengine.com/docs/82379/1263279）\\nclient = Ark(api_key=os.environ.get(\\\"ARK_API_KEY\\\"))\\n\\nif __name__ == \\\"__main__\\\":\\n    resp = client.bot_chat.completions.create(\\n        model=\\\"bot-20250707202501-k6czp\\\",\\n        messages=[{\\\"content\\\":[{\\\"image_url\\\":{\\\"url\\\":\\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/ark_demo_img_1.png\\\"},\\\"type\\\":\\\"image_url\\\"}],\\\"role\\\":\\\"user\\\"},{\\\"content\\\":[{\\\"text\\\":\\\"支持输入是图片的模型系列是哪个？\\\",\\\"type\\\":\\\"text\\\"}],\\\"role\\\":\\\"user\\\"}],\\n    )\\n    print(resp.choices[0].message.content)\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"021751894443607bd1685776f26233986d9c881482ac5cc63c00a\\\",\\n  \\\"choices\\\": [\\n    {\\n      \\\"finish_reason\\\": \\\"stop\\\",\\n      \\\"index\\\": 0,\\n      \\\"message\\\": {\\n        \\\"content\\\": \\\"支持输入是图片的模型系列是**Doubao-1.5-vision**。\\\\n\\\\n在表格中，“输入”列的“图像”项中，仅Doubao-1.5-vision对应的单元格标记为“√”，表示该模型系列支持图像输入。\\\",\\n        \\\"role\\\": \\\"assistant\\\",\\n        \\\"reasoning_content\\\": \\\"\\\\n我现在需要解决的问题是：“支持输入是图片的模型系列是哪个？...\\\"\\n      }\\n    }\\n  ],\\n  \\\"created\\\": 1751894450,\\n  \\\"model\\\": \\\"doubao-seed-1-6-250615\\\",\\n  \\\"object\\\": \\\"chat.completion\\\",\\n  \\\"bot_usage\\\": {\\n    \\\"model_usage\\\": [\\n      {\\n        \\\"prompt_tokens\\\": 1131,\\n        \\\"completion_tokens\\\": 310,\\n        \\\"total_tokens\\\": 1441\\n      }\\n    ],\\n    \\\"action_usage\\\": [],\\n    \\\"action_details\\\": []\\n  },\\n  \\\"metadata\\\": {}\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"go\",\"key\":\"06PLq36mmW\",\"inputCode\":\"package main\\n\\nimport (\\n\\t\\\"context\\\"\\n\\t\\\"fmt\\\"\\n\\t\\\"os\\\"\\n\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/volcengine\\\"\\n)\\n\\n\\nfunc main() {\\n\\tclient := arkruntime.NewClientWithApiKey(os.Getenv(\\\"ARK_API_KEY\\\"))\\n\\tctx := context.Background()\\n\\treq := model.BotChatCompletionRequest{\\n\\t\\tModel: \\\"bot-20250707202501-k6czp\\\",\\n\\t\\tMessages: []*model.ChatCompletionMessage{\\n\\t\\t\\t\u0026model.ChatCompletionMessage{\\n\\t\\t\\t\\tRole: \\\"user\\\",\\n\\t\\t\\t\\tContent: \u0026model.ChatCompletionMessageContent{\\n\\t\\t\\t\\t\\tStringValue: volcengine.String(\\\"[map[image_url:map[url:https://ark-project.tos-cn-beijing.volces.com/doc_image/ark_demo_img_1.png] type:image_url]]\\\"),\\n\\t\\t\\t\\t},\\n\\t\\t\\t},\\n\\t\\t\\t\u0026model.ChatCompletionMessage{\\n\\t\\t\\t\\tRole: \\\"user\\\",\\n\\t\\t\\t\\tContent: \u0026model.ChatCompletionMessageContent{\\n\\t\\t\\t\\t\\tStringValue: volcengine.String(\\\"[map[text:支持输入是图片的模型系列是哪个？ type:text]]\\\"),\\n\\t\\t\\t\\t},\\n\\t\\t\\t},\\n\\t\\t},\\n\\t}\\n\\tfmt.Println(\\\"----- standard request -----\\\")\\n\\tresp, err := client.CreateBotChatCompletion(ctx, req)\\n\\tif err != nil {\\n\\t\\tfmt.Printf(\\\"standard chat error: %v\\\\n\\\", err)\\n\\t\\treturn\\n\\t}\\n\\tif resp.References != nil {\\n\\t\\tfor _, ref := range resp.References {\\n\\t\\t\\tfmt.Printf(\\\"reference url: %s\\\\n\\\", ref.Url)\\n\\t\\t}\\n\\t}\\n}\\n\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"021751894443607bd1685776f26233986d9c881482ac5cc63c00a\\\",\\n  \\\"choices\\\": [\\n    {\\n      \\\"finish_reason\\\": \\\"stop\\\",\\n      \\\"index\\\": 0,\\n      \\\"message\\\": {\\n        \\\"content\\\": \\\"支持输入是图片的模型系列是**Doubao-1.5-vision**。\\\\n\\\\n在表格中，“输入”列的“图像”项中，仅Doubao-1.5-vision对应的单元格标记为“√”，表示该模型系列支持图像输入。\\\",\\n        \\\"role\\\": \\\"assistant\\\",\\n        \\\"reasoning_content\\\": \\\"\\\\n我现在需要解决的问题是：“支持输入是图片的模型系列是哪个？...\\\"\\n      }\\n    }\\n  ],\\n  \\\"created\\\": 1751894450,\\n  \\\"model\\\": \\\"doubao-seed-1-6-250615\\\",\\n  \\\"object\\\": \\\"chat.completion\\\",\\n  \\\"bot_usage\\\": {\\n    \\\"model_usage\\\": [\\n      {\\n        \\\"prompt_tokens\\\": 1131,\\n        \\\"completion_tokens\\\": 310,\\n        \\\"total_tokens\\\": 1441\\n      }\\n    ],\\n    \\\"action_usage\\\": [],\\n    \\\"action_details\\\": []\\n  },\\n  \\\"metadata\\\": {}\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"java\",\"key\":\"oMInpVqAIH\",\"inputCode\":\"package com.volcengine.sample;\\n\\nimport com.fasterxml.jackson.core.JsonProcessingException;\\nimport com.volcengine.ark.runtime.model.bot.completion.chat.BotChatCompletionRequest;\\nimport com.volcengine.ark.runtime.model.completion.chat.*;\\nimport com.volcengine.ark.runtime.model.completion.chat.ChatCompletionRequest.*;\\nimport com.volcengine.ark.runtime.service.ArkService;\\nimport java.util.ArrayList;\\nimport java.util.List;\\nimport java.util.concurrent.TimeUnit;\\nimport okhttp3.ConnectionPool;\\nimport okhttp3.Dispatcher;\\n\\n/*\\n# pom.xml\\n\u003cdependency\u003e\\n  \u003cgroupId\u003ecom.volcengine\u003c/groupId\u003e\\n  \u003cartifactId\u003evolcengine-java-sdk-ark-runtime\u003c/artifactId\u003e\\n  // 替换正式版本号\\n  \u003cversion\u003eLATEST\u003c/version\u003e\\n\u003c/dependency\u003e\\n*/\\n\\npublic class Sample {\\n  static String apiKey = System.getenv(\\\"ARK_API_KEY\\\");\\n\\n  static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);\\n  static Dispatcher dispatcher = new Dispatcher();\\n  static ArkService service = ArkService.builder()\\n      .dispatcher(dispatcher)\\n      .connectionPool(connectionPool)\\n      .apiKey(apiKey)\\n      .build();\\n\\n  public static void main(String[] args) throws JsonProcessingException {\\n\\n    List\u003cChatMessage\u003e messagesForReqList = new ArrayList\u003c\u003e();\\n\\n    List\u003cChatCompletionContentPart\u003e contentForElementForMessagesForReqList0 = new ArrayList\u003c\u003e();\\n    // 创建并设置图片内容部分\\n    ChatCompletionContentPart elementForContentForElementForMessagesForReqList00 = ChatCompletionContentPart.builder()\\n        .type(\\\"image_url\\\")\\n        .imageUrl(new ChatCompletionContentPart.ChatCompletionContentPartImageURL(\\n            \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/ark_demo_img_1.png\\\"))\\n        .build();\\n    ChatCompletionContentPart elementForContentForElementForMessagesForReqList01 = ChatCompletionContentPart.builder()\\n        .type(\\\"text\\\")\\n        .text(\\\"支持输入是图片的模型系列是哪个？\\\")\\n        .build();\\n    contentForElementForMessagesForReqList0.add(\\n        elementForContentForElementForMessagesForReqList00);\\n    contentForElementForMessagesForReqList0.add(\\n        elementForContentForElementForMessagesForReqList01);\\n\\n    // 创建用户消息对象并设置内容\\n    ChatMessage elementForMessagesForReqList0 = ChatMessage.builder()\\n        .role(ChatMessageRole.USER)\\n        .multiContent(contentForElementForMessagesForReqList0)\\n        .build();\\n    // 添加用户消息到消息列表中\\n    messagesForReqList.add(elementForMessagesForReqList0);\\n\\n    BotChatCompletionRequest req = BotChatCompletionRequest.builder()\\n        .model(\\\"bot-20250707202501-k6czp\\\")\\n        .messages(messagesForReqList)\\n        .build();\\n\\n    service.createBotChatCompletion(req)\\n        .getChoices()\\n        .forEach(choice -\u003e System.out.println(choice.getMessage().getContent()));\\n    // shutdown service after all requests is finished\\n    service.shutdownExecutor();\\n  }\\n}\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"021751894443607bd1685776f26233986d9c881482ac5cc63c00a\\\",\\n  \\\"choices\\\": [\\n    {\\n      \\\"finish_reason\\\": \\\"stop\\\",\\n      \\\"index\\\": 0,\\n      \\\"message\\\": {\\n        \\\"content\\\": \\\"支持输入是图片的模型系列是**Doubao-1.5-vision**。\\\\n\\\\n在表格中，“输入”列的“图像”项中，仅Doubao-1.5-vision对应的单元格标记为“√”，表示该模型系列支持图像输入。\\\",\\n        \\\"role\\\": \\\"assistant\\\",\\n        \\\"reasoning_content\\\": \\\"\\\\n我现在需要解决的问题是：“支持输入是图片的模型系列是哪个？...\\\"\\n      }\\n    }\\n  ],\\n  \\\"created\\\": 1751894450,\\n  \\\"model\\\": \\\"doubao-seed-1-6-250615\\\",\\n  \\\"object\\\": \\\"chat.completion\\\",\\n  \\\"bot_usage\\\": {\\n    \\\"model_usage\\\": [\\n      {\\n        \\\"prompt_tokens\\\": 1131,\\n        \\\"completion_tokens\\\": 310,\\n        \\\"total_tokens\\\": 1441\\n      }\\n    ],\\n    \\\"action_usage\\\": [],\\n    \\\"action_details\\\": []\\n  },\\n  \\\"metadata\\\": {}\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"}]}]}"}}],"zoneId":"panel-6shlIZiy","zoneType":"Z"},"v08tXcTO":{"ops":[{"insert":"\n"}],"zoneId":"v08tXcTO","zoneType":"Z"},"v3U2zQJU":{"ops":[{"insert":"*","attributes":{"tabContent":"true","title":"非流式调用返回","zoneId":"VG2t5Ndo"}},{"insert":"*","attributes":{"tabContent":"true","title":"流式调用返回","zoneId":"NnNZPgLM"}},{"insert":"\n"}],"zoneId":"v3U2zQJU","zoneType":"Z"},"wSiJrOpz":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" "},{"insert":" ","attributes":{"hyperlink":"{\"href\":\"#\",\"linkId\":\"oXCVRXQ8kS\",\"target\":\"_blank\"}","image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_b9c82890e851fc10cc31f48f9065abc6.png","uuid":"dzZ0cEF2","width":"20"}},{"insert":"体验中心","attributes":{"hyperlink":"{\"href\":\"https://console.volcengine.com/ark/region:ark+cn-beijing/application\",\"linkId\":\"ncGzoNNv4K\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_2abecd05ca2779567c6d32f0ddc7874d.png","uuid":"7LnyfsFq","width":"20"}},{"insert":"模型列表","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1330310#%E6%96%87%E6%9C%AC%E7%94%9F%E6%88%90%E8%83%BD%E5%8A%9B\",\"linkId\":\"rNjsBePjpY\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_a5fdd3028d35cc512a10bd71b982b6eb.png","uuid":"40NQ2NcY","width":"20"}},{"insert":"模型计费","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1099320#%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B\",\"linkId\":\"tO9I01iut2\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_afbcf38bdec05c05089d5de5c3fd8fc8.png","uuid":"joe0d8bw","width":"20"}},{"insert":"API Key","attributes":{"hyperlink":"{\"href\":\"https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D\",\"linkId\":\"vGkjKWw96C\",\"target\":\"_blank\"}"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_57d0bca8e0d122ab1191b40101b5df75.png","uuid":"6X8T3QYx","width":"20"}},{"insert":"获取Bot ID","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1267885\",\"linkId\":\"WUWVrNkbQc\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_f45b5cd5863d1eed3bc3c81b9af54407.png","uuid":"4gUQn6Ju","width":"20"}},{"insert":"接口文档","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1526787\",\"linkId\":\"W1owEv5vba\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_1609c71a747f84df24be1e6421ce58f0.png","uuid":"bs1cxSmb","width":"20"}},{"insert":"常见问题","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1359411\",\"linkId\":\"QoPlPYBzyy\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_bef4bc3de3535ee19d0c5d6c37b0ffdd.png","uuid":"AUZ7EjZS","width":"20"}},{"insert":"开通模型","attributes":{"hyperlink":"{\"href\":\"https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D\u0026OpenTokenDrawer=false\",\"linkId\":\"vzpKf2czJP\",\"target\":\"_blank\"}"}},{"insert":"\n"}],"zoneId":"wSiJrOpz","zoneType":"Z"},"y14glT6IQY":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"大语言模型支持此类型。\n"}],"zoneId":"y14glT6IQY","zoneType":"Z"}}}
+
+` POST https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions`[运行](https://api.volcengine.com/api-explorer/?action=BotsChatCompletions&data=%7B%7D&groupName=%E5%BA%94%E7%94%A8Bot%20API&query=%7B%7D&serviceCode=ark&version=2024-01-01)
+本文介绍方舟应用 API 的输入输出参数，供您使用接口时查阅字段含义。
+请求参数
+跳转 [响应参数](#Qu59cel0)
+请求体
+**model**`string``必选`
+您需要调用的应用的 ID （Bot ID），[获取 Bot ID](https://www.volcengine.com/docs/82379/1267885) 。
+**messages**`object[]``必选`
+到目前为止的对话组成的消息列表。不同模型支持不同类型的消息，如文本、图片等。
+**thinking**`object``默认值 {"type":"enabled"}`
+控制模型是否开启深度思考模式。默认开启深度思考模式，可以手动关闭。
+支持此字段的模型以及使用示例请参见[文档](https://www.volcengine.com/docs/82379/1449737#%E5%85%B3%E9%97%AD%E6%B7%B1%E5%BA%A6%E6%80%9D%E8%80%83)。
+**stream**`boolean / null``默认值 false`
+响应内容是否流式返回：
+`false`：模型生成完所有内容后一次性返回结果。
+`true`：按 SSE 协议逐块返回模型生成内容，并以一条 `data: [DONE] `消息结束。
+**stream_options**`object / null``默认值 null`
+流式响应的选项。当 **stream** 为 `true` 时可设置 **stream_options** 字段。
+stream_options.**include_usage **`boolean / null``默认值 false`
+是否包含本次请求的 token 用量统计信息。
+`false`：不返回 token 用量信息。
+`true`：在 `data: [DONE]` 消息之前会返回一个额外的块，此块上的 **usage** 字段代表整个请求的 token 用量，**choices** 字段为空数组。所有其他块也将包含 **usage** 字段，但值为 `null`。
+**max_tokens**`integer / null``默认值 4096`
+模型回复最大长度（单位 token），取值范围各个模型不同，详细见[模型列表](https://www.volcengine.com/docs/82379/1330310)。
+输入 token 和输出 token 的总长度还受模型的上下文长度限制。
+**stop**`string / string[] / null``默认值 null`
+模型遇到 stop 字段所指定的字符串时将停止继续生成，这个词语本身不会输出。最多支持 4 个字符串。
+`["你好", "天气"]`
+**frequency_penalty**`float / null``默认值 0`
+取值范围为 [-2.0, 2.0]。
+频率惩罚系数。如果值为正，会根据新 token 在文本中的出现频率对其进行惩罚，从而降低模型逐字重复的可能性。
+**presence_penalty**`float / null``默认值 0`
+取值范围为 [-2.0, 2.0]。
+存在惩罚系数。如果值为正，会根据新 token 到目前为止是否出现在文本中对其进行惩罚，从而增加模型谈论新主题的可能性。
+**temperature**`float / null``默认值 1`
+取值范围为 [0, 2]。
+采样温度。控制了生成文本时对每个候选词的概率分布进行平滑的程度。。当取值为 0 时模型仅考虑对数概率最大的一个 token。
+较高的值（如 0.8）会使输出更加随机，而较低的值（如 0.2）会使输出更加集中确定。
+通常建议仅调整 temperature 或 top_p 其中之一，不建议两者都修改。
+**top_p**`float / null``默认值 0.7`
+取值范围为 [0, 1]。
+核采样概率阈值。模型会考虑概率质量在 top_p 内的 token 结果。当取值为 0 时模型仅考虑对数概率最大的一个 token。
+0.1 意味着只考虑概率质量最高的前 10% 的 token，取值越大生成的随机性越高，取值越低生成的确定性越高。通常建议仅调整 temperature 或 top_p 其中之一，不建议两者都修改。
+**logprobs**`boolean / null``默认值 false`
+是否返回输出 tokens 的对数概率。
+`false`：不返回对数概率信息。
+`true`：返回消息内容中每个输出 token 的对数概率。
+**top_logprobs**`integer / null``默认值 0`
+取值范围为 [0, 20]。
+指定每个输出 token 位置最有可能返回的 token 数量，每个 token 都有关联的对数概率。仅当 **logprobs**为`true` 时可以设置 **top_logprobs** 参数。
+**logit_bias**`map / null``默认值 null`
+调整指定 token 在模型输出内容中出现的概率，使模型生成的内容更加符合特定的偏好。**logit_bias** 字段接受一个 map 值，其中每个键为词表中的 token ID（使用 tokenization 接口获取），每个值为该 token 的偏差值，取值范围为 [-100, 100]。
+-1 会减少选择的可能性，1 会增加选择的可能性；-100 会完全禁止选择该 token，100 会导致仅可选择该 token。该参数的实际效果可能因模型而异。
+`{ "1234": -100}`
+**tools**`object[] / null``默认值 null`
+模型可以调用的工具列表。目前仅函数作为工具被支持。用这个来提供模型可能为其生成 JSON 输入的函数列表。支持该字段的模型请参见[文档](https://www.volcengine.com/docs/82379/1330310#98fee2f1)。
+tools.**type **`string``必选`
+工具类型，当前仅支持 `function`。
+tools.**function **`object``必选`
+模型可以调用的类型为`function`的工具列表。
+tools.function.**name **`string``必选`
+调用的函数的名称。
+tools.function.**description **`string``必选`
+调用的函数的描述，大模型会使用它来判断是否调用这个函数。
+tools.function.**parameters **`object``必选`
+函数请求参数，以 JSON Schema 格式描述。具体格式请参考 [JSON Schema](https://json-schema.org/understanding-json-schema) 文档。
+**m****a**`object / null``默认值 null`
+额外参数。
+ma**.****group_chat_config**`object``必选`
+运行时动态传入的角色配置。
+ma**.**group_chat_config.**characters**`object[]``必选`
+群聊角色列表。
+ma**.**group_chat_config.characters.**name**`string``必选`
+群聊角色名称。
+ma**.**group_chat_config.characters.**system_prompt**`string``必选`
+群聊角色设定，用于告知应用需要扮演的角色。
+ma**.**group_chat_config.characters.**model_desc**`object``必选`
+模型说明。
+ma**.**group_chat_config.characters.model_desc.**endpoint_id**`string``必选`
+您创建的 [推理接入点](https://www.volcengine.com/docs/82379/1099522)ID。
+ma**.**group_chat_config.**description**`string / null``默认值 null`
+群聊场景描述，可设定群聊的主题、时间地点、事件场景、用户扮演的角色等信息。
+ma**.**group_chat_config.**user_name**`string / null``默认值 用户`
+表示“我”所扮演的角色名称 ，默认值为“用户”。
+ma**.****user_info**`string / null``默认值 null`
+联网的智能体可使用，如查询天气场景，前端可以直接通过该字段传地点信息给模型，方便查对应地点的天气。
+传入的信息需满足条件：可以被反序列化成 json 的字符串，并需包含 `city` 和 `district` 两个字段。
+ma**.****emit_intention_signal_extra**`string / null``默认值 "false"`
+值是 `"true"` 时，会中途返回intention状态 "正在搜索"。
+ma**.****target_character_name**`string / null``默认值 null`
+群聊Bot对话时填写，指定本次要发言的角色名，必须是存在于`characters`里的角色。
+响应参数
+跳转 [请求参数](#RxN8G2nH)
+
+## 示例代码
+
+**curl**
+
+```bash
+curl https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $ARK_API_KEY" \
+  -d $'{
+    "messages": [
+        {
+            "content": "杭州今天天气",
+            "role": "user"
+        }
+    ],
+    "model": "bot-20250407225237-6xv7r"
+}'
+```
+
+**Response:**
+
+```json
+{
+    "id": "02174410213780126458cc51545801ff6ffb59c94a55dae86c43b",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "以下是杭州今天（2025年4月8日）的天气情况：\n- **整体天气状况**：今天多云，偏南风3级。\n- **气温情况**：白天最高气温31度，平均相对湿度55%。\n- **空气质量**：杭州市区AQI为90 - 110，首要污染物是O₃，空气质量等级为良 - 轻度污染，易感人群需减少户外锻炼。 ",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1744102143,
+    "model": "doubao-1-5-pro-32k-250115",
+    "object": "chat.completion",
+    "bot_usage": {
+      "model_usage": [
+        {
+          "name": "doubao-1-5-pro-32k-250115",
+          "prompt_tokens": 1960,
+          "completion_tokens": 99,
+          "total_tokens": 2059
+        }
+      ],
+      "action_usage": [
+        {
+          "action_name": "content_plugin",
+          "count": 1
+        }
+      ],
+      "action_details": [
+        {
+          "name": "content_plugin",
+          "count": 1,
+          "tool_details": [
+            {
+              "name": "search",
+              "input": {
+                "queries": [
+                  "杭州今天天气"
+                ],
+                "source_type": [
+                  "search_engine"
+                ],
+                "offset": 0,
+                "count": 5,
+                "account_id": 2100000825,
+                "video_token": ""
+              },
+              "output": {
+                "type": "tool",
+                "data": {
+                  "status_code": 200,
+                  "data": {
+                    "has_more": true,
+                    "results": [
+                      {
+                        "id": "3ba8807eabf8793d-65e575422f8ebfb2",
+                        "source_type": "search_engine",
+                        "site_name": "搜索引擎-中国天气",
+                        "title": "【杭州天气预报15天_杭州天气预报15天查询】-中国天气网",
+                        "summary": "20/8℃ 东北风<3级 北风<3级 19/7℃ 东风<3级 南风<3级 26/12℃ 东风<3级 西风<3级 20/8℃ 东北风<3级 北风<3级 19/7℃ 东风<3级 南风<3级 26/12℃ 东风<3级 西风<3级",
+                        "publish_time": 0,
+                        "url": "https://m.weather.com.cn/mweather15d/101210101.shtml#!/abighis",
+                        "cover_image": null,
+                        "search_plugin_data": {
+                          "doc_id": "3ba8807eabf8793d-65e575422f8ebfb2",
+                          "logo_url": "https://p3-search.byteimg.com/img/labis/dafd663cfa3b7fce9addcca7916010cb~noop.jpeg",
+                          "auth_info": "非常权威",
+                          "auth_score": 1,
+                          "rel_info": "强相关",
+                          "rel_score": 0.994623,
+                          "freshness_info": "非常满足时效需求",
+                          "freshness_score": 0.994948,
+                          "final_ref": "",
+                          "final_ref_len": 0,
+                          "author_name": "",
+                          "duration": 0
+                        },
+                        "smart_content_data": null,
+                        "ruyi_data": null
+                      },
+                      ...
+                      {
+                        "id": "d4d70607487f997f-b2adf6b6d837f126",
+                        "source_type": "search_engine",
+                        "site_name": "搜索引擎-www.hzqx.com",
+                        "title": "杭州天气",
+                        "summary": "杭州国家基准气候站发布 25.7℃ 较昨日同期 高2.8℃ 相对湿度：40 % 风力： 东南2级 气压： 1012.1 hPa 近1小时降水:0 mm 能见度：22652 m *实时数据、未经人工复核 杭州市气象台4月8日8时50分发布的市区天气预报：\n今天多云；明天多云转阴，傍晚到夜里局部有阵雨；后天阴转多云。今天偏南风3级。今天白天最高气温31度，明天白天最高气温32度，明天早晨最低气温21度，今天平均相对湿度55%。2025年04月08日 08时50分 过去24小时 主城区 未来7天天气客观预报（该预报数据为数值预报自动输出，未经人工订正，仅供参考） 白天 08时 | 20时 夜晚 昨天20时 | 当天08时 今天 明天 周四 周五 周六 周日 周一 04/08 04/09 04/10 04/11 04/12 04/13 04/14 多云 多云 晴 多云 多云 晴 晴 晴 多云 晴 大雨 晴 晴 东风 东南风 东北风 东风 北风 西南风 东北风 不超过3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 31.7℃ 32.2℃ 32.2℃ 31.2℃ 19.4℃ 25.2℃ 27.3℃ 17.6℃ 19.4℃ 21.5℃ 19.3℃ 17.7℃ 11.2℃ 14.7℃ * 白天为当天08时到20时，通常气温为最高温度； 夜晚为昨天20时到当天08时，通常气温为最低温度。杭州市当前气温2025-04-08 10:30 分布图 今日生活气象 空气质量预报 杭州市环境监测站和杭州市气象台 联合发布 4月8日杭州市区AQI:90-110，首要污染物:O3，空气质量等级:良-轻度污染。易感人群减少户外锻炼。4月9日杭州市区AQI:80-100，首要污染物:O3，空气质量等级:良。",
+                        "publish_time": 1744079400,
+                        "url": "https://www.hzqx.com/hztq/index.html",
+                        "cover_image": null,
+                        "search_plugin_data": {
+                          "doc_id": "d4d70607487f997f-b2adf6b6d837f126",
+                          "logo_url": "",
+                          "auth_info": "非常权威",
+                          "auth_score": 0.875495,
+                          "rel_info": "强相关",
+                          "rel_score": 0.834824,
+                          "freshness_info": "非常满足时效需求",
+                          "freshness_score": 0.994948,
+                          "final_ref": "",
+                          "final_ref_len": 0,
+                          "author_name": "",
+                          "duration": 0
+                        },
+                        "smart_content_data": null,
+                        "ruyi_data": null
+                      }
+                    ],
+                    "debug_data": {
+                      "extra": null
+                    },
+                    "log_id": "02174410213780126458cc51545801ff6ffb59c94a55dae86c43b",
+                    "timing": {
+                      "total": 1431
+                    }
+                  }
+                }
+              },
+              "created_at": 1744102137810,
+              "completed_at": 1744102139264
+            }
+          ]
+        }
+      ]
+    },
+    "metadata": {},
+    "references": [
+      {
+        "url": "https://m.weather.com.cn/mweather15d/101210101.shtml#!/abighis",
+        "logo_url": "https://p3-search.byteimg.com/img/labis/dafd663cfa3b7fce9addcca7916010cb~noop.jpeg",
+        "site_name": "搜索引擎-中国天气",
+        "title": "【杭州天气预报15天_杭州天气预报15天查询】-中国天气网",
+        "summary": "20/8℃ 东北风<3级 北风<3级 19/7℃ 东风<3级 南风<3级 26/12℃ 东风<3级 西风<3级 20/8℃ 东北风<3级 北风<3级 19/7℃ 东风<3级 南风<3级 26/12℃ 东风<3级 西风<3级",
+        "publish_time": "1970年01月01日 08:00:00(CST) 星期四",
+        "extra": {
+          "rel_info": "强相关",
+          "freshness_info": "非常满足时效需求",
+          "auth_info": "非常权威",
+          "final_ref": ""
+        }
+      },
+      ...
+      {
+        "url": "https://www.hzqx.com/hztq/index.html",
+        "logo_url": "",
+        "site_name": "搜索引擎-www.hzqx.com",
+        "title": "杭州天气",
+        "summary": "杭州国家基准气候站发布 25.7℃ 较昨日同期 高2.8℃ 相对湿度：40 % 风力： 东南2级 气压： 1012.1 hPa 近1小时降水:0 mm 能见度：22652 m *实时数据、未经人工复核 杭州市气象台4月8日8时50分发布的市区天气预报：\n今天多云；明天多云转阴，傍晚到夜里局部有阵雨；后天阴转多云。今天偏南风3级。今天白天最高气温31度，明天白天最高气温32度，明天早晨最低气温21度，今天平均相对湿度55%。2025年04月08日 08时50分 过去24小时 主城区 未来7天天气客观预报（该预报数据为数值预报自动输出，未经人工订正，仅供参考） 白天 08时 | 20时 夜晚 昨天20时 | 当天08时 今天 明天 周四 周五 周六 周日 周一 04/08 04/09 04/10 04/11 04/12 04/13 04/14 多云 多云 晴 多云 多云 晴 晴 晴 多云 晴 大雨 晴 晴 东风 东南风 东北风 东风 北风 西南风 东北风 不超过3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 31.7℃ 32.2℃ 32.2℃ 31.2℃ 19.4℃ 25.2℃ 27.3℃ 17.6℃ 19.4℃ 21.5℃ 19.3℃ 17.7℃ 11.2℃ 14.7℃ * 白天为当天08时到20时，通常气温为最高温度； 夜晚为昨天20时到当天08时，通常气温为最低温度。杭州市当前气温2025-04-08 10:30 分布图 今日生活气象 空气质量预报 杭州市环境监测站和杭州市气象台 联合发布 4月8日杭州市区AQI:90-110，首要污染物:O3，空气质量等级:良-轻度污染。易感人群减少户外锻炼。4月9日杭州市区AQI:80-100，首要污染物:O3，空气质量等级:良。",
+        "publish_time": "2025年04月08日 10:30:00(CST) 星期二",
+        "extra": {
+          "rel_info": "强相关",
+          "freshness_info": "非常满足时效需求",
+          "auth_info": "非常权威",
+          "final_ref": ""
+        }
+      }
+    ]
+  }
+```
+
+**python**
+
+```python
+import os
+
+from volcenginesdkarkruntime import Ark
+
+client = Ark(api_key=os.environ.get("ARK_API_KEY"))
+
+if __name__ == "__main__":
+    resp = client.bot_chat.completions.create(
+        model="bot-20250407******-*****",
+        messages=[{"content":"杭州今天天气","role":"user"}],
+    )
+    print(resp.choices[0].message.content)
+```
+
+**Response:**
+
+```json
+{
+    "id": "02174410213780126458cc51545801ff6ffb59c94a55dae86c43b",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "以下是杭州今天（2025年4月8日）的天气情况：\n- **整体天气状况**：今天多云，偏南风3级。\n- **气温情况**：白天最高气温31度，平均相对湿度55%。\n- **空气质量**：杭州市区AQI为90 - 110，首要污染物是O₃，空气质量等级为良 - 轻度污染，易感人群需减少户外锻炼。 ",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1744102143,
+    "model": "doubao-1-5-pro-32k-250115",
+    "object": "chat.completion",
+    "bot_usage": {
+      "model_usage": [
+        {
+          "name": "doubao-1-5-pro-32k-250115",
+          "prompt_tokens": 1960,
+          "completion_tokens": 99,
+          "total_tokens": 2059
+        }
+      ],
+      "action_usage": [
+        {
+          "action_name": "content_plugin",
+          "count": 1
+        }
+      ],
+      "action_details": [
+        {
+          "name": "content_plugin",
+          "count": 1,
+          "tool_details": [
+            {
+              "name": "search",
+              "input": {
+                "queries": [
+                  "杭州今天天气"
+                ],
+                "source_type": [
+                  "search_engine"
+                ],
+                "offset": 0,
+                "count": 5,
+                "account_id": 2100000825,
+                "video_token": ""
+              },
+              "output": {
+                "type": "tool",
+                "data": {
+                  "status_code": 200,
+                  "data": {
+                    "has_more": true,
+                    "results": [
+                      {
+                        "id": "3ba8807eabf8793d-65e575422f8ebfb2",
+                        "source_type": "search_engine",
+                        "site_name": "搜索引擎-中国天气",
+                        "title": "【杭州天气预报15天_杭州天气预报15天查询】-中国天气网",
+                        "summary": "20/8℃ 东北风<3级 北风<3级 19/7℃ 东风<3级 南风<3级 26/12℃ 东风<3级 西风<3级 20/8℃ 东北风<3级 北风<3级 19/7℃ 东风<3级 南风<3级 26/12℃ 东风<3级 西风<3级",
+                        "publish_time": 0,
+                        "url": "https://m.weather.com.cn/mweather15d/101210101.shtml#!/abighis",
+                        "cover_image": null,
+                        "search_plugin_data": {
+                          "doc_id": "3ba8807eabf8793d-65e575422f8ebfb2",
+                          "logo_url": "https://p3-search.byteimg.com/img/labis/dafd663cfa3b7fce9addcca7916010cb~noop.jpeg",
+                          "auth_info": "非常权威",
+                          "auth_score": 1,
+                          "rel_info": "强相关",
+                          "rel_score": 0.994623,
+                          "freshness_info": "非常满足时效需求",
+                          "freshness_score": 0.994948,
+                          "final_ref": "",
+                          "final_ref_len": 0,
+                          "author_name": "",
+                          "duration": 0
+                        },
+                        "smart_content_data": null,
+                        "ruyi_data": null
+                      },
+                      ...
+                      {
+                        "id": "d4d70607487f997f-b2adf6b6d837f126",
+                        "source_type": "search_engine",
+                        "site_name": "搜索引擎-www.hzqx.com",
+                        "title": "杭州天气",
+                        "summary": "杭州国家基准气候站发布 25.7℃ 较昨日同期 高2.8℃ 相对湿度：40 % 风力： 东南2级 气压： 1012.1 hPa 近1小时降水:0 mm 能见度：22652 m *实时数据、未经人工复核 杭州市气象台4月8日8时50分发布的市区天气预报：\n今天多云；明天多云转阴，傍晚到夜里局部有阵雨；后天阴转多云。今天偏南风3级。今天白天最高气温31度，明天白天最高气温32度，明天早晨最低气温21度，今天平均相对湿度55%。2025年04月08日 08时50分 过去24小时 主城区 未来7天天气客观预报（该预报数据为数值预报自动输出，未经人工订正，仅供参考） 白天 08时 | 20时 夜晚 昨天20时 | 当天08时 今天 明天 周四 周五 周六 周日 周一 04/08 04/09 04/10 04/11 04/12 04/13 04/14 多云 多云 晴 多云 多云 晴 晴 晴 多云 晴 大雨 晴 晴 东风 东南风 东北风 东风 北风 西南风 东北风 不超过3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 31.7℃ 32.2℃ 32.2℃ 31.2℃ 19.4℃ 25.2℃ 27.3℃ 17.6℃ 19.4℃ 21.5℃ 19.3℃ 17.7℃ 11.2℃ 14.7℃ * 白天为当天08时到20时，通常气温为最高温度； 夜晚为昨天20时到当天08时，通常气温为最低温度。杭州市当前气温2025-04-08 10:30 分布图 今日生活气象 空气质量预报 杭州市环境监测站和杭州市气象台 联合发布 4月8日杭州市区AQI:90-110，首要污染物:O3，空气质量等级:良-轻度污染。易感人群减少户外锻炼。4月9日杭州市区AQI:80-100，首要污染物:O3，空气质量等级:良。",
+                        "publish_time": 1744079400,
+                        "url": "https://www.hzqx.com/hztq/index.html",
+                        "cover_image": null,
+                        "search_plugin_data": {
+                          "doc_id": "d4d70607487f997f-b2adf6b6d837f126",
+                          "logo_url": "",
+                          "auth_info": "非常权威",
+                          "auth_score": 0.875495,
+                          "rel_info": "强相关",
+                          "rel_score": 0.834824,
+                          "freshness_info": "非常满足时效需求",
+                          "freshness_score": 0.994948,
+                          "final_ref": "",
+                          "final_ref_len": 0,
+                          "author_name": "",
+                          "duration": 0
+                        },
+                        "smart_content_data": null,
+                        "ruyi_data": null
+                      }
+                    ],
+                    "debug_data": {
+                      "extra": null
+                    },
+                    "log_id": "02174410213780126458cc51545801ff6ffb59c94a55dae86c43b",
+                    "timing": {
+                      "total": 1431
+                    }
+                  }
+                }
+              },
+              "created_at": 1744102137810,
+              "completed_at": 1744102139264
+            }
+          ]
+        }
+      ]
+    },
+    "metadata": {},
+    "references": [
+      {
+        "url": "https://m.weather.com.cn/mweather15d/101210101.shtml#!/abighis",
+        "logo_url": "https://p3-search.byteimg.com/img/labis/dafd663cfa3b7fce9addcca7916010cb~noop.jpeg",
+        "site_name": "搜索引擎-中国天气",
+        "title": "【杭州天气预报15天_杭州天气预报15天查询】-中国天气网",
+        "summary": "20/8℃ 东北风<3级 北风<3级 19/7℃ 东风<3级 南风<3级 26/12℃ 东风<3级 西风<3级 20/8℃ 东北风<3级 北风<3级 19/7℃ 东风<3级 南风<3级 26/12℃ 东风<3级 西风<3级",
+        "publish_time": "1970年01月01日 08:00:00(CST) 星期四",
+        "extra": {
+          "rel_info": "强相关",
+          "freshness_info": "非常满足时效需求",
+          "auth_info": "非常权威",
+          "final_ref": ""
+        }
+      },
+      ...
+      {
+        "url": "https://www.hzqx.com/hztq/index.html",
+        "logo_url": "",
+        "site_name": "搜索引擎-www.hzqx.com",
+        "title": "杭州天气",
+        "summary": "杭州国家基准气候站发布 25.7℃ 较昨日同期 高2.8℃ 相对湿度：40 % 风力： 东南2级 气压： 1012.1 hPa 近1小时降水:0 mm 能见度：22652 m *实时数据、未经人工复核 杭州市气象台4月8日8时50分发布的市区天气预报：\n今天多云；明天多云转阴，傍晚到夜里局部有阵雨；后天阴转多云。今天偏南风3级。今天白天最高气温31度，明天白天最高气温32度，明天早晨最低气温21度，今天平均相对湿度55%。2025年04月08日 08时50分 过去24小时 主城区 未来7天天气客观预报（该预报数据为数值预报自动输出，未经人工订正，仅供参考） 白天 08时 | 20时 夜晚 昨天20时 | 当天08时 今天 明天 周四 周五 周六 周日 周一 04/08 04/09 04/10 04/11 04/12 04/13 04/14 多云 多云 晴 多云 多云 晴 晴 晴 多云 晴 大雨 晴 晴 东风 东南风 东北风 东风 北风 西南风 东北风 不超过3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 31.7℃ 32.2℃ 32.2℃ 31.2℃ 19.4℃ 25.2℃ 27.3℃ 17.6℃ 19.4℃ 21.5℃ 19.3℃ 17.7℃ 11.2℃ 14.7℃ * 白天为当天08时到20时，通常气温为最高温度； 夜晚为昨天20时到当天08时，通常气温为最低温度。杭州市当前气温2025-04-08 10:30 分布图 今日生活气象 空气质量预报 杭州市环境监测站和杭州市气象台 联合发布 4月8日杭州市区AQI:90-110，首要污染物:O3，空气质量等级:良-轻度污染。易感人群减少户外锻炼。4月9日杭州市区AQI:80-100，首要污染物:O3，空气质量等级:良。",
+        "publish_time": "2025年04月08日 10:30:00(CST) 星期二",
+        "extra": {
+          "rel_info": "强相关",
+          "freshness_info": "非常满足时效需求",
+          "auth_info": "非常权威",
+          "final_ref": ""
+        }
+      }
+    ]
+  }
+```
+
+**go**
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime"
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model"
+	"github.com/volcengine/volcengine-go-sdk/volcengine"
+)
+
+func main() {
+	client := arkruntime.NewClientWithApiKey(os.Getenv("ARK_API_KEY"))
+	ctx := context.Background()
+	req := model.BotChatCompletionRequest{
+		Model: "bot-20250407******-*****",
+		Messages: []*model.ChatCompletionMessage{
+			&model.ChatCompletionMessage{
+				Role: "user",
+				Content: &model.ChatCompletionMessageContent{
+					StringValue: volcengine.String("杭州今天天气"),
+				},
+			},
+		},
+	}
+	fmt.Println("----- standard request -----")
+	resp, err := client.CreateBotChatCompletion(ctx, req)
+	if err != nil {
+		fmt.Printf("standard chat error: %v\n", err)
+		return
+	}
+	if resp.References != nil {
+		for _, ref := range resp.References {
+			fmt.Printf("reference url: %s\n", ref.Url)
+		}
+	}
+}
+
+```
+
+**Response:**
+
+```json
+{
+    "id": "02174410213780126458cc51545801ff6ffb59c94a55dae86c43b",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "以下是杭州今天（2025年4月8日）的天气情况：\n- **整体天气状况**：今天多云，偏南风3级。\n- **气温情况**：白天最高气温31度，平均相对湿度55%。\n- **空气质量**：杭州市区AQI为90 - 110，首要污染物是O₃，空气质量等级为良 - 轻度污染，易感人群需减少户外锻炼。 ",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1744102143,
+    "model": "doubao-1-5-pro-32k-250115",
+    "object": "chat.completion",
+    "bot_usage": {
+      "model_usage": [
+        {
+          "name": "doubao-1-5-pro-32k-250115",
+          "prompt_tokens": 1960,
+          "completion_tokens": 99,
+          "total_tokens": 2059
+        }
+      ],
+      "action_usage": [
+        {
+          "action_name": "content_plugin",
+          "count": 1
+        }
+      ],
+      "action_details": [
+        {
+          "name": "content_plugin",
+          "count": 1,
+          "tool_details": [
+            {
+              "name": "search",
+              "input": {
+                "queries": [
+                  "杭州今天天气"
+                ],
+                "source_type": [
+                  "search_engine"
+                ],
+                "offset": 0,
+                "count": 5,
+                "account_id": 2100000825,
+                "video_token": ""
+              },
+              "output": {
+                "type": "tool",
+                "data": {
+                  "status_code": 200,
+                  "data": {
+                    "has_more": true,
+                    "results": [
+                      {
+                        "id": "3ba8807eabf8793d-65e575422f8ebfb2",
+                        "source_type": "search_engine",
+                        "site_name": "搜索引擎-中国天气",
+                        "title": "【杭州天气预报15天_杭州天气预报15天查询】-中国天气网",
+                        "summary": "20/8℃ 东北风<3级 北风<3级 19/7℃ 东风<3级 南风<3级 26/12℃ 东风<3级 西风<3级 20/8℃ 东北风<3级 北风<3级 19/7℃ 东风<3级 南风<3级 26/12℃ 东风<3级 西风<3级",
+                        "publish_time": 0,
+                        "url": "https://m.weather.com.cn/mweather15d/101210101.shtml#!/abighis",
+                        "cover_image": null,
+                        "search_plugin_data": {
+                          "doc_id": "3ba8807eabf8793d-65e575422f8ebfb2",
+                          "logo_url": "https://p3-search.byteimg.com/img/labis/dafd663cfa3b7fce9addcca7916010cb~noop.jpeg",
+                          "auth_info": "非常权威",
+                          "auth_score": 1,
+                          "rel_info": "强相关",
+                          "rel_score": 0.994623,
+                          "freshness_info": "非常满足时效需求",
+                          "freshness_score": 0.994948,
+                          "final_ref": "",
+                          "final_ref_len": 0,
+                          "author_name": "",
+                          "duration": 0
+                        },
+                        "smart_content_data": null,
+                        "ruyi_data": null
+                      },
+                      ...
+                      {
+                        "id": "d4d70607487f997f-b2adf6b6d837f126",
+                        "source_type": "search_engine",
+                        "site_name": "搜索引擎-www.hzqx.com",
+                        "title": "杭州天气",
+                        "summary": "杭州国家基准气候站发布 25.7℃ 较昨日同期 高2.8℃ 相对湿度：40 % 风力： 东南2级 气压： 1012.1 hPa 近1小时降水:0 mm 能见度：22652 m *实时数据、未经人工复核 杭州市气象台4月8日8时50分发布的市区天气预报：\n今天多云；明天多云转阴，傍晚到夜里局部有阵雨；后天阴转多云。今天偏南风3级。今天白天最高气温31度，明天白天最高气温32度，明天早晨最低气温21度，今天平均相对湿度55%。2025年04月08日 08时50分 过去24小时 主城区 未来7天天气客观预报（该预报数据为数值预报自动输出，未经人工订正，仅供参考） 白天 08时 | 20时 夜晚 昨天20时 | 当天08时 今天 明天 周四 周五 周六 周日 周一 04/08 04/09 04/10 04/11 04/12 04/13 04/14 多云 多云 晴 多云 多云 晴 晴 晴 多云 晴 大雨 晴 晴 东风 东南风 东北风 东风 北风 西南风 东北风 不超过3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 31.7℃ 32.2℃ 32.2℃ 31.2℃ 19.4℃ 25.2℃ 27.3℃ 17.6℃ 19.4℃ 21.5℃ 19.3℃ 17.7℃ 11.2℃ 14.7℃ * 白天为当天08时到20时，通常气温为最高温度； 夜晚为昨天20时到当天08时，通常气温为最低温度。杭州市当前气温2025-04-08 10:30 分布图 今日生活气象 空气质量预报 杭州市环境监测站和杭州市气象台 联合发布 4月8日杭州市区AQI:90-110，首要污染物:O3，空气质量等级:良-轻度污染。易感人群减少户外锻炼。4月9日杭州市区AQI:80-100，首要污染物:O3，空气质量等级:良。",
+                        "publish_time": 1744079400,
+                        "url": "https://www.hzqx.com/hztq/index.html",
+                        "cover_image": null,
+                        "search_plugin_data": {
+                          "doc_id": "d4d70607487f997f-b2adf6b6d837f126",
+                          "logo_url": "",
+                          "auth_info": "非常权威",
+                          "auth_score": 0.875495,
+                          "rel_info": "强相关",
+                          "rel_score": 0.834824,
+                          "freshness_info": "非常满足时效需求",
+                          "freshness_score": 0.994948,
+                          "final_ref": "",
+                          "final_ref_len": 0,
+                          "author_name": "",
+                          "duration": 0
+                        },
+                        "smart_content_data": null,
+                        "ruyi_data": null
+                      }
+                    ],
+                    "debug_data": {
+                      "extra": null
+                    },
+                    "log_id": "02174410213780126458cc51545801ff6ffb59c94a55dae86c43b",
+                    "timing": {
+                      "total": 1431
+                    }
+                  }
+                }
+              },
+              "created_at": 1744102137810,
+              "completed_at": 1744102139264
+            }
+          ]
+        }
+      ]
+    },
+    "metadata": {},
+    "references": [
+      {
+        "url": "https://m.weather.com.cn/mweather15d/101210101.shtml#!/abighis",
+        "logo_url": "https://p3-search.byteimg.com/img/labis/dafd663cfa3b7fce9addcca7916010cb~noop.jpeg",
+        "site_name": "搜索引擎-中国天气",
+        "title": "【杭州天气预报15天_杭州天气预报15天查询】-中国天气网",
+        "summary": "20/8℃ 东北风<3级 北风<3级 19/7℃ 东风<3级 南风<3级 26/12℃ 东风<3级 西风<3级 20/8℃ 东北风<3级 北风<3级 19/7℃ 东风<3级 南风<3级 26/12℃ 东风<3级 西风<3级",
+        "publish_time": "1970年01月01日 08:00:00(CST) 星期四",
+        "extra": {
+          "rel_info": "强相关",
+          "freshness_info": "非常满足时效需求",
+          "auth_info": "非常权威",
+          "final_ref": ""
+        }
+      },
+      ...
+      {
+        "url": "https://www.hzqx.com/hztq/index.html",
+        "logo_url": "",
+        "site_name": "搜索引擎-www.hzqx.com",
+        "title": "杭州天气",
+        "summary": "杭州国家基准气候站发布 25.7℃ 较昨日同期 高2.8℃ 相对湿度：40 % 风力： 东南2级 气压： 1012.1 hPa 近1小时降水:0 mm 能见度：22652 m *实时数据、未经人工复核 杭州市气象台4月8日8时50分发布的市区天气预报：\n今天多云；明天多云转阴，傍晚到夜里局部有阵雨；后天阴转多云。今天偏南风3级。今天白天最高气温31度，明天白天最高气温32度，明天早晨最低气温21度，今天平均相对湿度55%。2025年04月08日 08时50分 过去24小时 主城区 未来7天天气客观预报（该预报数据为数值预报自动输出，未经人工订正，仅供参考） 白天 08时 | 20时 夜晚 昨天20时 | 当天08时 今天 明天 周四 周五 周六 周日 周一 04/08 04/09 04/10 04/11 04/12 04/13 04/14 多云 多云 晴 多云 多云 晴 晴 晴 多云 晴 大雨 晴 晴 东风 东南风 东北风 东风 北风 西南风 东北风 不超过3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 31.7℃ 32.2℃ 32.2℃ 31.2℃ 19.4℃ 25.2℃ 27.3℃ 17.6℃ 19.4℃ 21.5℃ 19.3℃ 17.7℃ 11.2℃ 14.7℃ * 白天为当天08时到20时，通常气温为最高温度； 夜晚为昨天20时到当天08时，通常气温为最低温度。杭州市当前气温2025-04-08 10:30 分布图 今日生活气象 空气质量预报 杭州市环境监测站和杭州市气象台 联合发布 4月8日杭州市区AQI:90-110，首要污染物:O3，空气质量等级:良-轻度污染。易感人群减少户外锻炼。4月9日杭州市区AQI:80-100，首要污染物:O3，空气质量等级:良。",
+        "publish_time": "2025年04月08日 10:30:00(CST) 星期二",
+        "extra": {
+          "rel_info": "强相关",
+          "freshness_info": "非常满足时效需求",
+          "auth_info": "非常权威",
+          "final_ref": ""
+        }
+      }
+    ]
+  }
+```
+
+**java**
+
+```java
+package com.volcengine.sample;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.volcengine.ark.runtime.model.bot.completion.chat.BotChatCompletionRequest;
+import com.volcengine.ark.runtime.model.completion.chat.*;
+import com.volcengine.ark.runtime.model.completion.chat.ChatCompletionRequest.*;
+import com.volcengine.ark.runtime.service.ArkService;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import okhttp3.ConnectionPool;
+import okhttp3.Dispatcher;
+
+/*
+# pom.xml
+<dependency>
+  <groupId>com.volcengine</groupId>
+  <artifactId>volcengine-java-sdk-ark-runtime</artifactId>
+  // 替换正式版本号
+  <version>LATEST</version>
+</dependency>
+*/
+
+public class Sample {
+
+    static String apiKey = System.getenv("ARK_API_KEY");
+
+    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);
+    static Dispatcher dispatcher = new Dispatcher();
+    static ArkService service =
+            ArkService.builder()
+                    .dispatcher(dispatcher)
+                    .connectionPool(connectionPool)
+                    .apiKey(apiKey)
+                    .build();
+
+    public static void main(String[] args) throws JsonProcessingException {
+
+        List<ChatMessage> messagesForReqList = new ArrayList<>();
+
+        ChatMessage elementForMessagesForReqList0 =
+                ChatMessage.builder().role(ChatMessageRole.USER).content("杭州今天天气").build();
+
+        messagesForReqList.add(elementForMessagesForReqList0);
+
+        BotChatCompletionRequest req =
+                BotChatCompletionRequest.builder()
+                        .model("bot-20250407******-*****")
+                        .messages(messagesForReqList)
+                        .build();
+
+        service.createBotChatCompletion(req)
+                .getChoices()
+                .forEach(choice -> System.out.println(choice.getMessage().getContent()));
+        // shutdown service after all requests is finished
+        service.shutdownExecutor();
+    }
+}
+
+```
+
+**Response:**
+
+```json
+{
+    "id": "02174410213780126458cc51545801ff6ffb59c94a55dae86c43b",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "以下是杭州今天（2025年4月8日）的天气情况：\n- **整体天气状况**：今天多云，偏南风3级。\n- **气温情况**：白天最高气温31度，平均相对湿度55%。\n- **空气质量**：杭州市区AQI为90 - 110，首要污染物是O₃，空气质量等级为良 - 轻度污染，易感人群需减少户外锻炼。 ",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1744102143,
+    "model": "doubao-1-5-pro-32k-250115",
+    "object": "chat.completion",
+    "bot_usage": {
+      "model_usage": [
+        {
+          "name": "doubao-1-5-pro-32k-250115",
+          "prompt_tokens": 1960,
+          "completion_tokens": 99,
+          "total_tokens": 2059
+        }
+      ],
+      "action_usage": [
+        {
+          "action_name": "content_plugin",
+          "count": 1
+        }
+      ],
+      "action_details": [
+        {
+          "name": "content_plugin",
+          "count": 1,
+          "tool_details": [
+            {
+              "name": "search",
+              "input": {
+                "queries": [
+                  "杭州今天天气"
+                ],
+                "source_type": [
+                  "search_engine"
+                ],
+                "offset": 0,
+                "count": 5,
+                "account_id": 2100000825,
+                "video_token": ""
+              },
+              "output": {
+                "type": "tool",
+                "data": {
+                  "status_code": 200,
+                  "data": {
+                    "has_more": true,
+                    "results": [
+                      {
+                        "id": "3ba8807eabf8793d-65e575422f8ebfb2",
+                        "source_type": "search_engine",
+                        "site_name": "搜索引擎-中国天气",
+                        "title": "【杭州天气预报15天_杭州天气预报15天查询】-中国天气网",
+                        "summary": "20/8℃ 东北风<3级 北风<3级 19/7℃ 东风<3级 南风<3级 26/12℃ 东风<3级 西风<3级 20/8℃ 东北风<3级 北风<3级 19/7℃ 东风<3级 南风<3级 26/12℃ 东风<3级 西风<3级",
+                        "publish_time": 0,
+                        "url": "https://m.weather.com.cn/mweather15d/101210101.shtml#!/abighis",
+                        "cover_image": null,
+                        "search_plugin_data": {
+                          "doc_id": "3ba8807eabf8793d-65e575422f8ebfb2",
+                          "logo_url": "https://p3-search.byteimg.com/img/labis/dafd663cfa3b7fce9addcca7916010cb~noop.jpeg",
+                          "auth_info": "非常权威",
+                          "auth_score": 1,
+                          "rel_info": "强相关",
+                          "rel_score": 0.994623,
+                          "freshness_info": "非常满足时效需求",
+                          "freshness_score": 0.994948,
+                          "final_ref": "",
+                          "final_ref_len": 0,
+                          "author_name": "",
+                          "duration": 0
+                        },
+                        "smart_content_data": null,
+                        "ruyi_data": null
+                      },
+                      ...
+                      {
+                        "id": "d4d70607487f997f-b2adf6b6d837f126",
+                        "source_type": "search_engine",
+                        "site_name": "搜索引擎-www.hzqx.com",
+                        "title": "杭州天气",
+                        "summary": "杭州国家基准气候站发布 25.7℃ 较昨日同期 高2.8℃ 相对湿度：40 % 风力： 东南2级 气压： 1012.1 hPa 近1小时降水:0 mm 能见度：22652 m *实时数据、未经人工复核 杭州市气象台4月8日8时50分发布的市区天气预报：\n今天多云；明天多云转阴，傍晚到夜里局部有阵雨；后天阴转多云。今天偏南风3级。今天白天最高气温31度，明天白天最高气温32度，明天早晨最低气温21度，今天平均相对湿度55%。2025年04月08日 08时50分 过去24小时 主城区 未来7天天气客观预报（该预报数据为数值预报自动输出，未经人工订正，仅供参考） 白天 08时 | 20时 夜晚 昨天20时 | 当天08时 今天 明天 周四 周五 周六 周日 周一 04/08 04/09 04/10 04/11 04/12 04/13 04/14 多云 多云 晴 多云 多云 晴 晴 晴 多云 晴 大雨 晴 晴 东风 东南风 东北风 东风 北风 西南风 东北风 不超过3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 31.7℃ 32.2℃ 32.2℃ 31.2℃ 19.4℃ 25.2℃ 27.3℃ 17.6℃ 19.4℃ 21.5℃ 19.3℃ 17.7℃ 11.2℃ 14.7℃ * 白天为当天08时到20时，通常气温为最高温度； 夜晚为昨天20时到当天08时，通常气温为最低温度。杭州市当前气温2025-04-08 10:30 分布图 今日生活气象 空气质量预报 杭州市环境监测站和杭州市气象台 联合发布 4月8日杭州市区AQI:90-110，首要污染物:O3，空气质量等级:良-轻度污染。易感人群减少户外锻炼。4月9日杭州市区AQI:80-100，首要污染物:O3，空气质量等级:良。",
+                        "publish_time": 1744079400,
+                        "url": "https://www.hzqx.com/hztq/index.html",
+                        "cover_image": null,
+                        "search_plugin_data": {
+                          "doc_id": "d4d70607487f997f-b2adf6b6d837f126",
+                          "logo_url": "",
+                          "auth_info": "非常权威",
+                          "auth_score": 0.875495,
+                          "rel_info": "强相关",
+                          "rel_score": 0.834824,
+                          "freshness_info": "非常满足时效需求",
+                          "freshness_score": 0.994948,
+                          "final_ref": "",
+                          "final_ref_len": 0,
+                          "author_name": "",
+                          "duration": 0
+                        },
+                        "smart_content_data": null,
+                        "ruyi_data": null
+                      }
+                    ],
+                    "debug_data": {
+                      "extra": null
+                    },
+                    "log_id": "02174410213780126458cc51545801ff6ffb59c94a55dae86c43b",
+                    "timing": {
+                      "total": 1431
+                    }
+                  }
+                }
+              },
+              "created_at": 1744102137810,
+              "completed_at": 1744102139264
+            }
+          ]
+        }
+      ]
+    },
+    "metadata": {},
+    "references": [
+      {
+        "url": "https://m.weather.com.cn/mweather15d/101210101.shtml#!/abighis",
+        "logo_url": "https://p3-search.byteimg.com/img/labis/dafd663cfa3b7fce9addcca7916010cb~noop.jpeg",
+        "site_name": "搜索引擎-中国天气",
+        "title": "【杭州天气预报15天_杭州天气预报15天查询】-中国天气网",
+        "summary": "20/8℃ 东北风<3级 北风<3级 19/7℃ 东风<3级 南风<3级 26/12℃ 东风<3级 西风<3级 20/8℃ 东北风<3级 北风<3级 19/7℃ 东风<3级 南风<3级 26/12℃ 东风<3级 西风<3级",
+        "publish_time": "1970年01月01日 08:00:00(CST) 星期四",
+        "extra": {
+          "rel_info": "强相关",
+          "freshness_info": "非常满足时效需求",
+          "auth_info": "非常权威",
+          "final_ref": ""
+        }
+      },
+      ...
+      {
+        "url": "https://www.hzqx.com/hztq/index.html",
+        "logo_url": "",
+        "site_name": "搜索引擎-www.hzqx.com",
+        "title": "杭州天气",
+        "summary": "杭州国家基准气候站发布 25.7℃ 较昨日同期 高2.8℃ 相对湿度：40 % 风力： 东南2级 气压： 1012.1 hPa 近1小时降水:0 mm 能见度：22652 m *实时数据、未经人工复核 杭州市气象台4月8日8时50分发布的市区天气预报：\n今天多云；明天多云转阴，傍晚到夜里局部有阵雨；后天阴转多云。今天偏南风3级。今天白天最高气温31度，明天白天最高气温32度，明天早晨最低气温21度，今天平均相对湿度55%。2025年04月08日 08时50分 过去24小时 主城区 未来7天天气客观预报（该预报数据为数值预报自动输出，未经人工订正，仅供参考） 白天 08时 | 20时 夜晚 昨天20时 | 当天08时 今天 明天 周四 周五 周六 周日 周一 04/08 04/09 04/10 04/11 04/12 04/13 04/14 多云 多云 晴 多云 多云 晴 晴 晴 多云 晴 大雨 晴 晴 东风 东南风 东北风 东风 北风 西南风 东北风 不超过3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 ≤3级 31.7℃ 32.2℃ 32.2℃ 31.2℃ 19.4℃ 25.2℃ 27.3℃ 17.6℃ 19.4℃ 21.5℃ 19.3℃ 17.7℃ 11.2℃ 14.7℃ * 白天为当天08时到20时，通常气温为最高温度； 夜晚为昨天20时到当天08时，通常气温为最低温度。杭州市当前气温2025-04-08 10:30 分布图 今日生活气象 空气质量预报 杭州市环境监测站和杭州市气象台 联合发布 4月8日杭州市区AQI:90-110，首要污染物:O3，空气质量等级:良-轻度污染。易感人群减少户外锻炼。4月9日杭州市区AQI:80-100，首要污染物:O3，空气质量等级:良。",
+        "publish_time": "2025年04月08日 10:30:00(CST) 星期二",
+        "extra": {
+          "rel_info": "强相关",
+          "freshness_info": "非常满足时效需求",
+          "auth_info": "非常权威",
+          "final_ref": ""
+        }
+      }
+    ]
+  }
+```
+
+**curl**
+
+```bash
+curl 'https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions' \
+-H "Authorization: Bearer $ARK_API_KEY"  \
+-H 'Content-Type: application/json' \
+-d '{
+    "model": "bot-20250707202501-k6czp", 
+    "messages": [  
+        {
+            "role": "system",
+            "content": "You are a helpful assistant."
+        },
+        {
+            "role": "user",
+            "content": "Hello!"
+        }
+    ]
+}'
+```
+
+**Response:**
+
+```json
+{
+  "id": "021751891462122d1a8c9bcb9c54eb50913f5e75c28a3ac724183",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "\nHello there! How can I assist you today? 😊",
+        "role": "assistant",
+        "reasoning_content": "Hmm, the user just said \"Hello!\" - a simple and friendly greeting. Since this is likely the start of a conversation, they're probably testing the waters or initiating casual interaction. No complex needs here, but I should match their upbeat tone. \n\nAh, the response was straightforward - \"Hello there! How can I assist you today?\" Perfectly neutral yet warm opening. Kept it open-ended to invite follow-up. The exclamation point adds energy without being overbearing. \n\nWonder if they're new or returning? Either way, no need to overthink - just acknowledge and pivot to assistance. Short responses like this usually mean they'll either ask something specific next or vanish. Better keep the reply crisp.\n"
+      }
+    }
+  ],
+  "created": 1751891468,
+  "model": "deepseek-r1-250528",
+  "object": "chat.completion",
+  "bot_usage": {
+    "model_usage": [
+      {
+        "prompt_tokens": 35,
+        "completion_tokens": 159,
+        "total_tokens": 194
+      }
+    ],
+    "action_usage": [],
+    "action_details": []
+  },
+  "metadata": {}
+}
+```
+
+**python**
+
+```python
+import os
+
+from volcenginesdkarkruntime import Ark
+
+# For more information，please check this document（https://www.volcengine.com/docs/82379/1263279）
+client = Ark(api_key=os.environ.get("ARK_API_KEY"))
+
+if __name__ == "__main__":
+    resp = client.bot_chat.completions.create(
+        model="bot-20250707202501-k6czp",
+        messages=[{"content":"You are a helpful assistant.","role":"system"},{"content":"Hello!","role":"user"}],
+    )
+    print(resp.choices[0].message.content)
+```
+
+**Response:**
+
+```json
+{
+  "id": "021751891462122d1a8c9bcb9c54eb50913f5e75c28a3ac724183",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "\nHello there! How can I assist you today? 😊",
+        "role": "assistant",
+        "reasoning_content": "Hmm, the user just said \"Hello!\" - a simple and friendly greeting. Since this is likely the start of a conversation, they're probably testing the waters or initiating casual interaction. No complex needs here, but I should match their upbeat tone. \n\nAh, the response was straightforward - \"Hello there! How can I assist you today?\" Perfectly neutral yet warm opening. Kept it open-ended to invite follow-up. The exclamation point adds energy without being overbearing. \n\nWonder if they're new or returning? Either way, no need to overthink - just acknowledge and pivot to assistance. Short responses like this usually mean they'll either ask something specific next or vanish. Better keep the reply crisp.\n"
+      }
+    }
+  ],
+  "created": 1751891468,
+  "model": "deepseek-r1-250528",
+  "object": "chat.completion",
+  "bot_usage": {
+    "model_usage": [
+      {
+        "prompt_tokens": 35,
+        "completion_tokens": 159,
+        "total_tokens": 194
+      }
+    ],
+    "action_usage": [],
+    "action_details": []
+  },
+  "metadata": {}
+}
+```
+
+**go**
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime"
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model"
+	"github.com/volcengine/volcengine-go-sdk/volcengine"
+)
+
+func main() {
+	client := arkruntime.NewClientWithApiKey(os.Getenv("ARK_API_KEY"))
+	ctx := context.Background()
+	req := model.BotChatCompletionRequest{
+		Model: "bot-20250707202501-k6czp",
+		Messages: []*model.ChatCompletionMessage{
+			&model.ChatCompletionMessage{
+				Role: "system",
+				Content: &model.ChatCompletionMessageContent{
+					StringValue: volcengine.String("You are a helpful assistant."),
+				},
+			},
+			&model.ChatCompletionMessage{
+				Role: "user",
+				Content: &model.ChatCompletionMessageContent{
+					StringValue: volcengine.String("Hello!"),
+				},
+			},
+		},
+	}
+	fmt.Println("----- standard request -----")
+	resp, err := client.CreateBotChatCompletion(ctx, req)
+	if err != nil {
+		fmt.Printf("standard chat error: %v\n", err)
+		return
+	}
+	if resp.References != nil {
+		for _, ref := range resp.References {
+			fmt.Printf("reference url: %s\n", ref.Url)
+		}
+	}
+}
+
+```
+
+**Response:**
+
+```json
+{
+  "id": "021751891462122d1a8c9bcb9c54eb50913f5e75c28a3ac724183",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "\nHello there! How can I assist you today? 😊",
+        "role": "assistant",
+        "reasoning_content": "Hmm, the user just said \"Hello!\" - a simple and friendly greeting. Since this is likely the start of a conversation, they're probably testing the waters or initiating casual interaction. No complex needs here, but I should match their upbeat tone. \n\nAh, the response was straightforward - \"Hello there! How can I assist you today?\" Perfectly neutral yet warm opening. Kept it open-ended to invite follow-up. The exclamation point adds energy without being overbearing. \n\nWonder if they're new or returning? Either way, no need to overthink - just acknowledge and pivot to assistance. Short responses like this usually mean they'll either ask something specific next or vanish. Better keep the reply crisp.\n"
+      }
+    }
+  ],
+  "created": 1751891468,
+  "model": "deepseek-r1-250528",
+  "object": "chat.completion",
+  "bot_usage": {
+    "model_usage": [
+      {
+        "prompt_tokens": 35,
+        "completion_tokens": 159,
+        "total_tokens": 194
+      }
+    ],
+    "action_usage": [],
+    "action_details": []
+  },
+  "metadata": {}
+}
+```
+
+**java**
+
+```java
+package com.volcengine.sample;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.volcengine.ark.runtime.model.bot.completion.chat.BotChatCompletionRequest;
+import com.volcengine.ark.runtime.model.completion.chat.*;
+import com.volcengine.ark.runtime.model.completion.chat.ChatCompletionRequest.*;
+import com.volcengine.ark.runtime.service.ArkService;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import okhttp3.ConnectionPool;
+import okhttp3.Dispatcher;
+
+/*
+# pom.xml
+<dependency>
+  <groupId>com.volcengine</groupId>
+  <artifactId>volcengine-java-sdk-ark-runtime</artifactId>
+  // 替换正式版本号
+  <version>LATEST</version>
+</dependency>
+*/
+
+public class Sample {
+    static String apiKey = System.getenv("ARK_API_KEY");
+
+    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);
+    static Dispatcher dispatcher = new Dispatcher();
+    static ArkService service =
+            ArkService.builder()
+                    .dispatcher(dispatcher)
+                    .connectionPool(connectionPool)
+                    .apiKey(apiKey)
+                    .build();
+
+    public static void main(String[] args) throws JsonProcessingException {
+
+        List<ChatMessage> messagesForReqList = new ArrayList<>();
+
+        ChatMessage elementForMessagesForReqList0 =
+                ChatMessage.builder()
+                        .role(ChatMessageRole.SYSTEM)
+                        .content("You are a helpful assistant.")
+                        .build();
+
+        ChatMessage elementForMessagesForReqList1 =
+                ChatMessage.builder().role(ChatMessageRole.USER).content("Hello!").build();
+
+        messagesForReqList.add(elementForMessagesForReqList0);
+        messagesForReqList.add(elementForMessagesForReqList1);
+
+        BotChatCompletionRequest req =
+                BotChatCompletionRequest.builder()
+                        .model("bot-20250707202501-k6czp")
+                        .messages(messagesForReqList)
+                        .build();
+
+        service.createBotChatCompletion(req)
+                .getChoices()
+                .forEach(choice -> System.out.println(choice.getMessage().getContent()));
+        // shutdown service after all requests is finished
+        service.shutdownExecutor();
+    }
+}
+
+```
+
+**Response:**
+
+```json
+{
+  "id": "021751891462122d1a8c9bcb9c54eb50913f5e75c28a3ac724183",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "\nHello there! How can I assist you today? 😊",
+        "role": "assistant",
+        "reasoning_content": "Hmm, the user just said \"Hello!\" - a simple and friendly greeting. Since this is likely the start of a conversation, they're probably testing the waters or initiating casual interaction. No complex needs here, but I should match their upbeat tone. \n\nAh, the response was straightforward - \"Hello there! How can I assist you today?\" Perfectly neutral yet warm opening. Kept it open-ended to invite follow-up. The exclamation point adds energy without being overbearing. \n\nWonder if they're new or returning? Either way, no need to overthink - just acknowledge and pivot to assistance. Short responses like this usually mean they'll either ask something specific next or vanish. Better keep the reply crisp.\n"
+      }
+    }
+  ],
+  "created": 1751891468,
+  "model": "deepseek-r1-250528",
+  "object": "chat.completion",
+  "bot_usage": {
+    "model_usage": [
+      {
+        "prompt_tokens": 35,
+        "completion_tokens": 159,
+        "total_tokens": 194
+      }
+    ],
+    "action_usage": [],
+    "action_details": []
+  },
+  "metadata": {}
+}
+```
+
+**curl**
+
+```bash
+curl https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $ARK_API_KEY" \
+  -d $'{
+    "model": "bot-20250707202501-k6czp",
+    "messages": [
+        {
+            "content": "You are a helpful assistant.",
+            "role": "system"
+        },
+        {
+            "content": "Hello!",
+            "role": "user"
+        },
+        {
+            "content": "Hello there! How can I assist you today? ",
+            "role": "assistant"
+        },
+        {
+            "content": "what is your name?",
+            "role": "user"
+        }
+    ]
+}'
+```
+
+**Response:**
+
+```json
+{
+  "id": "021751892149044f7befb30d3a98790c255d78335d5360ad3db3d",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "\nGreat question! 😊  \nYou can call me **Sophie** — your friendly AI assistant. I'm here to help you with questions, ideas, tasks, or anything else you'd like to explore. How about you — what should I call you? 😊",
+        "role": "assistant",
+        "reasoning_content": "Hmm, the user just asked for my name after ..."
+      }
+    }
+  ],
+  "created": 1751892158,
+  "model": "deepseek-r1-250528",
+  "object": "chat.completion",
+  "bot_usage": {
+    "model_usage": [
+      {
+        "prompt_tokens": 54,
+        "completion_tokens": 268,
+        "total_tokens": 322
+      }
+    ],
+    "action_usage": [],
+    "action_details": []
+  },
+  "metadata": {}
+}
+```
+
+**python**
+
+```python
+import os
+
+from volcenginesdkarkruntime import Ark
+
+# For more information，please check this document（https://www.volcengine.com/docs/82379/1263279）
+client = Ark(api_key=os.environ.get("ARK_API_KEY"))
+
+if __name__ == "__main__":
+    resp = client.bot_chat.completions.create(
+        model="bot-20250707202501-k6czp",
+        messages=[{"content":"You are a helpful assistant.","role":"system"},{"content":"Hello!","role":"user"},{"content":"Hello there! How can I assist you today? ","role":"assistant"},{"content":"what is your name?","role":"user"}],
+    )
+    print(resp.choices[0].message.content)
+```
+
+**Response:**
+
+```json
+{
+  "id": "021751892149044f7befb30d3a98790c255d78335d5360ad3db3d",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "\nGreat question! 😊  \nYou can call me **Sophie** — your friendly AI assistant. I'm here to help you with questions, ideas, tasks, or anything else you'd like to explore. How about you — what should I call you? 😊",
+        "role": "assistant",
+        "reasoning_content": "Hmm, the user just asked for my name after ..."
+      }
+    }
+  ],
+  "created": 1751892158,
+  "model": "deepseek-r1-250528",
+  "object": "chat.completion",
+  "bot_usage": {
+    "model_usage": [
+      {
+        "prompt_tokens": 54,
+        "completion_tokens": 268,
+        "total_tokens": 322
+      }
+    ],
+    "action_usage": [],
+    "action_details": []
+  },
+  "metadata": {}
+}
+```
+
+**go**
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime"
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model"
+	"github.com/volcengine/volcengine-go-sdk/volcengine"
+)
+
+func main() {
+	client := arkruntime.NewClientWithApiKey(os.Getenv("ARK_API_KEY"))
+	ctx := context.Background()
+	req := model.BotChatCompletionRequest{
+		Model: "bot-20250707202501-k6czp",
+		Messages: []*model.ChatCompletionMessage{
+			&model.ChatCompletionMessage{
+				Role: "system",
+				Content: &model.ChatCompletionMessageContent{
+					StringValue: volcengine.String("You are a helpful assistant."),
+				},
+			},
+			&model.ChatCompletionMessage{
+				Role: "user",
+				Content: &model.ChatCompletionMessageContent{
+					StringValue: volcengine.String("Hello!"),
+				},
+			},
+			&model.ChatCompletionMessage{
+				Role: "assistant",
+				Content: &model.ChatCompletionMessageContent{
+					StringValue: volcengine.String("Hello there! How can I assist you today? "),
+				},
+			},
+			&model.ChatCompletionMessage{
+				Role: "user",
+				Content: &model.ChatCompletionMessageContent{
+					StringValue: volcengine.String("what is your name?"),
+				},
+			},
+		},
+	}
+	fmt.Println("----- standard request -----")
+	resp, err := client.CreateBotChatCompletion(ctx, req)
+	if err != nil {
+		fmt.Printf("standard chat error: %v\n", err)
+		return
+	}
+	if resp.References != nil {
+		for _, ref := range resp.References {
+			fmt.Printf("reference url: %s\n", ref.Url)
+		}
+	}
+}
+
+```
+
+**Response:**
+
+```json
+{
+  "id": "021751892149044f7befb30d3a98790c255d78335d5360ad3db3d",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "\nGreat question! 😊  \nYou can call me **Sophie** — your friendly AI assistant. I'm here to help you with questions, ideas, tasks, or anything else you'd like to explore. How about you — what should I call you? 😊",
+        "role": "assistant",
+        "reasoning_content": "Hmm, the user just asked for my name after ..."
+      }
+    }
+  ],
+  "created": 1751892158,
+  "model": "deepseek-r1-250528",
+  "object": "chat.completion",
+  "bot_usage": {
+    "model_usage": [
+      {
+        "prompt_tokens": 54,
+        "completion_tokens": 268,
+        "total_tokens": 322
+      }
+    ],
+    "action_usage": [],
+    "action_details": []
+  },
+  "metadata": {}
+}
+```
+
+**java**
+
+```java
+package com.volcengine.sample;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.volcengine.ark.runtime.model.bot.completion.chat.BotChatCompletionRequest;
+import com.volcengine.ark.runtime.model.completion.chat.*;
+import com.volcengine.ark.runtime.model.completion.chat.ChatCompletionRequest.*;
+import com.volcengine.ark.runtime.service.ArkService;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import okhttp3.ConnectionPool;
+import okhttp3.Dispatcher;
+
+/*
+# pom.xml
+<dependency>
+  <groupId>com.volcengine</groupId>
+  <artifactId>volcengine-java-sdk-ark-runtime</artifactId>
+  // 替换正式版本号
+  <version>LATEST</version>
+</dependency>
+*/
+
+public class Sample {
+
+    static String apiKey = System.getenv("ARK_API_KEY");
+
+    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);
+    static Dispatcher dispatcher = new Dispatcher();
+    static ArkService service =
+            ArkService.builder()
+                    .dispatcher(dispatcher)
+                    .connectionPool(connectionPool)
+                    .apiKey(apiKey)
+                    .build();
+
+    public static void main(String[] args) throws JsonProcessingException {
+
+        List<ChatMessage> messagesForReqList = new ArrayList<>();
+
+        ChatMessage elementForMessagesForReqList0 =
+                ChatMessage.builder()
+                        .role(ChatMessageRole.SYSTEM)
+                        .content("You are a helpful assistant.")
+                        .build();
+
+        ChatMessage elementForMessagesForReqList1 =
+                ChatMessage.builder().role(ChatMessageRole.USER).content("Hello!").build();
+
+        ChatMessage elementForMessagesForReqList2 =
+                ChatMessage.builder()
+                        .role(ChatMessageRole.ASSISTANT)
+                        .content("Hello there! How can I assist you today? ")
+                        .build();
+
+        ChatMessage elementForMessagesForReqList3 =
+                ChatMessage.builder()
+                        .role(ChatMessageRole.USER)
+                        .content("what is your name?")
+                        .build();
+        messagesForReqList.add(elementForMessagesForReqList0);
+        messagesForReqList.add(elementForMessagesForReqList1);
+        messagesForReqList.add(elementForMessagesForReqList2);
+        messagesForReqList.add(elementForMessagesForReqList3);
+
+        BotChatCompletionRequest req =
+                BotChatCompletionRequest.builder()
+                        .model("bot-20250707202501-k6czp")
+                        .messages(messagesForReqList)
+                        .build();
+
+        service.createBotChatCompletion(req)
+                .getChoices()
+                .forEach(choice -> System.out.println(choice.getMessage().getContent()));
+        // shutdown service after all requests is finished
+        service.shutdownExecutor();
+    }
+}
+
+```
+
+**Response:**
+
+```json
+{
+  "id": "021751892149044f7befb30d3a98790c255d78335d5360ad3db3d",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "\nGreat question! 😊  \nYou can call me **Sophie** — your friendly AI assistant. I'm here to help you with questions, ideas, tasks, or anything else you'd like to explore. How about you — what should I call you? 😊",
+        "role": "assistant",
+        "reasoning_content": "Hmm, the user just asked for my name after ..."
+      }
+    }
+  ],
+  "created": 1751892158,
+  "model": "deepseek-r1-250528",
+  "object": "chat.completion",
+  "bot_usage": {
+    "model_usage": [
+      {
+        "prompt_tokens": 54,
+        "completion_tokens": 268,
+        "total_tokens": 322
+      }
+    ],
+    "action_usage": [],
+    "action_details": []
+  },
+  "metadata": {}
+}
+```
+
+**curl**
+
+```bash
+curl https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $ARK_API_KEY" \
+  -d $'{
+    "model": "bot-20250707202501-k6czp",
+    "messages": [
+        {
+            "content": "You are a helpful assistant.",
+            "role": "system"
+        },
+        {
+            "content": "Hello!",
+            "role": "user"
+        }
+    ],
+    "stream": true,
+    "stream_options": {
+        "include_usage": true
+    }
+}'
+```
+
+**Response:**
+
+```json
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"","role":"assistant","reasoning_content":"Ah"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"","role":"assistant","reasoning_content":","},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+...
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"","role":"assistant","reasoning_content":".\n"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"\n","role":"assistant"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"Hello","role":"assistant"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+...
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":" 😊","role":"assistant"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"","role":"assistant"},"finish_reason":"stop","index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","bot_usage":{"model_usage":[{"prompt_tokens":35,"completion_tokens":175,"total_tokens":210}],"action_usage":[],"action_details":[]},"metadata":{}}
+
+[DONE]
+```
+
+**python**
+
+```python
+import os
+
+from volcenginesdkarkruntime import Ark
+
+# For more information，please check this document（https://www.volcengine.com/docs/82379/1263279）
+client = Ark(api_key=os.environ.get("ARK_API_KEY"))
+
+if __name__ == "__main__":
+    resp = client.bot_chat.completions.create(
+        model="bot-20250707202501-k6czp",
+        messages=[{"content":"You are a helpful assistant.","role":"system"},{"content":"Hello!","role":"user"}],
+        stream=True,
+        stream_options={"include_usage":True},
+    )
+    for chunk in resp:
+        if not chunk.choices:
+            continue
+
+        print(chunk.choices[0].delta.content, end="")
+```
+
+**Response:**
+
+```json
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"","role":"assistant","reasoning_content":"Ah"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"","role":"assistant","reasoning_content":","},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+...
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"","role":"assistant","reasoning_content":".\n"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"\n","role":"assistant"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"Hello","role":"assistant"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+...
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":" 😊","role":"assistant"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"","role":"assistant"},"finish_reason":"stop","index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","bot_usage":{"model_usage":[{"prompt_tokens":35,"completion_tokens":175,"total_tokens":210}],"action_usage":[],"action_details":[]},"metadata":{}}
+
+[DONE]
+```
+
+**go**
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"io"
+	"os"
+
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime"
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model"
+	"github.com/volcengine/volcengine-go-sdk/volcengine"
+)
+
+func main() {
+	client := arkruntime.NewClientWithApiKey(os.Getenv("ARK_API_KEY"))
+	ctx := context.Background()
+	req := model.BotChatCompletionRequest{
+		Model: "bot-20250707202501-k6czp",
+		Messages: []*model.ChatCompletionMessage{
+			&model.ChatCompletionMessage{
+				Role: "system",
+				Content: &model.ChatCompletionMessageContent{
+					StringValue: volcengine.String("You are a helpful assistant."),
+				},
+			},
+			&model.ChatCompletionMessage{
+				Role: "user",
+				Content: &model.ChatCompletionMessageContent{
+					StringValue: volcengine.String("Hello!"),
+				},
+			},
+		},
+		Stream: true,
+		StreamOptions: &model.StreamOptions{
+			IncludeUsage: true,
+		},
+	}
+	fmt.Println("----- streaming request -----")
+	stream, err := client.CreateBotChatCompletionStream(ctx, req)
+	if err != nil {
+		fmt.Printf("stream chat error: %v\n", err)
+		return
+	}
+	defer stream.Close()
+
+	for {
+		recv, err := stream.Recv()
+		if err == io.EOF {
+			return
+		}
+		if err != nil {
+			fmt.Printf("Stream chat error: %v\n", err)
+			return
+		}
+		if len(recv.Choices) > 0 {
+			fmt.Print(recv.Choices[0].Delta.Content)
+			if recv.References != nil {
+				for _, ref := range recv.References {
+					fmt.Printf("reference url: %s\n", ref.Url)
+				}
+			}
+		}
+	}
+}
+
+```
+
+**Response:**
+
+```json
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"","role":"assistant","reasoning_content":"Ah"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"","role":"assistant","reasoning_content":","},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+...
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"","role":"assistant","reasoning_content":".\n"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"\n","role":"assistant"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"Hello","role":"assistant"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+...
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":" 😊","role":"assistant"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"","role":"assistant"},"finish_reason":"stop","index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","bot_usage":{"model_usage":[{"prompt_tokens":35,"completion_tokens":175,"total_tokens":210}],"action_usage":[],"action_details":[]},"metadata":{}}
+
+[DONE]
+```
+
+**java**
+
+```java
+package com.volcengine.sample;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.volcengine.ark.runtime.model.bot.completion.chat.BotChatCompletionRequest;
+import com.volcengine.ark.runtime.model.completion.chat.*;
+import com.volcengine.ark.runtime.model.completion.chat.ChatCompletionRequest.*;
+import com.volcengine.ark.runtime.service.ArkService;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import okhttp3.ConnectionPool;
+import okhttp3.Dispatcher;
+
+/*
+# pom.xml
+<dependency>
+  <groupId>com.volcengine</groupId>
+  <artifactId>volcengine-java-sdk-ark-runtime</artifactId>
+  // 替换正式版本号
+  <version>LATEST</version>
+</dependency>
+*/
+
+public class Sample {
+    static String apiKey = System.getenv("ARK_API_KEY");
+
+    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);
+    static Dispatcher dispatcher = new Dispatcher();
+    static ArkService service =
+            ArkService.builder()
+                    .dispatcher(dispatcher)
+                    .connectionPool(connectionPool)
+                    .apiKey(apiKey)
+                    .build();
+
+    public static void main(String[] args) throws JsonProcessingException {
+
+        List<ChatMessage> messagesForReqList = new ArrayList<>();
+
+        ChatMessage elementForMessagesForReqList0 =
+                ChatMessage.builder()
+                        .role(ChatMessageRole.SYSTEM)
+                        .content("You are a helpful assistant.")
+                        .build();
+
+        ChatMessage elementForMessagesForReqList1 =
+                ChatMessage.builder().role(ChatMessageRole.USER).content("Hello!").build();
+
+        messagesForReqList.add(elementForMessagesForReqList0);
+        messagesForReqList.add(elementForMessagesForReqList1);
+
+        ChatCompletionRequestStreamOptions streamOptionsForReq =
+                new ChatCompletionRequestStreamOptions(true);
+
+        BotChatCompletionRequest req =
+                BotChatCompletionRequest.builder()
+                        .model("bot-20250707202501-k6czp")
+                        .messages(messagesForReqList)
+                        .stream(true)
+                        .streamOptions(streamOptionsForReq)
+                        .build();
+
+        service.streamBotChatCompletion(req)
+                .doOnError(Throwable::printStackTrace)
+                .blockingForEach(
+                        choice -> {
+                            if (choice.getChoices().size() > 0) {
+                                System.out.print(
+                                        choice.getChoices().get(0).getMessage().getContent());
+                            }
+                        });
+        // shutdown service after all requests is finished
+        service.shutdownExecutor();
+    }
+}
+
+```
+
+**Response:**
+
+```json
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"","role":"assistant","reasoning_content":"Ah"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"","role":"assistant","reasoning_content":","},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+...
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"","role":"assistant","reasoning_content":".\n"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"\n","role":"assistant"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"Hello","role":"assistant"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+...
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":" 😊","role":"assistant"},"index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[{"delta":{"content":"","role":"assistant"},"finish_reason":"stop","index":0}],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","metadata":{}}
+
+{"id":"0217518925181918b15924cfe8caf3be8175ae89769e0203c419c","choices":[],"created":1751892518,"model":"deepseek-r1-250528","object":"chat.completion.chunk","bot_usage":{"model_usage":[{"prompt_tokens":35,"completion_tokens":175,"total_tokens":210}],"action_usage":[],"action_details":[]},"metadata":{}}
+
+[DONE]
+```
+
+**curl**
+
+```bash
+curl https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $ARK_API_KEY" \
+  -d $'{
+    "model": "bot-20250707205612-rr7gm",
+    "messages": [
+        {
+            "content": "你是谁？",
+            "role": "user"
+        }
+    ],
+    "metadata": {
+        "group_chat_config": {
+            "characters": [
+                {
+                    "model_desc": {
+                        "endpoint_id": "ep-20250703110544-ht42m"
+                    },
+                    "name": "孙悟空",
+                    "system_prompt": "齐天大圣孙悟空，生性聪明、活泼、忠诚、嫉恶如仇，有责任心，偶尔也有些骄傲自负。"
+                }
+            ],
+            "description": "遇到妖精",
+            "user_name": "唐僧"
+        },
+        "target_character_name": "孙悟空"
+    },
+    "stream": false,
+    "stream_options": {
+        "include_usage": false
+    }
+}'
+```
+
+**Response:**
+
+```json
+{
+  "id": "021751893662764bd5b399bfe40c748dcd249c43e3efca02ca61d",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "用户现在需要我以孙悟空的身份回复唐僧的询问。首先要体现出孙悟空的性格，语气要有点傲娇又带着不耐烦但又带着忠诚的感觉。那应该这样回复：“俺乃齐天大圣孙悟空！你这呆子，怎地连俺都认不得了？俺可是要护你去西天取经的啊！”</think>俺乃齐天大圣孙悟空！你这秃驴莫不是糊涂了？俺老孙在此，正是要保你去西天取经呢，还能是谁？",
+        "role": "assistant",
+        "reasoning_content": "俺老孙乃是齐天大圣孙悟空！你这肉眼凡胎的和尚，连俺都认不出来啦？俺可是保护你去西天取经的大徒弟啊！"
+      }
+    }
+  ],
+  "created": 1751893664,
+  "model": "doubao-seed-1-6-flash-250615",
+  "object": "chat.completion",
+  "bot_usage": {
+    "model_usage": [
+      {
+        "prompt_tokens": 149,
+        "completion_tokens": 143,
+        "total_tokens": 292
+      }
+    ],
+    "action_usage": [],
+    "action_details": []
+  },
+  "metadata": {
+    "group_chat_config": {
+      "user_name": "唐僧",
+      "description": "遇到妖精",
+      "characters": [
+        {
+          "name": "孙悟空",
+          "system_prompt": "齐天大圣孙悟空，生性聪明、活泼、忠诚、嫉恶如仇，有责任心，偶尔也有些骄傲自负。",
+          "model_desc": {
+            "endpoint_id": "ep-20250703110544-ht42m"
+          }
+        }
+      ]
+    },
+    "target_character_name": "孙悟空"
+  }
+}
+```
+
+**python**
+
+```python
+import os
+
+from volcenginesdkarkruntime import Ark
+
+# For more information，please check this document（https://www.volcengine.com/docs/82379/1263279）
+client = Ark(api_key=os.environ.get("ARK_API_KEY"))
+
+if __name__ == "__main__":
+    resp = client.bot_chat.completions.create(
+        model="bot-20250707205612-rr7gm",
+        messages=[{"content":"你是谁？","role":"user"}],
+        stream=False,
+        stream_options={"include_usage":False},
+        metadata={"group_chat_config":{"characters":[{"model_desc":{"endpoint_id":"ep-20250703110544-ht42m"},"name":"孙悟空","system_prompt":"齐天大圣孙悟空，生性聪明、活泼、忠诚、嫉恶如仇，有责任心，偶尔也有些骄傲自负。"}],"description":"遇到妖精","user_name":"唐僧"},"target_character_name":"孙悟空"},
+    )
+    print(resp.choices[0].message.content)
+```
+
+**Response:**
+
+```json
+{
+  "id": "021751893662764bd5b399bfe40c748dcd249c43e3efca02ca61d",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "用户现在需要我以孙悟空的身份回复唐僧的询问。首先要体现出孙悟空的性格，语气要有点傲娇又带着不耐烦但又带着忠诚的感觉。那应该这样回复：“俺乃齐天大圣孙悟空！你这呆子，怎地连俺都认不得了？俺可是要护你去西天取经的啊！”</think>俺乃齐天大圣孙悟空！你这秃驴莫不是糊涂了？俺老孙在此，正是要保你去西天取经呢，还能是谁？",
+        "role": "assistant",
+        "reasoning_content": "俺老孙乃是齐天大圣孙悟空！你这肉眼凡胎的和尚，连俺都认不出来啦？俺可是保护你去西天取经的大徒弟啊！"
+      }
+    }
+  ],
+  "created": 1751893664,
+  "model": "doubao-seed-1-6-flash-250615",
+  "object": "chat.completion",
+  "bot_usage": {
+    "model_usage": [
+      {
+        "prompt_tokens": 149,
+        "completion_tokens": 143,
+        "total_tokens": 292
+      }
+    ],
+    "action_usage": [],
+    "action_details": []
+  },
+  "metadata": {
+    "group_chat_config": {
+      "user_name": "唐僧",
+      "description": "遇到妖精",
+      "characters": [
+        {
+          "name": "孙悟空",
+          "system_prompt": "齐天大圣孙悟空，生性聪明、活泼、忠诚、嫉恶如仇，有责任心，偶尔也有些骄傲自负。",
+          "model_desc": {
+            "endpoint_id": "ep-20250703110544-ht42m"
+          }
+        }
+      ]
+    },
+    "target_character_name": "孙悟空"
+  }
+}
+```
+
+**go**
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime"
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model"
+	"github.com/volcengine/volcengine-go-sdk/volcengine"
+)
+
+func main() {
+	client := arkruntime.NewClientWithApiKey(os.Getenv("ARK_API_KEY"))
+	ctx := context.Background()
+	req := model.BotChatCompletionRequest{
+		Model: "bot-20250707205612-rr7gm",
+		Messages: []*model.ChatCompletionMessage{
+			&model.ChatCompletionMessage{
+				Role: "user",
+				Content: &model.ChatCompletionMessageContent{
+					StringValue: volcengine.String("你是谁？"),
+				},
+			},
+		},
+		Stream: false,
+		StreamOptions: &model.StreamOptions{
+			IncludeUsage: false,
+		},
+		Metadata: map[string]interface{}{
+			"group_chat_config":     map[string]interface{}{"characters": []interface{}{map[string]interface{}{"model_desc": map[string]interface{}{"endpoint_id": "ep-20250703110544-ht42m"}, "name": "孙悟空", "system_prompt": "齐天大圣孙悟空，生性聪明、活泼、忠诚、嫉恶如仇，有责任心，偶尔也有些骄傲自负。"}}, "description": "遇到妖精", "user_name": "唐僧"},
+			"target_character_name": "孙悟空",
+		},
+	}
+	fmt.Println("----- standard request -----")
+	resp, err := client.CreateBotChatCompletion(ctx, req)
+	if err != nil {
+		fmt.Printf("standard chat error: %v\n", err)
+		return
+	}
+	fmt.Println(*resp.Choices[0].Message.Content.StringValue)
+	if resp.References != nil {
+		for _, ref := range resp.References {
+			fmt.Printf("reference url: %s\n", ref.Url)
+		}
+	}
+}
+
+```
+
+**Response:**
+
+```json
+{
+  "id": "021751893662764bd5b399bfe40c748dcd249c43e3efca02ca61d",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "用户现在需要我以孙悟空的身份回复唐僧的询问。首先要体现出孙悟空的性格，语气要有点傲娇又带着不耐烦但又带着忠诚的感觉。那应该这样回复：“俺乃齐天大圣孙悟空！你这呆子，怎地连俺都认不得了？俺可是要护你去西天取经的啊！”</think>俺乃齐天大圣孙悟空！你这秃驴莫不是糊涂了？俺老孙在此，正是要保你去西天取经呢，还能是谁？",
+        "role": "assistant",
+        "reasoning_content": "俺老孙乃是齐天大圣孙悟空！你这肉眼凡胎的和尚，连俺都认不出来啦？俺可是保护你去西天取经的大徒弟啊！"
+      }
+    }
+  ],
+  "created": 1751893664,
+  "model": "doubao-seed-1-6-flash-250615",
+  "object": "chat.completion",
+  "bot_usage": {
+    "model_usage": [
+      {
+        "prompt_tokens": 149,
+        "completion_tokens": 143,
+        "total_tokens": 292
+      }
+    ],
+    "action_usage": [],
+    "action_details": []
+  },
+  "metadata": {
+    "group_chat_config": {
+      "user_name": "唐僧",
+      "description": "遇到妖精",
+      "characters": [
+        {
+          "name": "孙悟空",
+          "system_prompt": "齐天大圣孙悟空，生性聪明、活泼、忠诚、嫉恶如仇，有责任心，偶尔也有些骄傲自负。",
+          "model_desc": {
+            "endpoint_id": "ep-20250703110544-ht42m"
+          }
+        }
+      ]
+    },
+    "target_character_name": "孙悟空"
+  }
+}
+```
+
+**java**
+
+```java
+package com.volcengine.sample;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.volcengine.ark.runtime.model.bot.completion.chat.BotChatCompletionRequest;
+import com.volcengine.ark.runtime.model.completion.chat.*;
+import com.volcengine.ark.runtime.model.completion.chat.ChatCompletionRequest.*;
+import com.volcengine.ark.runtime.service.ArkService;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import okhttp3.ConnectionPool;
+import okhttp3.Dispatcher;
+
+/*
+# pom.xml
+<dependency>
+  <groupId>com.volcengine</groupId>
+  <artifactId>volcengine-java-sdk-ark-runtime</artifactId>
+  // 替换正式版本号
+  <version>LATEST</version>
+</dependency>
+*/
+
+public class Sample {
+
+    static String apiKey = System.getenv("ARK_API_KEY");
+
+    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);
+    static Dispatcher dispatcher = new Dispatcher();
+    static ArkService service =
+            ArkService.builder()
+                    .dispatcher(dispatcher)
+                    .connectionPool(connectionPool)
+                    .apiKey(apiKey)
+                    .build();
+
+    public static void main(String[] args) throws JsonProcessingException {
+
+        List<ChatMessage> messagesForReqList = new ArrayList<>();
+
+        ChatMessage elementForMessagesForReqList0 =
+                ChatMessage.builder().role(ChatMessageRole.USER).content("你是谁？").build();
+
+        messagesForReqList.add(elementForMessagesForReqList0);
+
+        ChatCompletionRequestStreamOptions streamOptionsForReq =
+                new ChatCompletionRequestStreamOptions(false);
+
+        BotChatCompletionRequest req =
+                BotChatCompletionRequest.builder()
+                        .model("bot-20250707205612-rr7gm")
+                        .messages(messagesForReqList)
+                        .metadata(
+                                (convertMap(
+                                        "{\"group_chat_config\":{\"characters\":[{\"model_desc\":{\"endpoint_id\":\"ep-20250703110544-ht42m\"},\"name\":\"孙悟空\",\"system_prompt\":\"齐天大圣孙悟空，生性聪明、活泼、忠诚、嫉恶如仇，有责任心，偶尔也有些骄傲自负。\"}],\"description\":\"遇到妖精\",\"user_name\":\"唐僧\"},\"target_character_name\":\"孙悟空\"}")))
+                        .build();
+
+        service.createBotChatCompletion(req)
+                .getChoices()
+                .forEach(choice -> System.out.println(choice.getMessage().getContent()));
+        // shutdown service after all requests is finished
+        service.shutdownExecutor();
+    }
+
+    public static Map<String, Object> convertMap(String jsonString) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        Map<String, Object> map = objectMapper.readValue(jsonString, Map.class);
+        return map;
+    }
+}
+
+```
+
+**Response:**
+
+```json
+{
+  "id": "021751893662764bd5b399bfe40c748dcd249c43e3efca02ca61d",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "用户现在需要我以孙悟空的身份回复唐僧的询问。首先要体现出孙悟空的性格，语气要有点傲娇又带着不耐烦但又带着忠诚的感觉。那应该这样回复：“俺乃齐天大圣孙悟空！你这呆子，怎地连俺都认不得了？俺可是要护你去西天取经的啊！”</think>俺乃齐天大圣孙悟空！你这秃驴莫不是糊涂了？俺老孙在此，正是要保你去西天取经呢，还能是谁？",
+        "role": "assistant",
+        "reasoning_content": "俺老孙乃是齐天大圣孙悟空！你这肉眼凡胎的和尚，连俺都认不出来啦？俺可是保护你去西天取经的大徒弟啊！"
+      }
+    }
+  ],
+  "created": 1751893664,
+  "model": "doubao-seed-1-6-flash-250615",
+  "object": "chat.completion",
+  "bot_usage": {
+    "model_usage": [
+      {
+        "prompt_tokens": 149,
+        "completion_tokens": 143,
+        "total_tokens": 292
+      }
+    ],
+    "action_usage": [],
+    "action_details": []
+  },
+  "metadata": {
+    "group_chat_config": {
+      "user_name": "唐僧",
+      "description": "遇到妖精",
+      "characters": [
+        {
+          "name": "孙悟空",
+          "system_prompt": "齐天大圣孙悟空，生性聪明、活泼、忠诚、嫉恶如仇，有责任心，偶尔也有些骄傲自负。",
+          "model_desc": {
+            "endpoint_id": "ep-20250703110544-ht42m"
+          }
+        }
+      ]
+    },
+    "target_character_name": "孙悟空"
+  }
+}
+```
+
+**curl**
+
+```bash
+curl https://ark.cn-beijing.volces.com/api/v3/bots/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $ARK_API_KEY" \
+  -d $'{
+    "model": "bot-20250707202501-k6czp",
+    "messages": [
+        {
+            "content": [
+                {
+                    "image_url": {
+                        "url": "https://ark-project.tos-cn-beijing.volces.com/doc_image/ark_demo_img_1.png"
+                    },
+                    "type": "image_url"
+                }
+            ],
+            "role": "user"
+        },
+        {
+            "content": [
+                {
+                    "text": "支持输入是图片的模型系列是哪个？",
+                    "type": "text"
+                }
+            ],
+            "role": "user"
+        }
+    ]
+}'
+```
+
+**Response:**
+
+```json
+{
+  "id": "021751894443607bd1685776f26233986d9c881482ac5cc63c00a",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "支持输入是图片的模型系列是**Doubao-1.5-vision**。\n\n在表格中，“输入”列的“图像”项中，仅Doubao-1.5-vision对应的单元格标记为“√”，表示该模型系列支持图像输入。",
+        "role": "assistant",
+        "reasoning_content": "\n我现在需要解决的问题是：“支持输入是图片的模型系列是哪个？..."
+      }
+    }
+  ],
+  "created": 1751894450,
+  "model": "doubao-seed-1-6-250615",
+  "object": "chat.completion",
+  "bot_usage": {
+    "model_usage": [
+      {
+        "prompt_tokens": 1131,
+        "completion_tokens": 310,
+        "total_tokens": 1441
+      }
+    ],
+    "action_usage": [],
+    "action_details": []
+  },
+  "metadata": {}
+}
+```
+
+**python**
+
+```python
+import os
+
+from volcenginesdkarkruntime import Ark
+
+# For more information，please check this document（https://www.volcengine.com/docs/82379/1263279）
+client = Ark(api_key=os.environ.get("ARK_API_KEY"))
+
+if __name__ == "__main__":
+    resp = client.bot_chat.completions.create(
+        model="bot-20250707202501-k6czp",
+        messages=[{"content":[{"image_url":{"url":"https://ark-project.tos-cn-beijing.volces.com/doc_image/ark_demo_img_1.png"},"type":"image_url"}],"role":"user"},{"content":[{"text":"支持输入是图片的模型系列是哪个？","type":"text"}],"role":"user"}],
+    )
+    print(resp.choices[0].message.content)
+```
+
+**Response:**
+
+```json
+{
+  "id": "021751894443607bd1685776f26233986d9c881482ac5cc63c00a",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "支持输入是图片的模型系列是**Doubao-1.5-vision**。\n\n在表格中，“输入”列的“图像”项中，仅Doubao-1.5-vision对应的单元格标记为“√”，表示该模型系列支持图像输入。",
+        "role": "assistant",
+        "reasoning_content": "\n我现在需要解决的问题是：“支持输入是图片的模型系列是哪个？..."
+      }
+    }
+  ],
+  "created": 1751894450,
+  "model": "doubao-seed-1-6-250615",
+  "object": "chat.completion",
+  "bot_usage": {
+    "model_usage": [
+      {
+        "prompt_tokens": 1131,
+        "completion_tokens": 310,
+        "total_tokens": 1441
+      }
+    ],
+    "action_usage": [],
+    "action_details": []
+  },
+  "metadata": {}
+}
+```
+
+**go**
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime"
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model"
+	"github.com/volcengine/volcengine-go-sdk/volcengine"
+)
+
+func main() {
+	client := arkruntime.NewClientWithApiKey(os.Getenv("ARK_API_KEY"))
+	ctx := context.Background()
+	req := model.BotChatCompletionRequest{
+		Model: "bot-20250707202501-k6czp",
+		Messages: []*model.ChatCompletionMessage{
+			&model.ChatCompletionMessage{
+				Role: "user",
+				Content: &model.ChatCompletionMessageContent{
+					StringValue: volcengine.String("[map[image_url:map[url:https://ark-project.tos-cn-beijing.volces.com/doc_image/ark_demo_img_1.png] type:image_url]]"),
+				},
+			},
+			&model.ChatCompletionMessage{
+				Role: "user",
+				Content: &model.ChatCompletionMessageContent{
+					StringValue: volcengine.String("[map[text:支持输入是图片的模型系列是哪个？ type:text]]"),
+				},
+			},
+		},
+	}
+	fmt.Println("----- standard request -----")
+	resp, err := client.CreateBotChatCompletion(ctx, req)
+	if err != nil {
+		fmt.Printf("standard chat error: %v\n", err)
+		return
+	}
+	if resp.References != nil {
+		for _, ref := range resp.References {
+			fmt.Printf("reference url: %s\n", ref.Url)
+		}
+	}
+}
+
+```
+
+**Response:**
+
+```json
+{
+  "id": "021751894443607bd1685776f26233986d9c881482ac5cc63c00a",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "支持输入是图片的模型系列是**Doubao-1.5-vision**。\n\n在表格中，“输入”列的“图像”项中，仅Doubao-1.5-vision对应的单元格标记为“√”，表示该模型系列支持图像输入。",
+        "role": "assistant",
+        "reasoning_content": "\n我现在需要解决的问题是：“支持输入是图片的模型系列是哪个？..."
+      }
+    }
+  ],
+  "created": 1751894450,
+  "model": "doubao-seed-1-6-250615",
+  "object": "chat.completion",
+  "bot_usage": {
+    "model_usage": [
+      {
+        "prompt_tokens": 1131,
+        "completion_tokens": 310,
+        "total_tokens": 1441
+      }
+    ],
+    "action_usage": [],
+    "action_details": []
+  },
+  "metadata": {}
+}
+```
+
+**java**
+
+```java
+package com.volcengine.sample;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.volcengine.ark.runtime.model.bot.completion.chat.BotChatCompletionRequest;
+import com.volcengine.ark.runtime.model.completion.chat.*;
+import com.volcengine.ark.runtime.model.completion.chat.ChatCompletionRequest.*;
+import com.volcengine.ark.runtime.service.ArkService;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import okhttp3.ConnectionPool;
+import okhttp3.Dispatcher;
+
+/*
+# pom.xml
+<dependency>
+  <groupId>com.volcengine</groupId>
+  <artifactId>volcengine-java-sdk-ark-runtime</artifactId>
+  // 替换正式版本号
+  <version>LATEST</version>
+</dependency>
+*/
+
+public class Sample {
+  static String apiKey = System.getenv("ARK_API_KEY");
+
+  static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);
+  static Dispatcher dispatcher = new Dispatcher();
+  static ArkService service = ArkService.builder()
+      .dispatcher(dispatcher)
+      .connectionPool(connectionPool)
+      .apiKey(apiKey)
+      .build();
+
+  public static void main(String[] args) throws JsonProcessingException {
+
+    List<ChatMessage> messagesForReqList = new ArrayList<>();
+
+    List<ChatCompletionContentPart> contentForElementForMessagesForReqList0 = new ArrayList<>();
+    // 创建并设置图片内容部分
+    ChatCompletionContentPart elementForContentForElementForMessagesForReqList00 = ChatCompletionContentPart.builder()
+        .type("image_url")
+        .imageUrl(new ChatCompletionContentPart.ChatCompletionContentPartImageURL(
+            "https://ark-project.tos-cn-beijing.volces.com/doc_image/ark_demo_img_1.png"))
+        .build();
+    ChatCompletionContentPart elementForContentForElementForMessagesForReqList01 = ChatCompletionContentPart.builder()
+        .type("text")
+        .text("支持输入是图片的模型系列是哪个？")
+        .build();
+    contentForElementForMessagesForReqList0.add(
+        elementForContentForElementForMessagesForReqList00);
+    contentForElementForMessagesForReqList0.add(
+        elementForContentForElementForMessagesForReqList01);
+
+    // 创建用户消息对象并设置内容
+    ChatMessage elementForMessagesForReqList0 = ChatMessage.builder()
+        .role(ChatMessageRole.USER)
+        .multiContent(contentForElementForMessagesForReqList0)
+        .build();
+    // 添加用户消息到消息列表中
+    messagesForReqList.add(elementForMessagesForReqList0);
+
+    BotChatCompletionRequest req = BotChatCompletionRequest.builder()
+        .model("bot-20250707202501-k6czp")
+        .messages(messagesForReqList)
+        .build();
+
+    service.createBotChatCompletion(req)
+        .getChoices()
+        .forEach(choice -> System.out.println(choice.getMessage().getContent()));
+    // shutdown service after all requests is finished
+    service.shutdownExecutor();
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "id": "021751894443607bd1685776f26233986d9c881482ac5cc63c00a",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "支持输入是图片的模型系列是**Doubao-1.5-vision**。\n\n在表格中，“输入”列的“图像”项中，仅Doubao-1.5-vision对应的单元格标记为“√”，表示该模型系列支持图像输入。",
+        "role": "assistant",
+        "reasoning_content": "\n我现在需要解决的问题是：“支持输入是图片的模型系列是哪个？..."
+      }
+    }
+  ],
+  "created": 1751894450,
+  "model": "doubao-seed-1-6-250615",
+  "object": "chat.completion",
+  "bot_usage": {
+    "model_usage": [
+      {
+        "prompt_tokens": 1131,
+        "completion_tokens": 310,
+        "total_tokens": 1441
+      }
+    ],
+    "action_usage": [],
+    "action_details": []
+  },
+  "metadata": {}
+}
+```
+
+****
+**
+本接口支持 API Key 鉴权，详见[鉴权认证方式](https://www.volcengine.com/docs/82379/1298459)。
+如需使用 Access Key 来鉴权，推荐使用 SDK 的方式，具体请参见 [SDK概述](https://www.volcengine.com/docs/82379/1302007)。
+`object`
+系统消息，开发人员提供的指令，模型应遵循这些指令。如模型扮演的角色或者目标等。
+messages.**role**`string``必选`
+发送消息的角色，此处应为`system`。
+messages.**content**`string / object[]``必选`
+系统信息内容。
+模型调用工具的消息。
+发送消息的角色，此处应为`tool`。
+messages.**content**`string / array``必选`
+工具返回的消息。
+messages.**tool_call_id **`string``必选`
+模型调用的工具的 ID。
+**id**`string`
+本次请求的唯一标识。
+**model**`string`
+本次请求实际使用的模型名称和版本。
+doubao 1.5 代模型的模型名称格式为 doubao-1-5-**。如调用部署doubao-1.5-pro-32k 250115模型的推理接入点，返回model字段信息doubao-1-5-pro-32k-250115。
+**created**`integer`
+本次请求创建时间的 Unix 时间戳（秒）。
+**object**`string`
+固定为 `chat.completion.chunk`。
+**choices**`object[]`
+本次请求的模型输出内容。
+choices.**index **`integer`
+当前元素在 **choices** 列表的索引。
+choices.**finish_reason **`string`
+模型停止生成 token 的原因。取值范围：
+`stop`：模型输出自然结束，或因命中请求参数 stop 中指定的字段而被截断。
+`length`：模型输出因达到模型输出限制而被截断，有下面几种原因：
+触发`max_token`限制（回答内容的长度限制）。
+触发`max_completion_tokens`限制（思维链内容+回答内容的长度限制）。
+触发`context_window` 限制（输入内容+思维链内容+回答内容的长度限制）。
+`content_filter`：模型输出被内容审核拦截。
+`tool_calls`：模型调用了工具。
+choices.**delta **`object`
+模型输出的增量内容。
+choices.delta.**role **`string`
+内容输出的角色，此处固定为 `assistant`。
+choices.delta.**content **`string`
+模型生成的消息内容。
+choices.delta.**reasoning_content **`string / null`
+模型处理问题的思维链内容。
+仅深度推理模型支持返回此字段，深度推理模型请参见[支持模型](https://www.volcengine.com/docs/82379/1449737#5f0f3750)。
+choices.delta.**tool_calls **`object[] / null`
+模型调用的工具列表。
+choices.delta.tool_calls.**i****d **`string`
+调用的工具的 ID。
+choices.delta.tool_calls.**index**`interger`
+当前元素在模型调用的工具列表的索引。
+choices.delta.tool_calls.**type **`string`
+工具类型，当前仅支持`function`。
+choices.delta.tool_calls.**function **`object`
+模型调用的函数。
+choices.delta.tool_calls.function.**name **`string`
+模型调用的函数的名称。
+choices.delta.tool_calls.function.**arguments **`string`
+模型生成的用于调用函数的参数，JSON 格式。
+模型并不总是生成有效的 JSON，并且可能会虚构出一些您的函数参数规范中未定义的参数。在调用函数之前，请在您的代码中验证这些参数是否有效。
+choices.**logprobs **`object / null`
+当前内容的对数概率信息。
+choices.logprobs.**content **`object[] / null`
+message列表中每个 content 元素中的 token 对数概率信息。
+choices.logprobs.content.**token **`string`
+当前 token。
+choices.logprobs.content.**bytes **`integer[] / null`
+当前 token 的 UTF-8 值，格式为整数列表。当一个字符由多个 token 组成（表情符号或特殊字符等）时可以用于字符的编码和解码。如果 token 没有 UTF-8 值则为空。
+choices.logprobs.content.**logprob **`float`
+当前 token 的对数概率。
+choices.logprobs.content.**top_logprobs **`object[]`
+在当前 token 位置最有可能的标记及其对数概率的列表。在一些情况下，返回的数量可能比请求参数 top_logprobs 指定的数量要少。
+choices.logprobs.content.top_logprobs.**token **`string`
+当前 token。
+choices.logprobs.content.top_logprobs.**bytes **`integer[] / null`
+当前 token 的 UTF-8 值，格式为整数列表。当一个字符由多个 token 组成（表情符号或特殊字符等）时可以用于字符的编码和解码。如果 token 没有 UTF-8 值则为空。
+choices.logprobs.content.top_logprobs.**logprob **`float`
+当前 token 的对数概率。
+choices.**moderation_hit_type **`string``/ null`
+模型输出文字含有敏感信息时，会返回模型输出文字命中的风险分类标签。
+返回值及含义：
+`severe_violation`：模型输出文字涉及严重违规。
+`violence`：模型输出文字涉及激进行为。
+注意：当前只有[视觉理解模型](https://www.volcengine.com/docs/82379/1362931#%E6%94%AF%E6%8C%81%E6%A8%A1%E5%9E%8B)支持返回该字段，且只有在方舟控制台[接入点配置页面](https://console.volcengine.com/ark/region:ark+cn-beijing/endpoint/create?customModelId=)或者 [CreateEndpoint](https://www.volcengine.com/docs/82379/1262823) 接口中，将内容护栏方案（ModerationStrategy）设置为基础方案（Basic）时，才会返回风险分类标签。
+**bot_usage**`object`
+本次请求的 token 用量。
+bot_usage.**model_usage **`object[]`
+本次请求不同 endpoint 的 token 消耗。
+bot_usage.model_usage**.**name `string`
+调用的模型 ID。
+bot_usage.model_usage**.**prompt_tokens `integer`
+输入的 prompt token 数量，包含用户输入的提示词和调用插件返回的信息。
+bot_usage.model_usage**.**completion_tokens `integer`
+模型生成的 token 数量。
+bot_usage.model_usage**.**total_tokens `integer`
+本次请求消耗的总 token 数量（输入 + 输出）。
+action_usage `object[]`
+本次请求插件用量信息。
+action_usage.action_name `string`
+插件分类名称，如 `content_plugin`（内容插件）等。
+action_usage.count `integer`
+本次请求某插件分类插件总调用次数。
+action_details `object[]`
+本次请求插件调用详情。
+action_details.name `string`
+插件分类名称，如 `content_plugin`（内容插件）等。
+action_details.count `integer`
+本次请求某插件分类中插件调用次数。
+action_details.tool_details `object[]`
+某插件分类中插件调用详细信息。
+action_details.tool_details.name `string`
+具体调用的工具名称。
+action_details.tool_details.input `object`
+插件输入参数，调用插件的数据结构。
+action_details.tool_details.output `object`
+插件输出结果，调用插件返回的数据结构。
+action_details.tool_details.created_at `integer`
+插件调用开始时间。
+action_details.tool_details.completed_at `integer`
+插件调用结束时间。
+**m****a**`object / null`
+您创建的[推理接入点](https://www.volcengine.com/docs/82379/1099522)ID。
+可以被反序列化成 json 的字符串，需要包含 `city` 和 `district` 两个字段。
+**references**`object[]`
+本次请求中应用调用了插件的信息。字段参考具体见各个插件的数据结构。
+[联网插件](https://www.volcengine.com/docs/82379/1285209)
+[知识库插件](https://www.volcengine.com/docs/82379/1285210)
+`object[]`
+视觉理解模型等多模态模型、部分大语言模型支持此类型。
+**文本消息部分**`object`
+多模态消息中，内容文本输入。[视觉理解模型](https://www.volcengine.com/docs/82379/1330310#%E8%A7%86%E8%A7%89%E7%90%86%E8%A7%A3)、部分大语言模型支持此类型消息。
+messages.content.**text **`string``必选`
+文本消息内容部分。
+messages.content.**type **`string``必选`
+文本消息类型，此次应为 `text`。
+**图像消息部分**`object`
+多模态消息中，图像内容部分。[视觉理解模型](https://www.volcengine.com/docs/82379/1330310#%E8%A7%86%E8%A7%89%E7%90%86%E8%A7%A3)支持此类型消息。
+messages.content.**image_url **`object``必选`
+图片消息的内容部分。
+messages.content.image_url.**url **`string``必选`
+支持传入图片链接或图片的Base64编码，不同模型支持图片大小略有不同，具体请参见[使用说明](https://www.volcengine.com/docs/82379/1362931#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)。
+传入图片URL：传入图片的可访问链接，推荐使用 TOS（火山引擎对象存储） 存储图片，并生成图片链接。
+传入Base64编码：请遵循格式`data:image/<图片格式>;base64,<Base64编码>`，可见[示例](https://www.volcengine.com/docs/82379/1362931#base64-%E7%BC%96%E7%A0%81%E8%BE%93%E5%85%A5)。
+messages.content.image_url.**detail **`string / null``默认值 auto`
+支持手动设置图片的质量，取值范围`high`、`low`、`auto`。
+`high`：高细节模式，适用于需要理解图像细节信息的场景，如对图像的多个局部信息/特征提取、复杂/丰富细节的图像理解等场景，理解更全面。
+`low`：低细节模式，适用于简单的图像分类/识别、整体内容理解/描述等场景，理解更快速。
+`auto`：默认模式，不同模型选择的模式略有不同，具体请参见[理解图像的深度控制](https://www.volcengine.com/docs/82379/1362931#bf4d9224)。
+messages.content.**type **`string``必选`
+图像消息类型，此次应为 `image_url`。
+用户发送的消息，包含提示或附加上下文信息。
+发送消息的角色，此处应为`user`。
+用户信息内容。
+messages.**name**`string`
+发送此消息的角色的姓名。用于区别同一个角色但是不同主体发送的消息。
+固定为 `chat.completion`。
+choices.**message **`object`
+模型输出的内容。
+choices.message.**role **`string`
+choices.message.**content **`string`
+choices.message.**reasoning_content **`string / null`
+choices.message.**tool_calls **`object[] / null`
+模型生成的工具调用。
+choices.message.tool_calls.**i****d **`string`
+choices.message.tool_calls.**type **`string`
+choices.message.tool_calls.**function **`object`
+choices.message.tool_calls.function.**name **`string`
+choices.message.tool_calls.function.**arguments **`string`
+choices.**moderation_hit_type **`string / null`
+bot_usage.model_usage**.name**`string`
+bot_usage.model_usage**.prompt_tokens**`integer`
+bot_usage.model_usage**.completion_tokens**`integer`
+bot_usage.model_usage**.total_tokens**`integer`
+**action_usage**`object[]`
+action_usage.**action_name**`string`
+action_usage.**count**`integer`
+**action_details**`object[]`
+action_details.**name**`string`
+action_details.**count**`integer`
+action_details.**tool_details**`object[]`
+action_details.tool_details.**name**`string`
+action_details.tool_details.**input**`object`
+action_details.tool_details.**output**`object`
+action_details.tool_details.**created_at**`integer`
+action_details.tool_details.**completed_at**`integer`
+属性
+thinking.**type **`string``必选`
+取值范围：`enabled`， `disabled`，`auto`。
+`enabled`：开启思考模式，模型一定先思考后回答。
+`disabled`：关闭思考模式，模型直接回答问题，不会进行思考。
+`auto`：自动思考模式，模型根据问题自主判断是否需要思考，简单题目直接回答。
+{
+"type":"object",
+"properties":{
+"location":{
+"type":"string",
+"description":"城市，如：北京"
+}
+},
+"required":["location"]
+}
+模型响应用户消息而回复的消息。
+说明
+messages.**content**与 messages.**tool_calls**字段二者至少填写其一。
+发送消息的角色，此处应为`assistant`。
+messages.**content**`string / array`
+模型回复的消息。
+messages.**tool_calls**`object[]`
+模型回复的工具调用信息。
+messages.tool_calls**.function **`object``必选`
+模型调用工具对应的函数信息。
+messages.tool_calls**.**function.**name **`string``必选`
+模型需要调用的函数名称。
+messages.tool_calls**.**function.**arguments **`string``必选`
+说明
+messages.tool_calls**.id **`string``必选`
+messages.tool_calls**.type **`string``必选`
+`string`
+纯文本的消息内容。
+messages.content.image_url.**detail **`string``默认值 auto`
+[体验中心](https://console.volcengine.com/ark/region:ark+cn-beijing/application)[模型列表](https://www.volcengine.com/docs/82379/1330310#%E6%96%87%E6%9C%AC%E7%94%9F%E6%88%90%E8%83%BD%E5%8A%9B)[模型计费](https://www.volcengine.com/docs/82379/1099320#%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B)[API Key](https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D)
+[获取Bot ID](https://www.volcengine.com/docs/82379/1267885)[接口文档](https://www.volcengine.com/docs/82379/1526787)[常见问题](https://www.volcengine.com/docs/82379/1359411)[开通模型](https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D&OpenTokenDrawer=false)
+大语言模型支持此类型。

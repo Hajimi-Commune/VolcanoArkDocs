@@ -1,2 +1,289 @@
 # 文本向量化 API
-{"version":"1.2.11","data":{"0":{"ops":[{"insert":"POST https://ark.cn-beijing.volces.com/api/v3/embeddings","attributes":{"inlineCode":"true"}},{"insert":"   ","attributes":{"backgroundcolor":"rgb(43, 43, 43)"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(43, 43, 43)","hyperlink":"{\"href\":\"https://api.volcengine.com/api-explorer/?action=CreateContentsGenerationsTasks\u0026data=%7B%7D\u0026groupName=%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90API\u0026query=%7B%7D\u0026serviceCode=ark\u0026version=2024-01-01\",\"linkId\":\"GXLITHxQll\",\"target\":\"_blank\"}"}},{"insert":"运行","attributes":{"bold":"true","hyperlink":"{\"href\":\"https://api.volcengine.com/api-explorer/?action=Embeddings\u0026data=%7B%7D\u0026groupName=%E5%90%91%E9%87%8F%E5%8C%96%20API\u0026query=%7B%7D\u0026serviceCode=ark\u0026version=2024-01-01\",\"linkId\":\"GXLITHxQll\",\"target\":\"_blank\"}","inlineCode":"true"}},{"insert":"\n"},{"insert":"当您需通过语义来处理文本，如语义检索、分析词性等，可以调用向量化服务，将文本转化为向量，来分析文本的语义关系。本文为您提供服务接口的参数详细说明供您查阅。\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1"}},{"insert":"如果您需要调整向量维度，请参考 "},{"insert":"向量降维","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1583857#%E5%90%91%E9%87%8F%E9%99%8D%E7%BB%B4\",\"linkId\":\"ZXpUszLqVB\",\"target\":\"_blank\"}"}},{"insert":"。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"tabs":"true","tabsZoneId":"6rr9ymN0","zoneType":"Z"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"anchor":"#RxN8G2nH","heading":"h2","lmkr":"1"}},{"insert":"请求参数 \n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1"}},{"insert":"跳转 "},{"insert":"响应参数","attributes":{"hyperlink":"{\"href\":\"#L9tzcCyD\",\"linkId\":\"ickPsXjv3n\",\"target\":\"_self\"}"}},{"insert":"\n"},{"insert":"*","attributes":{"anchor":"#BJ5XLFqM","heading":"h3","lmkr":"1"}},{"insert":"请求体\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"model","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"您需要调用的模型的 ID （"},{"insert":"Model ID","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"），"},{"insert":"开通模型服务","attributes":{"hyperlink":"{\"href\":\"https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D\u0026OpenTokenDrawer=false\",\"linkId\":\"GGS2zAW9AH\",\"target\":\"_blank\"}"}},{"insert":"，并"},{"insert":"查询 Model ID","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1330310\",\"linkId\":\"gADGehB09y\",\"target\":\"_blank\"}"}},{"insert":" 。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"您也可通过 Endpoint ID 来调用模型，获得限流、计费类型（前付费/后付费）、运行状态查询、监控、安全等高级能力，可参考","attributes":{"backgroundcolor":"rgb(243, 245, 247)"}},{"insert":"获取 Endpoint ID","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1099522#%E8%8E%B7%E5%8F%96-endpoint-id\",\"linkId\":\"ndxtuRY0gw\",\"target\":\"_blank\"}"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(243, 245, 247)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"input","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string / string[]","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"需要向量化的内容列表，支持中文、英文。输入内容需满足下面条件：\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"不得超过模型的最大输入 token 数。doubao-embdding 模型，每个列表元素（并非单次请求总数）最大输入token 数为 4096。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"不能为空列表，列表的每个成员不能为空字符串。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"单条文本以 utf-8 编码，长度不超过 100,000 字节。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"为获得更好性能，建议文本数量总token不超过4096，或者文本条数不超过4。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"encoding_format","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string / null ","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 float","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"取值范围： "},{"insert":"float","attributes":{"inlineCode":"true"}},{"insert":"、"},{"insert":"base64","attributes":{"inlineCode":"true"}},{"insert":"、"},{"insert":"null","attributes":{"inlineCode":"true"}},{"insert":"。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"embedding 返回的格式。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"\n"},{"insert":"*","attributes":{"anchor":"#L9tzcCyD","heading":"h2","lmkr":"1"}},{"insert":"响应参数\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1"}},{"insert":"跳转 "},{"insert":"请求参数","attributes":{"hyperlink":"{\"href\":\"#RxN8G2nH\",\"linkId\":\"TUXitZpiK3\",\"target\":\"_self\"}"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"id ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求的唯一标识 。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"model","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求实际使用的模型名称和版本。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"created","attributes":{"bold":"true"}},{"insert":" "},{"insert":"integer","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求创建时间的 Unix 时间戳（秒）。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"object","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"固定为 "},{"insert":"list","attributes":{"inlineCode":"true"}},{"insert":"。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"data","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求的算法输出内容。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"collapse":"container","collapseStatus":"unfold","zoneId":"R7ckdeSF"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"usage","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求的 token 用量。\n"},{"insert":" ","attributes":{"collapse":"container","collapseStatus":"unfold","zoneId":"yvXDGtBM"}},{"insert":"\n"}],"zoneId":"0","zoneType":"Z"},"6rr9ymN0":{"ops":[{"insert":"*","attributes":{"tabContent":"true","title":"快速入口","zoneId":"x07cK6lM"}},{"insert":"*","attributes":{"tabContent":"true","title":"鉴权说明","zoneId":"k5gDlMBL"}},{"insert":"\n"}],"zoneId":"6rr9ymN0","zoneType":"Z"},"R7ckdeSF":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"data."},{"insert":"index","attributes":{"bold":"true"}},{"insert":" "},{"insert":"integer","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"向量的序号，与请求参数 "},{"insert":"input","attributes":{"inlineCode":"true"}},{"insert":" 列表中的内容顺序对应。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"data."},{"insert":"embedding","attributes":{"bold":"true"}},{"insert":" "},{"insert":"float[]","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"对应内容的向量化结果。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"data."},{"insert":"object","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"固定为 "},{"insert":"embedding","attributes":{"inlineCode":"true"}},{"insert":"。\n"}],"zoneId":"R7ckdeSF","zoneType":"Z"},"k5gDlMBL":{"ops":[{"insert":"本接口支持 API Key 鉴权，详见"},{"insert":"鉴权认证方式","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1298459\",\"linkId\":\"lb8ut5WA2O\",\"target\":\"_blank\"}"}},{"insert":"。\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"如需使用 Access Key 来鉴权，推荐使用 SDK 的方式，具体请参见 "},{"insert":"SDK概述","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1302007\",\"linkId\":\"sNVXyF8Fpv\",\"target\":\"_blank\"}"}},{"insert":"。\n"}],"zoneId":"k5gDlMBL","zoneType":"Z"},"panel-JJC3ypk4":{"ops":[{"insert":" ","attributes":{"apiSample":"multiple","apiSampleData":"{\"type\":\"multiple\",\"config\":{\"inputName\":\"request\",\"outputName\":\"response\"},\"data\":[{\"title\":\"默认\",\"key\":\"0\",\"children\":[{\"title\":\"curl\",\"key\":\"Gg2h2Mwtw4\",\"inputCode\":\" curl https://ark.cn-beijing.volces.com/api/v3/embeddings \\\\\\n  -H \\\"Content-Type: application/json\\\" \\\\\\n  -H \\\"Authorization: Bearer $ARK_API_KEY\\\" \\\\\\n  -d $'{\\n    \\\"encoding_format\\\": \\\"float\\\",\\n    \\\"input\\\": [\\n        \\\" 天很蓝\\\",\\n        \\\"海很深\\\"\\n    ],\\n    \\\"model\\\": \\\"doubao-embedding-text-240715\\\"\\n}'\",\"outputCode\":\"{\\n  \\\"created\\\": 1743500074,\\n  \\\"id\\\": \\\"021743500074720a0965b1ddc5dd75a6dc7a92b58e4552e39fb68\\\",\\n  \\\"data\\\": [\\n    {\\n      \\\"embedding\\\": [-1.9609375, -0.197265625, -1.359375, ... , 1.984375],\\n      \\\"index\\\": 0,\\n      \\\"object\\\": \\\"embedding\\\"\\n    },\\n    {\\n      \\\"embedding\\\": [-2.3125, -0.70703125, -0.82421875, ... , 0.259765625],\\n      \\\"index\\\": 1,\\n      \\\"object\\\": \\\"embedding\\\"\\n    }\\n  ],\\n  \\\"model\\\": \\\"doubao-embedding-text-240715\\\",\\n  \\\"object\\\": \\\"list\\\",\\n  \\\"usage\\\": {\\n    \\\"prompt_tokens\\\": 8,\\n    \\\"total_tokens\\\": 8\\n  }\\n}\\n\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"python\",\"key\":\"J7wa0YMKQX\",\"inputCode\":\"import os\\n\\nfrom volcenginesdkarkruntime import Ark\\n\\n\\nclient = Ark(api_key=os.environ.get(\\\"ARK_API_KEY\\\"))\\n\\nresp = client.embeddings.create(\\n    model=\\\"doubao-embedding-text-240715\\\",\\n    input=[\\n        \\\" 天很蓝\\\",\\n        \\\"海很深\\\",\\n    ],\\n    encoding_format=\\\"float\\\",\\n)\\nprint(resp)\",\"outputCode\":\"{\\n  \\\"created\\\": 1743500074,\\n  \\\"id\\\": \\\"021743500074720a0965b1ddc5dd75a6dc7a92b58e4552e39fb68\\\",\\n  \\\"data\\\": [\\n    {\\n      \\\"embedding\\\": [-1.9609375, -0.197265625, -1.359375, ... , 1.984375],\\n      \\\"index\\\": 0,\\n      \\\"object\\\": \\\"embedding\\\"\\n    },\\n    {\\n      \\\"embedding\\\": [-2.3125, -0.70703125, -0.82421875, ... , 0.259765625],\\n      \\\"index\\\": 1,\\n      \\\"object\\\": \\\"embedding\\\"\\n    }\\n  ],\\n  \\\"model\\\": \\\"doubao-embedding-text-240715\\\",\\n  \\\"object\\\": \\\"list\\\",\\n  \\\"usage\\\": {\\n    \\\"prompt_tokens\\\": 8,\\n    \\\"total_tokens\\\": 8\\n  }\\n}\\n\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"go\",\"key\":\"zAwjz6xsku\",\"inputCode\":\"package main\\n\\nimport (\\n\\t\\\"context\\\"\\n\\t\\\"fmt\\\"\\n\\t\\\"os\\\"\\n\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model\\\"\\n)\\n\\n\\nfunc main() {\\n\\tclient := arkruntime.NewClientWithApiKey(os.Getenv(\\\"ARK_API_KEY\\\"))\\n\\tctx := context.Background()\\n\\treq := model.EmbeddingRequestStrings{\\n\\t\\tInput: []string{\\n\\t\\t\\t\\\" 天很蓝\\\",\\n\\t\\t\\t\\\"海很深\\\",\\n\\t\\t},\\n\\t\\tModel:          \\\"doubao-embedding-text-240715\\\",\\n\\t\\tEncodingFormat: \\\"float\\\",\\n\\t}\\n\\tresp, err := client.CreateEmbeddings(ctx, req)\\n\\tif err != nil {\\n\\t\\tfmt.Printf(\\\"embeddings error: %v\\\\n\\\", err)\\n\\t\\treturn\\n\\t}\\n\\tfmt.Printf(\\\"%+v\\\", resp)\\n}\",\"outputCode\":\"{\\n  \\\"created\\\": 1743500074,\\n  \\\"id\\\": \\\"021743500074720a0965b1ddc5dd75a6dc7a92b58e4552e39fb68\\\",\\n  \\\"data\\\": [\\n    {\\n      \\\"embedding\\\": [-1.9609375, -0.197265625, -1.359375, ... , 1.984375],\\n      \\\"index\\\": 0,\\n      \\\"object\\\": \\\"embedding\\\"\\n    },\\n    {\\n      \\\"embedding\\\": [-2.3125, -0.70703125, -0.82421875, ... , 0.259765625],\\n      \\\"index\\\": 1,\\n      \\\"object\\\": \\\"embedding\\\"\\n    }\\n  ],\\n  \\\"model\\\": \\\"doubao-embedding-text-240715\\\",\\n  \\\"object\\\": \\\"list\\\",\\n  \\\"usage\\\": {\\n    \\\"prompt_tokens\\\": 8,\\n    \\\"total_tokens\\\": 8\\n  }\\n}\\n\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"java\",\"key\":\"RFbS1sbFlf\",\"inputCode\":\"package com.example;\\n\\nimport com.fasterxml.jackson.core.JsonProcessingException;\\nimport com.volcengine.ark.runtime.model.embeddings.EmbeddingRequest;\\nimport com.volcengine.ark.runtime.service.ArkService;\\nimport java.util.Arrays;\\nimport java.util.concurrent.TimeUnit;\\nimport okhttp3.ConnectionPool;\\nimport okhttp3.Dispatcher;\\n\\n/*\\n# pom.xml\\n\u003cdependency\u003e\\n  \u003cgroupId\u003ecom.volcengine\u003c/groupId\u003e\\n  \u003cartifactId\u003evolcengine-java-sdk-ark-runtime\u003c/artifactId\u003e\\n  // 替换正式版本号\\n  \u003cversion\u003eLATEST\u003c/version\u003e\\n\u003c/dependency\u003e\\n*/\\n\\npublic class Sample {\\n\\n    static String apiKey = System.getenv(\\\"ARK_API_KEY\\\");\\n\\n    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);\\n    static Dispatcher dispatcher = new Dispatcher();\\n    static ArkService service =\\n            ArkService.builder()\\n                    .dispatcher(dispatcher)\\n                    .connectionPool(connectionPool)\\n                    .apiKey(apiKey)\\n                    .build();\\n\\n    public static void main(String[] args) throws JsonProcessingException {\\n\\n        EmbeddingRequest req =\\n                EmbeddingRequest.builder()\\n                        .model(\\\"doubao-embedding-text-240715\\\")\\n                        .input(Arrays.asList(\\\" 天很蓝\\\", \\\"海很深\\\"))\\n                        .build();\\n\\n        service.createEmbeddings(req).toString();\\n        System.out.println(service.createEmbeddings(req));\\n\\n        // shutdown service after all requests is finished\\n        service.shutdownExecutor();\\n    }\\n}\\n\",\"outputCode\":\"{\\n  \\\"created\\\": 1743500074,\\n  \\\"id\\\": \\\"021743500074720a0965b1ddc5dd75a6dc7a92b58e4552e39fb68\\\",\\n  \\\"data\\\": [\\n    {\\n      \\\"embedding\\\": [-1.9609375, -0.197265625, -1.359375, ... , 1.984375],\\n      \\\"index\\\": 0,\\n      \\\"object\\\": \\\"embedding\\\"\\n    },\\n    {\\n      \\\"embedding\\\": [-2.3125, -0.70703125, -0.82421875, ... , 0.259765625],\\n      \\\"index\\\": 1,\\n      \\\"object\\\": \\\"embedding\\\"\\n    }\\n  ],\\n  \\\"model\\\": \\\"doubao-embedding-text-240715\\\",\\n  \\\"object\\\": \\\"list\\\",\\n  \\\"usage\\\": {\\n    \\\"prompt_tokens\\\": 8,\\n    \\\"total_tokens\\\": 8\\n  }\\n}\\n\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"}]}]}"}}],"zoneId":"panel-JJC3ypk4","zoneType":"Z"},"x07cK6lM":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_2abecd05ca2779567c6d32f0ddc7874d.png","uuid":"qkSva6Fc","width":"20"}},{"insert":"模型列表","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1330310\",\"linkId\":\"oyDABqn9sG\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_a5fdd3028d35cc512a10bd71b982b6eb.png","uuid":"L8JDwCNF","width":"20"}},{"insert":"模型计费","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1099320#%E6%96%87%E6%9C%AC%E5%90%91%E9%87%8F%E6%A8%A1%E5%9E%8B\",\"linkId\":\"iz9GaRAwww\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_afbcf38bdec05c05089d5de5c3fd8fc8.png","uuid":"pQZTBL5a","width":"20"}},{"insert":"API Key","attributes":{"hyperlink":"{\"href\":\"https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D\",\"linkId\":\"DXmR4CqIRJ\",\"target\":\"_blank\"}"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_f45b5cd5863d1eed3bc3c81b9af54407.png","uuid":"RIUtbESs","width":"20"}},{"insert":"接口文档","attributes":{"hyperlink":"{\"href\":\"#\",\"linkId\":\"h8kh6aw0wS\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_1609c71a747f84df24be1e6421ce58f0.png","uuid":"EVKvb6qr","width":"20"}},{"insert":"常见问题","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1359411\",\"linkId\":\"rN2zDAvsrm\",\"target\":\"_blank\"}"}},{"insert":"      "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_bef4bc3de3535ee19d0c5d6c37b0ffdd.png","uuid":"PEBrYNVg","width":"20"}},{"insert":"开通模型","attributes":{"hyperlink":"{\"href\":\"https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D\u0026OpenTokenDrawer=false\",\"linkId\":\"FpIqIJ4NbM\",\"target\":\"_blank\"}"}},{"insert":"\n"}],"zoneId":"x07cK6lM","zoneType":"Z"},"yvXDGtBM":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"usage."},{"insert":"prompt_tokens","attributes":{"bold":"true"}},{"insert":" "},{"insert":"integer","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"输入内容 token 数量。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"usage."},{"insert":"total_tokens","attributes":{"bold":"true"}},{"insert":" "},{"insert":"integer","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求消耗的总 token 数量（输入 + 输出）。\n"}],"zoneId":"yvXDGtBM","zoneType":"Z"}}}
+
+`POST https://ark.cn-beijing.volces.com/api/v3/embeddings`[运行](https://api.volcengine.com/api-explorer/?action=Embeddings&data=%7B%7D&groupName=%E5%90%91%E9%87%8F%E5%8C%96%20API&query=%7B%7D&serviceCode=ark&version=2024-01-01)
+当您需通过语义来处理文本，如语义检索、分析词性等，可以调用向量化服务，将文本转化为向量，来分析文本的语义关系。本文为您提供服务接口的参数详细说明供您查阅。
+如果您需要调整向量维度，请参考 [向量降维](https://www.volcengine.com/docs/82379/1583857#%E5%90%91%E9%87%8F%E9%99%8D%E7%BB%B4)。
+请求参数
+跳转 [响应参数](#L9tzcCyD)
+请求体
+**model**`string``必选`
+您需要调用的模型的 ID （Model ID），[开通模型服务](https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D&OpenTokenDrawer=false)，并[查询 Model ID](https://www.volcengine.com/docs/82379/1330310) 。
+您也可通过 Endpoint ID 来调用模型，获得限流、计费类型（前付费/后付费）、运行状态查询、监控、安全等高级能力，可参考[获取 Endpoint ID](https://www.volcengine.com/docs/82379/1099522#%E8%8E%B7%E5%8F%96-endpoint-id)。
+**input**`string / string[]``必选`
+需要向量化的内容列表，支持中文、英文。输入内容需满足下面条件：
+不得超过模型的最大输入 token 数。doubao-embdding 模型，每个列表元素（并非单次请求总数）最大输入token 数为 4096。
+不能为空列表，列表的每个成员不能为空字符串。
+单条文本以 utf-8 编码，长度不超过 100,000 字节。
+为获得更好性能，建议文本数量总token不超过4096，或者文本条数不超过4。
+**encoding_format**`string / null ``默认值 float`
+取值范围： `float`、`base64`、`null`。
+embedding 返回的格式。
+响应参数
+跳转 [请求参数](#RxN8G2nH)
+**id **`string`
+本次请求的唯一标识 。
+**model**`string`
+本次请求实际使用的模型名称和版本。
+**created**`integer`
+本次请求创建时间的 Unix 时间戳（秒）。
+**object**`string`
+固定为 `list`。
+**data**`object`
+本次请求的算法输出内容。
+**usage**`object`
+本次请求的 token 用量。
+
+## 示例代码
+
+**curl**
+
+```bash
+ curl https://ark.cn-beijing.volces.com/api/v3/embeddings \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $ARK_API_KEY" \
+  -d $'{
+    "encoding_format": "float",
+    "input": [
+        " 天很蓝",
+        "海很深"
+    ],
+    "model": "doubao-embedding-text-240715"
+}'
+```
+
+**Response:**
+
+```json
+{
+  "created": 1743500074,
+  "id": "021743500074720a0965b1ddc5dd75a6dc7a92b58e4552e39fb68",
+  "data": [
+    {
+      "embedding": [-1.9609375, -0.197265625, -1.359375, ... , 1.984375],
+      "index": 0,
+      "object": "embedding"
+    },
+    {
+      "embedding": [-2.3125, -0.70703125, -0.82421875, ... , 0.259765625],
+      "index": 1,
+      "object": "embedding"
+    }
+  ],
+  "model": "doubao-embedding-text-240715",
+  "object": "list",
+  "usage": {
+    "prompt_tokens": 8,
+    "total_tokens": 8
+  }
+}
+
+```
+
+**python**
+
+```python
+import os
+
+from volcenginesdkarkruntime import Ark
+
+client = Ark(api_key=os.environ.get("ARK_API_KEY"))
+
+resp = client.embeddings.create(
+    model="doubao-embedding-text-240715",
+    input=[
+        " 天很蓝",
+        "海很深",
+    ],
+    encoding_format="float",
+)
+print(resp)
+```
+
+**Response:**
+
+```json
+{
+  "created": 1743500074,
+  "id": "021743500074720a0965b1ddc5dd75a6dc7a92b58e4552e39fb68",
+  "data": [
+    {
+      "embedding": [-1.9609375, -0.197265625, -1.359375, ... , 1.984375],
+      "index": 0,
+      "object": "embedding"
+    },
+    {
+      "embedding": [-2.3125, -0.70703125, -0.82421875, ... , 0.259765625],
+      "index": 1,
+      "object": "embedding"
+    }
+  ],
+  "model": "doubao-embedding-text-240715",
+  "object": "list",
+  "usage": {
+    "prompt_tokens": 8,
+    "total_tokens": 8
+  }
+}
+
+```
+
+**go**
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime"
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model"
+)
+
+func main() {
+	client := arkruntime.NewClientWithApiKey(os.Getenv("ARK_API_KEY"))
+	ctx := context.Background()
+	req := model.EmbeddingRequestStrings{
+		Input: []string{
+			" 天很蓝",
+			"海很深",
+		},
+		Model:          "doubao-embedding-text-240715",
+		EncodingFormat: "float",
+	}
+	resp, err := client.CreateEmbeddings(ctx, req)
+	if err != nil {
+		fmt.Printf("embeddings error: %v\n", err)
+		return
+	}
+	fmt.Printf("%+v", resp)
+}
+```
+
+**Response:**
+
+```json
+{
+  "created": 1743500074,
+  "id": "021743500074720a0965b1ddc5dd75a6dc7a92b58e4552e39fb68",
+  "data": [
+    {
+      "embedding": [-1.9609375, -0.197265625, -1.359375, ... , 1.984375],
+      "index": 0,
+      "object": "embedding"
+    },
+    {
+      "embedding": [-2.3125, -0.70703125, -0.82421875, ... , 0.259765625],
+      "index": 1,
+      "object": "embedding"
+    }
+  ],
+  "model": "doubao-embedding-text-240715",
+  "object": "list",
+  "usage": {
+    "prompt_tokens": 8,
+    "total_tokens": 8
+  }
+}
+
+```
+
+**java**
+
+```java
+package com.example;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.volcengine.ark.runtime.model.embeddings.EmbeddingRequest;
+import com.volcengine.ark.runtime.service.ArkService;
+import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
+import okhttp3.ConnectionPool;
+import okhttp3.Dispatcher;
+
+/*
+# pom.xml
+<dependency>
+  <groupId>com.volcengine</groupId>
+  <artifactId>volcengine-java-sdk-ark-runtime</artifactId>
+  // 替换正式版本号
+  <version>LATEST</version>
+</dependency>
+*/
+
+public class Sample {
+
+    static String apiKey = System.getenv("ARK_API_KEY");
+
+    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);
+    static Dispatcher dispatcher = new Dispatcher();
+    static ArkService service =
+            ArkService.builder()
+                    .dispatcher(dispatcher)
+                    .connectionPool(connectionPool)
+                    .apiKey(apiKey)
+                    .build();
+
+    public static void main(String[] args) throws JsonProcessingException {
+
+        EmbeddingRequest req =
+                EmbeddingRequest.builder()
+                        .model("doubao-embedding-text-240715")
+                        .input(Arrays.asList(" 天很蓝", "海很深"))
+                        .build();
+
+        service.createEmbeddings(req).toString();
+        System.out.println(service.createEmbeddings(req));
+
+        // shutdown service after all requests is finished
+        service.shutdownExecutor();
+    }
+}
+
+```
+
+**Response:**
+
+```json
+{
+  "created": 1743500074,
+  "id": "021743500074720a0965b1ddc5dd75a6dc7a92b58e4552e39fb68",
+  "data": [
+    {
+      "embedding": [-1.9609375, -0.197265625, -1.359375, ... , 1.984375],
+      "index": 0,
+      "object": "embedding"
+    },
+    {
+      "embedding": [-2.3125, -0.70703125, -0.82421875, ... , 0.259765625],
+      "index": 1,
+      "object": "embedding"
+    }
+  ],
+  "model": "doubao-embedding-text-240715",
+  "object": "list",
+  "usage": {
+    "prompt_tokens": 8,
+    "total_tokens": 8
+  }
+}
+
+```
+
+**
+属性
+data.**index**`integer`
+向量的序号，与请求参数 `input` 列表中的内容顺序对应。
+data.**embedding**`float[]`
+对应内容的向量化结果。
+data.**object**`string`
+固定为 `embedding`。
+本接口支持 API Key 鉴权，详见[鉴权认证方式](https://www.volcengine.com/docs/82379/1298459)。
+如需使用 Access Key 来鉴权，推荐使用 SDK 的方式，具体请参见 [SDK概述](https://www.volcengine.com/docs/82379/1302007)。
+[模型列表](https://www.volcengine.com/docs/82379/1330310)[模型计费](https://www.volcengine.com/docs/82379/1099320#%E6%96%87%E6%9C%AC%E5%90%91%E9%87%8F%E6%A8%A1%E5%9E%8B)[API Key](https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D)
+[接口文档](#)[常见问题](https://www.volcengine.com/docs/82379/1359411)[开通模型](https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D&OpenTokenDrawer=false)
+usage.**prompt_tokens**`integer`
+输入内容 token 数量。
+usage.**total_tokens**`integer`
+本次请求消耗的总 token 数量（输入 + 输出）。

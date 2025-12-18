@@ -1,2 +1,583 @@
 # 创建上下文缓存 API
-{"version":"1.2.0","data":{"0":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" "},{"insert":" POST https://ark.cn-beijing.volces.com/api/v3/context/create","attributes":{"backgroundcolor":"rgb(43, 43, 43)","inlineCode":"true"}},{"insert":"   ","attributes":{"backgroundcolor":"rgb(43, 43, 43)"}},{"insert":"运行","attributes":{"bold":"true","hyperlink":"{\"href\":\"https://api.volcengine.com/api-explorer/?action=ContextCreate\u0026data=%7B%7D\u0026groupName=%E4%B8%8A%E4%B8%8B%E6%96%87%E7%BC%93%E5%AD%98\u0026query=%7B%7D\u0026serviceCode=ark\u0026version=2024-01-01\",\"linkId\":\"hQSeb7bjP2\",\"target\":\"_blank\"}","inlineCode":"true"}},{"insert":"\n"},{"insert":"上下文缓存（Context API）是方舟提供的一个高效的缓存机制。它通过缓存上下文数据，减少重复加载或处理，提高响应速度和一致性。本文介绍上下文缓存 API 的输入输出参数，供您使用接口时查阅字段含义。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"tabs":"true","tabsZoneId":"z36YGGi9","zoneType":"Z"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"anchor":"#RxN8G2nH","heading":"h2","lmkr":"1"}},{"insert":"请求参数 \n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1"}},{"insert":"跳转 "},{"insert":"响应参数","attributes":{"hyperlink":"{\"href\":\"#Qu59cel0\",\"linkId\":\"AVSxDSvtZz\",\"target\":\"_self\"}"}},{"insert":"\n"},{"insert":"*","attributes":{"anchor":"#pjuiBZGA","heading":"h3","lmkr":"1"}},{"insert":"请求体\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"model","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"通过 Endpoint ID 来调用模型，获得限流、计费类型（前付费/后付费）、运行状态查询、监控、安全等高级能力，可参考","attributes":{"backgroundcolor":"rgb(243, 245, 247)"}},{"insert":"获取 Endpoint ID","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1099522\",\"linkId\":\"fB71EksSmr\",\"target\":\"_blank\"}"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(243, 245, 247)"}},{"insert":"\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1","wrapperIndent":"0"}},{"insert":"暂不支持通过 Model ID 来调用。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"messages","attributes":{"backgroundcolor":"rgb(32, 33, 35)","bold":"true"}},{"insert":"  ","attributes":{"backgroundcolor":"rgb(32, 33, 35)"}},{"insert":"object[]","attributes":{"backgroundcolor":"rgba(238, 242, 245, 0.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(32, 33, 35)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(32, 33, 35)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"对话组成的消息列表。您希望缓存的信息。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"注意：初始化的信息如系统人设，背景信息等，请使用系统消息（System message）放在消息列表最前。这部分信息在2种缓存模式下，均会一直存储在缓存中，直到缓存到期（触达最大生命周期）释放。\n"},{"insert":" ","attributes":{"collapse":"container","collapseStatus":"unfold","zoneId":"Mmr7awIL"}},{"insert":"\n"},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"mode","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 session","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求创建的上下文缓存的类型。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"点此","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1398933\",\"linkId\":\"wNCzjvvBrL\",\"target\":\"_blank\"}"}},{"insert":"了解类型介绍。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"点此","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1330310#e6772192\",\"linkId\":\"WUfnlO3O1w\",\"target\":\"_blank\"}"}},{"insert":"了解支持的模型 "},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"session","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":" ：Session 缓存。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"common_prefix","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":" ：前缀缓存。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"ttl","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"integer / null","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"默认值 86400","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"过期时长，单位为秒，设置范围：[3600, 604800]，即1小时到7天。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"信息在创建后即开始计时，每次使用则重置为0。计时超过ttl，信息会被从缓存中删除。每次调用chat均根据ttl更新过期时间。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"truncation_strategy","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"object / null","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"默认值 null","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"缓存的上下文长度的窗口长度策略配置，只在当 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"mode ","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","bold":"true"}},{"insert":"字段设置为","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"session","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"，该字段可设置。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"支持 Session 缓存的模型能且只能支持 1 种 Session 缓存模式。如不配置该字段，方舟会根据您调用的模型自动适配合适的 Session 缓存模式。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":" ","attributes":{"collapse":"container","collapseStatus":"unfold","zoneId":"1lsAXkGU"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"\n"},{"insert":"*","attributes":{"anchor":"#Qu59cel0","heading":"h2","lmkr":"1"}},{"insert":"响应参数\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1"}},{"insert":"跳转 "},{"insert":"请求参数","attributes":{"hyperlink":"{\"href\":\"#RxN8G2nH\",\"linkId\":\"BK6dTS6bOi\",\"target\":\"_self\"}"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"id","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求创建的上下文缓存的ID，在后续创建带缓存的","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"上下文缓存对话 API","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1346560\",\"linkId\":\"ehDPZV1eC6\",\"target\":\"_blank\"}"}},{"insert":"需要使用。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"model","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求使用的推理接入点的 ID 。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"mode","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求创建的上下文缓存的类型。"},{"insert":"点此","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1330310#e6772192\",\"linkId\":\"vECgfZVFwm\",\"target\":\"_blank\"}"}},{"insert":"了解支持的模型 "},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"session","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":" ：Session 缓存。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"common_prefix","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":" ：前缀缓存。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"ttl","attributes":{"bold":"true"}},{"insert":" "},{"insert":"integer","attributes":{"inlineCode":"true"}},{"insert":" \n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求创建的上下文缓存"},{"insert":"过期时长，单位为秒。信息在创建后即开始计时，每次使用则重置为0。计时超过ttl，信息会被从缓存中删除。每次调用chat均根据ttl更新过期时间。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"过期时间可以设置的范围在1小时到7天，即[3600, 604800]。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"truncation_strategy ","attributes":{"bold":"true"}},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求创建的 Session 缓存使用的截断策略信息。\n"},{"insert":" ","attributes":{"collapse":"container","collapseStatus":"unfold","zoneId":"oJSXk87c"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"usage","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求的 token 用量。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":" ","attributes":{"collapse":"container","collapseStatus":"unfold","zoneId":"1EZhvL3E"}},{"insert":"\n"},{"insert":"\n"}],"zoneId":"0","zoneType":"Z"},"1EZhvL3E":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"usage."},{"insert":"prompt_tokens ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"输入的 prompt token 数量。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"usage."},{"insert":"completion_tokens ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"模型生成的 token 数量。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"usage."},{"insert":"total_tokens ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求消耗的总 token 数量（输入 + 输出）。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"usage."},{"insert":"prompt_tokens_details ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"命中上下文缓存的 token 细节。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":" ","attributes":{"collapse":"section","collapseStatus":"unfold","zoneId":"x3CU0Cc6"}},{"insert":"\n"}],"zoneId":"1EZhvL3E","zoneType":"Z"},"1lsAXkGU":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"last_history_tokens 模式 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"触发缓存上限不会重新计算。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"collapse":"section","collapseStatus":"unfold","zoneId":"FvrjZDuX"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"rolling_tokens 模式 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"object","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"触发缓存上限会进行重新计算。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"collapse":"section","collapseStatus":"unfold","zoneId":"NyiyqWGb"}},{"insert":"\n"}],"zoneId":"1lsAXkGU","zoneType":"Z"},"900g1Dlh":{"ops":[{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"messages."},{"insert":"role","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"发送消息的角色，此处应为"},{"insert":"system","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"messages."},{"insert":"content","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"系统信息内容。\n"}],"zoneId":"900g1Dlh","zoneType":"Z"},"FvrjZDuX":{"ops":[{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"truncation_strategy.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"type ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"此处应为 "},{"insert":"last_history_tokens","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"truncation_strategy.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"last_history_tokens ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"默认值 4096","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"取值范围："},{"insert":" (0,32768)","attributes":{"inlineCode":"true"}},{"insert":"。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"缓存上下文窗口大小，即可缓存的上下文的最大 token 数。触发该上限将根据缓存上下文窗口大小对缓存内容进行清除。清除顺序按照信息被缓存时间长短排序，先清除缓存时间长的信息 。\n"}],"zoneId":"FvrjZDuX","zoneType":"Z"},"Mmr7awIL":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"系统消息","attributes":{"bold":"true"}},{"insert":"  "},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"系统消息，"},{"insert":"开发人员提供的指令，模型应遵循这些指令。如模型扮演的角色或者目标等。","attributes":{"backgroundcolor":"rgb(32, 33, 35)"}},{"insert":"\n"},{"insert":" ","attributes":{"collapse":"section","collapseStatus":"unfold","zoneId":"900g1Dlh"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"用户消息","attributes":{"bold":"true"}},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"用户发送的消息，包含提示或附加上下文信息。","attributes":{"backgroundcolor":"rgb(32, 33, 35)"}},{"insert":"\n"},{"insert":" ","attributes":{"collapse":"section","collapseStatus":"unfold","zoneId":"NTSOsZqH"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"模型消息","attributes":{"bold":"true"}},{"insert":"  "},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"模型响应用户消息而回复的消息。","attributes":{"backgroundcolor":"rgb(32, 33, 35)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","tips":"{\"type\":\"default\",\"isTitle\":true}"}},{"insert":"说明\n"},{"insert":"*","attributes":{"align":"left","lmkr":"1","tips":"{\"type\":\"default\"}"}},{"insert":"messages."},{"insert":"content","attributes":{"bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","bold":"true"}},{"insert":"与 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"messages."},{"insert":"tool_calls","attributes":{"bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","bold":"true"}},{"insert":"字段二者至少填写其一。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"messages."},{"insert":"role","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"发送消息的角色，此处应为"},{"insert":"assistant","attributes":{"inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"messages."},{"insert":"content","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"backgroundcolor":"rgb(32, 33, 35)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(32, 33, 35)"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"模型回复的消息。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"messages."},{"insert":"tool_calls","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object[]","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"模型回复的工具调用信息。\n"},{"insert":" ","attributes":{"collapse":"section","collapseStatus":"unfold","zoneId":"eqUEz9ok"}},{"insert":"\n"}],"zoneId":"Mmr7awIL","zoneType":"Z"},"NTSOsZqH":{"ops":[{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"messages."},{"insert":"role","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"发送消息的角色，此处应为"},{"insert":"user","attributes":{"inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"messages."},{"insert":"content","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"用户信息内容。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"messages."},{"insert":"name","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"backgroundcolor":"rgba(238, 242, 245, 0.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgba(238, 242, 245, 0.5)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"发送此消息的角色的姓名。用于区别同一个角色但是不同主体发送的消息。\n"}],"zoneId":"NTSOsZqH","zoneType":"Z"},"NyiyqWGb":{"ops":[{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"truncation_strategy.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"type ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"此处应为 "},{"insert":"rolling_tokens","attributes":{"inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"truncation_strategy.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"rolling_tokens ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"boolean","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"默认值 true","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"在缓存中历史消息长度接近 "},{"insert":"max_window_tokens ","attributes":{"bold":"true"}},{"insert":"字段值时，是否自动对历史上下文进行裁剪（按照 message 元素粒度裁剪，按照 message 元素取整，即删除的信息的长度在 "},{"insert":"rolling_window_tokens ","attributes":{"bold":"true"}},{"insert":"范围内，不会截断任意信息）。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"false","attributes":{"inlineCode":"true"}},{"insert":"：在历史消息长度超过上下文长度时模型会停止输出（返回字段 "},{"insert":"finish_reason ","attributes":{"bold":"true"}},{"insert":"为"},{"insert":"length","attributes":{"inlineCode":"true"}},{"insert":")。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"true","attributes":{"inlineCode":"true"}},{"insert":"：在历史消息长度接近上下文长度时模型按照先进先出的顺序，自动删除定量（"},{"insert":"rolling_window_tokens","attributes":{"bold":"true"}},{"insert":" 字段值 token 数）的内容，为新对话内容腾挪缓存空间；同时对缓存中的信息进行重新计算和读入，保障内容理解一致性。具体的计算逻辑，请参见 "},{"insert":"rolling_tokens 模式","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1396491#rolling-tokens-%E6%A8%A1%E5%BC%8F\",\"linkId\":\"gANPE2OAfj\",\"target\":\"_blank\"}"}},{"insert":"。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1"}},{"insert":"truncation_strategy.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"max_window_tokens ","attributes":{"bold":"true"}},{"insert":"integer / null","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"默认值 32768","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"在缓存中可存储的历史消息长度最大值。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"取值满足下面条件：0 \u003c "},{"insert":"rolling_tokens ","attributes":{"bold":"true"}},{"insert":"\u003c "},{"insert":"max_window_tokens ","attributes":{"bold":"true"}},{"insert":"\u003c "},{"insert":"context window","attributes":{"bold":"true"}},{"insert":"（模型最大上下文）。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1"}},{"insert":"truncation_strategy.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"rolling_window_tokens ","attributes":{"bold":"true"}},{"insert":"integer / null","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"默认值 4096","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"当缓存触发了"},{"insert":"max_window_tokens ","attributes":{"bold":"true"}},{"insert":"上限，则会裁剪滚动窗口长度。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"取值满足下面条件：0 \u003c "},{"insert":"rolling_tokens ","attributes":{"bold":"true"}},{"insert":"\u003c "},{"insert":"max_window_tokens ","attributes":{"bold":"true"}},{"insert":"\u003c "},{"insert":"context window","attributes":{"bold":"true"}},{"insert":"（模型最大上下文）。\n"}],"zoneId":"NyiyqWGb","zoneType":"Z"},"PaSjn6Q5":{"ops":[{"insert":"属性 \n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"truncation_strategy."},{"insert":"type ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求创建的 Session 缓存的截断策略，此处应为 "},{"insert":"rolling_tokens","attributes":{"inlineCode":"true"}},{"insert":"。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"truncation_strategy."},{"insert":"rolling_tokens ","attributes":{"bold":"true"}},{"insert":"boolean","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求创建的 Session 缓存，当缓存的信息量达到最大缓存窗口时，是否自动处理。\n"}],"zoneId":"PaSjn6Q5","zoneType":"Z"},"agb0lYnB":{"ops":[{"insert":"本接口支持 API Key / Access Key鉴权，详见"},{"insert":"鉴权认证方式","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1298459\",\"linkId\":\"6Mn9gV0zXn\",\"target\":\"_blank\"}"}},{"insert":"。\n"}],"zoneId":"agb0lYnB","zoneType":"Z"},"eqUEz9ok":{"ops":[{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"messages.tool_calls"},{"insert":".function ","attributes":{"bold":"true"}},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"模型调用工具对应的函数信息。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":" ","attributes":{"collapse":"section","collapseStatus":"unfold","zoneId":"zkYvkLa2"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"messages.tool_calls"},{"insert":".id ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"调用的工具的 ID。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"messages.tool_calls"},{"insert":".type ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"工具类型，当前仅支持","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"function","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"\n"}],"zoneId":"eqUEz9ok","zoneType":"Z"},"kgxyAQJT":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_a5fdd3028d35cc512a10bd71b982b6eb.png","uuid":"BAvJ4ST8","width":"20"}},{"insert":"计费说明","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1099320#%E4%B8%8A%E4%B8%8B%E6%96%87%E7%BC%93%E5%AD%98%E8%AE%A1%E8%B4%B9\",\"linkId\":\"jCeFV05qfB\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_afbcf38bdec05c05089d5de5c3fd8fc8.png","uuid":"orYiHtQM","width":"20"}},{"insert":"API Key","attributes":{"hyperlink":"{\"href\":\"https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D\",\"linkId\":\"jfpMtwIJ2h\",\"target\":\"_blank\"}"}},{"insert":"        "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_2abecd05ca2779567c6d32f0ddc7874d.png","uuid":"QXV1qFDl","width":"20"}},{"insert":"支持模型","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1330310#e6772192\",\"linkId\":\"x8ljiAp6yN\",\"target\":\"_blank\"}"}},{"insert":"  \n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_57d0bca8e0d122ab1191b40101b5df75.png","uuid":"G6KSf4rb","width":"20"}},{"insert":"调用教程","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1396491\",\"linkId\":\"mnrwneqnou\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_bef4bc3de3535ee19d0c5d6c37b0ffdd.png","uuid":"Yhb2BeR1","width":"20"}},{"insert":"开通模型","attributes":{"hyperlink":"{\"href\":\"https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D\u0026OpenTokenDrawer=false\",\"linkId\":\"AoeqwA9KA1\",\"target\":\"_blank\"}"}},{"insert":"       \n"}],"zoneId":"kgxyAQJT","zoneType":"Z"},"oJSXk87c":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"last_history_tokens 模式 ","attributes":{"bold":"true"}},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"触发缓存上限，自动滚动缓存内容，无需重新计算。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"collapse":"section","collapseStatus":"unfold","zoneId":"qUaPDcFf"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"rolling_tokens 模式 ","attributes":{"bold":"true"}},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"触发缓存上限，进行重新计算。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"collapse":"section","collapseStatus":"unfold","zoneId":"PaSjn6Q5"}},{"insert":"\n"}],"zoneId":"oJSXk87c","zoneType":"Z"},"panel-AlRySPn4":{"ops":[{"insert":" ","attributes":{"apiSample":"multiple","apiSampleData":"{\"type\":\"multiple\",\"config\":{\"inputName\":\"request\",\"outputName\":\"response\"},\"data\":[{\"title\":\"创建前缀缓存\",\"key\":\"0\",\"children\":[{\"title\":\"curl\",\"key\":\"CF6jzUr2KO\",\"inputCode\":\"curl https://ark.cn-beijing.volces.com/api/v3/context/create \\\\\\n  -H \\\"Content-Type: application/json\\\" \\\\\\n  -H \\\"Authorization: Bearer $ARK_API_KEY\\\" \\\\\\n  -d $'{\\n    \\\"messages\\\": [\\n        {\\n            \\\"content\\\": \\\"你是李雷，你只会说“我是李雷”\\\",\\n            \\\"role\\\": \\\"system\\\"\\n        }\\n    ],\\n    \\\"mode\\\": \\\"common_prefix\\\",\\n    \\\"model\\\": \\\"ep-20250410*****-*****\\\"\\n}'\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"ctx-20250410175333-lkjq2\\\",\\n  \\\"model\\\": \\\"ep-20250410*****-*****\\\",\\n  \\\"ttl\\\": 86400,\\n  \\\"usage\\\": {\\n    \\\"prompt_tokens\\\": 18,\\n    \\\"completion_tokens\\\": 0,\\n    \\\"total_tokens\\\": 18,\\n    \\\"prompt_tokens_details\\\": {\\n      \\\"cached_tokens\\\": 0\\n    }\\n  },\\n  \\\"mode\\\": \\\"common_prefix\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"python\",\"key\":\"AGJi0198Si\",\"inputCode\":\"import os\\nimport datetime\\n\\nfrom volcenginesdkarkruntime import Ark\\n\\nclient = Ark(api_key=os.environ.get(\\\"ARK_API_KEY\\\"))\\n\\nif __name__ == \\\"__main__\\\":\\n    print(\\\"----- create context -----\\\")\\n    response = client.context.create(\\n        model=\\\"ep-202504101*****-*****\\\",\\n        mode=\\\"common_prefix\\\",\\n        messages=[{\\\"content\\\":\\\"你是李雷，你只会说“我是李雷”\\\",\\\"role\\\":\\\"system\\\"}],\\n    )\\n    print(response)\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"ctx-20250410175333-lkjq2\\\",\\n  \\\"model\\\": \\\"ep-20250410*****-*****\\\",\\n  \\\"ttl\\\": 86400,\\n  \\\"usage\\\": {\\n    \\\"prompt_tokens\\\": 18,\\n    \\\"completion_tokens\\\": 0,\\n    \\\"total_tokens\\\": 18,\\n    \\\"prompt_tokens_details\\\": {\\n      \\\"cached_tokens\\\": 0\\n    }\\n  },\\n  \\\"mode\\\": \\\"common_prefix\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"go\",\"key\":\"mNGRPsdYFJ\",\"inputCode\":\"package main\\n\\nimport (\\n\\t\\\"context\\\"\\n\\t\\\"fmt\\\"\\n\\t\\\"os\\\"\\n\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/volcengine\\\"\\n)\\n\\n\\nfunc main() {\\n\\tclient := arkruntime.NewClientWithApiKey(os.Getenv(\\\"ARK_API_KEY\\\"))\\n\\tctx := context.Background()\\n\\tfmt.Println(\\\"----- create context -----\\\")\\n\\treq := model.CreateContextRequest{\\n\\t\\tModel: \\\"ep-202504101*****-*****\\\",\\n\\t\\tMode:  \\\"common_prefix\\\",\\n\\t\\tMessages: []*model.ChatCompletionMessage{\\n\\t\\t\\t\u0026model.ChatCompletionMessage{\\n\\t\\t\\t\\tRole: \\\"system\\\",\\n\\t\\t\\t\\tContent: \u0026model.ChatCompletionMessageContent{\\n\\t\\t\\t\\t\\tStringValue: volcengine.String(\\\"你是李雷，你只会说“我是李雷”\\\"),\\n\\t\\t\\t\\t},\\n\\t\\t\\t},\\n\\t\\t},\\n\\t}\\n\\n\\tresp, err := client.CreateContext(ctx, req)\\n\\tif err != nil {\\n\\t\\tfmt.Printf(\\\"standard chat error: %v\\\\n\\\", err)\\n\\t\\treturn\\n\\t}\\n\\tfmt.Printf(\\\"create context response: %v\\\\n\\\", resp)\\n}\\n\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"ctx-20250410175333-lkjq2\\\",\\n  \\\"model\\\": \\\"ep-20250410*****-*****\\\",\\n  \\\"ttl\\\": 86400,\\n  \\\"usage\\\": {\\n    \\\"prompt_tokens\\\": 18,\\n    \\\"completion_tokens\\\": 0,\\n    \\\"total_tokens\\\": 18,\\n    \\\"prompt_tokens_details\\\": {\\n      \\\"cached_tokens\\\": 0\\n    }\\n  },\\n  \\\"mode\\\": \\\"common_prefix\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"java\",\"key\":\"ian41xNpOA\",\"inputCode\":\"package com.volcengine.sample;\\n\\nimport com.fasterxml.jackson.core.JsonProcessingException;\\nimport com.volcengine.ark.runtime.model.completion.chat.*;\\nimport com.volcengine.ark.runtime.model.completion.chat.ChatCompletionRequest.*;\\nimport com.volcengine.ark.runtime.model.context.*;\\nimport com.volcengine.ark.runtime.model.context.CreateContextRequest;\\nimport com.volcengine.ark.runtime.model.context.chat.*;\\nimport com.volcengine.ark.runtime.service.ArkService;\\nimport java.util.ArrayList;\\nimport java.util.List;\\nimport java.util.concurrent.TimeUnit;\\nimport okhttp3.ConnectionPool;\\nimport okhttp3.Dispatcher;\\n\\n/*\\n# pom.xml\\n\u003cdependency\u003e\\n  \u003cgroupId\u003ecom.volcengine\u003c/groupId\u003e\\n  \u003cartifactId\u003evolcengine-java-sdk-ark-runtime\u003c/artifactId\u003e\\n  // 替换正式版本号\\n  \u003cversion\u003eLATEST\u003c/version\u003e\\n\u003c/dependency\u003e\\n*/\\n\\npublic class Sample {\\n\\n    static String apiKey = System.getenv(\\\"ARK_API_KEY\\\");\\n\\n    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);\\n    static Dispatcher dispatcher = new Dispatcher();\\n    static ArkService service =\\n            ArkService.builder()\\n                    .dispatcher(dispatcher)\\n                    .connectionPool(connectionPool)\\n                    .apiKey(apiKey)\\n                    .build();\\n\\n    public static void main(String[] args) throws JsonProcessingException {\\n\\n        List\u003cChatMessage\u003e messagesForReqList = new ArrayList\u003c\u003e();\\n\\n        ChatMessage elementForMessagesForReqList0 =\\n                ChatMessage.builder()\\n                        .role(ChatMessageRole.SYSTEM)\\n                        .content(\\\"你是李雷，你只会说“我是李雷”\\\")\\n                        .build();\\n        messagesForReqList.add(elementForMessagesForReqList0);\\n\\n        CreateContextRequest req =\\n                CreateContextRequest.builder()\\n                        .model(\\\"ep-202504101*****-*****\\\")\\n                        .mode(\\\"common_prefix\\\")\\n                        .messages(messagesForReqList)\\n                        .build();\\n\\n        service.createContext(req).toString();\\n\\n        // shutdown service after all requests is finished\\n        service.shutdownExecutor();\\n    }\\n}\\n\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"ctx-20250410175333-lkjq2\\\",\\n  \\\"model\\\": \\\"ep-20250410*****-*****\\\",\\n  \\\"ttl\\\": 86400,\\n  \\\"usage\\\": {\\n    \\\"prompt_tokens\\\": 18,\\n    \\\"completion_tokens\\\": 0,\\n    \\\"total_tokens\\\": 18,\\n    \\\"prompt_tokens_details\\\": {\\n      \\\"cached_tokens\\\": 0\\n    }\\n  },\\n  \\\"mode\\\": \\\"common_prefix\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"}]},{\"title\":\"创建 Session 缓存\",\"key\":\"ygU5pa4K\",\"children\":[{\"title\":\"curl\",\"key\":\"Npw6Tapqh8\",\"inputCode\":\"curl https://ark.cn-beijing.volces.com/api/v3/context/create \\\\\\n  -H \\\"Content-Type: application/json\\\" \\\\\\n  -H \\\"Authorization: Bearer $ARK_API_KEY\\\" \\\\\\n  -d $'{\\n    \\\"messages\\\": [\\n        {\\n            \\\"content\\\": \\\"你是李雷，你只会说“我是李雷”\\\",\\n            \\\"role\\\": \\\"system\\\"\\n        }\\n    ],\\n    \\\"mode\\\": \\\"session\\\",\\n    \\\"model\\\": \\\"ep-202504101*****-*****\\\"\\n}'\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"ctx-20250410175644-824s6\\\",\\n  \\\"model\\\": \\\"ep-202504101*****-*****”,\\n  \\\"ttl\\\": 86400,\\n  \\\"truncation_strategy\\\": {\\n    \\\"type\\\": \\\"rolling_tokens\\\",\\n    \\\"rolling_tokens\\\": true\\n  },\\n  \\\"usage\\\": {\\n    \\\"prompt_tokens\\\": 18,\\n    \\\"completion_tokens\\\": 0,\\n    \\\"total_tokens\\\": 18,\\n    \\\"prompt_tokens_details\\\": {\\n      \\\"cached_tokens\\\": 0\\n    }\\n  },\\n  \\\"mode\\\": \\\"session\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"python\",\"key\":\"pUaywKIpGh\",\"inputCode\":\"import os\\nimport datetime\\n\\nfrom volcenginesdkarkruntime import Ark\\n\\nclient = Ark(api_key=os.environ.get(\\\"ARK_API_KEY\\\"))\\n\\nif __name__ == \\\"__main__\\\":\\n    print(\\\"----- create context -----\\\")\\n    response = client.context.create(\\n        model=\\\"ep-202504101*****-*****\\\",\\n        mode=\\\"session\\\",\\n        messages=[{\\\"content\\\":\\\"你是李雷，你只会说“我是李雷”\\\",\\\"role\\\":\\\"system\\\"}],\\n    )\\n    print(response)\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"ctx-20250410175644-824s6\\\",\\n  \\\"model\\\": \\\"ep-202504101*****-*****”,\\n  \\\"ttl\\\": 86400,\\n  \\\"truncation_strategy\\\": {\\n    \\\"type\\\": \\\"rolling_tokens\\\",\\n    \\\"rolling_tokens\\\": true\\n  },\\n  \\\"usage\\\": {\\n    \\\"prompt_tokens\\\": 18,\\n    \\\"completion_tokens\\\": 0,\\n    \\\"total_tokens\\\": 18,\\n    \\\"prompt_tokens_details\\\": {\\n      \\\"cached_tokens\\\": 0\\n    }\\n  },\\n  \\\"mode\\\": \\\"session\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"go\",\"key\":\"wYcvGpCDfW\",\"inputCode\":\"package main\\n\\nimport (\\n\\t\\\"context\\\"\\n\\t\\\"fmt\\\"\\n\\t\\\"os\\\"\\n\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model\\\"\\n\\t\\\"github.com/volcengine/volcengine-go-sdk/volcengine\\\"\\n)\\n\\n\\nfunc main() {\\n\\tclient := arkruntime.NewClientWithApiKey(os.Getenv(\\\"ARK_API_KEY\\\"))\\n\\tctx := context.Background()\\n\\tfmt.Println(\\\"----- create context -----\\\")\\n\\treq := model.CreateContextRequest{\\n\\t\\tModel: \\\"ep-202504101*****-*****\\\",\\n\\t\\tMode:  \\\"session\\\",\\n\\t\\tMessages: []*model.ChatCompletionMessage{\\n\\t\\t\\t\u0026model.ChatCompletionMessage{\\n\\t\\t\\t\\tRole: \\\"system\\\",\\n\\t\\t\\t\\tContent: \u0026model.ChatCompletionMessageContent{\\n\\t\\t\\t\\t\\tStringValue: volcengine.String(\\\"你是李雷，你只会说“我是李雷”\\\"),\\n\\t\\t\\t\\t},\\n\\t\\t\\t},\\n\\t\\t},\\n\\t}\\n\\n\\tresp, err := client.CreateContext(ctx, req)\\n\\tif err != nil {\\n\\t\\tfmt.Printf(\\\"standard chat error: %v\\\\n\\\", err)\\n\\t\\treturn\\n\\t}\\n\\tfmt.Printf(\\\"create context response: %v\\\\n\\\", resp)\\n}\\n\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"ctx-20250410175644-824s6\\\",\\n  \\\"model\\\": \\\"ep-202504101*****-*****”,\\n  \\\"ttl\\\": 86400,\\n  \\\"truncation_strategy\\\": {\\n    \\\"type\\\": \\\"rolling_tokens\\\",\\n    \\\"rolling_tokens\\\": true\\n  },\\n  \\\"usage\\\": {\\n    \\\"prompt_tokens\\\": 18,\\n    \\\"completion_tokens\\\": 0,\\n    \\\"total_tokens\\\": 18,\\n    \\\"prompt_tokens_details\\\": {\\n      \\\"cached_tokens\\\": 0\\n    }\\n  },\\n  \\\"mode\\\": \\\"session\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"java\",\"key\":\"nq84U3O7s0\",\"inputCode\":\"package com.volcengine.sample;\\n\\nimport com.fasterxml.jackson.core.JsonProcessingException;\\nimport com.volcengine.ark.runtime.model.completion.chat.*;\\nimport com.volcengine.ark.runtime.model.completion.chat.ChatCompletionRequest.*;\\nimport com.volcengine.ark.runtime.model.context.*;\\nimport com.volcengine.ark.runtime.model.context.CreateContextRequest;\\nimport com.volcengine.ark.runtime.model.context.chat.*;\\nimport com.volcengine.ark.runtime.service.ArkService;\\nimport java.util.ArrayList;\\nimport java.util.List;\\nimport java.util.concurrent.TimeUnit;\\nimport okhttp3.ConnectionPool;\\nimport okhttp3.Dispatcher;\\n\\n/*\\n# pom.xml\\n\u003cdependency\u003e\\n  \u003cgroupId\u003ecom.volcengine\u003c/groupId\u003e\\n  \u003cartifactId\u003evolcengine-java-sdk-ark-runtime\u003c/artifactId\u003e\\n  // 替换正式版本号\\n  \u003cversion\u003eLATEST\u003c/version\u003e\\n\u003c/dependency\u003e\\n*/\\n\\npublic class Sample {\\n\\n    static String apiKey = System.getenv(\\\"ARK_API_KEY\\\");\\n\\n    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);\\n    static Dispatcher dispatcher = new Dispatcher();\\n    static ArkService service =\\n            ArkService.builder()\\n                    .dispatcher(dispatcher)\\n                    .connectionPool(connectionPool)\\n                    .apiKey(apiKey)\\n                    .build();\\n\\n    public static void main(String[] args) throws JsonProcessingException {\\n\\n        List\u003cChatMessage\u003e messagesForReqList = new ArrayList\u003c\u003e();\\n\\n        ChatMessage elementForMessagesForReqList0 =\\n                ChatMessage.builder()\\n                        .role(ChatMessageRole.SYSTEM)\\n                        .content(\\\"你是李雷，你只会说“我是李雷”\\\")\\n                        .build();\\n        messagesForReqList.add(elementForMessagesForReqList0);\\n\\n        CreateContextRequest req =\\n                CreateContextRequest.builder()\\n                        .model(\\\"ep-202504101*****-*****\\\")\\n                        .mode(\\\"session\\\")\\n                        .messages(messagesForReqList)\\n                        .build();\\n\\n        service.createContext(req).toString();\\n\\n        // shutdown service after all requests is finished\\n        service.shutdownExecutor();\\n    }\\n}\\n\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"ctx-20250410175644-824s6\\\",\\n  \\\"model\\\": \\\"ep-202504101*****-*****”,\\n  \\\"ttl\\\": 86400,\\n  \\\"truncation_strategy\\\": {\\n    \\\"type\\\": \\\"rolling_tokens\\\",\\n    \\\"rolling_tokens\\\": true\\n  },\\n  \\\"usage\\\": {\\n    \\\"prompt_tokens\\\": 18,\\n    \\\"completion_tokens\\\": 0,\\n    \\\"total_tokens\\\": 18,\\n    \\\"prompt_tokens_details\\\": {\\n      \\\"cached_tokens\\\": 0\\n    }\\n  },\\n  \\\"mode\\\": \\\"session\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"}]}]}"}}],"zoneId":"panel-AlRySPn4","zoneType":"Z"},"qUaPDcFf":{"ops":[{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"truncation_strategy."},{"insert":"type ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求创建的 Session 缓存的截断策略，此处应为 "},{"insert":"last_history_tokens","attributes":{"inlineCode":"true"}},{"insert":"。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"truncation_strategy."},{"insert":"last_history_tokens ","attributes":{"bold":"true"}},{"insert":"integer","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"本次请求创建的 Session 缓存可缓存的最大 token 数。\n"}],"zoneId":"qUaPDcFf","zoneType":"Z"},"x3CU0Cc6":{"ops":[{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"usage."},{"insert":"prompt_tokens_details.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"cached_tokens ","attributes":{"backgroundcolor":"rgb(248, 248, 248)","bold":"true"}},{"insert":"integer","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"命中上下文缓存的 token 数","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"。","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"\n"}],"zoneId":"x3CU0Cc6","zoneType":"Z"},"z36YGGi9":{"ops":[{"insert":"*","attributes":{"tabContent":"true","title":"快速入口","zoneId":"kgxyAQJT"}},{"insert":"*","attributes":{"tabContent":"true","title":"鉴权说明","zoneId":"agb0lYnB"}},{"insert":"\n"}],"zoneId":"z36YGGi9","zoneType":"Z"},"zkYvkLa2":{"ops":[{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"messages.tool_calls"},{"insert":".","attributes":{"bold":"true"}},{"insert":"function."},{"insert":"name ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"模型需要调用的函数名称。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"messages.tool_calls"},{"insert":".","attributes":{"bold":"true"}},{"insert":"function."},{"insert":"arguments ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)","inlineCode":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(var(--gray-100)/.5)"}},{"insert":"必选","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"模型生成的用于调用函数的参数，JSON 格式。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","tips":"{\"type\":\"default\",\"isTitle\":true}","wrapperIndent":"1"}},{"insert":"说明\n"},{"insert":"*","attributes":{"lmkr":"1","tips":"{\"type\":\"default\"}","wrapperIndent":"1"}},{"insert":"模型并不总是生成有效的 JSON，并且可能会虚构出一些您的函数参数规范中未定义的参数。在调用函数之前，请在您的代码中验证这些参数是否有效。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"}],"zoneId":"zkYvkLa2","zoneType":"Z"}}}
+
+` POST https://ark.cn-beijing.volces.com/api/v3/context/create`[运行](https://api.volcengine.com/api-explorer/?action=ContextCreate&data=%7B%7D&groupName=%E4%B8%8A%E4%B8%8B%E6%96%87%E7%BC%93%E5%AD%98&query=%7B%7D&serviceCode=ark&version=2024-01-01)
+上下文缓存（Context API）是方舟提供的一个高效的缓存机制。它通过缓存上下文数据，减少重复加载或处理，提高响应速度和一致性。本文介绍上下文缓存 API 的输入输出参数，供您使用接口时查阅字段含义。
+请求参数
+跳转 [响应参数](#Qu59cel0)
+请求体
+**model**`string``必选`
+通过 Endpoint ID 来调用模型，获得限流、计费类型（前付费/后付费）、运行状态查询、监控、安全等高级能力，可参考[获取 Endpoint ID](https://www.volcengine.com/docs/82379/1099522)。
+暂不支持通过 Model ID 来调用。
+**messages**`object[]``必选`
+对话组成的消息列表。您希望缓存的信息。
+注意：初始化的信息如系统人设，背景信息等，请使用系统消息（System message）放在消息列表最前。这部分信息在2种缓存模式下，均会一直存储在缓存中，直到缓存到期（触达最大生命周期）释放。
+**mode**`string``默认值 session`
+本次请求创建的上下文缓存的类型。[点此](https://www.volcengine.com/docs/82379/1398933)了解类型介绍。[点此](https://www.volcengine.com/docs/82379/1330310#e6772192)了解支持的模型 。
+`session` ：Session 缓存。
+`common_prefix` ：前缀缓存。
+**ttl**`integer / null``默认值 86400`
+过期时长，单位为秒，设置范围：[3600, 604800]，即1小时到7天。
+信息在创建后即开始计时，每次使用则重置为0。计时超过ttl，信息会被从缓存中删除。每次调用chat均根据ttl更新过期时间。
+**truncation_strategy**`object / null``默认值 null`
+缓存的上下文长度的窗口长度策略配置，只在当 **mode **字段设置为`session`，该字段可设置。
+支持 Session 缓存的模型能且只能支持 1 种 Session 缓存模式。如不配置该字段，方舟会根据您调用的模型自动适配合适的 Session 缓存模式。
+响应参数
+跳转 [请求参数](#RxN8G2nH)
+**id**`string`
+本次请求创建的上下文缓存的ID，在后续创建带缓存的[上下文缓存对话 API](https://www.volcengine.com/docs/82379/1346560)需要使用。
+**model**`string`
+本次请求使用的推理接入点的 ID 。
+**mode**`string`
+本次请求创建的上下文缓存的类型。[点此](https://www.volcengine.com/docs/82379/1330310#e6772192)了解支持的模型 。
+`session` ：Session 缓存。
+`common_prefix` ：前缀缓存。
+**ttl**`integer`
+本次请求创建的上下文缓存过期时长，单位为秒。信息在创建后即开始计时，每次使用则重置为0。计时超过ttl，信息会被从缓存中删除。每次调用chat均根据ttl更新过期时间。
+过期时间可以设置的范围在1小时到7天，即[3600, 604800]。
+**truncation_strategy **`object`
+本次请求创建的 Session 缓存使用的截断策略信息。
+**usage**`object`
+本次请求的 token 用量。
+
+## 示例代码
+
+**curl**
+
+```bash
+curl https://ark.cn-beijing.volces.com/api/v3/context/create \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $ARK_API_KEY" \
+  -d $'{
+    "messages": [
+        {
+            "content": "你是李雷，你只会说“我是李雷”",
+            "role": "system"
+        }
+    ],
+    "mode": "common_prefix",
+    "model": "ep-20250410*****-*****"
+}'
+```
+
+**Response:**
+
+```json
+{
+  "id": "ctx-20250410175333-lkjq2",
+  "model": "ep-20250410*****-*****",
+  "ttl": 86400,
+  "usage": {
+    "prompt_tokens": 18,
+    "completion_tokens": 0,
+    "total_tokens": 18,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "mode": "common_prefix"
+}
+```
+
+**python**
+
+```python
+import os
+import datetime
+
+from volcenginesdkarkruntime import Ark
+
+client = Ark(api_key=os.environ.get("ARK_API_KEY"))
+
+if __name__ == "__main__":
+    print("----- create context -----")
+    response = client.context.create(
+        model="ep-202504101*****-*****",
+        mode="common_prefix",
+        messages=[{"content":"你是李雷，你只会说“我是李雷”","role":"system"}],
+    )
+    print(response)
+```
+
+**Response:**
+
+```json
+{
+  "id": "ctx-20250410175333-lkjq2",
+  "model": "ep-20250410*****-*****",
+  "ttl": 86400,
+  "usage": {
+    "prompt_tokens": 18,
+    "completion_tokens": 0,
+    "total_tokens": 18,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "mode": "common_prefix"
+}
+```
+
+**go**
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime"
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model"
+	"github.com/volcengine/volcengine-go-sdk/volcengine"
+)
+
+func main() {
+	client := arkruntime.NewClientWithApiKey(os.Getenv("ARK_API_KEY"))
+	ctx := context.Background()
+	fmt.Println("----- create context -----")
+	req := model.CreateContextRequest{
+		Model: "ep-202504101*****-*****",
+		Mode:  "common_prefix",
+		Messages: []*model.ChatCompletionMessage{
+			&model.ChatCompletionMessage{
+				Role: "system",
+				Content: &model.ChatCompletionMessageContent{
+					StringValue: volcengine.String("你是李雷，你只会说“我是李雷”"),
+				},
+			},
+		},
+	}
+
+	resp, err := client.CreateContext(ctx, req)
+	if err != nil {
+		fmt.Printf("standard chat error: %v\n", err)
+		return
+	}
+	fmt.Printf("create context response: %v\n", resp)
+}
+
+```
+
+**Response:**
+
+```json
+{
+  "id": "ctx-20250410175333-lkjq2",
+  "model": "ep-20250410*****-*****",
+  "ttl": 86400,
+  "usage": {
+    "prompt_tokens": 18,
+    "completion_tokens": 0,
+    "total_tokens": 18,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "mode": "common_prefix"
+}
+```
+
+**java**
+
+```java
+package com.volcengine.sample;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.volcengine.ark.runtime.model.completion.chat.*;
+import com.volcengine.ark.runtime.model.completion.chat.ChatCompletionRequest.*;
+import com.volcengine.ark.runtime.model.context.*;
+import com.volcengine.ark.runtime.model.context.CreateContextRequest;
+import com.volcengine.ark.runtime.model.context.chat.*;
+import com.volcengine.ark.runtime.service.ArkService;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import okhttp3.ConnectionPool;
+import okhttp3.Dispatcher;
+
+/*
+# pom.xml
+<dependency>
+  <groupId>com.volcengine</groupId>
+  <artifactId>volcengine-java-sdk-ark-runtime</artifactId>
+  // 替换正式版本号
+  <version>LATEST</version>
+</dependency>
+*/
+
+public class Sample {
+
+    static String apiKey = System.getenv("ARK_API_KEY");
+
+    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);
+    static Dispatcher dispatcher = new Dispatcher();
+    static ArkService service =
+            ArkService.builder()
+                    .dispatcher(dispatcher)
+                    .connectionPool(connectionPool)
+                    .apiKey(apiKey)
+                    .build();
+
+    public static void main(String[] args) throws JsonProcessingException {
+
+        List<ChatMessage> messagesForReqList = new ArrayList<>();
+
+        ChatMessage elementForMessagesForReqList0 =
+                ChatMessage.builder()
+                        .role(ChatMessageRole.SYSTEM)
+                        .content("你是李雷，你只会说“我是李雷”")
+                        .build();
+        messagesForReqList.add(elementForMessagesForReqList0);
+
+        CreateContextRequest req =
+                CreateContextRequest.builder()
+                        .model("ep-202504101*****-*****")
+                        .mode("common_prefix")
+                        .messages(messagesForReqList)
+                        .build();
+
+        service.createContext(req).toString();
+
+        // shutdown service after all requests is finished
+        service.shutdownExecutor();
+    }
+}
+
+```
+
+**Response:**
+
+```json
+{
+  "id": "ctx-20250410175333-lkjq2",
+  "model": "ep-20250410*****-*****",
+  "ttl": 86400,
+  "usage": {
+    "prompt_tokens": 18,
+    "completion_tokens": 0,
+    "total_tokens": 18,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "mode": "common_prefix"
+}
+```
+
+**curl**
+
+```bash
+curl https://ark.cn-beijing.volces.com/api/v3/context/create \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $ARK_API_KEY" \
+  -d $'{
+    "messages": [
+        {
+            "content": "你是李雷，你只会说“我是李雷”",
+            "role": "system"
+        }
+    ],
+    "mode": "session",
+    "model": "ep-202504101*****-*****"
+}'
+```
+
+**Response:**
+
+```json
+{
+  "id": "ctx-20250410175644-824s6",
+  "model": "ep-202504101*****-*****”,
+  "ttl": 86400,
+  "truncation_strategy": {
+    "type": "rolling_tokens",
+    "rolling_tokens": true
+  },
+  "usage": {
+    "prompt_tokens": 18,
+    "completion_tokens": 0,
+    "total_tokens": 18,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "mode": "session"
+}
+```
+
+**python**
+
+```python
+import os
+import datetime
+
+from volcenginesdkarkruntime import Ark
+
+client = Ark(api_key=os.environ.get("ARK_API_KEY"))
+
+if __name__ == "__main__":
+    print("----- create context -----")
+    response = client.context.create(
+        model="ep-202504101*****-*****",
+        mode="session",
+        messages=[{"content":"你是李雷，你只会说“我是李雷”","role":"system"}],
+    )
+    print(response)
+```
+
+**Response:**
+
+```json
+{
+  "id": "ctx-20250410175644-824s6",
+  "model": "ep-202504101*****-*****”,
+  "ttl": 86400,
+  "truncation_strategy": {
+    "type": "rolling_tokens",
+    "rolling_tokens": true
+  },
+  "usage": {
+    "prompt_tokens": 18,
+    "completion_tokens": 0,
+    "total_tokens": 18,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "mode": "session"
+}
+```
+
+**go**
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime"
+	"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model"
+	"github.com/volcengine/volcengine-go-sdk/volcengine"
+)
+
+func main() {
+	client := arkruntime.NewClientWithApiKey(os.Getenv("ARK_API_KEY"))
+	ctx := context.Background()
+	fmt.Println("----- create context -----")
+	req := model.CreateContextRequest{
+		Model: "ep-202504101*****-*****",
+		Mode:  "session",
+		Messages: []*model.ChatCompletionMessage{
+			&model.ChatCompletionMessage{
+				Role: "system",
+				Content: &model.ChatCompletionMessageContent{
+					StringValue: volcengine.String("你是李雷，你只会说“我是李雷”"),
+				},
+			},
+		},
+	}
+
+	resp, err := client.CreateContext(ctx, req)
+	if err != nil {
+		fmt.Printf("standard chat error: %v\n", err)
+		return
+	}
+	fmt.Printf("create context response: %v\n", resp)
+}
+
+```
+
+**Response:**
+
+```json
+{
+  "id": "ctx-20250410175644-824s6",
+  "model": "ep-202504101*****-*****”,
+  "ttl": 86400,
+  "truncation_strategy": {
+    "type": "rolling_tokens",
+    "rolling_tokens": true
+  },
+  "usage": {
+    "prompt_tokens": 18,
+    "completion_tokens": 0,
+    "total_tokens": 18,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "mode": "session"
+}
+```
+
+**java**
+
+```java
+package com.volcengine.sample;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.volcengine.ark.runtime.model.completion.chat.*;
+import com.volcengine.ark.runtime.model.completion.chat.ChatCompletionRequest.*;
+import com.volcengine.ark.runtime.model.context.*;
+import com.volcengine.ark.runtime.model.context.CreateContextRequest;
+import com.volcengine.ark.runtime.model.context.chat.*;
+import com.volcengine.ark.runtime.service.ArkService;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import okhttp3.ConnectionPool;
+import okhttp3.Dispatcher;
+
+/*
+# pom.xml
+<dependency>
+  <groupId>com.volcengine</groupId>
+  <artifactId>volcengine-java-sdk-ark-runtime</artifactId>
+  // 替换正式版本号
+  <version>LATEST</version>
+</dependency>
+*/
+
+public class Sample {
+
+    static String apiKey = System.getenv("ARK_API_KEY");
+
+    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);
+    static Dispatcher dispatcher = new Dispatcher();
+    static ArkService service =
+            ArkService.builder()
+                    .dispatcher(dispatcher)
+                    .connectionPool(connectionPool)
+                    .apiKey(apiKey)
+                    .build();
+
+    public static void main(String[] args) throws JsonProcessingException {
+
+        List<ChatMessage> messagesForReqList = new ArrayList<>();
+
+        ChatMessage elementForMessagesForReqList0 =
+                ChatMessage.builder()
+                        .role(ChatMessageRole.SYSTEM)
+                        .content("你是李雷，你只会说“我是李雷”")
+                        .build();
+        messagesForReqList.add(elementForMessagesForReqList0);
+
+        CreateContextRequest req =
+                CreateContextRequest.builder()
+                        .model("ep-202504101*****-*****")
+                        .mode("session")
+                        .messages(messagesForReqList)
+                        .build();
+
+        service.createContext(req).toString();
+
+        // shutdown service after all requests is finished
+        service.shutdownExecutor();
+    }
+}
+
+```
+
+**Response:**
+
+```json
+{
+  "id": "ctx-20250410175644-824s6",
+  "model": "ep-202504101*****-*****”,
+  "ttl": 86400,
+  "truncation_strategy": {
+    "type": "rolling_tokens",
+    "rolling_tokens": true
+  },
+  "usage": {
+    "prompt_tokens": 18,
+    "completion_tokens": 0,
+    "total_tokens": 18,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "mode": "session"
+}
+```
+
+属性
+usage.**prompt_tokens **`integer`
+输入的 prompt token 数量。
+usage.**completion_tokens **`integer`
+模型生成的 token 数量。
+usage.**total_tokens **`integer`
+本次请求消耗的总 token 数量（输入 + 输出）。
+usage.**prompt_tokens_details **`object`
+命中上下文缓存的 token 细节。
+**last_history_tokens 模式 **`object`
+触发缓存上限不会重新计算。
+**rolling_tokens 模式 **`object`
+触发缓存上限会进行重新计算。
+messages.**role**`string``必选`
+发送消息的角色，此处应为`system`。
+messages.**content**`string``必选`
+系统信息内容。
+truncation_strategy.**type **`string``必选`
+此处应为 `last_history_tokens`。
+truncation_strategy.**last_history_tokens **`integer``默认值 4096`
+取值范围：` (0,32768)`。
+缓存上下文窗口大小，即可缓存的上下文的最大 token 数。触发该上限将根据缓存上下文窗口大小对缓存内容进行清除。清除顺序按照信息被缓存时间长短排序，先清除缓存时间长的信息 。
+**系统消息**`object`
+系统消息，开发人员提供的指令，模型应遵循这些指令。如模型扮演的角色或者目标等。
+**用户消息**`object`
+用户发送的消息，包含提示或附加上下文信息。
+**模型消息**`object`
+模型响应用户消息而回复的消息。
+说明
+messages.**content**与 messages.**tool_calls**字段二者至少填写其一。
+发送消息的角色，此处应为`assistant`。
+messages.**content**`string`
+模型回复的消息。
+messages.**tool_calls**`object[]`
+模型回复的工具调用信息。
+发送消息的角色，此处应为`user`。
+用户信息内容。
+messages.**name**`string`
+发送此消息的角色的姓名。用于区别同一个角色但是不同主体发送的消息。
+此处应为 `rolling_tokens`。
+truncation_strategy.**rolling_tokens **`boolean``默认值 true`
+在缓存中历史消息长度接近 **max_window_tokens **字段值时，是否自动对历史上下文进行裁剪（按照 message 元素粒度裁剪，按照 message 元素取整，即删除的信息的长度在 **rolling_window_tokens **范围内，不会截断任意信息）。
+`false`：在历史消息长度超过上下文长度时模型会停止输出（返回字段 **finish_reason **为`length`)。
+`true`：在历史消息长度接近上下文长度时模型按照先进先出的顺序，自动删除定量（**rolling_window_tokens** 字段值 token 数）的内容，为新对话内容腾挪缓存空间；同时对缓存中的信息进行重新计算和读入，保障内容理解一致性。具体的计算逻辑，请参见 [rolling_tokens 模式](https://www.volcengine.com/docs/82379/1396491#rolling-tokens-%E6%A8%A1%E5%BC%8F)。
+truncation_strategy.**max_window_tokens **`integer / null``默认值 32768`
+在缓存中可存储的历史消息长度最大值。
+取值满足下面条件：0 < **rolling_tokens **< **max_window_tokens **< **context window**（模型最大上下文）。
+truncation_strategy.**rolling_window_tokens **`integer / null``默认值 4096`
+当缓存触发了**max_window_tokens **上限，则会裁剪滚动窗口长度。
+取值满足下面条件：0 < **rolling_tokens **< **max_window_tokens **< **context window**（模型最大上下文）。
+truncation_strategy.**type **`string`
+本次请求创建的 Session 缓存的截断策略，此处应为 `rolling_tokens`。
+truncation_strategy.**rolling_tokens **`boolean`
+本次请求创建的 Session 缓存，当缓存的信息量达到最大缓存窗口时，是否自动处理。
+本接口支持 API Key / Access Key鉴权，详见[鉴权认证方式](https://www.volcengine.com/docs/82379/1298459)。
+messages.tool_calls**.function **`object``必选`
+模型调用工具对应的函数信息。
+messages.tool_calls**.id **`string``必选`
+调用的工具的 ID。
+messages.tool_calls**.type **`string``必选`
+工具类型，当前仅支持`function`。
+[计费说明](https://www.volcengine.com/docs/82379/1099320#%E4%B8%8A%E4%B8%8B%E6%96%87%E7%BC%93%E5%AD%98%E8%AE%A1%E8%B4%B9)[API Key](https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D)[支持模型](https://www.volcengine.com/docs/82379/1330310#e6772192)
+[调用教程](https://www.volcengine.com/docs/82379/1396491)[开通模型](https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D&OpenTokenDrawer=false)
+触发缓存上限，自动滚动缓存内容，无需重新计算。
+触发缓存上限，进行重新计算。
+本次请求创建的 Session 缓存的截断策略，此处应为 `last_history_tokens`。
+truncation_strategy.**last_history_tokens **`integer`
+本次请求创建的 Session 缓存可缓存的最大 token 数。
+usage.prompt_tokens_details.**cached_tokens **`integer`
+命中上下文缓存的 token 数。
+**
+messages.tool_calls**.**function.**name **`string``必选`
+模型需要调用的函数名称。
+messages.tool_calls**.**function.**arguments **`string``必选`
+模型生成的用于调用函数的参数，JSON 格式。
+模型并不总是生成有效的 JSON，并且可能会虚构出一些您的函数参数规范中未定义的参数。在调用函数之前，请在您的代码中验证这些参数是否有效。

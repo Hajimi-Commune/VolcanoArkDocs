@@ -1,2 +1,1131 @@
 # 创建视频生成任务 API
-{"version":"1.2.30","data":{"0":{"ops":[{"insert":"POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"   ","attributes":{"backgroundcolor":"rgb(43, 43, 43)"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(43, 43, 43)","hyperlink":"{\"href\":\"https://api.volcengine.com/api-explorer/?action=CreateContentsGenerationsTasks\u0026data=%7B%7D\u0026groupName=%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90API\u0026query=%7B%7D\u0026serviceCode=ark\u0026version=2024-01-01\",\"linkId\":\"GXLITHxQll\",\"target\":\"_blank\"}"}},{"insert":"运行","attributes":{"bold":"true","hyperlink":"{\"href\":\"https://api.volcengine.com/api-explorer/?action=CreateContentsGenerationsTasks\u0026data=%7B%7D\u0026groupName=%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90API\u0026query=%7B%7D\u0026serviceCode=ark\u0026version=2024-01-01\",\"linkId\":\"GXLITHxQll\",\"target\":\"_blank\"}","inlineCode":"true"}},{"insert":"\n"},{"insert":"本文介绍创建视频生成任务 API 的输入输出参数，供您使用接口时查阅字段含义。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"模型会依据传入的图片及文本信息生成视频，待生成完成后，您可以按条件查询任务并获取生成的视频。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"collapse":"container","collapseStatus":"fold","zoneId":"ve635hnF","zoneIds":"ve635hnF"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"collapse":"container","collapseStatus":"fold","zoneId":"zAvYGrzr","zoneIds":"zAvYGrzr"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"tabs":"true","tabsZoneId":"6T6somy0","zoneIds":"cKmdyIjR,vRJT6oJZ,le7SQjQUB1","zoneType":"Z"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"anchor":"#RxN8G2nH","heading":"h2","lmkr":"1"}},{"insert":"请求参数 \n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1"}},{"insert":"跳转 "},{"insert":"响应参数","attributes":{"hyperlink":"{\"href\":\"#L9tzcCyD\",\"linkId\":\"ickPsXjv3n\",\"target\":\"_self\"}"}},{"insert":"\n"},{"insert":"*","attributes":{"anchor":"#BJ5XLFqM","heading":"h3","lmkr":"1"}},{"insert":"请求体\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"model","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":" ","attributes":{"apiTag":"require|iQiygT"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"您需要调用的模型的 ID （"},{"insert":"Model ID","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"），"},{"insert":"开通模型服务","attributes":{"hyperlink":"{\"href\":\"https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D\u0026OpenTokenDrawer=false\",\"linkId\":\"GGS2zAW9AH\",\"target\":\"_blank\"}"}},{"insert":"，并"},{"insert":"查询 Model ID","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1330310\",\"linkId\":\"gADGehB09y\",\"target\":\"_blank\"}"}},{"insert":" 。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"您也可通过 Endpoint ID 来调用模型，获得限流、计费类型（前付费/后付费）、运行状态查询、监控、安全等高级能力，可参考","attributes":{"backgroundcolor":"rgb(243, 245, 247)"}},{"insert":"获取 Endpoint ID","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1099522\",\"linkId\":\"ndxtuRY0gw\",\"target\":\"_blank\"}"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(243, 245, 247)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"content","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object[]","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":" ","attributes":{"apiTag":"require|1tWwL8"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"输入给模型，生成视频的信息，支持文本信息和图片信息。\n"},{"insert":" ","attributes":{"collapse":"container","collapseStatus":"unfold","zoneId":"2avAZbcz","zoneIds":"2avAZbcz"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"callback_url","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" \n"},{"insert":"*","attributes":{"lmkr":"1","text-indent":"true"}},{"insert":"填写本次生成任务结果的回调通知地址。当视频生成任务有状态变化时，方舟将向此地址推送 POST 请求。\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","text-indent":"true"}},{"insert":"回调请求内容结构与"},{"insert":"查询任务API","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1521309\",\"linkId\":\"DwMshF6iEe\",\"target\":\"_blank\"}"}},{"insert":"的返回体一致。\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","text-indent":"true"}},{"insert":"回调返回的 status 包括以下状态：\n"},{"insert":"*","attributes":{"align":"left","list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"queued：排队中。\n"},{"insert":"*","attributes":{"align":"left","list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"running：任务运行中。\n"},{"insert":"*","attributes":{"align":"left","list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"succeeded： 任务成功。（如发送失败，即5秒内没有接收到成功发送的信息，回调三次）\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"failed：任务失败。（如发送失败，即5秒内没有接收到成功发送的信息，回调三次）\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"expired：任务超时，即"},{"insert":"任务处于","attributes":{"backgroundcolor":"rgba(183, 237, 177, 0.8)"}},{"insert":"运行中或排队中","attributes":{"backgroundcolor":"rgba(183, 237, 177, 0.8)","bold":"true"}},{"insert":"状态超过过期时间。可通过 ","attributes":{"backgroundcolor":"rgba(183, 237, 177, 0.8)"}},{"insert":"execution_expires_after ","attributes":{"backgroundcolor":"rgba(255, 246, 122, 0.8)","bold":"true"}},{"insert":"字段设置","attributes":{"backgroundcolor":"rgba(255, 246, 122, 0.8)"}},{"insert":"过期时间","attributes":{"backgroundcolor":"rgba(183, 237, 177, 0.8)"}},{"insert":"。","attributes":{"backgroundcolor":"rgba(255, 246, 122, 0.8)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"return_last_frame","attributes":{"bold":"true"}},{"insert":" "},{"insert":"boolean","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 false","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"true：返回生成视频的尾帧图像。设置为 "},{"insert":"true","attributes":{"inlineCode":"true"}},{"insert":" 后，可通过 "},{"insert":"查询视频生成任务接口","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1521309\",\"linkId\":\"acGrU6Qep6\",\"target\":\"_blank\"}"}},{"insert":" 获取视频的尾帧图像。尾帧图像的格式为 png，宽高像素值与生成的视频保持一致，无水印。\n"},{"insert":"*","attributes":{"list":"indent1","lmkr":"1","origin-start":"1","start":"1","text-indent":"true"}},{"insert":"使用该参数可实现生成多个连续视频：以上一个生成视频的尾帧作为下一个视频任务的首帧，快速生成多个连续视频，调用示例详见 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"教程","attributes":{"backgroundcolor":"rgb(255, 255, 255)","hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1366799?lang=zh#%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E8%BF%9E%E7%BB%AD%E8%A7%86%E9%A2%91\",\"linkId\":\"47cwMGsuYQ\",\"target\":\"_blank\"}"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"false：不返回生成视频的尾帧图像。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"service_tier","attributes":{"bold":"true"}},{"insert":"new","attributes":{"bold":"true","mark":"true","subsuper":"sup"}},{"insert":" "},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 default","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1"}},{"insert":"不支持修改已提交任务的服务等级\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"指定处理本次请求的服务等级类型，枚举值：\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"default：在线推理模式，RPM 和并发数配额较低（详见 "},{"insert":"模型列表","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1330310?lang=zh#%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90%E8%83%BD%E5%8A%9B\",\"linkId\":\"fnmkZAJeMq\",\"target\":\"_blank\"}"}},{"insert":"），适合对推理时效性要求较高的场景。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"flex：离线推理模式，TPD 配额更高（详见 "},{"insert":"模型列表","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1330310?lang=zh#%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90%E8%83%BD%E5%8A%9B\",\"linkId\":\"qBOMghzARY\",\"target\":\"_blank\"}"}},{"insert":"），价格为在线推理的 50%， 适合对推理时延要求不高的场景。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"execution_expires_after","attributes":{"backgroundcolor":"rgba(255, 246, 122, 0.8)","bold":"true"}},{"insert":"new","attributes":{"bold":"true","mark":"true","subsuper":"sup"}},{"insert":" ","attributes":{"bold":"true"}},{"insert":"integer","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 172800","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"任务超时阈值。指定任务提交后的过期时间（单位：秒），从 "},{"insert":"created at","attributes":{"bold":"true"}},{"insert":" 时间戳开始计算。默认值 172800 秒，即 48 小时。取值范围：[3600，259200]。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"不论使用哪种 "},{"insert":"service_tier","attributes":{"bold":"true"}},{"insert":"，都建议根据业务场景设置合适的超时时间。超过该时间后任务会被自动终止，并标记为"},{"insert":"expired","attributes":{"inlineCode":"true"}},{"insert":"状态。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"\n"},{"insert":"*","attributes":{"anchor":"#L9tzcCyD","heading":"h3","lmkr":"1"}},{"insert":"模型文本命令(选填)\n"},{"insert":"在文本提示词后追加 --[parameters] ","attributes":{"bold":"true"}},{"insert":"，控制视频输出的规格，包括宽高比、帧率、分辨率等。\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1"}},{"insert":"不同模型，可能对应支持不同的参数与取值，详见 "},{"insert":"输出视频格式","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1366799?lang=zh#%E8%AE%BE%E7%BD%AE%E8%BE%93%E5%87%BA%E8%A7%86%E9%A2%91%E6%A0%BC%E5%BC%8F\",\"linkId\":\"87zQw1OQC0\",\"target\":\"_blank\"}"}},{"insert":" 。当输入的参数或取值不符合所选的模型时，内容会被忽略或报错。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"collapse":"container","collapseStatus":"unfold","zoneId":"JjZX1JO1","zoneIds":"JjZX1JO1"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"resolution ","attributes":{"bold":"true"}},{"insert":" "},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"简写 rs","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1"}},{"insert":"doubao-seedance-1-0-lite 默认值："},{"insert":"720p","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1"}},{"insert":"doubao-seedance-1-0-pro\u0026pro-fast 默认值："},{"insert":"1080p","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","text-indent":"true"}},{"insert":"视频分辨率，枚举值：\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"480p\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"720p\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"1080p：参考图场景不支持\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1"}},{"insert":"ratio ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"简写 rt","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"文生视频默认值是"},{"insert":"16:9","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"图生视频默认值一般是"},{"insert":"adaptive","attributes":{"inlineCode":"true"}},{"insert":"。特别注意，参考图生视频的默认值是"},{"insert":"16:9","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","text-indent":"true"}},{"insert":"生成视频的宽高比例。不同宽高比对应的宽高像素值见下方表格。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"16:9 \n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"4:3\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"1:1\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"3:4\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"9:16\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"21:9\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"adaptive：仅图生视频支持。"},{"insert":"根据所上传图片的比例，自动选择最合适的宽高比。","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"\n"},{"insert":" ","attributes":{"collapse":"container","collapseStatus":"fold","zoneId":"HpyVxxmX","zoneIds":"HpyVxxmX"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1"}},{"insert":"duration","attributes":{"bold":"true"}},{"insert":" "},{"insert":"integer","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 5","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"简写 dur","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"duration 和 frames 二选一即可，frames 的优先级高于 duration。如果您希望生成整数秒的视频，建议指定 duration。\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","text-indent":"true"}},{"insert":"生成视频时长，单位：秒。支持 2~12 秒"},{"insert":"new","attributes":{"bold":"true","mark":"true","subsuper":"sup"}},{"insert":"。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1"}},{"insert":"frames","attributes":{"bold":"true"}},{"insert":"new","attributes":{"bold":"true","mark":"true","subsuper":"sup"}},{"insert":" "},{"insert":"integer","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"简写 frames","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"duration 和 frames 二选一即可，frames 的优先级高于 duration。如果您希望生成小数秒的视频，建议指定 frames。\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1"}},{"insert":"生成视频的帧数。通过指定帧数，可以灵活控制生成视频的长度，生成小数秒的视频。\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1"}},{"insert":"由于 frames 的取值限制，仅能支持有限小数秒，您需要根据公式推算最接近的帧数。","attributes":{"backgroundcolor":"rgba(255, 246, 122, 0.8)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"计算公式：帧数 = 时长 × 帧率（24）。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"取值范围：支持 [29, 289] 区间内所有满足 ","attributes":{"backgroundcolor":"rgba(255, 246, 122, 0.8)"}},{"insert":"25 + 4n","attributes":{"backgroundcolor":"rgba(255, 246, 122, 0.8)","inlineCode":"true"}},{"insert":" 格式的整数值，其中 n 为正整数。","attributes":{"backgroundcolor":"rgba(255, 246, 122, 0.8)"}},{"insert":"\n"},{"insert":"例如：假设需要生成 2.4 秒的视频，帧数=2.4×24=57.6。由于 frames 不支持 57.6，此时您只能选择一个最接近的值。根据 25+4n 计算出最接近的帧数为 57，实际生成的视频为 57/24=2.375 秒。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1"}},{"insert":"framespersecond","attributes":{"bold":"true"}},{"insert":"  "},{"insert":"integer","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 24","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"简写 fps","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","text-indent":"true"}},{"insert":"帧率，即一秒时间内视频画面数量。仅支持 24\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1"}},{"insert":"seed","attributes":{"backgroundcolor":"rgb(239, 251, 255)","bold":"true"}},{"insert":" ","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"integer","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 -1","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"简写 seed","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","text-indent":"true"}},{"insert":"种子整数，用于控制生成内容的随机性。","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","text-indent":"true"}},{"insert":"取值范围：","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"[-1, 2^32-1]","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"之间的整数。","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","tips":"{\"type\":\"warning\",\"isTitle\":true}"}},{"insert":"注意\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1","tips":"{\"type\":\"warning\"}"}},{"insert":"相同的请求下，模型收到不同的seed值，如：不指定seed值或令seed取值为-1（会使用随机数替代）、或手动变更seed值，将生成不同的结果。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1","tips":"{\"type\":\"warning\"}"}},{"insert":"相同的请求下，模型收到相同的seed值，会生成类似的结果，但不保证完全一致。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1"}},{"insert":"camerafixed","attributes":{"bold":"true"}},{"insert":" "},{"insert":"boolean","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 false","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"简写 cf","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"参考图场景不支持\n"},{"insert":"*","attributes":{"lmkr":"1","text-indent":"true"}},{"insert":"是否固定摄像头。枚举值：\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"true：固定摄像头。平台会在用户提示词中追加固定摄像头，实际效果不保证。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"false：不固定摄像头。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1"}},{"insert":"watermark","attributes":{"bold":"true"}},{"insert":" "},{"insert":"boolean","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"默认值 false","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"简写 wm","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","text-indent":"true"}},{"insert":"生成视频是否包含水印。枚举值：","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"false","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"：不含水印。","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"true","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"：含有水印。","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"\n"},{"insert":"*","attributes":{"anchor":"#L9tzcCyD","heading":"h2","lmkr":"1"}},{"insert":"响应参数\n"},{"insert":"*","attributes":{"blockquote":"true","lmkr":"1"}},{"insert":"跳转 "},{"insert":"请求参数","attributes":{"hyperlink":"{\"href\":\"#RxN8G2nH\",\"linkId\":\"7vtnc4xYLj\",\"target\":\"_self\"}"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"id ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"backgroundcolor":"rgb(255, 255, 255)","inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"视频生成任务 ID 。创建视频生成任务为异步接口，获取 ID 后，需要通过 "},{"insert":"查询视频生成任务 API","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1521309\",\"linkId\":\"kpcfOyBoPT\",\"target\":\"_blank\"}"}},{"insert":" 来查询视频生成任务的状态。任务成功后，会输出生成视频的"},{"insert":"video_url","attributes":{"inlineCode":"true"}},{"insert":"。\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"\n"}],"zoneId":"0","zoneType":"Z"},"0yQwEs8t":{"ops":[{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"content."},{"insert":"type ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":" ","attributes":{"apiTag":"require|jzW78i"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"输入内容的类型，","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"此处应为 "},{"insert":"text","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"content."},{"insert":"text ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":" ","attributes":{"apiTag":"require|3W94EU"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","text-indent":"true"}},{"insert":"输入给模型的文本内容，描述期望生成的视频，","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"包括：","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","text-indent":"true"}},{"insert":"文本提示词（必填）","attributes":{"backgroundcolor":"rgb(239, 251, 255)","bold":"true"}},{"insert":"：支持中英文。","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"建议不超过500字。字数过多信息容易分散，模型可能因此忽略细节，只关注重点，造成视频缺失部分元素。"},{"insert":"提示词的更多使用技巧请参见 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"Seedance 提示词指南","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1587797\",\"linkId\":\"qL1MPHIqvW\",\"target\":\"_blank\"}"}},{"insert":"。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","text-indent":"true"}},{"insert":"参数（选填）","attributes":{"backgroundcolor":"rgb(239, 251, 255)","bold":"true"}},{"insert":"：","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"在文本提示词后追加--[parameters]，控制视频输出的规格，"},{"insert":"详情见 ","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"模型文本命令(选填","attributes":{"bold":"true","removeLink":"true"}},{"insert":"）","attributes":{"bold":"true"}},{"insert":"。\n"}],"zoneId":"0yQwEs8t","zoneType":"Z"},"2avAZbcz":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"信息类型\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"文本信息","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"输入给模型生成视频的内容，文本内容部分。","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"\n"},{"insert":" ","attributes":{"collapse":"section","collapseStatus":"fold","zoneId":"0yQwEs8t","zoneIds":"0yQwEs8t"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"图片信息","attributes":{"bold":"true"}},{"insert":" "},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"输入给模型生成视频的内容，图片信息部分。","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"\n"},{"insert":" ","attributes":{"collapse":"section","collapseStatus":"fold","zoneId":"YE24nPpZ","zoneIds":"YE24nPpZ"}},{"insert":"\n"}],"zoneId":"2avAZbcz","zoneType":"Z"},"6T6somy0":{"ops":[{"insert":"*","attributes":{"tabContent":"true","title":"快速入口","zoneId":"cKmdyIjR","zoneIds":"cKmdyIjR"}},{"insert":"*","attributes":{"tabContent":"true","title":"鉴权说明","zoneId":"vRJT6oJZ","zoneIds":"vRJT6oJZ"}},{"insert":"*","attributes":{"tabContent":"true","title":"在线调试","zoneId":"le7SQjQUB1","zoneIds":"le7SQjQUB1"}},{"insert":"\n"}],"zoneId":"6T6somy0","zoneType":"Z"},"HpyVxxmX":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"不同宽高比对应的宽高像素值","attributes":{"bold":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"Note：图生视频，选择的宽高比与您上传的图片宽高比不一致时，方舟会对您的图片进行裁剪，裁剪时会居中裁剪，详细规则见 "},{"insert":"图片裁剪规则","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1366799#%E5%9B%BE%E7%89%87%E8%A3%81%E5%89%AA%E8%A7%84%E5%88%99\",\"linkId\":\"UUEniqwV9m\",\"target\":\"_blank\"}"}},{"insert":"。\n"},{"insert":"*","attributes":{"aceTable":"rshi0c6camp68n5h1gjv91vvj53oitrs76 cs61benis3l2342rcwm5k6q1rdk4d9ev8z","zoneIds":"xr12ptpag4zzgdtmodkfk95v12d72ztmbdjxc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr12ptpag4zzgdtmodkfk95v12d72ztmbdjxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr12ptpag4zzgdtmodkfk95v12d72ztmbdjxc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr19beuep982qz6ngpqqpamkbzl8ivq2nzqxc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr19beuep982qz6ngpqqpamkbzl8ivq2nzqxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr19beuep982qz6ngpqqpamkbzl8ivq2nzqxc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr1jdm3r8iawhr8g2huuhf1jzfn5bounz88xc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr1jdm3r8iawhr8g2huuhf1jzfn5bounz88xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr1jdm3r8iawhr8g2huuhf1jzfn5bounz88xc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr17bsqmyeh2s4we0eehuv1n8kejzzmz4sqxc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr17bsqmyeh2s4we0eehuv1n8kejzzmz4sqxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr17bsqmyeh2s4we0eehuv1n8kejzzmz4sqxc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr1data8cir17yu2ctny5m47jaeuccmujd9xc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr1data8cir17yu2ctny5m47jaeuccmujd9xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr1data8cir17yu2ctny5m47jaeuccmujd9xc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr1vzmj7gjm0jea58f1w9lshpcf5mjznr02xc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr1vzmj7gjm0jea58f1w9lshpcf5mjznr02xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr1vzmj7gjm0jea58f1w9lshpcf5mjznr02xc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr1sbfm7gym7uci6eoz2awauwrjc6ngf2b0xc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr1sbfm7gym7uci6eoz2awauwrjc6ngf2b0xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr1sbfm7gym7uci6eoz2awauwrjc6ngf2b0xc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr19tfa7mj7nqfy143nriglypwzgkdpeabmxc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr19tfa7mj7nqfy143nriglypwzgkdpeabmxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr19tfa7mj7nqfy143nriglypwzgkdpeabmxc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr1kpcqfmes9nbr127e4lp48jwre9l3bymhxc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr1kpcqfmes9nbr127e4lp48jwre9l3bymhxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr1kpcqfmes9nbr127e4lp48jwre9l3bymhxc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr1ezcrd3mf4i6zijmkmyrngqihmbt04ov3xc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr1ezcrd3mf4i6zijmkmyrngqihmbt04ov3xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr1ezcrd3mf4i6zijmkmyrngqihmbt04ov3xc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr1n3vcteb0y4lbl11j15cfos9ranvkki1lxc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr1n3vcteb0y4lbl11j15cfos9ranvkki1lxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr1n3vcteb0y4lbl11j15cfos9ranvkki1lxc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr187hqtb8ca62a3vvipngjsrvqy1ld65kexc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr187hqtb8ca62a3vvipngjsrvqy1ld65kexc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr187hqtb8ca62a3vvipngjsrvqy1ld65kexc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr1r5q7tcslg8k185ez1haq24g9vjqf5pcnxc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr1r5q7tcslg8k185ez1haq24g9vjqf5pcnxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr1r5q7tcslg8k185ez1haq24g9vjqf5pcnxc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr1f0ubwddj1uakkytwailhlfwgdi09j22vxc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr1f0ubwddj1uakkytwailhlfwgdi09j22vxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr1f0ubwddj1uakkytwailhlfwgdi09j22vxc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr1532jb8k5si2lyhv5q1s1nm7ogp9tpp9nxc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr1532jb8k5si2lyhv5q1s1nm7ogp9tpp9nxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr1532jb8k5si2lyhv5q1s1nm7ogp9tpp9nxc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr1m9gdddzauhb3twoqabrc11egt6sh9s2fxc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr1m9gdddzauhb3twoqabrc11egt6sh9s2fxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr1m9gdddzauhb3twoqabrc11egt6sh9s2fxc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr1w7i909bfdtis44t7sk8g1mblw1juzrbcxc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr1w7i909bfdtis44t7sk8g1mblw1juzrbcxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr1w7i909bfdtis44t7sk8g1mblw1juzrbcxc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr14c1otyy8mj9ly4lv9gahasvmqb19k4rcxc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr14c1otyy8mj9ly4lv9gahasvmqb19k4rcxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr14c1otyy8mj9ly4lv9gahasvmqb19k4rcxc15ae2sfq0nol78slao3jpwoyylu9uhb84,xr12atgakkwnm4e7w6ysd292wiih20b9md3xc1tr6chsptk2weet7zh7z1n3g96sivy02k,xr12atgakkwnm4e7w6ysd292wiih20b9md3xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7,xr12atgakkwnm4e7w6ysd292wiih20b9md3xc15ae2sfq0nol78slao3jpwoyylu9uhb84"}},{"insert":"\n"},{"insert":"\n"}],"zoneId":"HpyVxxmX","zoneType":"Z"},"JjZX1JO1":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"示例\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"language":"JSON","parentZoneId":"JjZX1JO1","type":"codeblock","wrap":"true","zoneId":"vkv6btxsip","zoneIds":"vkv6btxsip"}},{"insert":"\n"},{"insert":"\n"}],"zoneId":"JjZX1JO1","zoneType":"Z"},"YE24nPpZ":{"ops":[{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"content."},{"insert":"type ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":" ","attributes":{"apiTag":"require|bMbwS9"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"输入内容的类型，","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"此处应为 "},{"insert":"image_url","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"。支持","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"图片URL或图片 Base64 编码。","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"content."},{"insert":"image_url ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"object","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":" ","attributes":{"apiTag":"require|aA7qjF"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"输入给模型的图片对象。","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"\n"},{"insert":" ","attributes":{"collapse":"section","collapseStatus":"fold","zoneId":"dI8iNIqG","zoneIds":"dI8iNIqG"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1"}},{"insert":"content."},{"insert":"role ","attributes":{"bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":"条件必填","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","text-indent":"true"}},{"insert":"图片的位置或用途。\n"},{"insert":"*","attributes":{"lmkr":"1","tips":"{\"type\":\"warning\",\"isTitle\":true}"}},{"insert":"注意\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","text-indent":"true","tips":"{\"type\":\"warning\"}"}},{"insert":"首帧图生视频、首尾帧图生视频、参考图生视频为 3 种互斥的场景，不支持混用。\n"},{"insert":" ","attributes":{"collapse":"section","collapseStatus":"fold","zoneId":"q7G1RV2Z","zoneIds":"q7G1RV2Z"}},{"insert":"\n"},{"insert":" ","attributes":{"collapse":"section","collapseStatus":"fold","zoneId":"aqRpReOi","zoneIds":"aqRpReOi"}},{"insert":"\n"},{"insert":" ","attributes":{"collapse":"section","collapseStatus":"fold","zoneId":"gAOq7KoJ","zoneIds":"gAOq7KoJ"}},{"insert":"\n"}],"zoneId":"YE24nPpZ","zoneType":"Z"},"aqRpReOi":{"ops":[{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","text-indent":"true"}},{"insert":"图生视频-首尾帧\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"支持模型：","attributes":{"bold":"true"}},{"insert":"doubao-seedance-pro、doubao-seedance-lite-i2v\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"字段role取值：","attributes":{"bold":"true"}},{"insert":"需要传入2个image_url对象，且字段role必填。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"首帧图片对应的字段role为：first_frame\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"尾帧图片对应的字段role为：last_frame\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","tips":"{\"type\":\"default\",\"isTitle\":true}"}},{"insert":"说明\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","tips":"{\"type\":\"default\"}"}},{"insert":"传入的首尾帧图片可相同。首尾帧图片的宽高比不一致时，以首帧图片为主，尾帧图片会自动裁剪适配。\n"}],"zoneId":"aqRpReOi","zoneType":"Z"},"cKmdyIjR":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" "},{"insert":" ","attributes":{"hyperlink":"{\"href\":\"#\",\"linkId\":\"jB9YcG4A9x\",\"target\":\"_blank\"}","image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_b9c82890e851fc10cc31f48f9065abc6.png","uuid":"uzgYFKtL","width":"20"}},{"insert":"体验中心","attributes":{"hyperlink":"{\"href\":\"https://console.volcengine.com/ark/region:ark+cn-beijing/experience/vision\",\"linkId\":\"aE5EfjflXy\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_2abecd05ca2779567c6d32f0ddc7874d.png","uuid":"fuzXNdU9","width":"20"}},{"insert":"模型列表","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1330310#%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90%E8%83%BD%E5%8A%9B\",\"linkId\":\"21CHPjbKBZ\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_a5fdd3028d35cc512a10bd71b982b6eb.png","uuid":"L5w1YQ5w","width":"20"}},{"insert":"模型计费","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1544106?redirect=1\u0026lang=zh#02affcb8\",\"linkId\":\"dXgYOw3P2j\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_afbcf38bdec05c05089d5de5c3fd8fc8.png","uuid":"VfJDPVH4","width":"20"}},{"insert":"API Key","attributes":{"hyperlink":"{\"href\":\"https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D\",\"linkId\":\"DXmR4CqIRJ\",\"target\":\"_blank\"}"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_57d0bca8e0d122ab1191b40101b5df75.png","uuid":"BLwZzCpy","width":"20"}},{"insert":"调用教程","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1366799\",\"linkId\":\"ntdpr0hUKc\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_f45b5cd5863d1eed3bc3c81b9af54407.png","uuid":"fwtUpEfc","width":"20"}},{"insert":"接口文档","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1520758\",\"linkId\":\"DeBimjrL2R\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_1609c71a747f84df24be1e6421ce58f0.png","uuid":"3GPDsiHh","width":"20"}},{"insert":"常见问题","attributes":{"hyperlink":"{\"href\":\"https://www.volcengine.com/docs/82379/1359411\",\"linkId\":\"xDn2vaZgsB\",\"target\":\"_blank\"}"}},{"insert":"       "},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_bef4bc3de3535ee19d0c5d6c37b0ffdd.png","uuid":"0tVpR9wi","width":"20"}},{"insert":"开通模型","attributes":{"hyperlink":"{\"href\":\"https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D\u0026OpenTokenDrawer=false\",\"linkId\":\"FpIqIJ4NbM\",\"target\":\"_blank\"}"}},{"insert":"\n"}],"zoneId":"cKmdyIjR","zoneType":"Z"},"cs61benis3l2342rcwm5k6q1rdk4d9ev8z":{"ops":[{"insert":{"id":"c1tr6chsptk2weet7zh7z1n3g96sivy02k"},"attributes":{"colWidth":"116","mergeCellID":"d5e33sgp,be9fghdy,zvlhbf0m"}},{"insert":{"id":"c1sbgn7n6z81wne5jf8y26ukcy62dj68s7"},"attributes":{"colWidth":"124"}},{"insert":{"id":"c15ae2sfq0nol78slao3jpwoyylu9uhb84"},"attributes":{"colWidth":"200"}}],"zoneId":"cs61benis3l2342rcwm5k6q1rdk4d9ev8z","zoneType":"C"},"dI8iNIqG":{"ops":[{"insert":"属性\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":" ","attributes":{"horizontal-line":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"content."},{"insert":"image_url.","attributes":{"backgroundcolor":"rgb(255, 255, 255)"}},{"insert":"url ","attributes":{"backgroundcolor":"rgb(255, 255, 255)","bold":"true"}},{"insert":"string","attributes":{"inlineCode":"true"}},{"insert":" "},{"insert":" ","attributes":{"apiTag":"require|BpI7e0"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"图片信息，可以是图片URL或图片 Base64 编码。","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"图片URL：请确保图片URL可被访问。","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"Base64编码：请遵循此格式","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"data:image/\u003c图片格式\u003e;base64,\u003cBase64编码\u003e","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":"，注意 ","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"\u003c图片格式\u003e","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)","inlineCode":"true"}},{"insert":" 需小写，如 ","attributes":{"backgroundcolor":"rgba(27, 31, 35, 0.05)"}},{"insert":"data:image/png;base64,{base64_image}","attributes":{"backgroundcolor":"rgb(248, 248, 248)","inlineCode":"true"}},{"insert":"。","attributes":{"backgroundcolor":"rgb(239, 251, 255)"}},{"insert":"\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","tips":"{\"type\":\"default\",\"isTitle\":true}"}},{"insert":"说明\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","tips":"{\"type\":\"default\"}"}},{"insert":"传入图片需要满足以下条件：","attributes":{"backgroundcolor":"rgb(243, 245, 247)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1","tips":"{\"type\":\"default\"}"}},{"insert":"图片格式：jpeg、png、webp、bmp、tiff、gif","attributes":{"backgroundcolor":"rgb(243, 245, 247)"}},{"insert":"。"},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1","tips":"{\"type\":\"default\"}"}},{"insert":"宽高比（宽/高）： (0.4, 2.5) ","attributes":{"backgroundcolor":"rgb(243, 245, 247)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1","tips":"{\"type\":\"default\"}"}},{"insert":"宽高长度（px）：(300, 6000)","attributes":{"backgroundcolor":"rgb(243, 245, 247)"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1","tips":"{\"type\":\"default\"}"}},{"insert":"大小：小于 30 MB","attributes":{"backgroundcolor":"rgb(243, 245, 247)"}},{"insert":"\n"}],"zoneId":"dI8iNIqG","zoneType":"Z"},"gAOq7KoJ":{"ops":[{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","text-indent":"true"}},{"insert":"图生视频-参考图\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"支持模型：","attributes":{"bold":"true"}},{"insert":"doubao-seedance-1-0-lite-i2v\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"字段role取值：","attributes":{"bold":"true"}},{"insert":"需要传入1～4个image_url对象，且字段role必填。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1"}},{"insert":"每张参考图片对应的字段role均为：reference_image\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","tips":"{\"type\":\"default\",\"isTitle\":true}"}},{"insert":"说明\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","tips":"{\"type\":\"default\"}"}},{"insert":"参考图生视频功能的文本提示词，可以用自然语言指定多张图片的组合。但若想有更好的指令遵循效果，"},{"insert":"推荐使用“[图1]xxx，[图2]xxx”的方式来指定图片","attributes":{"bold":"true"}},{"insert":"。\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","tips":"{\"type\":\"default\"}"}},{"insert":"示例1：戴着眼镜穿着蓝色T恤的男生和柯基小狗，坐在草坪上，3D卡通风格\n"},{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","tips":"{\"type\":\"default\"}"}},{"insert":"示例2：[图1]戴着眼镜穿着蓝色T恤的男生和[图2]的柯基小狗，坐在[图3]的草坪上，3D卡通风格\n"}],"zoneId":"gAOq7KoJ","zoneType":"Z"},"le7SQjQUB1":{"ops":[{"insert":" ","attributes":{"apiGoDebug":"{\"id\":\"R4y3xMXfina2KKc0Krzm\",\"button\":{\"href\":\"https://api.volcengine.com/api-explorer/?action=CreateContentsGenerationsTasks\u0026data=%7B%7D\u0026groupName=%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90API\u0026query=%7B%7D\u0026serviceCode=ark\u0026version=2024-01-01\"}}"}},{"insert":"\n"}],"zoneId":"le7SQjQUB1","zoneType":"Z"},"panel-AQAt06Yu":{"ops":[{"insert":" ","attributes":{"apiSample":"multiple","apiSampleData":"{\"type\":\"multiple\",\"config\":{\"inputName\":\"request\",\"outputName\":\"response\"},\"data\":[{\"title\":\"文生视频\",\"key\":\"H4eiXtgu\",\"children\":[{\"title\":\"curl\",\"key\":\"FBMR8LPmsk\",\"inputCode\":\"curl -X POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks \\\\\\n  -H \\\"Content-Type: application/json\\\" \\\\\\n  -H \\\"Authorization: Bearer $ARK_API_KEY\\\" \\\\\\n  -d '{\\n    \\\"model\\\": \\\"doubao-seedance-1-0-pro-250528\\\",\\n    \\\"content\\\": [\\n        {\\n            \\\"type\\\": \\\"text\\\",\\n            \\\"text\\\": \\\"多个镜头。一名侦探进入一间光线昏暗的房间。他检查桌上的线索，手里拿起桌上的某个物品。镜头转向他正在思索。 --ratio 16:9\\\"\\n        }\\n    ]\\n}'\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"python\",\"key\":\"NZd6FaKzmv\",\"inputCode\":\"import os\\n\\nfrom volcenginesdkarkruntime import Ark\\n\\n\\nclient = Ark(api_key=os.environ.get(\\\"ARK_API_KEY\\\"))\\n\\nif __name__ == \\\"__main__\\\":\\n    print(\\\"----- create request -----\\\")\\n    resp = client.content_generation.tasks.create(\\n        model=\\\"doubao-seedance-1-0-pro-250528\\\",\\n        content=[{\\\"text\\\":\\\"多个镜头。一名侦探进入一间光线昏暗的房间。他检查桌上的线索，手里拿起桌上的某个物品。镜头转向他正在思索。 --ratio 16:9\\\",\\\"type\\\":\\\"text\\\"}]\\n    )\\n    print(resp)\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"go\",\"key\":\"dHMMJoGhrJ\",\"inputCode\":\"package main\\n\\nimport (\\n        \\\"context\\\"\\n        \\\"fmt\\\"\\n        \\\"os\\\"\\n\\n        \\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime\\\"\\n        \\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model\\\"\\n        \\\"github.com/volcengine/volcengine-go-sdk/volcengine\\\"\\n)\\n\\nfunc main() {\\n        client := arkruntime.NewClientWithApiKey(os.Getenv(\\\"ARK_API_KEY\\\"))\\n        ctx := context.Background()\\n\\n        req := model.CreateContentGenerationTaskRequest{\\n                Model: \\\"doubao-seedance-1-0-pro-250528\\\",\\n                Content: []*model.CreateContentGenerationContentItem{\\n                        \u0026model.CreateContentGenerationContentItem{\\n                                Type: \\\"text\\\",\\n                                Text: volcengine.String(\\\"多个镜头。一名侦探进入一间光线昏暗的房间。他检查桌上的线索，手里拿起桌上的某个物品。镜头转向他正在思索。 --ratio 16:9\\\"),\\n                        },\\n                },\\n        }\\n\\n        resp, err := client.CreateContentGenerationTask(ctx, req)\\n        if err != nil {\\n                fmt.Printf(\\\"create content generation error: %v\\\\n\\\", err)\\n                return\\n        }\\n        fmt.Printf(\\\"Task Created with ID: %s\\\\n\\\", resp.ID)\\n}\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"java\",\"key\":\"nuE3OxBLas\",\"inputCode\":\"package com.volcengine.sample;\\n\\nimport com.fasterxml.jackson.core.JsonProcessingException;\\nimport com.volcengine.ark.runtime.model.content.generation.CreateContentGenerationTaskRequest;\\nimport com.volcengine.ark.runtime.model.content.generation.CreateContentGenerationTaskRequest.*;\\nimport com.volcengine.ark.runtime.service.ArkService;\\nimport java.util.ArrayList;\\nimport java.util.List;\\nimport java.util.concurrent.TimeUnit;\\nimport okhttp3.ConnectionPool;\\nimport okhttp3.Dispatcher;\\n\\n/*\\n# pom.xml\\n\u003cdependency\u003e\\n  \u003cgroupId\u003ecom.volcengine\u003c/groupId\u003e\\n  \u003cartifactId\u003evolcengine-java-sdk-ark-runtime\u003c/artifactId\u003e\\n  // 替换正式版本号\\n  \u003cversion\u003eLATEST\u003c/version\u003e\\n\u003c/dependency\u003e\\n*/\\n\\npublic class Sample {\\n\\n    static String apiKey = System.getenv(\\\"ARK_API_KEY\\\");\\n\\n    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);\\n    static Dispatcher dispatcher = new Dispatcher();\\n    static ArkService service =\\n            ArkService.builder()\\n                    .dispatcher(dispatcher)\\n                    .connectionPool(connectionPool)\\n                    .apiKey(apiKey)\\n                    .build();\\n\\n    public static void main(String[] args) throws JsonProcessingException {\\n\\n        List\u003cContent\u003e contentForReqList = new ArrayList\u003c\u003e();\\n        Content elementForContentForReqList0 = new Content();\\n        elementForContentForReqList0.setType(\\\"text\\\");\\n        elementForContentForReqList0.setText(\\n                \\\"多个镜头。一名侦探进入一间光线昏暗的房间。他检查桌上的线索，手里拿起桌上的某个物品。镜头转向他正在思索。 --ratio 16:9\\\");\\n        contentForReqList.add(elementForContentForReqList0);\\n\\n        CreateContentGenerationTaskRequest req =\\n                CreateContentGenerationTaskRequest.builder()\\n                        .model(\\\"doubao-seedance-1-0-pro-250528\\\")\\n                        .content(contentForReqList)\\n                        .build();\\n\\n        service.createContentGenerationTask(req).toString();\\n\\n        // shutdown service after all requests is finished\\n        service.shutdownExecutor();\\n    }\\n}\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"}]},{\"title\":\"图生视频-首帧\",\"key\":\"784hsbBr\",\"children\":[{\"title\":\"curl\",\"key\":\"gvk1d70KAj\",\"inputCode\":\"curl -X POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks \\\\\\n  -H \\\"Content-Type: application/json\\\" \\\\\\n  -H \\\"Authorization: Bearer $ARK_API_KEY\\\" \\\\\\n  -d '{\\n    \\\"model\\\": \\\"doubao-seedance-1-0-pro-fast-251015\\\",\\n    \\\"content\\\": [\\n        {\\n            \\\"type\\\": \\\"text\\\",\\n            \\\"text\\\": \\\"女孩抱着狐狸，女孩睁开眼，温柔地看向镜头，狐狸友善地抱着，镜头缓缓拉出，女孩的头发被风吹动  --ratio adaptive  --dur 5\\\"\\n        },\\n        {\\n            \\\"type\\\": \\\"image_url\\\",\\n            \\\"image_url\\\": {\\n                \\\"url\\\": \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/i2v_foxrgirl.png\\\"\\n            }\\n        }\\n    ]\\n}'\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"bash\",\"outputLanguage\":\"\"},{\"title\":\"python\",\"key\":\"6LgwmIxsDe\",\"inputCode\":\"import os\\n\\nfrom volcenginesdkarkruntime import Ark\\n\\nclient = Ark(api_key=os.environ.get(\\\"ARK_API_KEY\\\"))\\n\\nif __name__ == \\\"__main__\\\":\\n    print(\\\"----- create request -----\\\")\\n    resp = client.content_generation.tasks.create(\\n        model=\\\"doubao-seedance-1-0-pro-fast-251015\\\",\\n        content=[{\\\"text\\\":\\\"女孩抱着狐狸，女孩睁开眼，温柔地看向镜头，狐狸友善地抱着，镜头缓缓拉出，女孩的头发被风吹动  --ratio adaptive  --dur 5\\\",\\\"type\\\":\\\"text\\\"},{\\\"image_url\\\":{\\\"url\\\":\\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/i2v_foxrgirl.png\\\"},\\\"type\\\":\\\"image_url\\\"}]\\n    )\\n    print(resp)\\n\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"go\",\"key\":\"1VhG70FoIF\",\"inputCode\":\"package main\\n\\nimport (\\n        \\\"context\\\"\\n        \\\"fmt\\\"\\n        \\\"os\\\"\\n\\n        \\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime\\\"\\n        \\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model\\\"\\n        \\\"github.com/volcengine/volcengine-go-sdk/volcengine\\\"\\n)\\n\\n\\nfunc main() {\\n        client := arkruntime.NewClientWithApiKey(os.Getenv(\\\"ARK_API_KEY\\\"))\\n        ctx := context.Background()\\n\\n        req := model.CreateContentGenerationTaskRequest{\\n                Model: \\\"doubao-seedance-1-0-pro-fast-251015\\\",\\n                Content: []*model.CreateContentGenerationContentItem{\\n                        \u0026model.CreateContentGenerationContentItem{\\n                                Type: \\\"text\\\",\\n                                Text: volcengine.String(\\\"女孩抱着狐狸，女孩睁开眼，温柔地看向镜头，狐狸友善地抱着，镜头缓缓拉出，女孩的头发被风吹动  --ratio adaptive  --dur 5\\\"),\\n                        },\\n                        \u0026model.CreateContentGenerationContentItem{\\n                                Type: \\\"image_url\\\",\\n                                ImageURL: \u0026model.ImageURL{\\n                                        URL: \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/i2v_foxrgirl.png\\\",\\n                                },\\n                        },\\n                },\\n        }\\n\\n        resp, err := client.CreateContentGenerationTask(ctx, req)\\n        if err != nil {\\n                fmt.Printf(\\\"create content generation error: %v\\\\n\\\", err)\\n                return\\n        }\\n        fmt.Printf(\\\"Task Created with ID: %s\\\\n\\\", resp.ID)\\n}\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"java\",\"key\":\"S80ZfTWNfI\",\"inputCode\":\"package com.volcengine.sample;\\n\\nimport com.fasterxml.jackson.core.JsonProcessingException;\\nimport com.volcengine.ark.runtime.model.content.generation.CreateContentGenerationTaskRequest;\\nimport com.volcengine.ark.runtime.model.content.generation.CreateContentGenerationTaskRequest.*;\\nimport com.volcengine.ark.runtime.service.ArkService;\\nimport java.util.ArrayList;\\nimport java.util.List;\\nimport java.util.concurrent.TimeUnit;\\nimport okhttp3.ConnectionPool;\\nimport okhttp3.Dispatcher;\\n\\n/*\\n# pom.xml\\n\u003cdependency\u003e\\n  \u003cgroupId\u003ecom.volcengine\u003c/groupId\u003e\\n  \u003cartifactId\u003evolcengine-java-sdk-ark-runtime\u003c/artifactId\u003e\\n  // 替换正式版本号\\n  \u003cversion\u003eLATEST\u003c/version\u003e\\n\u003c/dependency\u003e\\n*/\\n\\npublic class Sample {\\n\\n    static String apiKey = System.getenv(\\\"ARK_API_KEY\\\");\\n\\n    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);\\n    static Dispatcher dispatcher = new Dispatcher();\\n    static ArkService service =\\n            ArkService.builder()\\n                    .dispatcher(dispatcher)\\n                    .connectionPool(connectionPool)\\n                    .apiKey(apiKey)\\n                    .build();\\n\\n    public static void main(String[] args) throws JsonProcessingException {\\n\\n        List\u003cContent\u003e contentForReqList = new ArrayList\u003c\u003e();\\n        Content elementForContentForReqList0 = new Content();\\n        elementForContentForReqList0.setType(\\\"text\\\");\\n        elementForContentForReqList0.setText(\\\"女孩抱着狐狸，女孩睁开眼，温柔地看向镜头，狐狸友善地抱着，镜头缓缓拉出，女孩的头发被风吹动  --ratio adaptive  --dur 5\\\");\\n\\n        ImageUrl imageUrlForElementForContentForReqList1 = new ImageUrl();\\n        imageUrlForElementForContentForReqList1.setUrl(\\n                \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/i2v_foxrgirl.png\\\");\\n        Content elementForContentForReqList1 = new Content();\\n        elementForContentForReqList1.setType(\\\"image_url\\\");\\n        elementForContentForReqList1.setImageUrl(imageUrlForElementForContentForReqList1);\\n        contentForReqList.add(elementForContentForReqList0);\\n        contentForReqList.add(elementForContentForReqList1);\\n\\n        CreateContentGenerationTaskRequest req =\\n                CreateContentGenerationTaskRequest.builder()\\n                        .model(\\\"doubao-seedance-1-0-pro-fast-251015\\\")\\n                        .content(contentForReqList)\\n                        .build();\\n\\n        service.createContentGenerationTask(req).toString();\\n\\n        // shutdown service after all requests is finished\\n        service.shutdownExecutor();\\n    }\\n}\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"}]},{\"title\":\"图生视频-首尾帧\",\"key\":\"rP1cif9y\",\"children\":[{\"title\":\"curl\",\"key\":\"sMP5CbyRIG\",\"inputCode\":\"curl -X POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks \\\\\\n  -H \\\"Content-Type: application/json\\\" \\\\\\n  -H \\\"Authorization: Bearer $ARK_API_KEY\\\" \\\\\\n  -d '{\\n    \\\"model\\\": \\\"doubao-seedance-1-0-pro-250528\\\",\\n    \\\"content\\\": [\\n         {\\n            \\\"type\\\": \\\"text\\\",\\n            \\\"text\\\": \\\"360度环绕运镜\\\"\\n        },\\n        {\\n            \\\"type\\\": \\\"image_url\\\",\\n            \\\"image_url\\\": {\\n                \\\"url\\\": \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seepro_first_frame.jpeg\\\"\\n            },\\n            \\\"role\\\": \\\"first_frame\\\"\\n        },\\n        {\\n            \\\"type\\\": \\\"image_url\\\",\\n            \\\"image_url\\\": {\\n                \\\"url\\\": \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seepro_last_frame.jpeg\\\"\\n            },\\n            \\\"role\\\": \\\"last_frame\\\"\\n        }\\n    ]\\n}'\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"python\",\"key\":\"SdnV5pHWHj\",\"inputCode\":\"import os\\nfrom volcenginesdkarkruntime import Ark\\n\\n# 请确保您已将 API Key 存储在环境变量 ARK_API_KEY 中\\n# 初始化Ark客户端，从环境变量中读取您的API Key\\n\\nclient = Ark(\\n    # 从环境变量中获取您的 API Key。此为默认方式，您可根据需要进行修改\\n    api_key=os.environ.get(\\\"ARK_API_KEY\\\"),\\n)\\n\\nprint(\\\"----- create request -----\\\")\\n# 创建视频生成任务\\ncreate_result = client.content_generation.tasks.create(\\n    # 设置模型ID\\n    model=\\\"doubao-seedance-1-0-pro-250528\\\", \\n    content=[\\n        {\\n            # 文本提示词与参数组合\\n            \\\"type\\\": \\\"text\\\",\\n            \\\"text\\\": \\\"360度环绕运镜\\\"\\n        },\\n        {\\n            # 首帧图片URL\\n            \\\"type\\\": \\\"image_url\\\",\\n            \\\"image_url\\\": {\\n                \\\"url\\\": \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seepro_first_frame.jpeg\\\"\\n            },\\n            \\\"role\\\": \\\"first_frame\\\"\\n        },\\n        {\\n            # 尾帧图片URL\\n            \\\"type\\\": \\\"image_url\\\",\\n            \\\"image_url\\\": {\\n                \\\"url\\\": \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seepro_last_frame.jpeg\\\"\\n            },\\n            \\\"role\\\": \\\"last_frame\\\"\\n        }\\n    ]\\n)\\nprint(create_result)\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"java\",\"key\":\"Ze2AAXcO8i\",\"inputCode\":\"package com.volcengine.ark.runtime;\\n\\nimport com.volcengine.ark.runtime.model.content.generation.DeleteContentGenerationTaskResponse;\\nimport com.volcengine.ark.runtime.model.content.generation.*;\\nimport com.volcengine.ark.runtime.model.content.generation.CreateContentGenerationTaskRequest.Content;\\nimport com.volcengine.ark.runtime.service.ArkService;\\nimport okhttp3.ConnectionPool;\\nimport okhttp3.Dispatcher;\\n\\nimport java.util.ArrayList;\\nimport java.util.List;\\nimport java.util.concurrent.TimeUnit;\\n\\n\\npublic class ContentGenerationTaskExample {\\n    // 请确保您已将 API Key 存储在环境变量 ARK_API_KEY 中\\n    // 初始化Ark客户端，从环境变量中读取您的API Key\\n    static String apiKey = System.getenv(\\\"ARK_API_KEY\\\");\\n    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);\\n    static Dispatcher dispatcher = new Dispatcher();\\n    static ArkService service = ArkService.builder()\\n           .dispatcher(dispatcher)\\n           .connectionPool(connectionPool)\\n           .apiKey(apiKey)\\n           .build();\\n    public static void main(String[] args) {\\n        //替换为您的 Model ID\\n        String model = \\\"doubao-seedance-1-0-pro-250528\\\"; \\n        \\n        System.out.println(\\\"----- CREATE Task Request -----\\\");\\n        List\u003cContent\u003e contents = new ArrayList\u003c\u003e();\\n\\n        // 添加文本提示词与参数组合\\n        contents.add(Content.builder()\\n                .type(\\\"text\\\")\\n                .text(\\\"360度环绕运镜\\\")\\n                .build());\\n\\n        // 添加首帧图片URL\\n        contents.add(Content.builder()\\n                .type(\\\"image_url\\\")\\n                .imageUrl(CreateContentGenerationTaskRequest.ImageUrl.builder()\\n                        .url(\\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seepro_first_frame.jpeg\\\")\\n                        .build())\\n                .role(\\\"first_frame\\\")\\n                .build());\\n\\n        // 添加尾帧图片URL\\n        contents.add(Content.builder()\\n                .type(\\\"image_url\\\")\\n                .imageUrl(CreateContentGenerationTaskRequest.ImageUrl.builder()\\n                        .url(\\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seepro_last_frame.jpeg\\\")\\n                        .build())\\n                .role(\\\"last_frame\\\")\\n                .build());\\n        \\n        // 创建视频生成任务\\n        CreateContentGenerationTaskRequest createRequest = CreateContentGenerationTaskRequest.builder()\\n                .model(model)\\n                .content(contents)\\n                .build();\\n \\n        CreateContentGenerationTaskResult createResult = service.createContentGenerationTask(createRequest);\\n        System.out.println(createResult);\\n    }\\n}\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"go\",\"key\":\"LSDggsoJnV\",\"inputCode\":\"package main\\n\\nimport (\\n        \\\"context\\\"\\n        \\\"fmt\\\"\\n        \\\"github.com/volcengine/volcengine-go-sdk/volcengine\\\"\\n        \\\"os\\\"\\n\\n        \\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime\\\"\\n        \\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model\\\"\\n)\\n\\nfunc main() {\\n        // 请确保您已将 API Key 存储在环境变量 ARK_API_KEY 中\\n        // 初始化Ark客户端，从环境变量中读取您的API Key\\n        client := arkruntime.NewClientWithApiKey(\\n                // 从环境变量中获取您的 API Key。此为默认方式，您可根据需要进行修改\\n                os.Getenv(\\\"ARK_API_KEY\\\"),\\n        )\\n        ctx := context.Background()      \\n        // 设置模型ID\\n        modelEp := \\\"doubao-seedance-1-0-pro-250528\\\" \\n\\n        fmt.Println(\\\"----- create content generation task -----\\\")\\n        // 创建视频生成任务\\n        createReq := model.CreateContentGenerationTaskRequest{\\n                Model: modelEp,\\n                Content: []*model.CreateContentGenerationContentItem{\\n                        {\\n                                // 文本提示词与参数组合\\n                                Type: model.ContentGenerationContentItemTypeText,\\n                                Text: volcengine.String(\\\"360度环绕运镜\\\"),\\n                        },\\n                        {\\n                                // 首帧图片URL\\n                                Type: model.ContentGenerationContentItemTypeImageURL,\\n                                ImageURL: \u0026model.ImageURL{\\n                                        URL: \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seepro_first_frame.jpeg\\\",\\n                                },\\n                                Role: volcengine.String(\\\"first_frame\\\"),\\n                        },\\n                        {\\n                                // 尾帧图片URL\\n                                Type: model.ContentGenerationContentItemTypeImageURL,\\n                                ImageURL: \u0026model.ImageURL{\\n                                        URL: \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seepro_last_frame.jpeg\\\",\\n                                },\\n                                Role: volcengine.String(\\\"last_frame\\\"),\\n                        },\\n                },\\n        }\\n\\n        createResponse, err := client.CreateContentGenerationTask(ctx, createReq)\\n        if err != nil {\\n                fmt.Printf(\\\"create content generation error: %v\\\", err)\\n                return\\n        }\\n        fmt.Printf(\\\"Task Created with ID: %s\\\", createResponse.ID)\\n}\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"}]},{\"title\":\"seedance-lite-参考图\",\"key\":\"xInI7Lsl\",\"children\":[{\"title\":\"curl\",\"key\":\"gFf4dHsp3m\",\"inputCode\":\"curl -X POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks \\\\\\n  -H \\\"Content-Type: application/json\\\" \\\\\\n  -H \\\"Authorization: Bearer $ARK_API_KEY\\\" \\\\\\n  -d '{\\n    \\\"model\\\": \\\"doubao-seedance-1-0-lite-i2v-250428\\\",\\n    \\\"content\\\": [\\n         {\\n            \\\"type\\\": \\\"text\\\",\\n            \\\"text\\\": \\\"[图1]戴着眼镜穿着蓝色T恤的男生和[图2]的柯基小狗，坐在[图3]的草坪上，3D卡通风格\\\"\\n        },\\n        {\\n            \\\"type\\\": \\\"image_url\\\",\\n            \\\"image_url\\\": {\\n                \\\"url\\\": \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_1.png\\\"\\n            },\\n            \\\"role\\\": \\\"reference_image\\\"\\n        },\\n        {\\n            \\\"type\\\": \\\"image_url\\\",\\n            \\\"image_url\\\": {\\n                \\\"url\\\": \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_2.png\\\"\\n            },\\n            \\\"role\\\": \\\"reference_image\\\"\\n        },\\n        {\\n            \\\"type\\\": \\\"image_url\\\",\\n            \\\"image_url\\\": {\\n                \\\"url\\\": \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_3.png\\\"\\n            },\\n            \\\"role\\\": \\\"reference_image\\\"\\n        }\\n    ]\\n}'\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"json\",\"outputLanguage\":\"json\"},{\"title\":\"python\",\"key\":\"Esqx2Ib6FC\",\"inputCode\":\"import os \\nfrom volcenginesdkarkruntime import Ark \\n \\n# 请确保您已将 API Key 存储在环境变量 ARK_API_KEY 中 \\n# 初始化Ark客户端，从环境变量中读取您的API Key \\n \\nclient = Ark( \\n    # 从环境变量中获取您的 API Key。此为默认方式，您可根据需要进行修改 \\n    api_key=os.environ.get(\\\"ARK_API_KEY\\\"), \\n \\nprint(\\\"----- create request -----\\\") \\n# 创建视频生成任务 \\ncreate_result = client.content_generation.tasks.create( \\n    # 替换 \u003cModel\u003e 为模型的Model ID\\n    model=\\\"doubao-seedance-1-0-lite-i2v-250428\\\",  \\n    content=[ \\n        { \\n            # 文本提示词与参数组合 \\n            \\\"type\\\": \\\"text\\\", \\n            \\\"text\\\": \\\"[图1]戴着眼镜穿着蓝色T恤的男生和[图2]的柯基小狗，坐在[图3]的草坪上，3D卡通风格\\\" \\n        }, \\n        { \\n            # 第一张参考图片URL \\n            # 参考图需要传入1～4张\\n            \\\"type\\\": \\\"image_url\\\", \\n            \\\"image_url\\\": { \\n                \\\"url\\\": \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_1.png\\\" \\n            }, \\n            \\\"role\\\": \\\"reference_image\\\" \\n        }, \\n        { \\n            # 第二张参考图片URL \\n            \\\"type\\\": \\\"image_url\\\", \\n            \\\"image_url\\\": { \\n                \\\"url\\\": \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_2.png\\\" \\n            }, \\n            \\\"role\\\": \\\"reference_image\\\" \\n        }, \\n        { \\n            # 第三张参考图片URL\\n            \\\"type\\\": \\\"image_url\\\", \\n            \\\"image_url\\\": { \\n                \\\"url\\\": \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_3.png\\\" \\n            }, \\n            \\\"role\\\": \\\"reference_image\\\" \\n        } \\n    ] \\n) \\nprint(create_result)\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"java\",\"key\":\"8hEEJDVTZS\",\"inputCode\":\"package com.volcengine.ark.runtime; \\n \\nimport com.volcengine.ark.runtime.model.content.generation.DeleteContentGenerationTaskResponse; \\nimport com.volcengine.ark.runtime.model.content.generation.*; \\nimport com.volcengine.ark.runtime.model.content.generation.CreateContentGenerationTaskRequest.Content; \\nimport com.volcengine.ark.runtime.service.ArkService; \\nimport okhttp3.ConnectionPool; \\nimport okhttp3.Dispatcher; \\n \\nimport java.util.ArrayList; \\nimport java.util.List; \\nimport java.util.concurrent.TimeUnit; \\n\\n\\npublic class ContentGenerationTaskExample { \\n    // 请确保您已将 API Key 存储在环境变量 ARK_API_KEY 中 \\n    // 初始化Ark客户端，从环境变量中读取您的API Key \\n    static String apiKey = System.getenv(\\\"ARK_API_KEY\\\"); \\n    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS); \\n    static Dispatcher dispatcher = new Dispatcher(); \\n    static ArkService service = ArkService.builder() \\n           .dispatcher(dispatcher) \\n           .connectionPool(connectionPool) \\n           .apiKey(apiKey) \\n           .build(); \\n    public static void main(String[] args) { \\n        //替换为您的 Model ID\\n        String model = \\\"doubao-seedance-1-0-lite-i2v-250428\\\";  \\n         \\n        System.out.println(\\\"----- CREATE Task Request -----\\\"); \\n        List\u003cContent\u003e contents = new ArrayList\u003c\u003e(); \\n \\n        // 添加文本提示词与参数组合 \\n        contents.add(Content.builder() \\n                .type(\\\"text\\\") \\n                .text(\\\"[图1]戴着眼镜穿着蓝色T恤的男生和[图2]的柯基小狗，坐在[图3]的草坪上，3D卡通风格\\\") \\n                .build()); \\n \\n        // 第一张参考图片URL \\n        // 参考图需要传入1～4张\\n        contents.add(Content.builder() \\n                .type(\\\"image_url\\\") \\n                .imageUrl(CreateContentGenerationTaskRequest.ImageUrl.builder() \\n                        .url(\\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_1.png\\\") \\n                        .build()) \\n                .role(\\\"reference_image\\\") \\n                .build()); \\n \\n        // 第二张参考图片URL  \\n        contents.add(Content.builder() \\n                .type(\\\"image_url\\\") \\n                .imageUrl(CreateContentGenerationTaskRequest.ImageUrl.builder() \\n                        .url(\\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_2.png\\\") \\n                        .build()) \\n                .role(\\\"reference_image\\\") \\n                .build()); \\n        \\n        // 第三张参考图片URL  \\n        contents.add(Content.builder() \\n                .type(\\\"image_url\\\") \\n                .imageUrl(CreateContentGenerationTaskRequest.ImageUrl.builder() \\n                        .url(\\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_3.png\\\") \\n                        .build()) \\n                .role(\\\"reference_image\\\") \\n                .build()); \\n         \\n        // 创建视频生成任务 \\n        CreateContentGenerationTaskRequest createRequest = CreateContentGenerationTaskRequest.builder() \\n                .model(model) \\n                .content(contents) \\n                .build(); \\n  \\n        CreateContentGenerationTaskResult createResult = service.createContentGenerationTask(createRequest); \\n        System.out.println(createResult); \\n \\n         \\n        service.shutdownExecutor(); \\n    } \\n}\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"},{\"title\":\"go\",\"key\":\"AfRvwSDdCS\",\"inputCode\":\"package main\\n\\nimport (\\n    \\\"context\\\"\\n    \\\"fmt\\\"\\n    \\\"os\\\"\\n\\n    \\\"github.com/volcengine/volcengine-go-sdk/volcengine\\\"\\n    \\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime\\\"\\n    \\\"github.com/volcengine/volcengine-go-sdk/service/arkruntime/model\\\"\\n)\\n\\nfunc main() {\\n    // 请确保您已将 API Key 存储在环境变量 ARK_API_KEY 中\\n    // 初始化Ark客户端，从环境变量中读取您的API Key\\n    client := arkruntime.NewClientWithApiKey(\\n        // 从环境变量中获取您的 API Key。此为默认方式，您可根据需要进行修改\\n        os.Getenv(\\\"ARK_API_KEY\\\"),\\n    )\\n    ctx := context.Background()\\n    //替换为您的 Model ID\\n    modelEp := \\\"doubao-seedance-1-0-lite-i2v-250428\\\"\\n\\n    fmt.Println(\\\"----- create content generation task -----\\\")\\n    // 创建视频生成任务\\n    createReq := model.CreateContentGenerationTaskRequest{\\n        Model: modelEp,\\n        Content: []*model.CreateContentGenerationContentItem{\\n            {\\n                // 文本提示词与参数组合\\n                Type: model.ContentGenerationContentItemTypeText,\\n                Text: volcengine.String(\\\"[图1]戴着眼镜穿着蓝色T恤的男生和[图2]的柯基小狗，坐在[图3]的草坪上，3D卡通风格\\\"),\\n            },\\n            {\\n                // 第一张参考图片URL\\n                // 参考图需要传入1～4张\\n                Type: model.ContentGenerationContentItemTypeImage,\\n                ImageURL: \u0026model.ImageURL{\\n                    URL: \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_1.png\\\",\\n                },\\n                Role: volcengine.String(\\\"reference_image\\\"),\\n            },\\n            {\\n                // 第二张参考图片URL\\n                Type: model.ContentGenerationContentItemTypeImage,\\n                ImageURL: \u0026model.ImageURL{\\n                    URL: \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_2.png\\\",\\n                },\\n                Role: volcengine.String(\\\"reference_image\\\"),\\n            },\\n            {\\n                // 第三张参考图片URL\\n                Type: model.ContentGenerationContentItemTypeImage,\\n                ImageURL: \u0026model.ImageURL{\\n                    URL: \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_3.png\\\",\\n                },\\n                Role: volcengine.String(\\\"reference_image\\\"),\\n            },\\n        },\\n    }\\n\\n    createResponse, err := client.CreateContentGenerationTask(ctx, createReq)\\n    if err != nil {\\n        fmt.Printf(\\\"create content generation error: %v\\\", err)\\n        return\\n    }\\n    fmt.Printf(\\\"Task Created with ID: %s\\\", createResponse.ID)\\n}\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"}]},{\"title\":\"图生视频-base64编码\",\"key\":\"CMySzOfY\",\"children\":[{\"title\":\"curl\",\"key\":\"8E8mtGm5mQ\",\"inputCode\":\"curl -X POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks \\\\\\n  -H \\\"Content-Type: application/json\\\" \\\\\\n  -H \\\"Authorization: Bearer $ARK_API_KEY\\\" \\\\\\n  -d '{\\n    \\\"model\\\": \\\"doubao-seedance-1-0-lite-i2v-250428\\\",\\n    \\\"content\\\": [\\n        {\\n            \\\"type\\\": \\\"text\\\",\\n            \\\"text\\\": \\\"女孩抱着狐狸，女孩睁开眼，温柔地看向镜头，狐狸友善地抱着，镜头缓缓拉出，女孩的头发被风吹动  --ratio adaptive  --dur 5\\\"\\n        },\\n        {\\n            \\\"type\\\": \\\"image_url\\\",\\n            \\\"image_url\\\": {\\n                \\\"url\\\": \\\"data:image/png;base64,aHR0******cG5n\\\"\\n            }\\n        }\\n    ]\\n}'\",\"outputCode\":\"{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\"\\n}\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"}]},{\"title\":\"callback使用示例\",\"key\":\"j74JFoxx\",\"inputCode\":\"curl https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks \\\\\\n  -H \\\"Content-Type: application/json\\\" \\\\\\n  -H \\\"Authorization: Bearer $ARK_API_KEY\\\" \\\\\\n  -d '{\\n    \\\"model\\\": \\\"doubao-seedance-1-0-lite-t2v-250428\\\",\\n    \\\"content\\\": [\\n        {\\n            \\\"type\\\": \\\"text\\\",\\n            \\\"text\\\": \\\"写实风格，晴朗的蓝天之下，一大片白色的雏菊花田，镜头逐渐拉近，最终定格在一朵雏菊花的特写上，花瓣上有几颗晶莹的露珠。 --ratio 16:9\\\"\\n        }\\n    ],\\n    \\\"callback_url\\\": \\\"https://****\\\"\\n}'\",\"outputCode\":\"//以下为向您的 callback_url 发送的请求体\\n\\n// 状态为queued时：\\n{\\n    \\\"id\\\": \\\"cgt-2025******-****\\\",\\n    \\\"model\\\": \\\"doubao-seedance-1-0-lite-t2v-250428\\\",\\n    \\\"status\\\": \\\"queued\\\",\\n    \\\"created_at\\\": 1745899232,\\n    \\\"updated_at\\\": 1745899232\\n}\\n\\n//状态为running时：\\n{\\n    \\\"id\\\": \\\"cgt-2025******-****\\\",\\n    \\\"model\\\": \\\"doubao-seedance-1-0-lite-t2v-250428\\\",\\n    \\\"status\\\": \\\"running\\\",\\n    \\\"created_at\\\": 1745910851,\\n    \\\"updated_at\\\": 1745910851\\n}\\n\\n//状态为succeeded时：\\n{\\n  \\\"id\\\": \\\"cgt-2025******-****\\\",\\n  \\\"model\\\": \\\"doubao-seedance-1-0-lite-t2v-250428\\\",\\n  \\\"status\\\": \\\"succeeded\\\",\\n  \\\"content\\\": {\\n    \\\"video_url\\\": \\\"https://ark-content-generation-cn-beijing.tos-cn-beijing.volces.com/****\\\"\\n  },\\n  \\\"usage\\\": {\\n    \\\"completion_tokens\\\": 108900,\\n    \\\"total_tokens\\\": 108900\\n  },\\n  \\\"created_at\\\": 1743414619,\\n  \\\"updated_at\\\": 1743414673\\n}\",\"inputLanguage\":\"bash\",\"outputLanguage\":\"\"},{\"title\":\"文本提示词+全量参数\",\"key\":\"pXSRvt0E\",\"children\":[{\"title\":\"json\",\"key\":\"fwOO918XKz\",\"inputCode\":\"// 指定生成视频的宽高比为16:9，时长为 5 秒，帧率为 24 fps，分辨率为720p，包含水印，种子整数为11，不固定摄像头\\n\\n//参数使用简写\\n\\\"content\\\": [\\n        {\\n            \\\"type\\\": \\\"text\\\",\\n            \\\"text\\\": \\\"女孩抱着狐狸 --rs 720p --rt 16:9 --dur 5 --fps 24 --wm true --seed 11 --cf false\\\"\\n        },\\n        {\\n            \\\"type\\\": \\\"image_url\\\",\\n            \\\"image_url\\\": {\\n                \\\"url\\\": \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/i2v_foxrgirl.png\\\"\\n            }\\n        }\\n    ]\\n    \\n//参数使用全称\\n\\\"content\\\": [\\n        {\\n            \\\"type\\\": \\\"text\\\",\\n            \\\"text\\\": \\\"女孩抱着狐狸 --resolution 720p --ratio 16:9 --duration 5 --framespersecond 24 --watermark true --seed 11 --camerafixed false\\\"\\n        },\\n        {\\n            \\\"type\\\": \\\"image_url\\\",\\n            \\\"image_url\\\": {\\n                \\\"url\\\": \\\"https://ark-project.tos-cn-beijing.volces.com/doc_image/i2v_foxrgirl.png\\\"\\n            }\\n        }\\n    ]\",\"outputCode\":\"无\",\"inputLanguage\":\"\",\"outputLanguage\":\"\"}]}]}"}}],"zoneId":"panel-AQAt06Yu","zoneType":"Z"},"q7G1RV2Z":{"ops":[{"insert":"*","attributes":{"lmkr":"1","origin-start":"1","start":"1","text-indent":"true"}},{"insert":"图生视频-首帧\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"支持模型：","attributes":{"bold":"true"}},{"insert":"doubao-seedance-pro、doubao-seedance-pro-fast、doubao-seedance-lite-i2v\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1"}},{"insert":"字段role取值：","attributes":{"bold":"true"}},{"insert":"需要传入1个image_url对象，且字段role可不填，或字段role为：first_frame\n"}],"zoneId":"q7G1RV2Z","zoneType":"Z"},"rshi0c6camp68n5h1gjv91vvj53oitrs76":{"ops":[{"insert":{"id":"r12ptpag4zzgdtmodkfk95v12d72ztmbdj"},"attributes":{"rowHeight":"39"}},{"insert":{"id":"r19beuep982qz6ngpqqpamkbzl8ivq2nzq"},"attributes":{"mergeCellID":"d5e33sgp","rowHeight":"39"}},{"insert":{"id":"r1jdm3r8iawhr8g2huuhf1jzfn5bounz88"},"attributes":{"mergeCellID":"d5e33sgp","rowHeight":"39"}},{"insert":{"id":"r17bsqmyeh2s4we0eehuv1n8kejzzmz4sq"},"attributes":{"mergeCellID":"d5e33sgp","rowHeight":"39"}},{"insert":{"id":"r1data8cir17yu2ctny5m47jaeuccmujd9"},"attributes":{"mergeCellID":"d5e33sgp","rowHeight":"39"}},{"insert":{"id":"r1vzmj7gjm0jea58f1w9lshpcf5mjznr02"},"attributes":{"mergeCellID":"d5e33sgp","rowHeight":"39"}},{"insert":{"id":"r1sbfm7gym7uci6eoz2awauwrjc6ngf2b0"},"attributes":{"mergeCellID":"d5e33sgp","rowHeight":"39"}},{"insert":{"id":"r19tfa7mj7nqfy143nriglypwzgkdpeabm"},"attributes":{"mergeCellID":"be9fghdy","rowHeight":"39"}},{"insert":{"id":"r1kpcqfmes9nbr127e4lp48jwre9l3bymh"},"attributes":{"mergeCellID":"be9fghdy","rowHeight":"39"}},{"insert":{"id":"r1ezcrd3mf4i6zijmkmyrngqihmbt04ov3"},"attributes":{"mergeCellID":"be9fghdy","rowHeight":"39"}},{"insert":{"id":"r1n3vcteb0y4lbl11j15cfos9ranvkki1l"},"attributes":{"mergeCellID":"be9fghdy","rowHeight":"39"}},{"insert":{"id":"r187hqtb8ca62a3vvipngjsrvqy1ld65ke"},"attributes":{"mergeCellID":"be9fghdy","rowHeight":"39"}},{"insert":{"id":"r1r5q7tcslg8k185ez1haq24g9vjqf5pcn"},"attributes":{"mergeCellID":"be9fghdy","rowHeight":"39"}},{"insert":{"id":"r1f0ubwddj1uakkytwailhlfwgdi09j22v"},"attributes":{"mergeCellID":"zvlhbf0m","rowHeight":"39"}},{"insert":{"id":"r1532jb8k5si2lyhv5q1s1nm7ogp9tpp9n"},"attributes":{"mergeCellID":"zvlhbf0m","rowHeight":"39"}},{"insert":{"id":"r1m9gdddzauhb3twoqabrc11egt6sh9s2f"},"attributes":{"mergeCellID":"zvlhbf0m","rowHeight":"39"}},{"insert":{"id":"r1w7i909bfdtis44t7sk8g1mblw1juzrbc"},"attributes":{"mergeCellID":"zvlhbf0m","rowHeight":"39"}},{"insert":{"id":"r14c1otyy8mj9ly4lv9gahasvmqb19k4rc"},"attributes":{"mergeCellID":"zvlhbf0m","rowHeight":"39"}},{"insert":{"id":"r12atgakkwnm4e7w6ysd292wiih20b9md3"},"attributes":{"mergeCellID":"zvlhbf0m","rowHeight":"39"}}],"zoneId":"rshi0c6camp68n5h1gjv91vvj53oitrs76","zoneType":"R"},"vRJT6oJZ":{"ops":[{"insert":"本接口仅支持 API Key 鉴权，请在 "},{"insert":"获取 API Key","attributes":{"hyperlink":"{\"href\":\"https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey\",\"linkId\":\"p8u2azO8Hz\",\"target\":\"_blank\"}"}},{"insert":" 页面，获取长效 API Key。\n"}],"zoneId":"vRJT6oJZ","zoneType":"Z"},"ve635hnF":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"不同模型支持的视频生成能力简介","attributes":{"bold":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"doubao-seedance-pro","attributes":{"bold":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"图生视频-首尾帧，根据您输入的"},{"insert":"首帧图片+尾帧图片+文本提示词（可选）+参数（可选）","attributes":{"underline":"true"}},{"insert":"生成目标视频。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"图生视频-首帧，根据您输入的"},{"insert":"首帧图片+文本提示词（可选）+参数（可选）","attributes":{"underline":"true"}},{"insert":"生成目标视频。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"文生视频，根据您输入的"},{"insert":"文本提示词+参数（可选）","attributes":{"underline":"true"}},{"insert":"生成目标视频。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"doubao-seedance-pro-fast","attributes":{"bold":"true"}},{"insert":"new","attributes":{"bold":"true","mark":"true","subsuper":"sup"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"图生视频-首帧，根据您输入的"},{"insert":"首帧图片+文本提示词（可选）+参数（可选）","attributes":{"underline":"true"}},{"insert":"生成目标视频。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"文生视频，根据您输入的"},{"insert":"文本提示词+参数（可选）","attributes":{"underline":"true"}},{"insert":"生成目标视频。\n"},{"insert":"*","attributes":{"list":"bullet1","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"doubao-seedance-lite","attributes":{"bold":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"doubao-seedance-1-0-lite-t2v：","attributes":{"bold":"true"}},{"insert":"文生视频，根据您输入的"},{"insert":"文本提示词+参数（可选）","attributes":{"underline":"true"}},{"insert":"生成目标视频。\n"},{"insert":"*","attributes":{"list":"bullet2","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"doubao-seedance-1-0-lite-i2v：","attributes":{"bold":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"图生视频-参考图，根据您输入的"},{"insert":"参考图片（1-4张）","attributes":{"bold":"true","underline":"true"}},{"insert":"+文本提示词（可选）+ 参数（可选）","attributes":{"underline":"true"}},{"insert":"生成目标视频。\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"图生视频-首尾帧，根据您输入的"},{"insert":"首帧图片+尾帧图片+文本提示词（可选）+参数（可选）","attributes":{"underline":"true"}},{"insert":"生成目标视频。\n"},{"insert":"*","attributes":{"list":"bullet3","lmkr":"1","origin-start":"1","start":"1"}},{"insert":"图生视频-首帧，根据您输入的"},{"insert":"首帧图片+文本提示词（可选）+参数（可选）","attributes":{"underline":"true"}},{"insert":"生成目标视频。\n"}],"zoneId":"ve635hnF","zoneType":"Z"},"vkv6btxsip":{"ops":[{"insert":"// 指定生成视频的宽高比为16:9，时长为 5 秒，帧率为 24 fps，分辨率为720p，包含水印，种子整数为11，不固定摄像头","attributes":{"clientside-highlight":"code-hljs-comment"}},{"insert":"\n"},{"insert":"\n"},{"insert":"\"content\"","attributes":{"clientside-highlight":"code-hljs-attr"}},{"insert":":","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":" "},{"insert":"[","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":"\n"},{"insert":"        "},{"insert":"{","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":"\n"},{"insert":"            "},{"insert":"\"type\"","attributes":{"clientside-highlight":"code-hljs-attr"}},{"insert":":","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":" "},{"insert":"\"text\"","attributes":{"clientside-highlight":"code-hljs-string"}},{"insert":",","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":"\n"},{"insert":"            "},{"insert":"\"text\"","attributes":{"clientside-highlight":"code-hljs-attr"}},{"insert":":","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":" "},{"insert":"\"小猫对着镜头打哈欠。 --rs 720p --rt 16:9 --dur 5 --fps 24 --wm true --seed 11 --cf false\"","attributes":{"clientside-highlight":"code-hljs-string"}},{"insert":"\n"},{"insert":"        "},{"insert":"}","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":"\n"},{"insert":"    "},{"insert":"]","attributes":{"clientside-highlight":"code-hljs-punctuation"}},{"insert":"\n"},{"insert":"\n"}],"zoneId":"vkv6btxsip","zoneType":"Z"},"xr12atgakkwnm4e7w6ysd292wiih20b9md3xc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"2176×928\n"}],"zoneId":"xr12atgakkwnm4e7w6ysd292wiih20b9md3xc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr12atgakkwnm4e7w6ysd292wiih20b9md3xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"21:9\n"}],"zoneId":"xr12atgakkwnm4e7w6ysd292wiih20b9md3xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr12atgakkwnm4e7w6ysd292wiih20b9md3xc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"\n"}],"zoneId":"xr12atgakkwnm4e7w6ysd292wiih20b9md3xc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr12ptpag4zzgdtmodkfk95v12d72ztmbdjxc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"宽高像素值\n"}],"zoneId":"xr12ptpag4zzgdtmodkfk95v12d72ztmbdjxc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr12ptpag4zzgdtmodkfk95v12d72ztmbdjxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"宽高比\n"}],"zoneId":"xr12ptpag4zzgdtmodkfk95v12d72ztmbdjxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr12ptpag4zzgdtmodkfk95v12d72ztmbdjxc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"分辨率\n"}],"zoneId":"xr12ptpag4zzgdtmodkfk95v12d72ztmbdjxc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr14c1otyy8mj9ly4lv9gahasvmqb19k4rcxc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"1088×1920\n"}],"zoneId":"xr14c1otyy8mj9ly4lv9gahasvmqb19k4rcxc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr14c1otyy8mj9ly4lv9gahasvmqb19k4rcxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"9:16\n"}],"zoneId":"xr14c1otyy8mj9ly4lv9gahasvmqb19k4rcxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr14c1otyy8mj9ly4lv9gahasvmqb19k4rcxc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"\n"}],"zoneId":"xr14c1otyy8mj9ly4lv9gahasvmqb19k4rcxc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr1532jb8k5si2lyhv5q1s1nm7ogp9tpp9nxc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"1664×1248\n"}],"zoneId":"xr1532jb8k5si2lyhv5q1s1nm7ogp9tpp9nxc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr1532jb8k5si2lyhv5q1s1nm7ogp9tpp9nxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"4:3\n"}],"zoneId":"xr1532jb8k5si2lyhv5q1s1nm7ogp9tpp9nxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr1532jb8k5si2lyhv5q1s1nm7ogp9tpp9nxc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"\n"}],"zoneId":"xr1532jb8k5si2lyhv5q1s1nm7ogp9tpp9nxc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr17bsqmyeh2s4we0eehuv1n8kejzzmz4sqxc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"640×640\n"}],"zoneId":"xr17bsqmyeh2s4we0eehuv1n8kejzzmz4sqxc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr17bsqmyeh2s4we0eehuv1n8kejzzmz4sqxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"1:1\n"}],"zoneId":"xr17bsqmyeh2s4we0eehuv1n8kejzzmz4sqxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr17bsqmyeh2s4we0eehuv1n8kejzzmz4sqxc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"\n"}],"zoneId":"xr17bsqmyeh2s4we0eehuv1n8kejzzmz4sqxc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr187hqtb8ca62a3vvipngjsrvqy1ld65kexc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"704×1248\n"}],"zoneId":"xr187hqtb8ca62a3vvipngjsrvqy1ld65kexc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr187hqtb8ca62a3vvipngjsrvqy1ld65kexc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"9:16\n"}],"zoneId":"xr187hqtb8ca62a3vvipngjsrvqy1ld65kexc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr187hqtb8ca62a3vvipngjsrvqy1ld65kexc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"\n"}],"zoneId":"xr187hqtb8ca62a3vvipngjsrvqy1ld65kexc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr19beuep982qz6ngpqqpamkbzl8ivq2nzqxc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"864×480\n"}],"zoneId":"xr19beuep982qz6ngpqqpamkbzl8ivq2nzqxc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr19beuep982qz6ngpqqpamkbzl8ivq2nzqxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"16:9\n"}],"zoneId":"xr19beuep982qz6ngpqqpamkbzl8ivq2nzqxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr19beuep982qz6ngpqqpamkbzl8ivq2nzqxc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"480p\n"},{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"\n"}],"zoneId":"xr19beuep982qz6ngpqqpamkbzl8ivq2nzqxc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr19tfa7mj7nqfy143nriglypwzgkdpeabmxc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"1248×704\n"}],"zoneId":"xr19tfa7mj7nqfy143nriglypwzgkdpeabmxc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr19tfa7mj7nqfy143nriglypwzgkdpeabmxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"16:9\n"}],"zoneId":"xr19tfa7mj7nqfy143nriglypwzgkdpeabmxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr19tfa7mj7nqfy143nriglypwzgkdpeabmxc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"720p\n"},{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"\n"}],"zoneId":"xr19tfa7mj7nqfy143nriglypwzgkdpeabmxc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr1data8cir17yu2ctny5m47jaeuccmujd9xc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"544×736\n"}],"zoneId":"xr1data8cir17yu2ctny5m47jaeuccmujd9xc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr1data8cir17yu2ctny5m47jaeuccmujd9xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"3:4\n"}],"zoneId":"xr1data8cir17yu2ctny5m47jaeuccmujd9xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr1data8cir17yu2ctny5m47jaeuccmujd9xc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"\n"}],"zoneId":"xr1data8cir17yu2ctny5m47jaeuccmujd9xc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr1ezcrd3mf4i6zijmkmyrngqihmbt04ov3xc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"960×960\n"}],"zoneId":"xr1ezcrd3mf4i6zijmkmyrngqihmbt04ov3xc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr1ezcrd3mf4i6zijmkmyrngqihmbt04ov3xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"1:1\n"}],"zoneId":"xr1ezcrd3mf4i6zijmkmyrngqihmbt04ov3xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr1ezcrd3mf4i6zijmkmyrngqihmbt04ov3xc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"\n"}],"zoneId":"xr1ezcrd3mf4i6zijmkmyrngqihmbt04ov3xc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr1f0ubwddj1uakkytwailhlfwgdi09j22vxc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"1920×1088\n"}],"zoneId":"xr1f0ubwddj1uakkytwailhlfwgdi09j22vxc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr1f0ubwddj1uakkytwailhlfwgdi09j22vxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"16:9\n"}],"zoneId":"xr1f0ubwddj1uakkytwailhlfwgdi09j22vxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr1f0ubwddj1uakkytwailhlfwgdi09j22vxc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"1080p"},{"insert":"参考图场景不支持","attributes":{"inlineCode":"true"}},{"insert":"\n"},{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"\n"}],"zoneId":"xr1f0ubwddj1uakkytwailhlfwgdi09j22vxc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr1jdm3r8iawhr8g2huuhf1jzfn5bounz88xc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"736×544\n"}],"zoneId":"xr1jdm3r8iawhr8g2huuhf1jzfn5bounz88xc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr1jdm3r8iawhr8g2huuhf1jzfn5bounz88xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"4:3\n"}],"zoneId":"xr1jdm3r8iawhr8g2huuhf1jzfn5bounz88xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr1jdm3r8iawhr8g2huuhf1jzfn5bounz88xc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"\n"}],"zoneId":"xr1jdm3r8iawhr8g2huuhf1jzfn5bounz88xc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr1kpcqfmes9nbr127e4lp48jwre9l3bymhxc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"1120×832\n"}],"zoneId":"xr1kpcqfmes9nbr127e4lp48jwre9l3bymhxc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr1kpcqfmes9nbr127e4lp48jwre9l3bymhxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"4:3\n"}],"zoneId":"xr1kpcqfmes9nbr127e4lp48jwre9l3bymhxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr1kpcqfmes9nbr127e4lp48jwre9l3bymhxc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"\n"}],"zoneId":"xr1kpcqfmes9nbr127e4lp48jwre9l3bymhxc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr1m9gdddzauhb3twoqabrc11egt6sh9s2fxc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"1440×1440\n"}],"zoneId":"xr1m9gdddzauhb3twoqabrc11egt6sh9s2fxc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr1m9gdddzauhb3twoqabrc11egt6sh9s2fxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"1:1\n"}],"zoneId":"xr1m9gdddzauhb3twoqabrc11egt6sh9s2fxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr1m9gdddzauhb3twoqabrc11egt6sh9s2fxc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"\n"}],"zoneId":"xr1m9gdddzauhb3twoqabrc11egt6sh9s2fxc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr1n3vcteb0y4lbl11j15cfos9ranvkki1lxc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"832×1120\n"}],"zoneId":"xr1n3vcteb0y4lbl11j15cfos9ranvkki1lxc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr1n3vcteb0y4lbl11j15cfos9ranvkki1lxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"3:4\n"}],"zoneId":"xr1n3vcteb0y4lbl11j15cfos9ranvkki1lxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr1n3vcteb0y4lbl11j15cfos9ranvkki1lxc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"\n"}],"zoneId":"xr1n3vcteb0y4lbl11j15cfos9ranvkki1lxc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr1r5q7tcslg8k185ez1haq24g9vjqf5pcnxc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"1504×640\n"}],"zoneId":"xr1r5q7tcslg8k185ez1haq24g9vjqf5pcnxc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr1r5q7tcslg8k185ez1haq24g9vjqf5pcnxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"21:9\n"}],"zoneId":"xr1r5q7tcslg8k185ez1haq24g9vjqf5pcnxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr1r5q7tcslg8k185ez1haq24g9vjqf5pcnxc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"\n"}],"zoneId":"xr1r5q7tcslg8k185ez1haq24g9vjqf5pcnxc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr1sbfm7gym7uci6eoz2awauwrjc6ngf2b0xc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"960×416\n"}],"zoneId":"xr1sbfm7gym7uci6eoz2awauwrjc6ngf2b0xc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr1sbfm7gym7uci6eoz2awauwrjc6ngf2b0xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"21:9\n"}],"zoneId":"xr1sbfm7gym7uci6eoz2awauwrjc6ngf2b0xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr1sbfm7gym7uci6eoz2awauwrjc6ngf2b0xc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"\n"}],"zoneId":"xr1sbfm7gym7uci6eoz2awauwrjc6ngf2b0xc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr1vzmj7gjm0jea58f1w9lshpcf5mjznr02xc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"480×864\n"}],"zoneId":"xr1vzmj7gjm0jea58f1w9lshpcf5mjznr02xc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr1vzmj7gjm0jea58f1w9lshpcf5mjznr02xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"9:16\n"}],"zoneId":"xr1vzmj7gjm0jea58f1w9lshpcf5mjznr02xc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr1vzmj7gjm0jea58f1w9lshpcf5mjznr02xc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"\n"}],"zoneId":"xr1vzmj7gjm0jea58f1w9lshpcf5mjznr02xc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"xr1w7i909bfdtis44t7sk8g1mblw1juzrbcxc15ae2sfq0nol78slao3jpwoyylu9uhb84":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"1248×1664\n"}],"zoneId":"xr1w7i909bfdtis44t7sk8g1mblw1juzrbcxc15ae2sfq0nol78slao3jpwoyylu9uhb84","zoneType":"Z"},"xr1w7i909bfdtis44t7sk8g1mblw1juzrbcxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7":{"ops":[{"insert":"*","attributes":{"align":"left","lmkr":"1"}},{"insert":"3:4\n"}],"zoneId":"xr1w7i909bfdtis44t7sk8g1mblw1juzrbcxc1sbgn7n6z81wne5jf8y26ukcy62dj68s7","zoneType":"Z"},"xr1w7i909bfdtis44t7sk8g1mblw1juzrbcxc1tr6chsptk2weet7zh7z1n3g96sivy02k":{"ops":[{"insert":"\n"}],"zoneId":"xr1w7i909bfdtis44t7sk8g1mblw1juzrbcxc1tr6chsptk2weet7zh7z1n3g96sivy02k","zoneType":"Z"},"zAvYGrzr":{"ops":[{"insert":"*","attributes":{"lmkr":"1"}},{"insert":"Tips：一键展开折叠，快速检索内容\n"},{"insert":"打开页面右上角开关，"},{"insert":"ctrl ","attributes":{"bold":"true"}},{"insert":"+ "},{"insert":"f","attributes":{"bold":"true"}},{"insert":" 可检索页面内所有内容。\n"},{"insert":" ","attributes":{"image":"true","src":"https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_cae7ddb0e1977b68b353f17897b8574c.png","uuid":"xENn1NuIYU6I36hIIzKw"}},{"insert":"\n"}],"zoneId":"zAvYGrzr","zoneType":"Z"}}}
+
+`POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks`[运行](https://api.volcengine.com/api-explorer/?action=CreateContentsGenerationsTasks&data=%7B%7D&groupName=%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90API&query=%7B%7D&serviceCode=ark&version=2024-01-01)
+本文介绍创建视频生成任务 API 的输入输出参数，供您使用接口时查阅字段含义。模型会依据传入的图片及文本信息生成视频，待生成完成后，您可以按条件查询任务并获取生成的视频。
+请求参数
+跳转 [响应参数](#L9tzcCyD)
+请求体
+**model**`string`
+您需要调用的模型的 ID （Model ID），[开通模型服务](https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D&OpenTokenDrawer=false)，并[查询 Model ID](https://www.volcengine.com/docs/82379/1330310) 。
+您也可通过 Endpoint ID 来调用模型，获得限流、计费类型（前付费/后付费）、运行状态查询、监控、安全等高级能力，可参考[获取 Endpoint ID](https://www.volcengine.com/docs/82379/1099522)。
+**content**`object[]`
+输入给模型，生成视频的信息，支持文本信息和图片信息。
+**callback_url**`string`
+填写本次生成任务结果的回调通知地址。当视频生成任务有状态变化时，方舟将向此地址推送 POST 请求。
+回调请求内容结构与[查询任务API](https://www.volcengine.com/docs/82379/1521309)的返回体一致。
+回调返回的 status 包括以下状态：
+queued：排队中。
+running：任务运行中。
+succeeded： 任务成功。（如发送失败，即5秒内没有接收到成功发送的信息，回调三次）
+failed：任务失败。（如发送失败，即5秒内没有接收到成功发送的信息，回调三次）
+expired：任务超时，即任务处于**运行中或排队中**状态超过过期时间。可通过 **execution_expires_after **字段设置过期时间。
+**return_last_frame**`boolean``默认值 false`
+true：返回生成视频的尾帧图像。设置为 `true` 后，可通过 [查询视频生成任务接口](https://www.volcengine.com/docs/82379/1521309) 获取视频的尾帧图像。尾帧图像的格式为 png，宽高像素值与生成的视频保持一致，无水印。
+使用该参数可实现生成多个连续视频：以上一个生成视频的尾帧作为下一个视频任务的首帧，快速生成多个连续视频，调用示例详见 [教程](https://www.volcengine.com/docs/82379/1366799?lang=zh#%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E8%BF%9E%E7%BB%AD%E8%A7%86%E9%A2%91)。
+false：不返回生成视频的尾帧图像。
+**service_tier****new**`string``默认值 default`
+不支持修改已提交任务的服务等级
+指定处理本次请求的服务等级类型，枚举值：
+default：在线推理模式，RPM 和并发数配额较低（详见 [模型列表](https://www.volcengine.com/docs/82379/1330310?lang=zh#%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90%E8%83%BD%E5%8A%9B)），适合对推理时效性要求较高的场景。
+flex：离线推理模式，TPD 配额更高（详见 [模型列表](https://www.volcengine.com/docs/82379/1330310?lang=zh#%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90%E8%83%BD%E5%8A%9B)），价格为在线推理的 50%， 适合对推理时延要求不高的场景。
+**execution_expires_after****new**`integer``默认值 172800`
+任务超时阈值。指定任务提交后的过期时间（单位：秒），从 **created at** 时间戳开始计算。默认值 172800 秒，即 48 小时。取值范围：[3600，259200]。
+不论使用哪种 **service_tier**，都建议根据业务场景设置合适的超时时间。超过该时间后任务会被自动终止，并标记为`expired`状态。
+模型文本命令(选填)
+**在文本提示词后追加 --[parameters] **，控制视频输出的规格，包括宽高比、帧率、分辨率等。
+不同模型，可能对应支持不同的参数与取值，详见 [输出视频格式](https://www.volcengine.com/docs/82379/1366799?lang=zh#%E8%AE%BE%E7%BD%AE%E8%BE%93%E5%87%BA%E8%A7%86%E9%A2%91%E6%A0%BC%E5%BC%8F) 。当输入的参数或取值不符合所选的模型时，内容会被忽略或报错。
+**resolution **`string``简写 rs`
+doubao-seedance-1-0-lite 默认值：`720p`
+doubao-seedance-1-0-pro&pro-fast 默认值：`1080p`
+视频分辨率，枚举值：
+480p
+720p
+1080p：参考图场景不支持
+**ratio **`string``简写 rt`
+文生视频默认值是`16:9`
+图生视频默认值一般是`adaptive`。特别注意，参考图生视频的默认值是`16:9`
+生成视频的宽高比例。不同宽高比对应的宽高像素值见下方表格。
+16:9
+4:3
+1:1
+3:4
+9:16
+21:9
+adaptive：仅图生视频支持。根据所上传图片的比例，自动选择最合适的宽高比。
+**duration**`integer``默认值 5``简写 dur`
+duration 和 frames 二选一即可，frames 的优先级高于 duration。如果您希望生成整数秒的视频，建议指定 duration。
+生成视频时长，单位：秒。支持 2~12 秒**new**。
+**frames****new**`integer``简写 frames`
+duration 和 frames 二选一即可，frames 的优先级高于 duration。如果您希望生成小数秒的视频，建议指定 frames。
+生成视频的帧数。通过指定帧数，可以灵活控制生成视频的长度，生成小数秒的视频。
+由于 frames 的取值限制，仅能支持有限小数秒，您需要根据公式推算最接近的帧数。
+计算公式：帧数 = 时长 × 帧率（24）。
+取值范围：支持 [29, 289] 区间内所有满足 `25 + 4n` 格式的整数值，其中 n 为正整数。
+例如：假设需要生成 2.4 秒的视频，帧数=2.4×24=57.6。由于 frames 不支持 57.6，此时您只能选择一个最接近的值。根据 25+4n 计算出最接近的帧数为 57，实际生成的视频为 57/24=2.375 秒。
+**framespersecond**`integer``默认值 24``简写 fps`
+帧率，即一秒时间内视频画面数量。仅支持 24
+**seed**`integer``默认值 -1``简写 seed`
+种子整数，用于控制生成内容的随机性。
+取值范围：[-1, 2^32-1]之间的整数。
+注意
+相同的请求下，模型收到不同的seed值，如：不指定seed值或令seed取值为-1（会使用随机数替代）、或手动变更seed值，将生成不同的结果。
+相同的请求下，模型收到相同的seed值，会生成类似的结果，但不保证完全一致。
+**camerafixed**`boolean``默认值 false``简写 cf`
+参考图场景不支持
+是否固定摄像头。枚举值：
+true：固定摄像头。平台会在用户提示词中追加固定摄像头，实际效果不保证。
+false：不固定摄像头。
+**watermark**`boolean``默认值 false``简写 wm`
+生成视频是否包含水印。枚举值：
+false：不含水印。
+true：含有水印。
+响应参数
+跳转 [请求参数](#RxN8G2nH)
+**id **`string`
+视频生成任务 ID 。创建视频生成任务为异步接口，获取 ID 后，需要通过 [查询视频生成任务 API](https://www.volcengine.com/docs/82379/1521309) 来查询视频生成任务的状态。任务成功后，会输出生成视频的`video_url`。
+
+## 示例代码
+
+**curl**
+
+```bash
+curl -X POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $ARK_API_KEY" \
+  -d '{
+    "model": "doubao-seedance-1-0-pro-250528",
+    "content": [
+        {
+            "type": "text",
+            "text": "多个镜头。一名侦探进入一间光线昏暗的房间。他检查桌上的线索，手里拿起桌上的某个物品。镜头转向他正在思索。 --ratio 16:9"
+        }
+    ]
+}'
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**python**
+
+```python
+import os
+
+from volcenginesdkarkruntime import Ark
+
+client = Ark(api_key=os.environ.get("ARK_API_KEY"))
+
+if __name__ == "__main__":
+    print("----- create request -----")
+    resp = client.content_generation.tasks.create(
+        model="doubao-seedance-1-0-pro-250528",
+        content=[{"text":"多个镜头。一名侦探进入一间光线昏暗的房间。他检查桌上的线索，手里拿起桌上的某个物品。镜头转向他正在思索。 --ratio 16:9","type":"text"}]
+    )
+    print(resp)
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**go**
+
+```go
+package main
+
+import (
+        "context"
+        "fmt"
+        "os"
+
+        "github.com/volcengine/volcengine-go-sdk/service/arkruntime"
+        "github.com/volcengine/volcengine-go-sdk/service/arkruntime/model"
+        "github.com/volcengine/volcengine-go-sdk/volcengine"
+)
+
+func main() {
+        client := arkruntime.NewClientWithApiKey(os.Getenv("ARK_API_KEY"))
+        ctx := context.Background()
+
+        req := model.CreateContentGenerationTaskRequest{
+                Model: "doubao-seedance-1-0-pro-250528",
+                Content: []*model.CreateContentGenerationContentItem{
+                        &model.CreateContentGenerationContentItem{
+                                Type: "text",
+                                Text: volcengine.String("多个镜头。一名侦探进入一间光线昏暗的房间。他检查桌上的线索，手里拿起桌上的某个物品。镜头转向他正在思索。 --ratio 16:9"),
+                        },
+                },
+        }
+
+        resp, err := client.CreateContentGenerationTask(ctx, req)
+        if err != nil {
+                fmt.Printf("create content generation error: %v\n", err)
+                return
+        }
+        fmt.Printf("Task Created with ID: %s\n", resp.ID)
+}
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**java**
+
+```java
+package com.volcengine.sample;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.volcengine.ark.runtime.model.content.generation.CreateContentGenerationTaskRequest;
+import com.volcengine.ark.runtime.model.content.generation.CreateContentGenerationTaskRequest.*;
+import com.volcengine.ark.runtime.service.ArkService;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import okhttp3.ConnectionPool;
+import okhttp3.Dispatcher;
+
+/*
+# pom.xml
+<dependency>
+  <groupId>com.volcengine</groupId>
+  <artifactId>volcengine-java-sdk-ark-runtime</artifactId>
+  // 替换正式版本号
+  <version>LATEST</version>
+</dependency>
+*/
+
+public class Sample {
+
+    static String apiKey = System.getenv("ARK_API_KEY");
+
+    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);
+    static Dispatcher dispatcher = new Dispatcher();
+    static ArkService service =
+            ArkService.builder()
+                    .dispatcher(dispatcher)
+                    .connectionPool(connectionPool)
+                    .apiKey(apiKey)
+                    .build();
+
+    public static void main(String[] args) throws JsonProcessingException {
+
+        List<Content> contentForReqList = new ArrayList<>();
+        Content elementForContentForReqList0 = new Content();
+        elementForContentForReqList0.setType("text");
+        elementForContentForReqList0.setText(
+                "多个镜头。一名侦探进入一间光线昏暗的房间。他检查桌上的线索，手里拿起桌上的某个物品。镜头转向他正在思索。 --ratio 16:9");
+        contentForReqList.add(elementForContentForReqList0);
+
+        CreateContentGenerationTaskRequest req =
+                CreateContentGenerationTaskRequest.builder()
+                        .model("doubao-seedance-1-0-pro-250528")
+                        .content(contentForReqList)
+                        .build();
+
+        service.createContentGenerationTask(req).toString();
+
+        // shutdown service after all requests is finished
+        service.shutdownExecutor();
+    }
+}
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**curl**
+
+```bash
+curl -X POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $ARK_API_KEY" \
+  -d '{
+    "model": "doubao-seedance-1-0-pro-fast-251015",
+    "content": [
+        {
+            "type": "text",
+            "text": "女孩抱着狐狸，女孩睁开眼，温柔地看向镜头，狐狸友善地抱着，镜头缓缓拉出，女孩的头发被风吹动  --ratio adaptive  --dur 5"
+        },
+        {
+            "type": "image_url",
+            "image_url": {
+                "url": "https://ark-project.tos-cn-beijing.volces.com/doc_image/i2v_foxrgirl.png"
+            }
+        }
+    ]
+}'
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**python**
+
+```python
+import os
+
+from volcenginesdkarkruntime import Ark
+
+client = Ark(api_key=os.environ.get("ARK_API_KEY"))
+
+if __name__ == "__main__":
+    print("----- create request -----")
+    resp = client.content_generation.tasks.create(
+        model="doubao-seedance-1-0-pro-fast-251015",
+        content=[{"text":"女孩抱着狐狸，女孩睁开眼，温柔地看向镜头，狐狸友善地抱着，镜头缓缓拉出，女孩的头发被风吹动  --ratio adaptive  --dur 5","type":"text"},{"image_url":{"url":"https://ark-project.tos-cn-beijing.volces.com/doc_image/i2v_foxrgirl.png"},"type":"image_url"}]
+    )
+    print(resp)
+
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**go**
+
+```go
+package main
+
+import (
+        "context"
+        "fmt"
+        "os"
+
+        "github.com/volcengine/volcengine-go-sdk/service/arkruntime"
+        "github.com/volcengine/volcengine-go-sdk/service/arkruntime/model"
+        "github.com/volcengine/volcengine-go-sdk/volcengine"
+)
+
+func main() {
+        client := arkruntime.NewClientWithApiKey(os.Getenv("ARK_API_KEY"))
+        ctx := context.Background()
+
+        req := model.CreateContentGenerationTaskRequest{
+                Model: "doubao-seedance-1-0-pro-fast-251015",
+                Content: []*model.CreateContentGenerationContentItem{
+                        &model.CreateContentGenerationContentItem{
+                                Type: "text",
+                                Text: volcengine.String("女孩抱着狐狸，女孩睁开眼，温柔地看向镜头，狐狸友善地抱着，镜头缓缓拉出，女孩的头发被风吹动  --ratio adaptive  --dur 5"),
+                        },
+                        &model.CreateContentGenerationContentItem{
+                                Type: "image_url",
+                                ImageURL: &model.ImageURL{
+                                        URL: "https://ark-project.tos-cn-beijing.volces.com/doc_image/i2v_foxrgirl.png",
+                                },
+                        },
+                },
+        }
+
+        resp, err := client.CreateContentGenerationTask(ctx, req)
+        if err != nil {
+                fmt.Printf("create content generation error: %v\n", err)
+                return
+        }
+        fmt.Printf("Task Created with ID: %s\n", resp.ID)
+}
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**java**
+
+```java
+package com.volcengine.sample;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.volcengine.ark.runtime.model.content.generation.CreateContentGenerationTaskRequest;
+import com.volcengine.ark.runtime.model.content.generation.CreateContentGenerationTaskRequest.*;
+import com.volcengine.ark.runtime.service.ArkService;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import okhttp3.ConnectionPool;
+import okhttp3.Dispatcher;
+
+/*
+# pom.xml
+<dependency>
+  <groupId>com.volcengine</groupId>
+  <artifactId>volcengine-java-sdk-ark-runtime</artifactId>
+  // 替换正式版本号
+  <version>LATEST</version>
+</dependency>
+*/
+
+public class Sample {
+
+    static String apiKey = System.getenv("ARK_API_KEY");
+
+    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);
+    static Dispatcher dispatcher = new Dispatcher();
+    static ArkService service =
+            ArkService.builder()
+                    .dispatcher(dispatcher)
+                    .connectionPool(connectionPool)
+                    .apiKey(apiKey)
+                    .build();
+
+    public static void main(String[] args) throws JsonProcessingException {
+
+        List<Content> contentForReqList = new ArrayList<>();
+        Content elementForContentForReqList0 = new Content();
+        elementForContentForReqList0.setType("text");
+        elementForContentForReqList0.setText("女孩抱着狐狸，女孩睁开眼，温柔地看向镜头，狐狸友善地抱着，镜头缓缓拉出，女孩的头发被风吹动  --ratio adaptive  --dur 5");
+
+        ImageUrl imageUrlForElementForContentForReqList1 = new ImageUrl();
+        imageUrlForElementForContentForReqList1.setUrl(
+                "https://ark-project.tos-cn-beijing.volces.com/doc_image/i2v_foxrgirl.png");
+        Content elementForContentForReqList1 = new Content();
+        elementForContentForReqList1.setType("image_url");
+        elementForContentForReqList1.setImageUrl(imageUrlForElementForContentForReqList1);
+        contentForReqList.add(elementForContentForReqList0);
+        contentForReqList.add(elementForContentForReqList1);
+
+        CreateContentGenerationTaskRequest req =
+                CreateContentGenerationTaskRequest.builder()
+                        .model("doubao-seedance-1-0-pro-fast-251015")
+                        .content(contentForReqList)
+                        .build();
+
+        service.createContentGenerationTask(req).toString();
+
+        // shutdown service after all requests is finished
+        service.shutdownExecutor();
+    }
+}
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**curl**
+
+```bash
+curl -X POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $ARK_API_KEY" \
+  -d '{
+    "model": "doubao-seedance-1-0-pro-250528",
+    "content": [
+         {
+            "type": "text",
+            "text": "360度环绕运镜"
+        },
+        {
+            "type": "image_url",
+            "image_url": {
+                "url": "https://ark-project.tos-cn-beijing.volces.com/doc_image/seepro_first_frame.jpeg"
+            },
+            "role": "first_frame"
+        },
+        {
+            "type": "image_url",
+            "image_url": {
+                "url": "https://ark-project.tos-cn-beijing.volces.com/doc_image/seepro_last_frame.jpeg"
+            },
+            "role": "last_frame"
+        }
+    ]
+}'
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**python**
+
+```python
+import os
+from volcenginesdkarkruntime import Ark
+
+# 请确保您已将 API Key 存储在环境变量 ARK_API_KEY 中
+# 初始化Ark客户端，从环境变量中读取您的API Key
+
+client = Ark(
+    # 从环境变量中获取您的 API Key。此为默认方式，您可根据需要进行修改
+    api_key=os.environ.get("ARK_API_KEY"),
+)
+
+print("----- create request -----")
+# 创建视频生成任务
+create_result = client.content_generation.tasks.create(
+    # 设置模型ID
+    model="doubao-seedance-1-0-pro-250528", 
+    content=[
+        {
+            # 文本提示词与参数组合
+            "type": "text",
+            "text": "360度环绕运镜"
+        },
+        {
+            # 首帧图片URL
+            "type": "image_url",
+            "image_url": {
+                "url": "https://ark-project.tos-cn-beijing.volces.com/doc_image/seepro_first_frame.jpeg"
+            },
+            "role": "first_frame"
+        },
+        {
+            # 尾帧图片URL
+            "type": "image_url",
+            "image_url": {
+                "url": "https://ark-project.tos-cn-beijing.volces.com/doc_image/seepro_last_frame.jpeg"
+            },
+            "role": "last_frame"
+        }
+    ]
+)
+print(create_result)
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**java**
+
+```java
+package com.volcengine.ark.runtime;
+
+import com.volcengine.ark.runtime.model.content.generation.DeleteContentGenerationTaskResponse;
+import com.volcengine.ark.runtime.model.content.generation.*;
+import com.volcengine.ark.runtime.model.content.generation.CreateContentGenerationTaskRequest.Content;
+import com.volcengine.ark.runtime.service.ArkService;
+import okhttp3.ConnectionPool;
+import okhttp3.Dispatcher;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+public class ContentGenerationTaskExample {
+    // 请确保您已将 API Key 存储在环境变量 ARK_API_KEY 中
+    // 初始化Ark客户端，从环境变量中读取您的API Key
+    static String apiKey = System.getenv("ARK_API_KEY");
+    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS);
+    static Dispatcher dispatcher = new Dispatcher();
+    static ArkService service = ArkService.builder()
+           .dispatcher(dispatcher)
+           .connectionPool(connectionPool)
+           .apiKey(apiKey)
+           .build();
+    public static void main(String[] args) {
+        //替换为您的 Model ID
+        String model = "doubao-seedance-1-0-pro-250528"; 
+        
+        System.out.println("----- CREATE Task Request -----");
+        List<Content> contents = new ArrayList<>();
+
+        // 添加文本提示词与参数组合
+        contents.add(Content.builder()
+                .type("text")
+                .text("360度环绕运镜")
+                .build());
+
+        // 添加首帧图片URL
+        contents.add(Content.builder()
+                .type("image_url")
+                .imageUrl(CreateContentGenerationTaskRequest.ImageUrl.builder()
+                        .url("https://ark-project.tos-cn-beijing.volces.com/doc_image/seepro_first_frame.jpeg")
+                        .build())
+                .role("first_frame")
+                .build());
+
+        // 添加尾帧图片URL
+        contents.add(Content.builder()
+                .type("image_url")
+                .imageUrl(CreateContentGenerationTaskRequest.ImageUrl.builder()
+                        .url("https://ark-project.tos-cn-beijing.volces.com/doc_image/seepro_last_frame.jpeg")
+                        .build())
+                .role("last_frame")
+                .build());
+        
+        // 创建视频生成任务
+        CreateContentGenerationTaskRequest createRequest = CreateContentGenerationTaskRequest.builder()
+                .model(model)
+                .content(contents)
+                .build();
+ 
+        CreateContentGenerationTaskResult createResult = service.createContentGenerationTask(createRequest);
+        System.out.println(createResult);
+    }
+}
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**go**
+
+```go
+package main
+
+import (
+        "context"
+        "fmt"
+        "github.com/volcengine/volcengine-go-sdk/volcengine"
+        "os"
+
+        "github.com/volcengine/volcengine-go-sdk/service/arkruntime"
+        "github.com/volcengine/volcengine-go-sdk/service/arkruntime/model"
+)
+
+func main() {
+        // 请确保您已将 API Key 存储在环境变量 ARK_API_KEY 中
+        // 初始化Ark客户端，从环境变量中读取您的API Key
+        client := arkruntime.NewClientWithApiKey(
+                // 从环境变量中获取您的 API Key。此为默认方式，您可根据需要进行修改
+                os.Getenv("ARK_API_KEY"),
+        )
+        ctx := context.Background()      
+        // 设置模型ID
+        modelEp := "doubao-seedance-1-0-pro-250528" 
+
+        fmt.Println("----- create content generation task -----")
+        // 创建视频生成任务
+        createReq := model.CreateContentGenerationTaskRequest{
+                Model: modelEp,
+                Content: []*model.CreateContentGenerationContentItem{
+                        {
+                                // 文本提示词与参数组合
+                                Type: model.ContentGenerationContentItemTypeText,
+                                Text: volcengine.String("360度环绕运镜"),
+                        },
+                        {
+                                // 首帧图片URL
+                                Type: model.ContentGenerationContentItemTypeImageURL,
+                                ImageURL: &model.ImageURL{
+                                        URL: "https://ark-project.tos-cn-beijing.volces.com/doc_image/seepro_first_frame.jpeg",
+                                },
+                                Role: volcengine.String("first_frame"),
+                        },
+                        {
+                                // 尾帧图片URL
+                                Type: model.ContentGenerationContentItemTypeImageURL,
+                                ImageURL: &model.ImageURL{
+                                        URL: "https://ark-project.tos-cn-beijing.volces.com/doc_image/seepro_last_frame.jpeg",
+                                },
+                                Role: volcengine.String("last_frame"),
+                        },
+                },
+        }
+
+        createResponse, err := client.CreateContentGenerationTask(ctx, createReq)
+        if err != nil {
+                fmt.Printf("create content generation error: %v", err)
+                return
+        }
+        fmt.Printf("Task Created with ID: %s", createResponse.ID)
+}
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**curl**
+
+```bash
+curl -X POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $ARK_API_KEY" \
+  -d '{
+    "model": "doubao-seedance-1-0-lite-i2v-250428",
+    "content": [
+         {
+            "type": "text",
+            "text": "[图1]戴着眼镜穿着蓝色T恤的男生和[图2]的柯基小狗，坐在[图3]的草坪上，3D卡通风格"
+        },
+        {
+            "type": "image_url",
+            "image_url": {
+                "url": "https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_1.png"
+            },
+            "role": "reference_image"
+        },
+        {
+            "type": "image_url",
+            "image_url": {
+                "url": "https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_2.png"
+            },
+            "role": "reference_image"
+        },
+        {
+            "type": "image_url",
+            "image_url": {
+                "url": "https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_3.png"
+            },
+            "role": "reference_image"
+        }
+    ]
+}'
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**python**
+
+```python
+import os 
+from volcenginesdkarkruntime import Ark 
+ 
+# 请确保您已将 API Key 存储在环境变量 ARK_API_KEY 中 
+# 初始化Ark客户端，从环境变量中读取您的API Key 
+ 
+client = Ark( 
+    # 从环境变量中获取您的 API Key。此为默认方式，您可根据需要进行修改 
+    api_key=os.environ.get("ARK_API_KEY"), 
+ 
+print("----- create request -----") 
+# 创建视频生成任务 
+create_result = client.content_generation.tasks.create( 
+    # 替换 <Model> 为模型的Model ID
+    model="doubao-seedance-1-0-lite-i2v-250428",  
+    content=[ 
+        { 
+            # 文本提示词与参数组合 
+            "type": "text", 
+            "text": "[图1]戴着眼镜穿着蓝色T恤的男生和[图2]的柯基小狗，坐在[图3]的草坪上，3D卡通风格" 
+        }, 
+        { 
+            # 第一张参考图片URL 
+            # 参考图需要传入1～4张
+            "type": "image_url", 
+            "image_url": { 
+                "url": "https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_1.png" 
+            }, 
+            "role": "reference_image" 
+        }, 
+        { 
+            # 第二张参考图片URL 
+            "type": "image_url", 
+            "image_url": { 
+                "url": "https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_2.png" 
+            }, 
+            "role": "reference_image" 
+        }, 
+        { 
+            # 第三张参考图片URL
+            "type": "image_url", 
+            "image_url": { 
+                "url": "https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_3.png" 
+            }, 
+            "role": "reference_image" 
+        } 
+    ] 
+) 
+print(create_result)
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**java**
+
+```java
+package com.volcengine.ark.runtime; 
+ 
+import com.volcengine.ark.runtime.model.content.generation.DeleteContentGenerationTaskResponse; 
+import com.volcengine.ark.runtime.model.content.generation.*; 
+import com.volcengine.ark.runtime.model.content.generation.CreateContentGenerationTaskRequest.Content; 
+import com.volcengine.ark.runtime.service.ArkService; 
+import okhttp3.ConnectionPool; 
+import okhttp3.Dispatcher; 
+ 
+import java.util.ArrayList; 
+import java.util.List; 
+import java.util.concurrent.TimeUnit; 
+
+public class ContentGenerationTaskExample { 
+    // 请确保您已将 API Key 存储在环境变量 ARK_API_KEY 中 
+    // 初始化Ark客户端，从环境变量中读取您的API Key 
+    static String apiKey = System.getenv("ARK_API_KEY"); 
+    static ConnectionPool connectionPool = new ConnectionPool(5, 1, TimeUnit.SECONDS); 
+    static Dispatcher dispatcher = new Dispatcher(); 
+    static ArkService service = ArkService.builder() 
+           .dispatcher(dispatcher) 
+           .connectionPool(connectionPool) 
+           .apiKey(apiKey) 
+           .build(); 
+    public static void main(String[] args) { 
+        //替换为您的 Model ID
+        String model = "doubao-seedance-1-0-lite-i2v-250428";  
+         
+        System.out.println("----- CREATE Task Request -----"); 
+        List<Content> contents = new ArrayList<>(); 
+ 
+        // 添加文本提示词与参数组合 
+        contents.add(Content.builder() 
+                .type("text") 
+                .text("[图1]戴着眼镜穿着蓝色T恤的男生和[图2]的柯基小狗，坐在[图3]的草坪上，3D卡通风格") 
+                .build()); 
+ 
+        // 第一张参考图片URL 
+        // 参考图需要传入1～4张
+        contents.add(Content.builder() 
+                .type("image_url") 
+                .imageUrl(CreateContentGenerationTaskRequest.ImageUrl.builder() 
+                        .url("https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_1.png") 
+                        .build()) 
+                .role("reference_image") 
+                .build()); 
+ 
+        // 第二张参考图片URL  
+        contents.add(Content.builder() 
+                .type("image_url") 
+                .imageUrl(CreateContentGenerationTaskRequest.ImageUrl.builder() 
+                        .url("https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_2.png") 
+                        .build()) 
+                .role("reference_image") 
+                .build()); 
+        
+        // 第三张参考图片URL  
+        contents.add(Content.builder() 
+                .type("image_url") 
+                .imageUrl(CreateContentGenerationTaskRequest.ImageUrl.builder() 
+                        .url("https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_3.png") 
+                        .build()) 
+                .role("reference_image") 
+                .build()); 
+         
+        // 创建视频生成任务 
+        CreateContentGenerationTaskRequest createRequest = CreateContentGenerationTaskRequest.builder() 
+                .model(model) 
+                .content(contents) 
+                .build(); 
+  
+        CreateContentGenerationTaskResult createResult = service.createContentGenerationTask(createRequest); 
+        System.out.println(createResult); 
+ 
+         
+        service.shutdownExecutor(); 
+    } 
+}
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**go**
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+
+    "github.com/volcengine/volcengine-go-sdk/volcengine"
+    "github.com/volcengine/volcengine-go-sdk/service/arkruntime"
+    "github.com/volcengine/volcengine-go-sdk/service/arkruntime/model"
+)
+
+func main() {
+    // 请确保您已将 API Key 存储在环境变量 ARK_API_KEY 中
+    // 初始化Ark客户端，从环境变量中读取您的API Key
+    client := arkruntime.NewClientWithApiKey(
+        // 从环境变量中获取您的 API Key。此为默认方式，您可根据需要进行修改
+        os.Getenv("ARK_API_KEY"),
+    )
+    ctx := context.Background()
+    //替换为您的 Model ID
+    modelEp := "doubao-seedance-1-0-lite-i2v-250428"
+
+    fmt.Println("----- create content generation task -----")
+    // 创建视频生成任务
+    createReq := model.CreateContentGenerationTaskRequest{
+        Model: modelEp,
+        Content: []*model.CreateContentGenerationContentItem{
+            {
+                // 文本提示词与参数组合
+                Type: model.ContentGenerationContentItemTypeText,
+                Text: volcengine.String("[图1]戴着眼镜穿着蓝色T恤的男生和[图2]的柯基小狗，坐在[图3]的草坪上，3D卡通风格"),
+            },
+            {
+                // 第一张参考图片URL
+                // 参考图需要传入1～4张
+                Type: model.ContentGenerationContentItemTypeImage,
+                ImageURL: &model.ImageURL{
+                    URL: "https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_1.png",
+                },
+                Role: volcengine.String("reference_image"),
+            },
+            {
+                // 第二张参考图片URL
+                Type: model.ContentGenerationContentItemTypeImage,
+                ImageURL: &model.ImageURL{
+                    URL: "https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_2.png",
+                },
+                Role: volcengine.String("reference_image"),
+            },
+            {
+                // 第三张参考图片URL
+                Type: model.ContentGenerationContentItemTypeImage,
+                ImageURL: &model.ImageURL{
+                    URL: "https://ark-project.tos-cn-beijing.volces.com/doc_image/seelite_ref_3.png",
+                },
+                Role: volcengine.String("reference_image"),
+            },
+        },
+    }
+
+    createResponse, err := client.CreateContentGenerationTask(ctx, createReq)
+    if err != nil {
+        fmt.Printf("create content generation error: %v", err)
+        return
+    }
+    fmt.Printf("Task Created with ID: %s", createResponse.ID)
+}
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**curl**
+
+```bash
+curl -X POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $ARK_API_KEY" \
+  -d '{
+    "model": "doubao-seedance-1-0-lite-i2v-250428",
+    "content": [
+        {
+            "type": "text",
+            "text": "女孩抱着狐狸，女孩睁开眼，温柔地看向镜头，狐狸友善地抱着，镜头缓缓拉出，女孩的头发被风吹动  --ratio adaptive  --dur 5"
+        },
+        {
+            "type": "image_url",
+            "image_url": {
+                "url": "data:image/png;base64,aHR0******cG5n"
+            }
+        }
+    ]
+}'
+```
+
+**Response:**
+
+```json
+{
+  "id": "cgt-2025******-****"
+}
+```
+
+**json**
+
+```json
+// 指定生成视频的宽高比为16:9，时长为 5 秒，帧率为 24 fps，分辨率为720p，包含水印，种子整数为11，不固定摄像头
+
+//参数使用简写
+"content": [
+        {
+            "type": "text",
+            "text": "女孩抱着狐狸 --rs 720p --rt 16:9 --dur 5 --fps 24 --wm true --seed 11 --cf false"
+        },
+        {
+            "type": "image_url",
+            "image_url": {
+                "url": "https://ark-project.tos-cn-beijing.volces.com/doc_image/i2v_foxrgirl.png"
+            }
+        }
+    ]
+    
+//参数使用全称
+"content": [
+        {
+            "type": "text",
+            "text": "女孩抱着狐狸 --resolution 720p --ratio 16:9 --duration 5 --framespersecond 24 --watermark true --seed 11 --camerafixed false"
+        },
+        {
+            "type": "image_url",
+            "image_url": {
+                "url": "https://ark-project.tos-cn-beijing.volces.com/doc_image/i2v_foxrgirl.png"
+            }
+        }
+    ]
+```
+
+**Response:**
+
+```json
+无
+```
+
+属性
+content.**type **`string`
+输入内容的类型，此处应为 `text`。
+content.**text **`string`
+输入给模型的文本内容，描述期望生成的视频，包括：
+**文本提示词（必填）**：支持中英文。建议不超过500字。字数过多信息容易分散，模型可能因此忽略细节，只关注重点，造成视频缺失部分元素。提示词的更多使用技巧请参见 [Seedance 提示词指南](https://www.volcengine.com/docs/82379/1587797)。
+**参数（选填）**：在文本提示词后追加--[parameters]，控制视频输出的规格，详情见 **模型文本命令(选填****）**。
+信息类型
+**文本信息**`object`
+输入给模型生成视频的内容，文本内容部分。
+**图片信息**`object`
+输入给模型生成视频的内容，图片信息部分。
+***
+**不同宽高比对应的宽高像素值**
+Note：图生视频，选择的宽高比与您上传的图片宽高比不一致时，方舟会对您的图片进行裁剪，裁剪时会居中裁剪，详细规则见 [图片裁剪规则](https://www.volcengine.com/docs/82379/1366799#%E5%9B%BE%E7%89%87%E8%A3%81%E5%89%AA%E8%A7%84%E5%88%99)。
+*
+示例
+输入内容的类型，此处应为 `image_url`。支持图片URL或图片 Base64 编码。
+content.**image_url **`object`
+输入给模型的图片对象。
+content.**role **`string``条件必填`
+图片的位置或用途。
+首帧图生视频、首尾帧图生视频、参考图生视频为 3 种互斥的场景，不支持混用。
+图生视频-首尾帧
+**支持模型：**doubao-seedance-pro、doubao-seedance-lite-i2v
+**字段role取值：**需要传入2个image_url对象，且字段role必填。
+首帧图片对应的字段role为：first_frame
+尾帧图片对应的字段role为：last_frame
+说明
+传入的首尾帧图片可相同。首尾帧图片的宽高比不一致时，以首帧图片为主，尾帧图片会自动裁剪适配。
+[体验中心](https://console.volcengine.com/ark/region:ark+cn-beijing/experience/vision)[模型列表](https://www.volcengine.com/docs/82379/1330310#%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90%E8%83%BD%E5%8A%9B)[模型计费](https://www.volcengine.com/docs/82379/1544106?redirect=1&lang=zh#02affcb8)[API Key](https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D)
+[调用教程](https://www.volcengine.com/docs/82379/1366799)[接口文档](https://www.volcengine.com/docs/82379/1520758)[常见问题](https://www.volcengine.com/docs/82379/1359411)[开通模型](https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D&OpenTokenDrawer=false)
+content.image_url.**url **`string`
+图片信息，可以是图片URL或图片 Base64 编码。
+图片URL：请确保图片URL可被访问。
+Base64编码：请遵循此格式`data:image/<图片格式>;base64,<Base64编码>`，注意 `<图片格式>` 需小写，如 `data:image/png;base64,{base64_image}`。
+传入图片需要满足以下条件：
+图片格式：jpeg、png、webp、bmp、tiff、gif。
+宽高比（宽/高）： (0.4, 2.5)
+宽高长度（px）：(300, 6000)
+大小：小于 30 MB
+图生视频-参考图
+**支持模型：**doubao-seedance-1-0-lite-i2v
+**字段role取值：**需要传入1～4个image_url对象，且字段role必填。
+每张参考图片对应的字段role均为：reference_image
+参考图生视频功能的文本提示词，可以用自然语言指定多张图片的组合。但若想有更好的指令遵循效果，**推荐使用“[图1]xxx，[图2]xxx”的方式来指定图片**。
+示例1：戴着眼镜穿着蓝色T恤的男生和柯基小狗，坐在草坪上，3D卡通风格
+示例2：[图1]戴着眼镜穿着蓝色T恤的男生和[图2]的柯基小狗，坐在[图3]的草坪上，3D卡通风格
+图生视频-首帧
+**支持模型：**doubao-seedance-pro、doubao-seedance-pro-fast、doubao-seedance-lite-i2v
+**字段role取值：**需要传入1个image_url对象，且字段role可不填，或字段role为：first_frame
+本接口仅支持 API Key 鉴权，请在 [获取 API Key](https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey) 页面，获取长效 API Key。
+**不同模型支持的视频生成能力简介**
+**doubao-seedance-pro**
+图生视频-首尾帧，根据您输入的首帧图片+尾帧图片+文本提示词（可选）+参数（可选）生成目标视频。
+图生视频-首帧，根据您输入的首帧图片+文本提示词（可选）+参数（可选）生成目标视频。
+文生视频，根据您输入的文本提示词+参数（可选）生成目标视频。
+**doubao-seedance-pro-fast****new**
+图生视频-首帧，根据您输入的首帧图片+文本提示词（可选）+参数（可选）生成目标视频。
+文生视频，根据您输入的文本提示词+参数（可选）生成目标视频。
+**doubao-seedance-lite**
+**doubao-seedance-1-0-lite-t2v：**文生视频，根据您输入的文本提示词+参数（可选）生成目标视频。
+**doubao-seedance-1-0-lite-i2v：**
+图生视频-参考图，根据您输入的**参考图片（1-4张）**+文本提示词（可选）+ 参数（可选）生成目标视频。
+图生视频-首尾帧，根据您输入的首帧图片+尾帧图片+文本提示词（可选）+参数（可选）生成目标视频。
+图生视频-首帧，根据您输入的首帧图片+文本提示词（可选）+参数（可选）生成目标视频。
+// 指定生成视频的宽高比为16:9，时长为 5 秒，帧率为 24 fps，分辨率为720p，包含水印，种子整数为11，不固定摄像头
+"content":[
+{
+"type":"text",
+"text":"小猫对着镜头打哈欠。 --rs 720p --rt 16:9 --dur 5 --fps 24 --wm true --seed 11 --cf false"
+}
+]
+2176×928
+宽高像素值
+宽高比
+分辨率
+1088×1920
+1664×1248
+640×640
+704×1248
+864×480
+1248×704
+544×736
+960×960
+1920×1088
+1080p`参考图场景不支持`
+736×544
+1120×832
+1440×1440
+832×1120
+1504×640
+960×416
+480×864
+1248×1664
+Tips：一键展开折叠，快速检索内容
+打开页面右上角开关，**ctrl **+ **f** 可检索页面内所有内容。

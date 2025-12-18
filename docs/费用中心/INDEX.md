@@ -154,7 +154,7 @@
 - 支持OpenAPI退订的商品
 
 #### 资源包
-- ListResourcePackages - 查询资源包列表
+- [ListResourcePackages](API参考/ListResourcePackages.md) - 查询资源包列表
 - ListPackageUsageDetails - 查询资源包抵扣明细列表
 
 #### 算价
@@ -163,7 +163,7 @@
 - QueryPriceForSubscription - 预付费询价
 
 #### 代金券
-- ListCoupons - 查询代金券信息
+- [ListCoupons](API参考/ListCoupons.md) - 查询代金券信息
 - ListCouponUsageRecords - 查询代金券核销记录
 
 #### 费用管理

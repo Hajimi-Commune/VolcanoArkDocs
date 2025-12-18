@@ -163,12 +163,12 @@
 - [ListCouponUsageRecords](API参考/代金券/ListCouponUsageRecords.md) - 查询代金券核销记录
 
 #### 费用管理
-- ListRecipientInformation - 查询报警接收人信息
-- DeleteBudget - 删除预算
-- QueryBudgetDetail - 查询预算详情
-- CreateBudget - 创建预算
-- UpdateBudget - 更新预算
-- ListBudget - 查询预算列表
+- [ListRecipientInformation](API参考/费用管理/ListRecipientInformation.md) - 查询报警接收人信息
+- [DeleteBudget](API参考/费用管理/DeleteBudget.md) - 删除预算
+- [QueryBudgetDetail](API参考/费用管理/QueryBudgetDetail.md) - 查询预算详情
+- [CreateBudget](API参考/费用管理/CreateBudget.md) - 创建预算
+- [UpdateBudget](API参考/费用管理/UpdateBudget.md) - 更新预算
+- [ListBudget](API参考/费用管理/ListBudget.md) - 查询预算列表
 - ListBudgetAmountByBudgetID - 根据预算ID查询预算金额列表
 - ListBudgetFilterSubjectInfo - 查询预算服务主体筛选项
 - ListBudgetFilterTagValue - 查询标签value筛选项

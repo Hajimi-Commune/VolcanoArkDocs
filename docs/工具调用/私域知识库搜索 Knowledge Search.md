@@ -1,0 +1,120 @@
+# 私域知识库搜索 Knowledge Search
+
+私域知识库搜索工具 Knowledge Search 支持通过 Responses API 调用直接获取企业私域知识库中的信息（如内部文档、产品手册、行业资料等），适用于需基于企业专属数据解答问题的场景（如内部培训问答、产品功能咨询、行业方案查询等）。工具通过模型自动判断是否需要调用私域知识库，支持与自定义 Function、MCP 等工具混合使用，目前仅支持旗舰版知识库。
+说明
+测试期间调用此工具需要增加 header '`ark-beta-knowledge-search: true`'，调用方式请参见[快速开始](/docs/82379/1873396#eabed668)。
+**核心功能**
+**精准私域检索**：仅检索企业已授权的私域知识库，保障数据安全性，适用于内部敏感信息查询场景。
+**灵活参数配置**：支持设置搜索结果数量、关键词并行数、结果重排、获取切片中图片等参数，适配不同查询需求（如精准查询需减少结果数量，全面查询需增加关键词并行数）。
+**前提条件**
+[获取 API Key](https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey)
+[开通模型服务](https://console.volcengine.com/ark/openManagement)
+在 [模型列表](/docs/82379/1330310) 获取所需 Model ID
+通过 Endpoint ID 调用模型服务，请参考 [获取 Endpoint ID（创建自定义推理接入点）](/docs/82379/1099522)。
+另外，使用 Knowledge Search 私域知识库搜索工具前，需完成 **服务授权** 与 **知识库准备** 两步操作，确保工具可正常访问私域数据：
+**1. 服务授权**
+需先为工具授予访问知识库的权限，支持两种授权方式：
+**项目授权（推荐）**
+当前支持以项目为维度快捷授权，登录 **火山方舟控制台，**通过平台左上角切换项目。
+访问控制台 **项目配置 **页面，对当前项目下的知识库进行授权后，方舟服务可访问当前项目下所有知识库。
+**IAM 授权**
+访问 [权限策略-创建策略](https://console.volcengine.com/iam/policymanage/policy/new)，通过Json编辑器粘贴下面的内容并提交（注意替换账号AccountID）。
+2. 访问 [角色管理](https://console.volcengine.com/iam/identitymanage/role) 页面，新增角色，可以命名为 `ArkAccessRole_项目名称`，同时给角色赋予刚才创建的权限策略。
+**2. 知识库准备**
+需提前开通 **旗舰版知识库**（标准版知识库暂不支持），并完成知识库构建与数据上传，操作指南详见 [知识库构建文档](https://www.volcengine.com/docs/82379/1261885)。
+计费说明：私域知识库搜索的收费标准详见 [知识库计费文档](https://www.volcengine.com/docs/82379/1263336)。
+配额限制：知识库使用配额详见 [知识库配额说明](https://www.volcengine.com/docs/82379/1343907)，需确保配额充足以避免调用失败。
+**快速开始**
+以下提供多种调用方式示例，需先替换 `<ARK_API_KEY>` 为实际密钥、`<knowledge_resource_id>` 为授权的知识库ID。
+**参数说明**
+详情请参见 [创建Responses模型请求](https://www.volcengine.com/docs/82379/1569618)。
+**支持模型列表**
+Knowledge Search 工具支持的模型请参考[私域知识库搜索工具](/docs/82379/1330310#d89be1dc)。
+**注意事项**
+**【重要】计费与 Tokens 说明**：一轮搜索可能发起多个关键词并行查询，可通过返回参数 `usage.tool_usage` 和 `usage.tool_usage_details` 查看具体消耗情况。
+**Function 命名冲突**：若用户自定义 Function 与 `knowledge_search` 重名，无需特殊配置，由模型根据问题场景自动判断调用哪个工具。
+**搜索改写限制**：当前暂不支持通过参数设置改写后问题的个数，需通过 `system prompt` 或 `instructions` 控制（例如要求“每次仅生成1个核心搜索关键词”）。
+**知识库版本限制**：仅支持**旗舰版知识库**，标准版知识库暂不支持。
+**错误信息**：暂不支持`caching` 参数，使用该参数会返回400错误信息。
+附：搜索模式系统提示词样例
+curl --location 'https://ark.cn-beijing.volces.com/api/v3/responses' \\
+--header 'Content-Type: application/json' \\
+--header 'Authorization: Bearer <ARK_API_KEY>' \\
+--header 'ark-beta-knowledge-search: true' \\
+--data '{
+"model": "doubao-seed-1-6-251015",
+"stream": true,
+"thinking": {
+"type": "disabled"  # 关闭模型思考，直接调用知识库搜索
+},
+"tools": [
+{
+"type": "knowledge_search",
+"knowledge_resource_id": "<knowledge_resource_id>",  # 替换为实际知识库ID
+"limit": 2,  # 最多返回2条搜索结果
+"ranking_options": {
+"get_attachment_link": true  # 获取图片临时下载链接
+}
+}
+],
+"input": [
+{
+"role": "user",
+"content": "机票选择页面中，如何选择该航班不同价格的机票？"  # 用户问题
+}
+],
+"max_tool_calls": 1  # 仅调用1轮知识库搜索
+}'
+import os
+from openai import OpenAI
+# 从环境变量获取API密钥，配置方法见：https://www.volcengine.com/docs/82379/1399008
+api_key = os.getenv('ARK_API_KEY')
+# 初始化客户端
+client = OpenAI(
+base_url='https://ark.cn-beijing.volces.com/api/v3',
+api_key=api_key,
+default_headers={"ark-beta-knowledge-search": "true"}  # 启用私域知识库搜索
+)
+# 发起知识库搜索请求
+response = client.responses.create(
+model="doubao-seed-1-6-251015",  # 替换为支持的模型
+input=[
+"content": [
+"type": "input_text",
+"text": "应用实验室里有类似实时视频理解的agent demo么？"# 用户问题
+]
+tools=[
+"limit": 10,  # 最多返回10条搜索结果
+stream=True,  # 启用流式响应，实时获取结果
+extra_body={"thinking": {"type": "auto"}}  # 模型自动判断是否需要搜索
+)
+# 处理流式响应
+for chunk in response:
+ifhasattr(chunk, 'delta'):
+print(chunk.delta, end="", flush=True)
+# 定义系统提示词
+system_prompt = """
+你是豆包个人助手，负责解答用户的各种问题。你的主要职责是：
+1. **信息准确性守护者**：确保提供的信息准确无误。
+2. **搜索成本优化师**：在信息准确性和搜索成本之间找到最佳平衡。
+# 任务说明
+## 1. 知识库意图判断
+当用户提出的问题涉及以下情况时，需使用 `knowledge_search` 进行私域知识搜索：
+- **企业知识**：问题有关于火山方舟、大模型、responses API
+## 2. 知识库搜索后回答
+- 在回答中，优先使用已搜索到的资料。
+- 回复结构应清晰，使用序号、分段等方式帮助用户理解。
+## 3. 引用已搜索资料
+- 当使用知识库搜索的资料时，在正文中明确引用来源，引用格式为：
+`[1]  (URL地址)`。
+## 4. 总结与参考资料
+- 在回复的最后，列出所有已参考的资料。格式为：
+1. [资料标题](URL地址1)
+2. [资料标题](URL地址2)
+"""
+"Statement": [
+"Effect": "Allow",
+"Action": [
+"vikingdb:*"
+"Resource": [
+"trn:ark:*:账号AccountID:knowledgebase/*",

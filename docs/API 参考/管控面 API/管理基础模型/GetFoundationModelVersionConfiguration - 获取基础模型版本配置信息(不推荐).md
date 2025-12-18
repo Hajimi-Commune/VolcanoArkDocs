@@ -1,0 +1,5 @@
+# GetFoundationModelVersionConfiguration - 获取基础模型版本配置信息(不推荐)
+
+> ⚠️ 此页面内容需要通过浏览器直接访问获取。
+
+**源地址**: [https://www.volcengine.com/docs/82379/1262850](https://www.volcengine.com/docs/82379/1262850)

@@ -115,8 +115,8 @@
 ### API参考
 
 - [API调用说明](API参考/API调用说明.md) - 费用中心OpenAPI调用方法
-- API概览
-- ListBillDetail - 分页查询账单明细
+- [API概览](API参考/API概览.md) - 费用中心所有OpenAPI接口列表
+- [ListBillDetail](API参考/ListBillDetail.md) - 分页查询账单明细
 - ListBillOverviewByCategory - 查询账单总览-账号汇总信息
 - ListBillOverviewByProd - 分页查询账单总览-产品汇总信息
 - ListBill - 分页查询账单

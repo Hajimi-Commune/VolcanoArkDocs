@@ -4,41 +4,23 @@
 DPO（Direct Preference Optimization，直接偏好优化），即用户提供一份标注好的数据集，包含输入的提示词（prompt） 和输出的成对回答列表（response list）。回答列表中包含一个符合目标偏好的回答和一个不符合目标偏好的回答。然后，在基础模型上继续调整参数，来达到和目标偏好对齐的目的。
 ## DPO典型应用场景
 
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 64px) * 0.2000);">
-
 **对话系统**
 在智能客服和聊天机器人应用中，根据用户反馈和偏好调整回复，使内容更贴合用户。
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 64px) * 0.2000);margin-left: 16px;">
 
 **内容生成与创作**
 文本生成：可优化新闻报道、小说创作、文案撰写等的文本，使其符合读者或编辑偏好；
 代码生成：根据开发者偏好精调代码生成模型。
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 64px) * 0.2000);margin-left: 16px;">
-
 **问答系统改进**
 在专业领域问答系统中，根据专家意见和用户反馈调整回答；
 在常见问题解答系统中，根据用户选择和评价优化回答策略。
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 64px) * 0.2000);margin-left: 16px;">
 
 **模型安全性提升**
 将安全、积极、正面回答作为偏好输出，避免生成有害内容；
 根据审核人员判断和偏好训练模型，提高信息安全性。
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 64px) * 0.2000);margin-left: 16px;">
-
 **个性化推荐系统**
 根据用户历史行为、偏好和反馈精调推荐模型，提供个性化推荐。
-
-</div>
-</div>
 
 ---
 
@@ -86,9 +68,8 @@ DPO 的策划和实施步骤大致分为：数据准备、模型训练、模型�
   "messages": [
     {
       "role": "system",
-      "content": "你是白\
-你是一个男明星。\
-\
+      "content": "你是白
+你是一个男明星。
 你可以将动作、神情语气、心理活动、故事背景放在（）中来表示，为对话提供补充信息。"
     },
     {
@@ -245,7 +226,7 @@ score 相同的两个回复不会生成相应的偏序对，具体示例详见�
 ```
 
 最后一个 messages 必须为 assistant，并且支持多个 content。每个 content 都有一个 score，会按照 score 进行 dpo pair 排序。上面这个例子会得到 3 个 dpo pair：
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/cd472c4ec86c44f181ec107b6024dff4~tplv-goo7wpa0wc-image.image =1636x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/cd472c4ec86c44f181ec107b6024dff4~tplv-goo7wpa0wc-image.image)
 模型会同时训练这3个 dpo pair。
 下列的几项参数只有在训练时设置了 lm_loss_scale 才会生效：
 
@@ -283,17 +264,11 @@ score 相同的两个回复不会生成相应的偏序对，具体示例详见�
 #### 模型选型
 方舟平台提供多种规格的模型，汇总如下：
 
-| | | | | \
-|**模型名称** |**最大支持的token长度** |**模型参数量** |**模型推理耗时** |
-|---|---|---|---|
-| | | | | \
-|Doubao-lite-32k |32k |小 |较短 |
-| | | | | \
-|Doubao-lite-128k |128k |小 |较短 |
-| | | | | \
-|Doubao-pro-32k |32k |大 |长 |
-| | | | | \
-|Doubao-pro-128k |128k |大 |长 |
+- **模型名称** | **最大支持的token长度** | **模型参数量** | **模型推理耗时**
+- Doubao-lite-32k | 32k | 小 | 较短
+- Doubao-lite-128k | 128k | 小 | 较短
+- Doubao-pro-32k | 32k | 大 | 长
+- Doubao-pro-128k | 128k | 大 | 长
 
 1. 需要明确您模型使用场景是否对延迟比较敏感。如果要求低延迟，且测试过程中 pro 版本模型无法满足延迟要求时，可以使用 lite 模型。具体延迟可以到方舟[体验中心](https://console.volcengine.com/ark/region:ark+cn-beijing/experience)进行测试。
 2. 需要明确您的应用场景是否需要长文本能力。如果预期模型的输入和输出加起来超过了 32k 的 token 数，且删减字数对原有语义影响较大时，推荐使用 Doubao-pro-128k 模型（最大支持 128k token 的输入输出长度和）。

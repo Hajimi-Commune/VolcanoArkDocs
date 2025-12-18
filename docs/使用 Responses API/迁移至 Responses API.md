@@ -10,31 +10,20 @@ Responses API 是火山方舟最新推出的 API 接口，原生支持高效的�
 * 便捷的工具调用：支持多种工具调用方式，如内置工具联网搜索、图像处理、私域知识库搜索、云部署 MCP 等，提升开发和集成效率。
 * 良好的扩展性：未来将陆续支持更多内置工具，为开发者提供更丰富、更灵活的智能应用开发能力。
 
-| || | | \
-|能力 | |Chat API |Responses API |
-|---|---|---|---|
-| || | | \
-|文本生成 | |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image =20x) |\
-| | | |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image =20x) |
-| || | | \
-|视觉理解 | |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image =20x) |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image =20x) |
-| || | | \
-|结构化输出 | |beta阶段 |beta阶段 |
-| | | | | \
-|工具调用 |函数调用 Function Calling |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image =20x) |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image =20x) |
-|^^| | | | \
-| |联网搜索 Web Search |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/96a134db51ea4e8d83b5c9dccff686c3~tplv-goo7wpa0wc-image.image =25x) |\
-| | | |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image =20x) |
-|^^| | | | \
-| |图像处理 Image Process |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/96a134db51ea4e8d83b5c9dccff686c3~tplv-goo7wpa0wc-image.image =25x) |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image =20x) |
-|^^| | | | \
-| |私域知识库搜索 Knowledge Search |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/96a134db51ea4e8d83b5c9dccff686c3~tplv-goo7wpa0wc-image.image =25x) |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image =20x) |
-|^^| | | | \
-| |云部署 MCP |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/96a134db51ea4e8d83b5c9dccff686c3~tplv-goo7wpa0wc-image.image =25x) |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image =20x) |
-| || | | \
-|上下文缓存 | |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/96a134db51ea4e8d83b5c9dccff686c3~tplv-goo7wpa0wc-image.image =25x) |\
-| | | |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image =20x) |\
-| | | |> 250615之后的模型版本支持 |
+- 能力 | Chat API | Responses API
+- 文本生成 | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image)
+- ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image)
+- 视觉理解 | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image) | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image)
+- 结构化输出 | beta阶段 | beta阶段
+- 工具调用 | 函数调用 Function Calling | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image) | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image)
+- 联网搜索 Web Search | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/96a134db51ea4e8d83b5c9dccff686c3~tplv-goo7wpa0wc-image.image)
+- ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image)
+- 图像处理 Image Process | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/96a134db51ea4e8d83b5c9dccff686c3~tplv-goo7wpa0wc-image.image) | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image)
+- 私域知识库搜索 Knowledge Search | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/96a134db51ea4e8d83b5c9dccff686c3~tplv-goo7wpa0wc-image.image) | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image)
+- 云部署 MCP | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/96a134db51ea4e8d83b5c9dccff686c3~tplv-goo7wpa0wc-image.image) | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image)
+- 上下文缓存 | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/96a134db51ea4e8d83b5c9dccff686c3~tplv-goo7wpa0wc-image.image)
+- ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aba4522e4aab46318574c8c3e460d20b~tplv-goo7wpa0wc-image.image)
+- > 250615之后的模型版本支持
 
 ## 基础差异
 Chat API (`/chat/completions`) 与 Responses API (`/responses`) 输入和输出格式略有不同。
@@ -43,9 +32,6 @@ Chat API (`/chat/completions`) 与 Responses API (`/responses`) 输入和输出�
 * 输出：Chat API 返回 message，而 Responses API 返回一个包含自身 ID 的 response 对象。
 
 通过以下示例快速体验两个 API 使用上的差异。
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.4953051643192488);">
 
 **Chat API**
 输入示例
@@ -67,9 +53,6 @@ completion = client.chat.completions.create(
 print(completion)
 ```
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5046948356807511);margin-left: 16px;">
-
 **Responses API**
 输入示例
 ```Python
@@ -88,12 +71,6 @@ response = client.responses.create(
 
 print(response)
 ```
-
-</div>
-</div>
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.4953051643192488);">
 
 输出示例
 ```JSON
@@ -127,9 +104,6 @@ print(response)
         }
     }
 ```
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5046948356807511);margin-left: 16px;">
 
 输出示例
 ```JSON
@@ -185,18 +159,12 @@ print(response)
 }
 ```
 
-</div>
-</div>
-
 ## 进阶能力适配
 ### 更新多轮对话
 在多轮对话场景中，使用 Responses API 能够更高效的管理上下文，避免了手动维护上下文的繁琐过程。
 
 * Chat API 是无状态的，每次请求时需要将历史信息放在 **messages** 中，并通过 **role** 字段设置，以便进行主题相关的延续性对话。具体使用参见[多轮对话](/docs/82379/1399009#f6222fec)。
 * Responses API 默认开启存储功能，方便进行上下文管理，通过 **previous_response_id** 引入对应请求的输入和回复，实现智能交互体验。具体使用参见[上下文管理](/docs/82379/1958520#6d3df616)。
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);">
 
 **Chat API**
 ```Python
@@ -218,9 +186,6 @@ completion = client.chat.completions.create(
 )
 print(completion.choices[0].message.content)
 ```
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);margin-left: 16px;">
 
 **Responses API**
 ```Python
@@ -248,17 +213,11 @@ second_response = client.responses.create(
 print(second_response)
 ```
 
-</div>
-</div>
-
 ### 更新结构化输出定义
 定义结构化输出的方式：
 
 * Chat API：**response_format**，具体使用参见[结构化输出(beta)](/docs/82379/1568221)。
 * Responses API：**text.format**，具体使用参见[结构化输出(beta)](/docs/82379/1958523)。
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);">
 
 **Chat API**
 ```Python
@@ -281,9 +240,6 @@ completion = client.chat.completions.create(
 print(completion.choices[0].message.content)
 ```
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);margin-left: 16px;">
-
 **Responses API**
 ```Python
 import os
@@ -305,16 +261,10 @@ response = client.responses.create(
 print(response)
 ```
 
-</div>
-</div>
-
 ### 更新最大输出长度参数
 
 * Chat API：通过参数 **max_completion_tokens** 控制模型最大输出长度，具体教程参见[设置最大输出长度](/docs/82379/1449737#31ecc4d7)。
 * Responses API：通过参数 **max_output_tokens** 控制模型最大输出长度，具体教程参见[设置最大输出长度](/docs/82379/1956279#1460ba95)。
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);">
 
 **Chat API**
 ```Python
@@ -337,9 +287,6 @@ completion = client.chat.completions.create(
 print(completion.choices[0].message.content)
 ```
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);margin-left: 16px;">
-
 **Responses API**
 ```Python
 import os
@@ -361,14 +308,8 @@ response = client.responses.create(
 print(response)
 ```
 
-</div>
-</div>
-
 ### 使用上下文缓存能力
 Context API 支持上下文缓存能力，而 Responses API 在缓存操控方面更加灵活，支持进行 ID 粒度的使用及变更。关于两种使用方式，参见[上下文缓存概述](/docs/82379/1398933)。
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);">
 
 **Context API**
 ```Python
@@ -412,9 +353,6 @@ second_response = client.context.completions.create(
 print(second_response.choices[0].message.content)    
 ```
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);margin-left: 16px;">
-
 **Responses API**
 ```Python
 import os
@@ -457,15 +395,9 @@ second_response = client.responses.create(
 print(second_response.output[0].content[0].text)
 ```
 
-</div>
-</div>
-
 ### 使用工具调用
 #### 更新函数定义
 Responses API 和 Chat API 在定义 function 函数方面有细微区别，具体使用教程参见[函数调用 Function Calling](/docs/82379/1262342)：
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);">
 
 **Chat API**
 ```JSON
@@ -492,9 +424,6 @@ Responses API 和 Chat API 在定义 function 函数方面有细微区别，具�
 ]
 ```
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);margin-left: 16px;">
-
 **Responses API**
 ```JSON
 [
@@ -517,9 +446,6 @@ Responses API 和 Chat API 在定义 function 函数方面有细微区别，具�
     }
 ]
 ```
-
-</div>
-</div>
 
 #### 使用内置工具
 Chat API 当前不支持使用方舟大模型内置工具（联网搜索、图像处理、私域知识库搜索、云部署 MCP等）能力，可以通过 Responses API 使用，具体教程参见[联网搜索 Web Search ](/docs/82379/1756990)、[图像处理 Image Process](/docs/82379/1798161)、[私域知识库搜索 Knowledge Search](/docs/82379/1873396)、[云部署 MCP / Remote MCP](/docs/82379/1827534)。

@@ -40,11 +40,11 @@ MCP协议的价值在于通过标准化统一的接口，打破了大语言模�
 :::tip
 为获得更佳的 Canvas 体验效果，建议使用深度思考模型：Doubao-1.5-thinking-vision-pro，Doubao-1.5-thinking-pro，DeepSeek-R1。
 :::
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/67685a030d884481894080197779d4c3~tplv-goo7wpa0wc-image.image =695x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/67685a030d884481894080197779d4c3~tplv-goo7wpa0wc-image.image)
 在 MCP 服务器管理界面点击按钮即可开启服务，访问密钥已预置，如无预置密钥，需自行去服务提供商官网获取。目前已支持对象存储、数据湖等火山引擎 MCP 应用及飞常准，水滴信用等多个三方 MCP 应用，暂不支持自建MCP接入。更多应用正在开发和接入中，敬请期待。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/607db64eeb7140a890e6308e0f8fe1a0~tplv-goo7wpa0wc-image.image =695x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/607db64eeb7140a890e6308e0f8fe1a0~tplv-goo7wpa0wc-image.image)
 下面是一个用 Doubao-1.5-thinking-pro 调用”飞常准-Aviation“MCP 服务，实现自然语言查询航班的应用案例 ：
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/6e2373343dfe4ba586f6bfd531127d82~tplv-goo7wpa0wc-image.image =655x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/6e2373343dfe4ba586f6bfd531127d82~tplv-goo7wpa0wc-image.image)
 ### 
 ### 
 ##

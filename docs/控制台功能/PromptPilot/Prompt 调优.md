@@ -1,17 +1,17 @@
 # Prompt 调优
-在Prompt调优阶段，用户将跟进一个调优任务。通过「**调试​**」「**批量**」「**智能优化**」三个环节，完成Prompt的版本迭代。
+在Prompt调优阶段，用户将跟进一个调优任务。通过「**调试**」「**批量**」「**智能优化**」三个环节，完成Prompt的版本迭代。
 # 1. 调试
 「调试」流程中，用户可结合模型回答，初步调试优化Prompt，并将生成的种子样本（提问、回答、评分）加入评测集。
 ## 1.1 构建提问
 不同任务场景中，「提问」的构成要素各异。
 ### 文本理解/单轮对话任务
-文本理解/单轮对话任务的提问包含「Prompt」及其「变量（文本）」。变量在Prompt中的占位符为<span style="color: #D83931">{{变量名}}</span>，支持「用户手动输入」或「**AI联网生成变量​**」。开启联网功能后，能辅助AI生成更多样化的变量内容，但可能会产生额外 tokens 消耗和时长。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/84a66d37de454162809fe6d381b0c485~tplv-goo7wpa0wc-image.image =2958x)
+文本理解/单轮对话任务的提问包含「Prompt」及其「变量（文本）」。变量在Prompt中的占位符为{{变量名}}，支持「用户手动输入」或「**AI联网生成变量**」。开启联网功能后，能辅助AI生成更多样化的变量内容，但可能会产生额外 tokens 消耗和时长。
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/84a66d37de454162809fe6d381b0c485~tplv-goo7wpa0wc-image.image)
 
 ### 多轮对话任务
 多轮对话的提问包括「系统Prompt」和「用户内容」。「用户内容」支持「手动输入」与「文件上传」。
 ### 视觉理解任务
-视觉理解任务的提问包含「Prompt」及其「变量（文本、图像）」。变量在Prompt中的占位符为<span style="color: #D83931">{{变量名}}</span>，支持「文本手动输入」与「图片本地、TOS、URL上传」。 
+视觉理解任务的提问包含「Prompt」及其「变量（文本、图像）」。变量在Prompt中的占位符为{{变量名}}，支持「文本手动输入」与「图片本地、TOS、URL上传」。 
 ## 1.2 生成回答
 ### 文本理解/单轮对话任务
 
@@ -30,7 +30,7 @@
 * **助手回答**
 
   在多轮对话中，点击「生成/发送」按钮，或通过手动编辑、文件上传方式输入「助手回答」。
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/82938a1a30724b3e86adc32da47e5977~tplv-goo7wpa0wc-image.image" width="1330px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/82938a1a30724b3e86adc32da47e5977~tplv-goo7wpa0wc-image.image)
 
 * **理想回答/参照回答**
    * 选择「评分模式」的「多轮对话」任务无需添加「理想回答」。
@@ -56,39 +56,39 @@
 点击「添加至评测集」按钮，此条数据将会被添加至评测集，在下一流程「批量」中显示。
 ## 1.5 Prompt快速优化
 在「调试」流程中，用户可随时手动修改Prompt，或使用AI优化。
-支持**「一键改写」​**与**「基于反馈的调整」​**两种AI优化方式。
+支持**「一键改写」**与**「基于反馈的调整」**两种AI优化方式。
 
 * **一键改写**：若对当前Prompt整体不满意，点击魔法棒图标「一键改写Prompt」。
 * **基于反馈的调整**：若对Prompt局部不满意，点击「优化你的Prompt」后输入用户优化建议（文本理解/单轮对话、视觉理解任务），或点击「应用反馈优化Prompt」（多轮对话任务）。
 
 # 2.批量
 「批量」流程用于处理和准备用于Prompt「智能优化」的评测集。批量增加样本的提问、回答和评分。
-若用户想对单条样本进行精细化调试，可点击样本后的「方框」图标，进入「**调试模式​**」。
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/0ef494b70cbf4fb9988ca524d4515314~tplv-goo7wpa0wc-image.image" width="2212px" /></div>
+若用户想对单条样本进行精细化调试，可点击样本后的「方框」图标，进入「**调试模式**」。
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/0ef494b70cbf4fb9988ca524d4515314~tplv-goo7wpa0wc-image.image)
 
 ## 2.1 批量构建提问
 支持添加行后手动输入、AI生成、文件上传多种方式批量构建提问。
-在「文本理解/单轮对话」任务中，支持「**AI批量生成变量​**」。点击上方「AI生成变量」按键，填入新生成的行数。如需修改变量生成规则，则点击按键侧边下拉菜单「变量生成规则」即可跳转。
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/013d6eec399847c58f05e0301f93f7ff~tplv-goo7wpa0wc-image.image" width="2209px" /></div>
+在「文本理解/单轮对话」任务中，支持「**AI批量生成变量**」。点击上方「AI生成变量」按键，填入新生成的行数。如需修改变量生成规则，则点击按键侧边下拉菜单「变量生成规则」即可跳转。
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/013d6eec399847c58f05e0301f93f7ff~tplv-goo7wpa0wc-image.image)
 
 ## 2.2 批量生成回答
 回答包括「模型/助手回答」和「理想/参照回答」。「模型/助手回答」点击对应按钮生成。「理想/参照回答」支持手动输入、AI生成、文件上传等方式。
 ## 2.3 批量完成评分
-支持「用户打分」与「**AI智能评分​**」。在「AI智能评分」中，首先需明确「评分标准」。支持「用户输入评分标准」与「AI生成评分标准」两种方式。
+支持「用户打分」与「**AI智能评分**」。在「AI智能评分」中，首先需明确「评分标准」。支持「用户输入评分标准」与「AI生成评分标准」两种方式。
 
 * **用户输入评分标准**：根据提示输入，支持一种「**领域特定语言 (DSL)** 」来满足复杂评分需求，具体参考[评分DSL](https://www.volcengine.com/docs/82379/1399499)。
 * **AI生成评分标准**：当用户至少为3条样本打分后，AI将学习用户的评分标准。启用后支持用户进一步编辑。
 
-**注意**：AI自动生成的评分理由及结果仅供参考，建议人工仔细复查与修正。若评分结果有偏差，可能影响后续Prompt优化方向与效果。<span style="color: #D83931"><strong>一旦确认对所有回答重新评分，新AI评分将覆盖原记录，且原数据无法恢复，请谨慎操作</strong></span>。 **** 
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/51d605c335694fb98facf61138ad4584~tplv-goo7wpa0wc-image.image" width="2425px" /></div>
+**注意**：AI自动生成的评分理由及结果仅供参考，建议人工仔细复查与修正。若评分结果有偏差，可能影响后续Prompt优化方向与效果。<strong>一旦确认对所有回答重新评分，新AI评分将覆盖原记录，且原数据无法恢复，请谨慎操作</strong>。 **** 
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/51d605c335694fb98facf61138ad4584~tplv-goo7wpa0wc-image.image)
 
 ## 2.4 导出评测集
 点击上方「...」折叠按钮和「导出为XLSX」，实现评测集导出。
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/839c083f7cd4472bbf07a418b2c62213~tplv-goo7wpa0wc-image.image" width="2291px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/839c083f7cd4472bbf07a418b2c62213~tplv-goo7wpa0wc-image.image)
 
 ## 2.5 Prompt 版本比对
 在使用「评分模式」的「文本理解/单轮对话」或「视觉理解」任务中的，点击评测表格操作列的「＋」符号，选择对比版本后，数据集将新增「被选版本 Prompt 的模型回答」和「评分」，以便对比不同版本 Prompt 的效果。
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/1c4d4f46f2e94a9a95ab7c125f6c1370~tplv-goo7wpa0wc-image.image" width="2434px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/1c4d4f46f2e94a9a95ab7c125f6c1370~tplv-goo7wpa0wc-image.image)
 
 # 3.智能优化
 「智能优化」流程会基于「批量」流程中所构建的评测集，以提高样本整体评分为目标，对Prompt进行优化，从而生成优化报告、新版本的Prompt和评测集。用户需完成以下步骤：
@@ -99,7 +99,7 @@
 
 完成数据准备与配置后，点击「已准备好数据，开始智能优化」。优化过程中，会实时展示优化结果，可点击「下载为Excel」。 **注意：中间结果会实时更新为当前最佳的Prompt。若未进行下载操作，被后续结果覆盖的历史中间优化结果将无法找回。** 
 #  4.工具调用（可选）
-在使用「评分模式」的「文本理解/单轮对话」任务中，可开启「**工具调用​**」。
+在使用「评分模式」的「文本理解/单轮对话」任务中，可开启「**工具调用**」。
 :::tip
 「调试」、「批量」、「智能优化 」三个模块均支持开启工具调用。推荐在「调试」时开启，方便直接观测工具调用效果。
 :::
@@ -110,9 +110,9 @@
 
 ## **4.2 工具代码格式**
 支持Json格式，点击「本地上传」下载样例文件查看详细格式，代码中必须包含 function.name（工具名称）、function.description（工具描述）和 function.parameters（参数）。
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/ae3cc00437c24d089533f5d30c5f9d7d~tplv-goo7wpa0wc-image.image" width="2224px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/ae3cc00437c24d089533f5d30c5f9d7d~tplv-goo7wpa0wc-image.image)
 
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/5e0aaa2f6a8d4c6f8f8f39ffb3a2929e~tplv-goo7wpa0wc-image.image" width="2257px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/5e0aaa2f6a8d4c6f8f8f39ffb3a2929e~tplv-goo7wpa0wc-image.image)
 
 ## **4.3 示例**
 ### **Prompt**
@@ -228,15 +228,10 @@
 工具调用是连接大模型与物理世界控制系统的桥梁。启用工具后，大模型可精准输出适配车机空调控制系统的函数及参数；若未启用，模型将输出编造的函数和参数，无法用于控制车机空调。
 例如，当用户在历史对话中表达“帮我把第二排左侧调到25度吧”，大模型会准确输出ac_temperature_adjustment函数，位置参数为“左后”，温度参数为25。ac_temperature_adjustment及其参数就能输入给车机空调控制系统，进而控制物理世界的温度。
 
-| | | | | \
-|{{user_prompt}} |理想回答 |使用工具调用的模型回答 |不使用工具调用的模型回答 |
-|---|---|---|---|
-| | | | | \
-|{'role': 'user', 'content': '好热啊，今天几度啊？'}\n{'role': 'assistant', 'content': '...'}\n{'role': 'user', 'content': '帮我把第二排左侧调到25度吧'} |{"parameters": {"position": "左后", "value": "25"}, "name": "ac_temperature_adjustment"} |{"parameters": {"position": "左后", "value": "25"}, "name": "ac_temperature_adjustment"} |{"parameters": {"action": "设置温度", "position": "左后", "temperature": 25}, "name": "set_temperature"} |
-| | | | | \
-|{'role': 'user', 'content': '感觉有点冷，'}\n{'role': 'assistant', 'content': '...'}\n{'role': 'user', 'content': '帮我调高点'} |{"parameters": {"position": "空", "value": "+1"}, "name": "ac_temperature_adjustment"} |{"parameters": {"position": "副驾", "value": "+1"}, "name": "ac_temperature_adjustment"} |{"parameters": {"action": "调高", "position": "空"}, "name": "temperature_adjust"} |
-| | | | | \
-|{'role': 'user', 'content': '空调怎么调节？'}\n{'role': 'assistant', 'content': '...'}\n{'role': 'user', 'content': '打开老板位的'} |{"parameters": {"action": "打开", "position": "右后"}, "name": "ac_switch"} |{"parameters": {"action": "打开", "position": "右后"}, "name": "ac_switch"} |{"parameters": {"action": "打开", "position": "右后"}, "name": "air_conditioning_switch"} |
+- {{user_prompt}} | 理想回答 | 使用工具调用的模型回答 | 不使用工具调用的模型回答
+- {'role': 'user', 'content': '好热啊，今天几度啊？'}\n{'role': 'assistant', 'content': '...'}\n{'role': 'user', 'content': '帮我把第二排左侧调到25度吧'} | {"parameters": {"position": "左后", "value": "25"}, "name": "ac_temperature_adjustment"} | {"parameters": {"position": "左后", "value": "25"}, "name": "ac_temperature_adjustment"} | {"parameters": {"action": "设置温度", "position": "左后", "temperature": 25}, "name": "set_temperature"}
+- {'role': 'user', 'content': '感觉有点冷，'}\n{'role': 'assistant', 'content': '...'}\n{'role': 'user', 'content': '帮我调高点'} | {"parameters": {"position": "空", "value": "+1"}, "name": "ac_temperature_adjustment"} | {"parameters": {"position": "副驾", "value": "+1"}, "name": "ac_temperature_adjustment"} | {"parameters": {"action": "调高", "position": "空"}, "name": "temperature_adjust"}
+- {'role': 'user', 'content': '空调怎么调节？'}\n{'role': 'assistant', 'content': '...'}\n{'role': 'user', 'content': '打开老板位的'} | {"parameters": {"action": "打开", "position": "右后"}, "name": "ac_switch"} | {"parameters": {"action": "打开", "position": "右后"}, "name": "ac_switch"} | {"parameters": {"action": "打开", "position": "右后"}, "name": "air_conditioning_switch"}
 
 # 5.报告
 「智能优化」流程结束后，点击「查看优化报告」，即可跳转查看优化前后两个版本的比对结果。报告包括「Prompt文本」「评分整体比较、具体分布」「详细评测集」的新旧版本结果对比。

@@ -32,9 +32,9 @@ Authorization: Bearer <ARK_API_KEY>
 
 ### API 调用示例
 ```Shell
-curl https://ark.cn-beijing.volces.com/api/v3/chat/completions \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer <ARK_API_KEY>" \
+curl https://ark.cn-beijing.volces.com/api/v3/chat/completions
+  -H "Content-Type: application/json"
+  -H "Authorization: Bearer <ARK_API_KEY>"
   -d '{
     "model": "<Model ID>",
     "messages": [
@@ -85,12 +85,12 @@ curl https://ark.cn-beijing.volces.com/api/v3/chat/completions \
 2. 使用cURL发起请求，请求示例如下：
 
 ```Shell
-curl -X POST \
-  'https://ark.cn-beijing.volcengineapi.com/?Action=ListEndpoints&Version=2024-01-01' \
-  -H 'Authorization: HMAC-SHA256 Credential=AKL**/20240710/cn-beijing/ark/request, SignedHeaders=host;x-content-sha256;x-date, Signature=a7a****' \
-  -H 'Content-Type: application/json' \
-  -H 'Host: ark.cn-beijing.volcengineapi.com' \
-  -H 'X-Content-Sha256: 44***' \
-  -H 'X-Date: 20240710T042925Z' \
+curl -X POST
+  'https://ark.cn-beijing.volcengineapi.com/?Action=ListEndpoints&Version=2024-01-01'
+  -H 'Authorization: HMAC-SHA256 Credential=AKL**/20240710/cn-beijing/ark/request, SignedHeaders=host;x-content-sha256;x-date, Signature=a7a****'
+  -H 'Content-Type: application/json'
+  -H 'Host: ark.cn-beijing.volcengineapi.com'
+  -H 'X-Content-Sha256: 44***'
+  -H 'X-Date: 20240710T042925Z'
   -d '{}'
 ```

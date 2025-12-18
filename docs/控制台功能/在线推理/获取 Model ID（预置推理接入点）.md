@@ -5,7 +5,7 @@
 
 1. 参见 [模型列表](/docs/82379/1330310)，查阅所有可用模型。
 2. 访问 [模型广场](https://console.volcengine.com/ark/region:ark+cn-beijing/model)，在模型卡片详情页面获取。
-   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/1962b572103543bda30fd50ed7354431~tplv-goo7wpa0wc-image.image =328x)
+   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/1962b572103543bda30fd50ed7354431~tplv-goo7wpa0wc-image.image)
 
 ## 相关阅读
 

@@ -13,26 +13,16 @@
 - 在使用veFaaS部署服务前，需开通相关产品服务。若首次使用，请按需开通或申请以下产品：
 	
 
-| **产品名称** | **产品概述** | **是否为计费项目** | **是否需要申请开白** | **备注** |
-| --- | --- | --- | --- | --- |
-| [veFaaS](https://console.volcengine.com/vefaas/region:vefaas+cn-beijing/overview) | 函数服务（Volcano Engine Function as a Service，veFaaS）是事件驱动的无服务器函数托管计算平台，支持快速创建和部署函数，连接云上中间件和数据库产品，帮助企业低成本构建复杂应用。 | [产品计费](https://www.volcengine.com/docs/6662/107454) | 否 | 必选 |\
-||
-| [veFaaS Native函数](https://www.volcengine.com/docs/6662/116699) | Native 运行时支持用户基于原生的 HTTP 框架进行代码开发。使用 Native 运行时开发函数，需要遵循火山引擎的函数服务 Native 运行时规范。本文介绍 Native 运行时函数（下文简称 “Native 函数”）的运行环境、开发方法、日志采集及部署方法。 | ^^ | 否 | 必选 |\
-||||||
-| [veFaaS 异步函数](https://www.volcengine.com/docs/6662/1158775) | 异步任务是函数服务全新推出的函数运行机制，通过异步模式响应调用请求，在完成事件调度后立即返回 RequestId 结束调用操作，无需阻塞调用端资源。同时，异步任务支持追踪并保存任务各阶段的状态，提供丰富的任务控制和可观测能力。 | ^^  | 否 | 可选 |\
-||||||
-| [Serverless 应用托管](https://www.volcengine.com/docs/6662/97175) | 对原生 HTTP 框架应用进行托管。无需修改业务代码，在仅修改服务监听端口及服务启动脚本的情况下，便可平滑迁移至函数服务。 | ^^  | 否 | 必选 |\
-||||||
-| [CR（镜像仓库）](https://console.volcengine.com/cr/region:cr+cn-beijing/instances) | 火山引擎镜像仓库（Container Registry，CR）提供安全高可用的容器镜像、Helm Chart 等符合 OCI 标准的云原生制品托管服务，方便企业用户管理容器镜像和 Helm Chart 的全生命周期。 | [产品计费](https://www.volcengine.com/docs/6420/79158) | 否 | 必选 |\
-|||||
-| [VPC](https://console.volcengine.com/vpc/region:vpc+cn-beijing/vpc) | 私有网络（VPC，Virtual Private Cloud）为云上资源构建隔离的、自主配置和管理的虚拟网络环境。不同私有网络之间网络相互隔离，您可在自己的私有网络中创建和管理云服务器、负载均衡等云资源。 | [产品计费](https://www.volcengine.com/docs/6401/75314) | 否 | 必选 |\
-||||||
-| [TLS（日志服务）](https://console.volcengine.com/tls/region:tls+cn-beijing/) | 火山引擎日志服务 TLS（Tinder Log Service）是日志和 Trace 类数据的一站式服务平台，提供数据采集、存储、检索分析、加工、消费、投递、监控告警、可视化等功能，适用于业务运维监控、数据统计分析等场景。 | [产品计费](https://www.volcengine.com/docs/6470/1215813) | 否 | 必选 |\
-||||
-| [APIG](https://console.volcengine.com/veapig/region:veapig+cn-beijing/gateway) | API 网关（API Gateway，APIG）是基于云原生的、高扩展、高可用的云上网关托管服务。在传统流量网关的基础上，集成丰富的服务发现和服务治理能力，打通微服务架构的内外部网络，快速实现各服务之间、服务与客户端之间的安全通信。 | [产品计费](https://www.volcengine.com/docs/6569/185249) | 否 | 必选 |\
-||||
-| [云监控](https://console.volcengine.com/cloud-monitor/overview) | 云监控服务是云上一站式监控告警解决方案。 云监控可以收集并可视化展示各类云产品的资源状态，帮助您全面了解其健康状况，及时识别异常状态并发送告警通知，确保业务平稳运行、提升运维效率。 | [产品计费](https://www.volcengine.com/docs/6408/79155) | 否 | 必选 |\
-||
+- **产品名称** | **产品概述** | **是否为计费项目** | **是否需要申请开白** | **备注**
+- [veFaaS](https://console.volcengine.com/vefaas/region:vefaas+cn-beijing/overview) | 函数服务（Volcano Engine Function as a Service，veFaaS）是事件驱动的无服务器函数托管计算平台，支持快速创建和部署函数，连接云上中间件和数据库产品，帮助企业低成本构建复杂应用。 | [产品计费](https://www.volcengine.com/docs/6662/107454) | 否 | 必选
+- [veFaaS Native函数](https://www.volcengine.com/docs/6662/116699) | Native 运行时支持用户基于原生的 HTTP 框架进行代码开发。使用 Native 运行时开发函数，需要遵循火山引擎的函数服务 Native 运行时规范。本文介绍 Native 运行时函数（下文简称 “Native 函数”）的运行环境、开发方法、日志采集及部署方法。 | ^^ | 否 | 必选
+- [veFaaS 异步函数](https://www.volcengine.com/docs/6662/1158775) | 异步任务是函数服务全新推出的函数运行机制，通过异步模式响应调用请求，在完成事件调度后立即返回 RequestId 结束调用操作，无需阻塞调用端资源。同时，异步任务支持追踪并保存任务各阶段的状态，提供丰富的任务控制和可观测能力。 | ^^ | 否 | 可选
+- [Serverless 应用托管](https://www.volcengine.com/docs/6662/97175) | 对原生 HTTP 框架应用进行托管。无需修改业务代码，在仅修改服务监听端口及服务启动脚本的情况下，便可平滑迁移至函数服务。 | ^^ | 否 | 必选
+- [CR（镜像仓库）](https://console.volcengine.com/cr/region:cr+cn-beijing/instances) | 火山引擎镜像仓库（Container Registry，CR）提供安全高可用的容器镜像、Helm Chart 等符合 OCI 标准的云原生制品托管服务，方便企业用户管理容器镜像和 Helm Chart 的全生命周期。 | [产品计费](https://www.volcengine.com/docs/6420/79158) | 否 | 必选
+- [VPC](https://console.volcengine.com/vpc/region:vpc+cn-beijing/vpc) | 私有网络（VPC，Virtual Private Cloud）为云上资源构建隔离的、自主配置和管理的虚拟网络环境。不同私有网络之间网络相互隔离，您可在自己的私有网络中创建和管理云服务器、负载均衡等云资源。 | [产品计费](https://www.volcengine.com/docs/6401/75314) | 否 | 必选
+- [TLS（日志服务）](https://console.volcengine.com/tls/region:tls+cn-beijing/) | 火山引擎日志服务 TLS（Tinder Log Service）是日志和 Trace 类数据的一站式服务平台，提供数据采集、存储、检索分析、加工、消费、投递、监控告警、可视化等功能，适用于业务运维监控、数据统计分析等场景。 | [产品计费](https://www.volcengine.com/docs/6470/1215813) | 否 | 必选
+- [APIG](https://console.volcengine.com/veapig/region:veapig+cn-beijing/gateway) | API 网关（API Gateway，APIG）是基于云原生的、高扩展、高可用的云上网关托管服务。在传统流量网关的基础上，集成丰富的服务发现和服务治理能力，打通微服务架构的内外部网络，快速实现各服务之间、服务与客户端之间的安全通信。 | [产品计费](https://www.volcengine.com/docs/6569/185249) | 否 | 必选
+- [云监控](https://console.volcengine.com/cloud-monitor/overview) | 云监控服务是云上一站式监控告警解决方案。 云监控可以收集并可视化展示各类云产品的资源状态，帮助您全面了解其健康状况，及时识别异常状态并发送告警通知，确保业务平稳运行、提升运维效率。 | [产品计费](https://www.volcengine.com/docs/6408/79155) | 否 | 必选
 
 - 若使用子用户进行产品服务开通，则需为其配置权限：`iam:CreateServiceLinkedRole`，步骤如下：
 	
@@ -198,18 +188,17 @@ Web 应用帮助用户托管原生 Web 框架应用，支持基于各语言的�
 
 ![](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_ff652cc8c08b6ba1ecc517af3b644d2b.png)
 
-| 类型 | 键 / Key | 值 / Value |
-| :-- | :-- | :-- |
-| 鉴权 | VOLC\_ACCESSKEY | 火山ak |
-| ^^ | VOLC\_SECRETKEY | 火山sk |
-| Trace依赖 | REGION（tls地域） | e.g. cn-beijing |\
-| （Optional，配置后可查看各函数调用时间） |
-| ^^ | TRACE\_ENDPOINT（tls私网访问地址:4317） | e.g. https://tls-cn-beijing.ivolces.com:4317 |
-| ^^ | TRACE\_TOPIC（trace日志主题id） | e.g. a8adc928-69e1-4839-a4a0-929f4f188888 |
-| 自定义信息 | ACCOUNT\_ID | e.g. 2100xxxxxx |\
-| （Optional） |
-| ^^ | RESOURCE\_TYPE | e.g. bot |
-| ^^ | RESOURCE\_ID | e.g. browsing-pipeline |
+- 类型 | 键 / Key | 值 / Value
+- 鉴权 | VOLC\_ACCESSKEY | 火山ak
+- ^^ | VOLC\_SECRETKEY | 火山sk
+- Trace依赖 | REGION（tls地域） | e.g. cn-beijing
+（Optional，配置后可查看各函数调用时间）
+- ^^ | TRACE\_ENDPOINT（tls私网访问地址:4317） | e.g. https://tls-cn-beijing.ivolces.com:4317
+- ^^ | TRACE\_TOPIC（trace日志主题id） | e.g. a8adc928-69e1-4839-a4a0-929f4f188888
+- 自定义信息 | ACCOUNT\_ID | e.g. 2100xxxxxx
+（Optional）
+- ^^ | RESOURCE\_TYPE | e.g. bot
+- ^^ | RESOURCE\_ID | e.g. browsing-pipeline
 
 ### 1.2.5. 镜像相关配置
 	
@@ -585,8 +574,7 @@ Version: 2021-03-03
 
 | **参数名称** | **类型** | **是否必选** | **示例值** | **描述** |
 | --- | --- | --- | --- | --- |
-| Action | String | 是 | GetJwtToken | 公共参数，本接口值：GetJwtToken |\
-||
+| Action | String | 是 | GetJwtToken | 公共参数，本接口值：GetJwtToken |
 | ServiceId | String | 选填 |  | 服务Id（即将下线这个字段，之前是通过ServiceId来获取toke，兼容考虑） |
 | GatewayId | String | 选填 |  | 网关Id，Token是全网关生效 |
 
@@ -608,9 +596,8 @@ Content-Type:application/json
 - **返回参数**
 	
 
-| **参数名称** | **类型** | **示例值** | **描述** |
-| --- | --- | --- | --- |
-| JwtToken | String |  |  |
+- **参数名称** | **类型** | **示例值** | **描述**
+- JwtToken | String
 
 - **返回示例**
 	
@@ -671,10 +658,10 @@ Content-Type:application/json
 	![](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_74a40b9abcb1f4eb0c73281d4afd4c87.png)
 	
 	```shell
-	curl --location 'https://open.volcengineapi.com?Version=2021-03-03&Action=GetJwtToken' \
-	--header 'Region: cn-beijing' \
-	--header 'ServiceName: apig' \
-	--header 'Content-Type: application/json' \
+	curl --location 'https://open.volcengineapi.com?Version=2021-03-03&Action=GetJwtToken'
+	--header 'Region: cn-beijing'
+	--header 'ServiceName: apig'
+	--header 'Content-Type: application/json'
 	--data '{
 	    "ServiceId": {{service id}}
 	}'
@@ -835,9 +822,9 @@ public class Test {
 ![](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_1ee5883145ba48099e314065b958414f.png)
 
 ```shell
-curl --location '{APIHost}/api/v2/bots/chat' \
---header 'Authorization: Bearer {JWTToken}' \
---header 'Content-Type: application/json' \
+curl --location '{APIHost}/api/v2/bots/chat'
+--header 'Authorization: Bearer {JWTToken}'
+--header 'Content-Type: application/json'
 --data '{
     "messages": [
         {"role": "user", "content": "查今天的新闻"}

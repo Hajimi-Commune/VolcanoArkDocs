@@ -6,11 +6,11 @@
 
 * 访问方舟控制台[在线推理](https://console.volcengine.com/ark/region:ark+cn-beijing/endpoint?config=%7B%7D)页面，获取到`endpoint_id`。如无，请参考[创建推理接入点](https://www.volcengine.com/docs/82379/1099522)创建。
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/e8abeaf080a44eb4a41af3c0e3cf9e94~tplv-goo7wpa0wc-image.image =328x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/e8abeaf080a44eb4a41af3c0e3cf9e94~tplv-goo7wpa0wc-image.image)
 
 * 访问方舟控制台[API Key管理](https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D)页面，获取到`API Key`。如无，请参考[获取API Key](https://www.volcengine.com/docs/82379/1298459#%E8%8E%B7%E5%8F%96-api-key)创建。
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/214401afd3284e50afe71c4aed5759bd~tplv-goo7wpa0wc-image.image =884x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/214401afd3284e50afe71c4aed5759bd~tplv-goo7wpa0wc-image.image)
 ## 调用示例
 支持2种调用方式，接下来讲分别给出调用方式示例。
 
@@ -22,9 +22,9 @@
 1. 创建context。
 
 ```Shell
-curl --location 'https://ark.cn-beijing.volces.com/api/v3/context/create' \
---header 'Authorization: Bearer ${YOUR_API_KEY}' \
---header 'Content-Type: application/json' \
+curl --location 'https://ark.cn-beijing.volces.com/api/v3/context/create'
+--header 'Authorization: Bearer ${YOUR_API_KEY}'
+--header 'Content-Type: application/json'
 --data '{
     "model":"${YOUR_ENDPOINT_ID}",
     "messages":[
@@ -41,9 +41,9 @@ curl --location 'https://ark.cn-beijing.volces.com/api/v3/context/create' \
 2. 基于创建的 context 返回 id 开始对话。
 
 ```Shell
-curl --location 'https://ark.cn-beijing.volces.com/api/v3/context/chat/completions' \
---header 'Authorization: Bearer ${YOUR_API_KEY}' \
---header 'Content-Type: application/json' \
+curl --location 'https://ark.cn-beijing.volces.com/api/v3/context/chat/completions'
+--header 'Authorization: Bearer ${YOUR_API_KEY}'
+--header 'Content-Type: application/json'
 --data '{
     "context_id": "${YOUR_CONTEXT_ID}",
     "model": "${YOUR_ENDPOINT_ID}",

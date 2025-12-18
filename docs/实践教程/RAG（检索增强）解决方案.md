@@ -13,7 +13,7 @@
 **企业知识管理**：在企业环境中，RAG可以帮助员工快速找到所需的信息，通过检索企业内部的知识库并生成有用的回答。
 **法律咨询**：RAG可以用于提供法律咨询，通过检索相关的法律条文和案例来生成法律建议
 三、**下图显示了RAG与LLM配合的流程图：**
-![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_8d1490c2754334829e942183c80c1f8c.png =4239x)
+![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_8d1490c2754334829e942183c80c1f8c.png)
 **三、我们的优势：**
 
 * **提供毫秒级百亿规模的高性能检索，秒级流式知识库索引更新**
@@ -29,4 +29,4 @@
 
 **五、典型案例介绍：**
 某保险客户为提高客服人效和对话体验，将原有人工客服升级为AI客服。在项目中，多轮对话记忆、问题分散且泛的问题在传统客服功能中难以实现，对话体验不够自然真实，RAG、角色设定等能力，大大提升了客服的用户体验，帮助坐席承接了约30%的咨询问题，提效显著。
-![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_9ebf50478c3622749e306dc050f9453d.png =2983x)
+![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_9ebf50478c3622749e306dc050f9453d.png)

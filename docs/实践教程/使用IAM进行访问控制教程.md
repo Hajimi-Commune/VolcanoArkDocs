@@ -3,31 +3,20 @@
 
 # 基本概念
 
-| | | \
-|名称 |说明 |
-|---|---|
-| | | \
-|主账号 |火山主账号 |\
-| | |\
-| |* 账号（又称为主账号）可以看作是一个特殊的用户（被称为根用户，root user），是云服务资源的拥有者，也是资源计量、资源计费的主体。主账号默认拥有账号下所有权限。 |
-| | | \
-|IAM用户或子账号 |IAM用户即IAM账号，是IAM的一种实体身份类型。 |\
-| | |\
-| |* IAM用户由账号（主账号）或具有管理员权限的其他IAM用户、IAM角色创建，创建成功后，归属于该火山主账号，它不是独立的火山账号。 |\
-| |* IAM用户不拥有资源，不能独立计量计费，由所属的主账号统一付费。 |\
-| |* IAM用户必须在获得授权后，才能登录控制台或使用API访问火山主账号下的资源。 |\
-| | |\
-| |> 更多请查看：[IAM用户](https://www.volcengine.com/docs/6257/64977) |
-| | | \
-|用户组 |用户组是IAM的一种实体身份类型，用户组可以对职责相同的IAM用户进行分类并授权，从而更高效地管理IAM用户及其权限。 |\
-| | |\
-| |* 在IAM用户职责发生变化时，只需将其移动到相应职责的用户组下，不会对其他IAM用户产生影响。 |\
-| |* 当用户组的权限发生变化时，只需修改用户组的权限策略，即可应用到所有IAM用户。 |\
-| | |\
-| |> 更多请查看：[用户组管理](https://www.volcengine.com/docs/6257/104988) |
-| | | \
-|角色 |IAM角色是一种虚拟用户，可以被授予一组权限策略。与IAM用户不同，IAM角色没有永久身份凭证（登录密码或访问密钥），需要被一个可信实体扮演。扮演成功后，可信实体将获得IAM角色的临时身份凭证，即安全令牌（STS Token），使用该安全令牌就能以IAM角色身份访问被授权的资源。 |\
-| |> 更多请查看：[角色免密登录控制台](https://www.volcengine.com/docs/6257/160179) |
+- 名称 | 说明
+- 主账号 | 火山主账号
+- * 账号（又称为主账号）可以看作是一个特殊的用户（被称为根用户，root user），是云服务资源的拥有者，也是资源计量、资源计费的主体。主账号默认拥有账号下所有权限。
+- IAM用户或子账号 | IAM用户即IAM账号，是IAM的一种实体身份类型。
+- * IAM用户由账号（主账号）或具有管理员权限的其他IAM用户、IAM角色创建，创建成功后，归属于该火山主账号，它不是独立的火山账号。
+- * IAM用户不拥有资源，不能独立计量计费，由所属的主账号统一付费。
+- * IAM用户必须在获得授权后，才能登录控制台或使用API访问火山主账号下的资源。
+- > 更多请查看：[IAM用户](https://www.volcengine.com/docs/6257/64977)
+- 用户组 | 用户组是IAM的一种实体身份类型，用户组可以对职责相同的IAM用户进行分类并授权，从而更高效地管理IAM用户及其权限。
+- * 在IAM用户职责发生变化时，只需将其移动到相应职责的用户组下，不会对其他IAM用户产生影响。
+- * 当用户组的权限发生变化时，只需修改用户组的权限策略，即可应用到所有IAM用户。
+- > 更多请查看：[用户组管理](https://www.volcengine.com/docs/6257/104988)
+- 角色 | IAM角色是一种虚拟用户，可以被授予一组权限策略。与IAM用户不同，IAM角色没有永久身份凭证（登录密码或访问密钥），需要被一个可信实体扮演。扮演成功后，可信实体将获得IAM角色的临时身份凭证，即安全令牌（STS Token），使用该安全令牌就能以IAM角色身份访问被授权的资源。
+- > 更多请查看：[角色免密登录控制台](https://www.volcengine.com/docs/6257/160179)
 
 # 基于身份的系统预设策略
 ## 什么是系统预设策略
@@ -109,18 +98,12 @@
 ## 典型场景-赋予账号项目级权限
 当您需要配置IAM账号，使其拥有账号下A项目的权限，但是不具备B项目的权限，即限定用户只在A项目开发/查看/体验。您可以通过组合策略来达成。
 
-| | | | \
-|全局策略 |项目策略 |\
-| |需配置生效的项目 |账号权限描述 |
-|---|---|---|
-| | | | \
-|ArkGlobalInitAccess |ArkExperienceAccess |火山方舟体验中心权限，可**在项目内**查看并体验模型广场中的模型。  |
-| | | | \
-|ArkGlobalInitAccess |ArkReadOnlyAccess |火山方舟只读权限，可**在项目内**使用体验中心，并查看所有资源，包括精调任务、仓库模型、推理接入点等。 |
-| | | | \
-|ArkGlobalInitAccess |ArkStandardGlobalAccess |火山方舟基础功能使用权限，可**在项目内**查看并配置除模型开通外的所有资源。 |
-| | | | \
-|ArkGlobalInitAccess |ArkFullAccess |火山方舟管理员权限，可**在项目内**查看并配置管理所有资源。 |
+- 全局策略 | 项目策略
+- 需配置生效的项目 | 账号权限描述
+- ArkGlobalInitAccess | ArkExperienceAccess | 火山方舟体验中心权限，可**在项目内**查看并体验模型广场中的模型。
+- ArkGlobalInitAccess | ArkReadOnlyAccess | 火山方舟只读权限，可**在项目内**使用体验中心，并查看所有资源，包括精调任务、仓库模型、推理接入点等。
+- ArkGlobalInitAccess | ArkStandardGlobalAccess | 火山方舟基础功能使用权限，可**在项目内**查看并配置除模型开通外的所有资源。
+- ArkGlobalInitAccess | ArkFullAccess | 火山方舟管理员权限，可**在项目内**查看并配置管理所有资源。
 
 下面以为用户配置`default （默认项目）`的管理员`ArkFullAccess`权限为例，演示完整操作流程。
 
@@ -140,14 +123,14 @@
 2. [为IAM用户添加项目权限](https://www.volcengine.com/docs/6649/173422#%E6%B7%BB%E5%8A%A0%E9%A1%B9%E7%9B%AE%E6%9D%83%E9%99%90)：为子用户授予项目权限。
 3. 创建资源并且归属于项目中（资源会放入默认项目组，您可以在创建资源时选择资源所属项目）。
 4. （可选）[按项目查看账单](https://www.volcengine.com/docs/6269/94010#%E4%B8%80%E3%80%81%E8%B4%A6%E5%8D%95%E6%98%8E%E7%BB%86)：您可以根据项目筛选账单。
-   ![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_43789e6a623c89c97a3c83577de176fb.png =2752x)
+   ![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_43789e6a623c89c97a3c83577de176fb.png)
 
 ## 通过项目管理分账
 火山方舟已完成项目的对接，因此您可以在 [火山引擎-费用中心](https://console.volcengine.com/finance/bill/split-bill) 根据**项目**查看分账账单。
-![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_f26c56e7c0292f7437e471d389d5348e.png =3336x)
+![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_f26c56e7c0292f7437e471d389d5348e.png)
 更多信息请查看文档[项目分账](https://www.volcengine.com/docs/6649/174601)。
 # 标签管理
 资源标签是由一组KV键值对组成，您可以通过资源标签从不同维度对云资源进行分类和聚合管理，并且使用于标签制授权和资源分账等场景。火山方舟已经完成了系统标签 `create_by` 的对接，因此您可以在费用中心可以按照用户维度做分账。
 ## 使用步骤
 您可前往“[费用中心-账单管理-费用标签](https://console.volcengine.com/finance/bill/tag/)”，启用 `sys:ark:createdBy` 作为费用标签，启用后，该费用标签将会在账单明细数据中的“标签”列体现；
-![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_e83c4ba7d2ebe7ab1de1d87e8fc41ad5.png =3336x)
+![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_e83c4ba7d2ebe7ab1de1d87e8fc41ad5.png)

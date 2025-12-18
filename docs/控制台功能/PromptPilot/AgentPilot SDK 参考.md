@@ -36,21 +36,13 @@ AgentPilot SDK 为开发者提供工具、接口和资源，简化应用开发�
 
 具体而言，用户可以以低侵入灵活的方式将 PromptPilot 内部原子能力自由组合，通过 SDK 提供的工具、接口和资源，简化应用开发，让开发者可快速集成 PromptPilot 的核心功能，包括但不限于：
 
-| | | \
-|**功能** |**简要描述** |
-|---|---|
-| | | \
-|Task 和 Prompt 管理 |通过 SDK 直接管理 task 和 prompt，读取和列出版本信息，模型配置，以及评分标准等。 |
-| | | \
-|数据闭环和反馈 |支持与 Ark client 兼容的 completion 接口，用户可以推理的同时将数据和反馈回流到 PromptPilot 页面。 |
-| | | \
-|Prompt 优化和报告获取 |通过 SDK 提交 prompt 优化任务，并读取评估报告。 |
-| | | \
-|在线评估 |用户可提交自定义评估请求得到评估结果，是否回流可选。 |
-| | | \
-|Badcase 检测 |用户可以根据评估 score 和 confidence 判断哪些是 badcase，并通过 Console 页面标注。 |
-| | | \
-|Prompt 生成 |根据 task_description 生成 prompt。 |
+- **功能** | **简要描述**
+- Task 和 Prompt 管理 | 通过 SDK 直接管理 task 和 prompt，读取和列出版本信息，模型配置，以及评分标准等。
+- 数据闭环和反馈 | 支持与 Ark client 兼容的 completion 接口，用户可以推理的同时将数据和反馈回流到 PromptPilot 页面。
+- Prompt 优化和报告获取 | 通过 SDK 提交 prompt 优化任务，并读取评估报告。
+- 在线评估 | 用户可提交自定义评估请求得到评估结果，是否回流可选。
+- Badcase 检测 | 用户可以根据评估 score 和 confidence 判断哪些是 badcase，并通过 Console 页面标注。
+- Prompt 生成 | 根据 task_description 生成 prompt。
 
 ## 优势
 基于易用，模块化，易扩展，开放的设计原则，尽可能保证：
@@ -64,7 +56,7 @@ AgentPilot SDK 为开发者提供工具、接口和资源，简化应用开发�
 下图为 PromptPilot 的控制台（Console）和 SDK 的对应关系。一个任务 Task 一般创建在某个个人或团队空间 (workspace) 下面，任务通常包含多个 Prompt 版本。每一个版本围绕一个 "Prompt" 包含相关版本信息，比如task_id, version, prompt 和变量列表，用于评估的标准（criteria），模型名称和配置如 temperature，top_p 等。
 为了通过 SDK 发生数据回流，用户一般需要在请求中传入 workspace_id (指定某个空间),  task_id，version，AGENTPILOT_API_KEY (用于回流服务的鉴权)，ARK_API_KEY (用于方舟上的大模型推理)，即可完成大部分操作。
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/572faf3aaa1b4a84abc38ce873ad94d4~tplv-goo7wpa0wc-image.image =828x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/572faf3aaa1b4a84abc38ce873ad94d4~tplv-goo7wpa0wc-image.image)
 
 **回流事件 (run)**：
 大模型的一次调用如果被抽样，就会对应一次“回流事件”，一个回流事件对应平台“批量”页面中的一行数据。
@@ -103,19 +95,19 @@ export ARK_API_KEY=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 :::
 [独立站版本入口](https://promptpilot.volcengine.com/) | [火山方舟版本入口](https://console.volcengine.com/ark)
 如下图所示，点击左侧 “API Key” 按钮 -> 点击 “选择使用”，此时会拷贝你的 API_KEY。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/5e71f7eee08745c2ab37d491b89e98f3~tplv-goo7wpa0wc-image.image =3382x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/5e71f7eee08745c2ab37d491b89e98f3~tplv-goo7wpa0wc-image.image)
 
 3. **workspace_id 的获取 [new 20250912]**：SDK 的请求需要发送到某个个人或团队空间。
 
 [独立站版本入口](https://promptpilot.volcengine.com/) | [火山方舟版本入口](https://console.volcengine.com/ark)
 在 PromptPilot 页面切换到某个个人或团队空间后，顶部 URL 可以看到 "workspaceId=ws-zzzzzzzzzzzzzz-zzzzz" 开头的字样， `ws-zzzzzzzzzzzzzz-zzzzz` 即为当前 workspace_id。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/74c4ae7d10d74a83a7a22b13405eef73~tplv-goo7wpa0wc-image.image =1280x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/74c4ae7d10d74a83a7a22b13405eef73~tplv-goo7wpa0wc-image.image)
 
 4. **task_id的获取**
 
 [独立站版本入口](https://promptpilot.volcengine.com/) | [火山方舟版本入口](https://console.volcengine.com/ark)
 展开左侧“Prompt 调试” -> 选择某一任务类型比如 “文本理解” 任务 -> 点击上方 “+” 号新建任务。任务建好后，点击“任务名”可以看到“任务信息”弹窗，获取该任务的task_id，也可以从顶部 URL 截取。
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/639e66b4c8fb48128d311b4d7e4f18dc~tplv-goo7wpa0wc-image.image" width="3582px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/639e66b4c8fb48128d311b4d7e4f18dc~tplv-goo7wpa0wc-image.image)
 
 ## Jupyter Notebook 示例
 安装好 SDK 后，可以尝试运行下面的 Jupyter Notebook 中的示例代码，一步步模拟线上生成 Prompt，采集数据，实时评估，回流数据，Prompt 优化。
@@ -418,7 +410,7 @@ ap.flush()
 ```
 
 如果运行成功，登陆 PromptPilot 该任务下的批量页，你将看到，回流数据已添加了评分和评分原因。
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/3e0872eb97ca4a53b6900a0c4beb11fc~tplv-goo7wpa0wc-image.image" width="2472px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/3e0872eb97ca4a53b6900a0c4beb11fc~tplv-goo7wpa0wc-image.image)
 
 ## 3.在线评估
 ### 如何提交在线评估请求？
@@ -610,7 +602,7 @@ if run is not None:
 ```
 
 如果运行成功，登陆 PromptPilot 该任务下的批量页，你将看到，回流数据已添加了评分和评分原因，并且评分标记为“AI评分”。
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/9007bdef39c848b2b71abc5eb18f7466~tplv-goo7wpa0wc-image.image" width="2442px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/9007bdef39c848b2b71abc5eb18f7466~tplv-goo7wpa0wc-image.image)
 
 ### 如何生成评分标准？
 调用接口 ap.eval.generate_criteria()，通过传入一个样本列表 examples 生成评分标准，其中 examples 每一个元素是一个 example dict。++该功能++++对齐++++智能评分的生成评分标准功能。++
@@ -776,9 +768,8 @@ True
 ```
 
 注意：任务优化中，也可以通过 PromptPilot 的 Console 界面查看优化进度如下
-<div style="text-align: center"></div>
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/05733b103e7f443dad57ed0cc385d29b~tplv-goo7wpa0wc-image.image =1280x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/05733b103e7f443dad57ed0cc385d29b~tplv-goo7wpa0wc-image.image)
 
 ### 如何获取优化报告？
 如果优化成功，调用接口 opt_job.get_report()，可以获得优化报告。

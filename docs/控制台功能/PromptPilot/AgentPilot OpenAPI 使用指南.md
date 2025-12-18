@@ -17,9 +17,9 @@ export AGENTPILOT_WORKSPACE_ID=<YOUR WORKSPACE ID FROM PROMPTPILOT CONSOLE>
 所有 model_name 查看[https://www.volcengine.com/docs/82379/1330310](https://www.volcengine.com/docs/82379/1330310) ，成功后将看到创建后的任务信息和 Prompt 版本信息。
 ```Bash
 # Create a new task of text understanding
-curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=CreateTask" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=CreateTask"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '{
     "request_id": "'$(uuidgen)'",
     "workspace_id": "'$AGENTPILOT_WORKSPACE_ID'",
@@ -44,9 +44,9 @@ curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=Creat
 **创建视觉理解任务**
 ```Bash
 # Create a new task of visual understanding
-curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=CreateTask" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=CreateTask"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '{
     "request_id": "'$(uuidgen)'",
     "workspace_id": "'$AGENTPILOT_WORKSPACE_ID'",
@@ -75,9 +75,9 @@ curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=Creat
 **创建多轮对话任务**
 ```Bash
 # Create a new task of dialog
-curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=CreateTask" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=CreateTask"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '{
     "request_id": "'$(uuidgen)'",
     "workspace_id": "'$AGENTPILOT_WORKSPACE_ID'",
@@ -108,9 +108,9 @@ export task_id="ta-20250905101023-qEeWK"
 export version="v1"
 
 # Get a prompt version
-curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=GetPromptTemplate" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=GetPromptTemplate"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '{
     "request_id": "'$(uuidgen)'",
     "workspace_id": "'$AGENTPILOT_WORKSPACE_ID'",
@@ -130,9 +130,9 @@ curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=GetPr
 export task_id="ta-20250905101023-qEeWK"
 
 # List all prompt versions of a task
-curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=ListPromptTemplates" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=ListPromptTemplates"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '{
     "request_id": "'$(uuidgen)'",
     "workspace_id": "'$AGENTPILOT_WORKSPACE_ID'",
@@ -148,9 +148,9 @@ curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=ListP
 ###  文本理解
 ```Bash
 # Test text understanding tasks
-curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=GeneratePromptStream" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=GeneratePromptStream"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '{
     "request_id": "'$(uuidgen)'",
     "workspace_id": "'$AGENTPILOT_WORKSPACE_ID'",
@@ -166,9 +166,9 @@ curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=Gener
 ### 视觉理解
 ```Bash
 # Test visual understanding tasks
-curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=GeneratePromptStream" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=GeneratePromptStream"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '{
     "request_id": "'$(uuidgen)'",
     "workspace_id": "'$AGENTPILOT_WORKSPACE_ID'",
@@ -184,9 +184,9 @@ curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=Gener
 ### 多轮对话
 ```Bash
 # Test dialog tasks
-curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=GeneratePromptStream" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=GeneratePromptStream"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '{
     "request_id": "'$(uuidgen)'",
     "workspace_id": "'$AGENTPILOT_WORKSPACE_ID'",
@@ -212,9 +212,9 @@ export task_id="ta-20250904134351-AUtEk"
 export version="v1"
 
 # Upload a test dataset with 2 data records
-curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=TrackingEvent" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=TrackingEvent"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '{
     "request_id": "'$(uuidgen)'",
     "workspace_id": "'$AGENTPILOT_WORKSPACE_ID'",
@@ -276,7 +276,7 @@ curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=Track
 ```
 
 此时，登陆PromptPilot Console页面的批量评测，你将看到回流的数据
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/cda8380785f4430c90be916f494da875~tplv-goo7wpa0wc-image.image" width="3814px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/cda8380785f4430c90be916f494da875~tplv-goo7wpa0wc-image.image)
 
 * **通过 JSON 文件上传数据集** ：
    * 下载示例文件[AgentPilot Open API - 发布版](https://bytedance.larkoffice.com/docx/E3cQd122roiXIRxZWzZuVidgs8f?from=lark_search_qa&ccm_open_type=lark_search_qa#HntSd9zv5o4lktxPqvOu1VSPsNh)到某一路径下。
@@ -285,9 +285,9 @@ curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=Track
 ```Bash
 # Alternatively, you can upload the test dataset in a JSON file.
 # You need to set the related fields before submit a request, which may include request_id, task_id, version, run_id, etc.
-curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=TrackingEvent" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=TrackingEvent"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '@./test_dataset.json'
 ```
 
@@ -300,9 +300,9 @@ export task_id="ta-20250904134351-AUtEk"
 export version="v1"
 
 # Submit an optimization job for the task_id of the version.
-curl --location "$AGENTPILOT_API_URL/agent-pilot-optimize?Version=2024-01-01&Action=OptimizeServiceStartOptimize" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot-optimize?Version=2024-01-01&Action=OptimizeServiceStartOptimize"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '{
     "request_id": "'$(uuidgen)'",
     "workspace_id": "'$AGENTPILOT_WORKSPACE_ID'",
@@ -327,9 +327,9 @@ curl --location "$AGENTPILOT_API_URL/agent-pilot-optimize?Version=2024-01-01&Act
 export optimize_job_id="20250904152330_zUuSs_OptimizePrompt"
 
 # Check progress during the optimization (State=3) or after the optimization (State=7)
-curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=OptimizeServiceGetOptimizeProgress" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=OptimizeServiceGetOptimizeProgress"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '{
     "request_id": "'$(uuidgen)'",
     "workspace_id": "'$AGENTPILOT_WORKSPACE_ID'",
@@ -337,17 +337,11 @@ curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=Optim
 }'
 ```
 
-| | | \
-|State |解释 |
-|---|---|
-| | | \
-|1 |优化任务已创建 |
-| | | \
-|2 |优化任务运行中 |
-| | | \
-|3 |优化任务已完成且优化成功 |
-| | | \
-|4 |优化任务已完成且优化失败 |
+- State | 解释
+- 1 | 优化任务已创建
+- 2 | 优化任务运行中
+- 3 | 优化任务已完成且优化成功
+- 4 | 优化任务已完成且优化失败
 
 比如运行中 (State=2) 如下图
 ```JSON
@@ -362,7 +356,7 @@ curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=Optim
 :::tip
 你也可以登陆PromptPilot Console页面查看实时进展监控曲线
 :::
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/e4c2326eaa2b4ada87235ba53e2ce546~tplv-goo7wpa0wc-image.image" width="3786px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/e4c2326eaa2b4ada87235ba53e2ce546~tplv-goo7wpa0wc-image.image)
 
 ### 获取优化报告
 分别将task_id，base_version, ref_version替换为你的优化任务的task_id, base_version，ref_version，你将得到你刚才提交的从base_version优化到ref_version的优化报告。
@@ -373,9 +367,9 @@ export base_version="v1" # Version in previous command
 export ref_version="v2" # OptimizedVersion in previous command
 
 # Then, you can get the report.
-curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=OptimizeServiceGetReport" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=OptimizeServiceGetReport"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '{
     "request_id": "'$(uuidgen)'",
     "workspace_id": "'$AGENTPILOT_WORKSPACE_ID'",
@@ -394,9 +388,9 @@ curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=Optim
 ### 提交一个评估请求
 #### 文本理解
 ```Bash
-curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=EvalServiceInputResponseEvaluate" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=EvalServiceInputResponseEvaluate"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '{
     "request_id": "'$(uuidgen)'",
     "workspace_id": "'$AGENTPILOT_WORKSPACE_ID'",
@@ -438,9 +432,9 @@ curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=EvalS
 #### 视觉理解
 ```Bash
 # Test the evaluation for a multimodal example
-curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=EvalServiceInputResponseEvaluate" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=EvalServiceInputResponseEvaluate"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '{
     "request_id": "'$(uuidgen)'",
     "workspace_id": "'$AGENTPILOT_WORKSPACE_ID'",
@@ -487,9 +481,9 @@ curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=EvalS
 ```Bash
 
 # Test the criteria generation for a set of examples
-curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=EvalServiceCriteriaGeneration" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=EvalServiceCriteriaGeneration"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '{
     "request_id": "'$(uuidgen)'",
     "workspace_id": "'$AGENTPILOT_WORKSPACE_ID'",
@@ -553,9 +547,9 @@ curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=EvalS
 
 #### 视觉理解
 ```Bash
-curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=EvalServiceCriteriaGeneration" \
---header "Authorization: Bearer $AGENTPILOT_API_KEY" \
---header "Content-Type: application/json" \
+curl --location "$AGENTPILOT_API_URL/agent-pilot?Version=2024-01-01&Action=EvalServiceCriteriaGeneration"
+--header "Authorization: Bearer $AGENTPILOT_API_KEY"
+--header "Content-Type: application/json"
 --data '{
     "request_id": "'$(uuidgen)'",
     "workspace_id": "'$AGENTPILOT_WORKSPACE_ID'",

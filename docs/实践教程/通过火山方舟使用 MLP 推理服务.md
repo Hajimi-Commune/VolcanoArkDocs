@@ -15,35 +15,20 @@
 ## 支持能力
 MLP 推理服务可使用的火山方舟功能如下：
 
-| | | | \
-|类别 |功能/特性 |说明 |
-|---|---|---|
-| | | | \
-|在线推理 |API 调用 |通过 Endpoint ID 调用您的 MLP 推理服务， Endpoint ID 格式为`ep-s-xxx`。 |
-|^^| | | \
-| |支持模型 |MLP 推理服务（当前仅支持文本生成和深度思考大语言模型） |
-|^^| | | \
-| |模型版本平滑切换 |× |
-|^^| | | \
-| |配置接入点限流 |设置单接入点访问频率限制 |
-|^^| | | \
-| |开启/停用接入点 |控制是否可通过该接入点调用您的服务 |
-|^^| | | \
-| |查看监控 |查看 MLP 推理服务的监控指标 |
-|^^| | | \
-| |安全审计（会话、传输加密） |× |
-|^^| | | \
-| |细粒度权限管理 |支持 IAM、API key、项目、标签维度权限管理 |
-|^^| | | \
-| |算力保障（TPM 保障包、模型单元） |× |
-| | | | \
-|应用实验室 |零代码应用 |× |
-|^^| | | \
-| |高代码应用 |× |
-| | | | \
-|模型评测 |模型评测 |对您的MLP 推理服务进行评测 |
-| | | | \
-|数据投递 |数据投递 |× |
+- 类别 | 功能/特性 | 说明
+- 在线推理 | API 调用 | 通过 Endpoint ID 调用您的 MLP 推理服务， Endpoint ID 格式为`ep-s-xxx`。
+- 支持模型 | MLP 推理服务（当前仅支持文本生成和深度思考大语言模型）
+- 模型版本平滑切换 | ×
+- 配置接入点限流 | 设置单接入点访问频率限制
+- 开启/停用接入点 | 控制是否可通过该接入点调用您的服务
+- 查看监控 | 查看 MLP 推理服务的监控指标
+- 安全审计（会话、传输加密） | ×
+- 细粒度权限管理 | 支持 IAM、API key、项目、标签维度权限管理
+- 算力保障（TPM 保障包、模型单元） | ×
+- 应用实验室 | 零代码应用 | ×
+- 高代码应用 | ×
+- 模型评测 | 模型评测 | 对您的MLP 推理服务进行评测
+- 数据投递 | 数据投递 | ×
 
 ## 支持模型
 
@@ -83,7 +68,7 @@ MLP 推理服务可使用的火山方舟功能如下：
 3. 在 **自定义推理接入点** 页签，单击 **创建推理接入点。**
 4. 在创建接入点页面，按要求填写 **基本信息**。
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/e34f1209baba4f5a89f6af96f3984152~tplv-goo7wpa0wc-image.image =1762x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/e34f1209baba4f5a89f6af96f3984152~tplv-goo7wpa0wc-image.image)
 
 5. 接入来源选择**机器学习平台**，并选择待接入的 MLP 推理服务。
 
@@ -97,7 +82,7 @@ MLP 推理服务可使用的火山方舟功能如下：
 6. 配置接入点限流信息。请注意，实际的推理服务访问能力将由MLP的对应服务资源总量决定。
 7. 阅读并勾选相关协议，单击 **确认接入**，完成 MLP 推理接入点创建。
     创建成功后，复制 Endpoint ID 备用。
-   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/939375c8e0964caa8b8575dddc5b124c~tplv-goo7wpa0wc-image.image =2454x)
+   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/939375c8e0964caa8b8575dddc5b124c~tplv-goo7wpa0wc-image.image)
 
 ## 步骤二：通过方舟 API/SDK 调用MLP推理服务
 
@@ -117,9 +102,9 @@ export ARK_API_KEY="YOUR_API_KEY"
 
 注意 \`model \` 需替换为步骤一获取的 Endpoint ID。
 ```Plain Text
-curl https://ark.cn-beijing.volces.com/api/v3/chat/completions \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer $ARK_API_KEY" \
+curl https://ark.cn-beijing.volces.com/api/v3/chat/completions
+  -H "Content-Type: application/json"
+  -H "Authorization: Bearer $ARK_API_KEY"
   -d '{
     "model": "ep-s-xxx",
     "messages": [

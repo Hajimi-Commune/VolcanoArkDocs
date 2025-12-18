@@ -1,57 +1,34 @@
 # doubao-seed-code
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 64px) * 0.2000);">
 
-<div style="text-align: center"><code>模型效果</code></div>
+<code>模型效果</code>
 
-<div style="text-align: center">★★★★★</div>
+★★★★★
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 64px) * 0.2);margin-left: 16px;">
+<code>速度 </code>
 
-<div style="text-align: center"><code>速度 </code></div>
+★★★★
 
-<div style="text-align: center">★★★★</div>
+<code>输入</code>
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 64px) * 0.2);margin-left: 16px;">
+Text, Image, Video
 
-<div style="text-align: center"><code>输入</code></div>
+文本, 图片, 视频
 
-<div style="text-align: center">Text, Image, Video</div>
+<code>输出</code>
 
-<div style="text-align: center">文本, 图片, 视频</div>
+Text, <del>Image</del>, <del>Video</del>, <del>Audio</del>
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 64px) * 0.2000);margin-left: 16px;">
+文本
 
-<div style="text-align: center"><code>输出</code></div>
+<code>价格(元/百万token）</code>
 
-<div style="text-align: center">Text, <del>Image</del>, <del>Video</del>, <del>Audio</del></div>
+≥1.2, ≥8.0
 
-<div style="text-align: center">文本</div>
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 64px) * 0.2000);margin-left: 16px;">
-
-<div style="text-align: center"><code>价格(元/百万token）</code></div>
-
-<div style="text-align: center">≥1.2, ≥8.0</div>
-
-<div style="text-align: center">[输入], [输出]</div>
-
-</div>
-</div>
+[输入], [输出]
 
 ---
 
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);">
-
 doubao-seed-code是专为实际开发场景打造的AI Coding模型，强化了Bugfix能力和前端能力。支持输入透明Cache能力，降低使用成本。
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);margin-left: 16px;">
 
 最大上下文长度：256k
 最大输入长度：224k
@@ -59,27 +36,19 @@ doubao-seed-code是专为实际开发场景打造的AI Coding模型，强化了B
 max_tokens：最大32k，默认4k（不包含思考内容）
 max_completion_tokens：最大64k（包含思考内容）
 
-</div>
-</div>
-
 ---
 
 ## 模型价格
 
-| | | | | | \
-|条件 |\
-|(千 token) |输入 |\
-| |(元/百万 token) |输入命中缓存 |\
-| | |(元/百万 token) |输出单价 |\
-| | | |(元/百万 token) |缓存存储 |\
-| | | | |(元/百万 token*小时) |
-|---|---|---|---|---|
-| | | | | | \
-|输入长度 [0, 32] |1.20 |0.24 |8.00 |0.017 |
-| | | | | | \
-|输入长度 (32, 128] |1.40 |0.24 |12.00 |0.017 |
-| | | | | | \
-|输入长度 (128, 256] |2.80 |0.24 |16.00 |0.017 |
+- 条件
+- (千 token) | 输入
+- (元/百万 token) | 输入命中缓存
+- (元/百万 token) | 输出单价
+- (元/百万 token) | 缓存存储
+- (元/百万 token*小时)
+- 输入长度 [0, 32] | 1.20 | 0.24 | 8.00 | 0.017
+- 输入长度 (32, 128] | 1.40 | 0.24 | 12.00 | 0.017
+- 输入长度 (128, 256] | 2.80 | 0.24 | 16.00 | 0.017
 
 > 下面是计费项的简单说明，具体请参阅[模型服务价格](/docs/82379/1544106)。
 
@@ -88,21 +57,12 @@ max_completion_tokens：最大64k（包含思考内容）
 
 ## 能力支持
 
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);">
-
 * [文本生成](/docs/82379/1399009)
 * [函数调用 Function Calling](/docs/82379/1262342)
 * [上下文缓存(Responses API)](/docs/82379/1602228)
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);margin-left: 16px;">
-
 * [深度思考](/docs/82379/1449737)
 * [图片理解](/docs/82379/1362931)
-
-</div>
-</div>
 
 ## 模型版本
 doubao-seed-code
@@ -112,50 +72,29 @@ doubao-seed-code
 ## 模型限流
 > 速率限制通过对给定时间段内的请求或令牌使用量设置特定上限来确保公平可靠地访问 API。
 
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);">
+TPM：1,200,000
 
-<div style="text-align: center">TPM：1,200,000</div>
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);margin-left: 16px;">
-
-<div style="text-align: center">RPM：5,000</div>
-
-</div>
-</div>
+RPM：5,000
 
 ## 使用文档
 
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333333333333333);">
+<a href="/docs/82379/1449737">深度思考</a>
 
-<div style="text-align: center"><a href="/docs/82379/1449737">深度思考</a></div>
+深度思考能力使用教程
 
-<div style="text-align: center">深度思考能力使用教程</div>
+供您了解如何调用该模型，包括参数如何配置以及一些典型使用示例代码，您可以基于此进行扩展。
 
-<div style="text-align: center">供您了解如何调用该模型，包括参数如何配置以及一些典型使用示例代码，您可以基于此进行扩展。</div>
+<a href="/docs/82379/1362931">图片理解</a>
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333333333333333);margin-left: 16px;">
+视觉理解能力使用教程
 
-<div style="text-align: center"><a href="/docs/82379/1362931">图片理解</a></div>
+供您了解如何调用该模型，包括参数如何配置以及一些典型使用示例代码，您可以基于此进行扩展。
 
-<div style="text-align: center">视觉理解能力使用教程</div>
+<a href="https://www.volcengine.com/docs/82379/1494384">Chat API</a>
 
-<div style="text-align: center">供您了解如何调用该模型，包括参数如何配置以及一些典型使用示例代码，您可以基于此进行扩展。</div>
+Chat API参数的说明
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333333333333333);margin-left: 16px;">
-
-<div style="text-align: center"><a href="https://www.volcengine.com/docs/82379/1494384">Chat API</a></div>
-
-<div style="text-align: center">Chat API参数的说明</div>
-
-<div style="text-align: center">供您查阅API请求以及返回参数取值范围、默认值、示例等信息。</div>
-
-</div>
-</div>
+供您查阅API请求以及返回参数取值范围、默认值、示例等信息。
 
 ## 使用说明
 ### 深度思考开关
@@ -189,9 +128,9 @@ API使用文档：[Responses API](https://www.volcengine.com/docs/82379/1585135)
 Base URL：`https://ark.cn-beijing.volces.com/api/compatible`
 使用示例如下：
 ```Shell
-curl https://ark.cn-beijing.volces.com/api/compatible/v1/messages \
-  -H "Content-Type: application/json" \
-  -H "x-api-key: $ARK_API_KEY" \
+curl https://ark.cn-beijing.volces.com/api/compatible/v1/messages
+  -H "Content-Type: application/json"
+  -H "x-api-key: $ARK_API_KEY"
   -d '{
     "model": "doubao-seed-code-preview-251028",
     "system":"你是Doubao，我的编程助手。",

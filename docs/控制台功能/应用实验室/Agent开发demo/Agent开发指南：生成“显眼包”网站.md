@@ -4,9 +4,9 @@
 
 * 访问地址：[http://sd13cp6meq1emkiunq5hg.apigateway-cn-beijing.volceapi.com](http://sd13cp6meq1emkiunq5hg.apigateway-cn-beijing.volceapi.com/) 
 
-<span style="color: #646a73">   （</span><span style="color: #646a73">本网页由AI生成</span><span style="color: #646a73">）</span>
+   （本网页由AI生成）
 :::
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/149cef8c59b846dd9fcab6e14afb558e~tplv-goo7wpa0wc-image.image =1920x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/149cef8c59b846dd9fcab6e14afb558e~tplv-goo7wpa0wc-image.image)
 
 本文通过 [火山方舟大模型体验中心](https://www.volcengine.com/experience/ark) 调用了 Doubao、DeepSeek 等先进模型，参考用户手绘设计图与自然语言指令快速生成 HTML 代码，并借助火山引擎函数服务（veFaaS）MCP，**实现了从设计稿解析、代码生成到公网可访问网页的全流程自动化部署**。
 ## **任务目标**
@@ -35,15 +35,15 @@
 ### 操作步骤
 
 1. 访问 [火山方舟大模型体验中心](https://www.volcengine.com/experience/ark?model=doubao-1-5-thinking-vision-pro-250428)，登录火山引擎账号。
-   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/fa03e34fcb8d40df96ae082dbd6a8eb6~tplv-goo7wpa0wc-image.image =1766x)
+   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/fa03e34fcb8d40df96ae082dbd6a8eb6~tplv-goo7wpa0wc-image.image)
 2. 点击模型信息旁的切换按钮，将模型切换为 Doubao-Seed-1.6模型，250615版本。
-   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/306c99d30b6148e2b8c7a925d345776b~tplv-goo7wpa0wc-image.image =1962x)
+   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/306c99d30b6148e2b8c7a925d345776b~tplv-goo7wpa0wc-image.image)
 3. 点击 **Canvas** 按钮，打开预览 html 代码功能。
-   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/40c62aa0546544aea84d25b7f246db8c~tplv-goo7wpa0wc-image.image =1750x)
+   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/40c62aa0546544aea84d25b7f246db8c~tplv-goo7wpa0wc-image.image)
 4. 点击 **+** 符号打开附件上传界面，选择**图片上传**。
-   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/bc8dff24286346e7b78beb6816ed0b52~tplv-goo7wpa0wc-image.image =1750x)
+   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/bc8dff24286346e7b78beb6816ed0b52~tplv-goo7wpa0wc-image.image)
 5. 选择一个本地手绘稿设计图上传，我们以下面的图片为例。
-   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/ab683c7139e64d629288a12aa3a429b0~tplv-goo7wpa0wc-image.image =5712x)
+   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/ab683c7139e64d629288a12aa3a429b0~tplv-goo7wpa0wc-image.image)
 6. 在输入框中输入想要生成网页的具体要求（可包括网页主题、风格、配色、是否需要加入额外的产品参考素材等）。例如：
    ```Plain Text
    参考给出的手绘设计图，生成一个火山引擎AI玩偶“显眼包”产品的网页，显眼包是火山引擎送给伙伴们的礼物，网页风格可爱，主题颜色为蓝色，产品素材如下：
@@ -61,50 +61,41 @@
    ```
 
 7. 点击 **发送按钮** 开始执行任务。
-   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/7f9314432fbb48e28ed98bd749f99c43~tplv-goo7wpa0wc-image.image =1756x)
+   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/7f9314432fbb48e28ed98bd749f99c43~tplv-goo7wpa0wc-image.image)
 8. 等待模型完成推理。
-   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/18d923ed83ad416fafc5e9d040b27862~tplv-goo7wpa0wc-image.image =1964x)
+   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/18d923ed83ad416fafc5e9d040b27862~tplv-goo7wpa0wc-image.image)
 
 ### 效果展示
 模型推理完成后，将在右侧屏幕通过Canvas快速预览生成的html网页。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/43dc65fa38bb478386d9dfc808be0445~tplv-goo7wpa0wc-image.image =2940x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/43dc65fa38bb478386d9dfc808be0445~tplv-goo7wpa0wc-image.image)
 您也可以通过顶端的 **代码/预览** 切换按钮切换显示方式。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/87e560653ed84f3fa8ebf9bbae7b016b~tplv-goo7wpa0wc-image.image =2940x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/87e560653ed84f3fa8ebf9bbae7b016b~tplv-goo7wpa0wc-image.image)
 ### 多轮对话优化（可选）
 您可以继续通过对话让模型调整生成网页的效果。
 例如：把网页主题颜色改为淡粉色，重新生成。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aaa926ad179c495db30627b8c1e1c243~tplv-goo7wpa0wc-image.image =970x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aaa926ad179c495db30627b8c1e1c243~tplv-goo7wpa0wc-image.image)
 生成效果对比如下。
 
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);">
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/43dc65fa38bb478386d9dfc808be0445~tplv-goo7wpa0wc-image.image)
+优化前
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/43dc65fa38bb478386d9dfc808be0445~tplv-goo7wpa0wc-image.image =2940x)
-<div style="text-align: center">优化前</div>
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);margin-left: 16px;">
-
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/23932def2d624179aa8bd61a8c96e02e~tplv-goo7wpa0wc-image.image =2940x)
-<div style="text-align: center">优化后</div>
-
-</div>
-</div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/23932def2d624179aa8bd61a8c96e02e~tplv-goo7wpa0wc-image.image)
+优化后
 
 ## 部署网页代码
 ### 操作步骤
 #### 开启函数服务 MCP
 
 1. 点击 **MCP** 按钮，打开MCP服务器管理面板。
-   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/5633dd92cbad4d1fbbfa4f00b41c680e~tplv-goo7wpa0wc-image.image =974x)
+   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/5633dd92cbad4d1fbbfa4f00b41c680e~tplv-goo7wpa0wc-image.image)
 2. 开通 **函数服务（veFaaS）**。在MCP服务器管理面板中，找到 **veFaaS** 功能，点击右侧开启按钮。
-   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/d45d696517d94627be5af01d183cbcd6~tplv-goo7wpa0wc-image.image =871x)
+   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/d45d696517d94627be5af01d183cbcd6~tplv-goo7wpa0wc-image.image)
    1. 若未开通函数服务，系统可能会提示一键授权开通，请点击 **确定开通与授权** 按钮。
-      ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/56e8919df905480e8448fc911d8cc011~tplv-goo7wpa0wc-image.image =1022x)
+      ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/56e8919df905480e8448fc911d8cc011~tplv-goo7wpa0wc-image.image)
    2. 关闭 create_zip_base64 功能，其余均保持开启。
-      ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aa8195511a2e46b191405a6af3b0a78d~tplv-goo7wpa0wc-image.image =846x)
+      ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/aa8195511a2e46b191405a6af3b0a78d~tplv-goo7wpa0wc-image.image)
 3. 配置成功后，鼠标指向 MCP 功能，会显示已启用 veFaaS 函数服务。
-   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/0c36eed889d94ae9b5b8944f2b098772~tplv-goo7wpa0wc-image.image =993x)
+   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/0c36eed889d94ae9b5b8944f2b098772~tplv-goo7wpa0wc-image.image)
 
 #### 执行任务
 在文本框中输入部署要求，点击发送按钮。 示例输入：
@@ -112,11 +103,11 @@
 把生成的网页部署到veFaaS，记得上传生成的代码文件，最后给我返回一个公网可以访问的地址
 ```
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/48684cbe8d374b1693681eb01dd6758c~tplv-goo7wpa0wc-image.image =1946x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/48684cbe8d374b1693681eb01dd6758c~tplv-goo7wpa0wc-image.image)
 模型开始推理。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/45ddec7debaf46229384e4c0fa7d6c2e~tplv-goo7wpa0wc-image.image =1122x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/45ddec7debaf46229384e4c0fa7d6c2e~tplv-goo7wpa0wc-image.image)
 ### 效果展示
 模型推理完成后，大模型会返回部署好的网页链接信息。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/56e3e17e0c1a47539067b7534928d731~tplv-goo7wpa0wc-image.image =984x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/56e3e17e0c1a47539067b7534928d731~tplv-goo7wpa0wc-image.image)
 点击链接（[http://sd13cp6meq1emkiunq5hg.apigateway-cn-beijing.volceapi.com](http://sd13cp6meq1emkiunq5hg.apigateway-cn-beijing.volceapi.com/) ），即可预览网页部署效果。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/b3dad5e93e9a41349d134db982cbed19~tplv-goo7wpa0wc-image.image =2940x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/b3dad5e93e9a41349d134db982cbed19~tplv-goo7wpa0wc-image.image)

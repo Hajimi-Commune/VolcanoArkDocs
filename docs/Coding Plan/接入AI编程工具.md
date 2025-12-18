@@ -97,7 +97,7 @@ claude --version
    ```
 
 * 模型状态验证：输入`/status`确认模型状态。
-   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/66ac411648f34406ad71214db090d86d~tplv-goo7wpa0wc-image.image =1692x)
+   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/66ac411648f34406ad71214db090d86d~tplv-goo7wpa0wc-image.image)
    如果提示信息如下，可能是由于之前已登录过Claude Code，可输入`/logout`退出登录，然后再启动Claude Code。
    ```JSON
    {
@@ -125,10 +125,10 @@ Claude Code VSCode 插件支持在 VSCode 及基于 VSCode 的 IDE（如 Cursor�
 :::
 ### 安装插件
 打开 VSCode，在扩展市场搜索\`claude code\`进行安装。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/6c39c8cb4ec84f03bb0ca2444804eac7~tplv-goo7wpa0wc-image.image =1202x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/6c39c8cb4ec84f03bb0ca2444804eac7~tplv-goo7wpa0wc-image.image)
 ### 开始使用
 安装完成后，点击 VSCode 右上角的 Claude Code 图标，进入 Claude Code 页面，待初始化完成后即可开始使用。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/388665c0f9ed47379faa5291e180a6b2~tplv-goo7wpa0wc-image.image =1738x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/388665c0f9ed47379faa5291e180a6b2~tplv-goo7wpa0wc-image.image)
 
 **Claude Code Jetbrains 插件**
 
@@ -137,10 +137,10 @@ Claude Code Jetbrains 插件支持 Jetbrains 的系列 IDE 如 IntelliJ IDEA、P
 :::
 ### 安装插件
 打开 Jetbrains IDE，在插件市场搜索\`claude code\`进行安装。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/5859916985a34036bb41f5097ba58f6c~tplv-goo7wpa0wc-image.image =2334x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/5859916985a34036bb41f5097ba58f6c~tplv-goo7wpa0wc-image.image)
 ### 开始使用
 安装完成后，重启IDE后，单击Claude Code 图标，进入 Claude Code 页面开始使用。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/78fae54038524ffbbb0f9d0e677de393~tplv-goo7wpa0wc-image.image =505x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/78fae54038524ffbbb0f9d0e677de393~tplv-goo7wpa0wc-image.image)
 
 ## 接入veCLI
 ### 安装步骤
@@ -179,7 +179,7 @@ TRAE CN 最新版中可直接使用 Doubao-Seed-Code 模型，使用预置的 Do
 
 1. 访问[TRAE CN官网](https://www.trae.cn/)，下载最新版本TRAE IDE。
 2. 关闭Auto模式后，内置模型选择 Doubao-Seed-Code。
-   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/211f9acc79d341499d41f10430be0eda~tplv-goo7wpa0wc-image.image =279x)
+   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/211f9acc79d341499d41f10430be0eda~tplv-goo7wpa0wc-image.image)
 
 ## 接入Cline
 ### 安装步骤
@@ -254,7 +254,7 @@ codex --version
 ## 接入Kilo Code
 ### 安装步骤
 打开 VSCode，在扩展市场搜索`kilo code`进行安装，安装完成后选择信任发布者。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/3e991c168c0c49bc9449f6f6efc29bd7~tplv-goo7wpa0wc-image.image =572x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/3e991c168c0c49bc9449f6f6efc29bd7~tplv-goo7wpa0wc-image.image)
 ### 配置工具
 选择Use your own API key，然后配置以下信息。
 
@@ -267,7 +267,7 @@ codex --version
 ## 接入Roo Code
 ### 安装步骤
 打开 VSCode，在扩展市场搜索`Roo Code`进行安装，安装完成后选择信任发布者。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/dd47c5150044469cb4e95b8de067d817~tplv-goo7wpa0wc-image.image =601x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/dd47c5150044469cb4e95b8de067d817~tplv-goo7wpa0wc-image.image)
 ### 配置工具
 安装完成后，配置以下信息。
 
@@ -296,7 +296,7 @@ opencode --version
    :::tip
    * 支持的model：`doubao-seed-code-preview-latest`、`ark-code-latest`。
    * 替换配置信息中的[<ARK_API_KEY>](https://console.volcengine.com/ark/region:ark+cn-beijing/apikey)。
-   :::
+:::
    ```JSON
    {
      "$schema": "https://opencode.ai/config.json",
@@ -326,7 +326,7 @@ opencode --version
    ```
 
 2. 输入`/models`，选择配置的`doubao-seed-code-preview-latest`模型并在OpenCode中使用。
-   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/9d36feaf0d9945a682b98fce8fe91b5c~tplv-goo7wpa0wc-image.image =462x)
+   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/9d36feaf0d9945a682b98fce8fe91b5c~tplv-goo7wpa0wc-image.image)
 
 ## 错误码
 在编程工具中使用 Coding Plan 套餐时可能会遇到报错，您可以根据错误信息查看对应的报错场景并定位问题，具体可参考[错误码](/docs/82379/1299023)。

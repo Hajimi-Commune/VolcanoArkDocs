@@ -33,15 +33,10 @@ TPM 保障包是针对某个特定模型以及版本保障请求并发达到一�
 TPM 保障包支持按小时后付费和按天预付费，两种方式可叠加购买，单价请参见 [TPM 保障包](/docs/82379/1544106#95750410)。
 ## 计费方式对比
 
-| | | | \
-|计费类型 |后付费 |预付费 |
-|---|---|---|
-| | | | \
-|计费特点 |按实际使用时长计费，精确到秒 |按天计费，价格更优惠 |
-| | | | \
-|弹性配置 |支持 |- |
-| | | | \
-|适合场景 |短期、弹性或者服务请求波动较大的场景 |中长期稳定或服务请求相对稳定的场景 |
+- 计费类型 | 后付费 | 预付费
+- 计费特点 | 按实际使用时长计费，精确到秒 | 按天计费，价格更优惠
+- 弹性配置 | 支持 | -
+- 适合场景 | 短期、弹性或者服务请求波动较大的场景 | 中长期稳定或服务请求相对稳定的场景
 
 ## 后付费（按小时）
 
@@ -67,7 +62,7 @@ TPM保障包支持叠加购买。您可以在创建推理接入点时购买；�
 
 1. 访问[方舟控制台-在线推理](https://console.volcengine.com/ark/region:ark+cn-beijing/endpoint?config=%7B%7D)，切换到 **自定义推理接入点** 页签，单击 **创建推理接入点**。
 2. 在打开的页面中填写接入点名称，选择模型类型，并选择接入模式为 **TPM保障包**。
-   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/07a0dbcd51194863bfcb9f3233b1f4ca~tplv-goo7wpa0wc-image.image =1813x)
+   ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/07a0dbcd51194863bfcb9f3233b1f4ca~tplv-goo7wpa0wc-image.image)
 3. 使用 [TPM计算器](https://console.volcengine.com/ark/region:ark+cn-beijing/endpoint/create) 预估需要购买的输入和输出额度，并 [申请配额](https://console.volcengine.com/ark/region:ark+cn-beijing/quota?quota=%7B%22business%22%3A%22Endpoint%22%2C%22quota%22%3A%22ModelTPM%22%2C%22table%22%3A%7B%7D%7D)。配置项参数说明详见[配置参数](/docs/82379/1510762#ea03124a)。
 4. 勾选协议，并单击 **创建并接入**，完成下单。
 
@@ -76,52 +71,40 @@ TPM保障包支持叠加购买。您可以在创建推理接入点时购买；�
 1. 访问[方舟控制台-在线推理](https://console.volcengine.com/ark/region:ark+cn-beijing/endpoint?config=%7B%7D)，切换到 **自定义推理接入点** 页签。
 2. 单击目标接入点名称，进入接入点概览页。在算力保障区域，根据不同的付费类型，选择购买TPM保障包。
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/cb577d5a33e74969a4434896999a3c84~tplv-goo7wpa0wc-image.image =1630x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/cb577d5a33e74969a4434896999a3c84~tplv-goo7wpa0wc-image.image)
 
 # **配置参数**
 :::tip
 建议您打开 **创建说明** 开关，帮助您了解每个配置项的使用场景和含义，轻松完成TPM 保障包的下单。
 :::
 
-| | | \
-|配置名称 |配置说明 |
-|---|---|
-| | | \
-|接入模式 |必填，本场景选择 **TPM保障包**。 |
-| | | \
-|计费类型 |选择TPM保障包的计费类型： |\
-| | |\
-| |* **后付费**：按量计费，使用灵活，适合短期或者服务请求波动较大的场景。 |\
-| |* **预付费**：提前购买，价格较为优惠，适合长期或者服务请求相对稳定的场景。 |\
-| |* **组合使用**：预付费TPM保障包和后付费TPM保障包支持叠加使用。创建推理接入点时只能选择 1 种计费类型，操作叠加购买多种TPM保障包，需要创建完成推理接入点后，在推理接入点详情页进行配置。 |
-| | | \
-|购买额度 |根据您的业务需求，为模型输入和模型输出分别灵活购买所需的TPM保障包额度。 |\
-| |:::warning |\
-| |对于**doubao-seed-1.6 系列模型，不同长度请求抵扣 TPM 速度不同，您需要按抵扣系数计算购买的TPM。​**每个模型的抵扣系数不同，您可通过 [TPM 计算器](https://console.volcengine.com/ark/region:ark+cn-beijing/endpoint/create)**（登录后在下单页面使用）** 查看相应的抵扣系数，并估算实际需要购买的**可抵扣TPM**。 |\
-| |::: |
-| | | \
-|弹性伸缩 |**后付费（按小时）** 购买TPM保障包的配置项，选填。 |\
-| |弹性伸缩是一种按需自动调整资源量的机制，可根据指定的弹性规则，动态调整当前接入点的 TPM保障包购买量，帮助在业务高峰期扩容，在业务低谷期释放资源，提升资源利用率并降低成本。 |\
-| |支持以下两种弹性规则，多个弹性规则可叠加，灵活覆盖全业务周期。详细配置要求和注意事项请参见控制台 **创建说明**。 |\
-| | |\
-| |* **定时弹性**：您可以设置在某一时间节点（可精确到分钟）后将TPM保障包的输入TPM和输出TPM调整到您所需的新的值。 |\
-| |* **周期性弹性**：您可以「按天重复」、「按周重复」或「Cron表达式」来设置时间规则，TPM保障包的输入TPM和输出TPM将会在您所设置的时间节点后调整到您所需的新的值。 |
-| | | \
-|购买时长 |**预付费（按天）**购买TPM保障包的配置项，必填。 |\
-| |TPM保障包的购买时长。 |
-| | | \
-|自动续费 |**预付费（按天）**购买TPM保障包的配置项，选填。 |\
-| |推荐您进行选择，保障服务持续可用。 |\
-| | |\
-| |* 单次自动续费时长：选择每一次执行续费操作的续费时长。 |\
-| |* 自动续费次数：默认为永久生效，您可以根据业务填写自定义次数。 |
+- 配置名称 | 配置说明
+- 接入模式 | 必填，本场景选择 **TPM保障包**。
+- 计费类型 | 选择TPM保障包的计费类型：
+- * **后付费**：按量计费，使用灵活，适合短期或者服务请求波动较大的场景。
+- * **预付费**：提前购买，价格较为优惠，适合长期或者服务请求相对稳定的场景。
+- * **组合使用**：预付费TPM保障包和后付费TPM保障包支持叠加使用。创建推理接入点时只能选择 1 种计费类型，操作叠加购买多种TPM保障包，需要创建完成推理接入点后，在推理接入点详情页进行配置。
+- 购买额度 | 根据您的业务需求，为模型输入和模型输出分别灵活购买所需的TPM保障包额度。
+- :::warning
+- 对于**doubao-seed-1.6 系列模型，不同长度请求抵扣 TPM 速度不同，您需要按抵扣系数计算购买的TPM。**每个模型的抵扣系数不同，您可通过 [TPM 计算器](https://console.volcengine.com/ark/region:ark+cn-beijing/endpoint/create)**（登录后在下单页面使用）** 查看相应的抵扣系数，并估算实际需要购买的**可抵扣TPM**。
+- 弹性伸缩 | **后付费（按小时）** 购买TPM保障包的配置项，选填。
+- 弹性伸缩是一种按需自动调整资源量的机制，可根据指定的弹性规则，动态调整当前接入点的 TPM保障包购买量，帮助在业务高峰期扩容，在业务低谷期释放资源，提升资源利用率并降低成本。
+- 支持以下两种弹性规则，多个弹性规则可叠加，灵活覆盖全业务周期。详细配置要求和注意事项请参见控制台 **创建说明**。
+- * **定时弹性**：您可以设置在某一时间节点（可精确到分钟）后将TPM保障包的输入TPM和输出TPM调整到您所需的新的值。
+- * **周期性弹性**：您可以「按天重复」、「按周重复」或「Cron表达式」来设置时间规则，TPM保障包的输入TPM和输出TPM将会在您所设置的时间节点后调整到您所需的新的值。
+- 购买时长 | **预付费（按天）**购买TPM保障包的配置项，必填。
+- TPM保障包的购买时长。
+- 自动续费 | **预付费（按天）**购买TPM保障包的配置项，选填。
+- 推荐您进行选择，保障服务持续可用。
+- * 单次自动续费时长：选择每一次执行续费操作的续费时长。
+- * 自动续费次数：默认为永久生效，您可以根据业务填写自定义次数。
 
 # 调整数量/续费/退订
 
 1. 访问[方舟控制台-在线推理](https://console.volcengine.com/ark/region:ark+cn-beijing/endpoint?config=%7B%7D)，切换到**自定义推理接入点**页签。
 2. 单击目标接入点名称，进入接入点概览页。在算力保障区域，根据需要对TPM保障包进行调整数量、续费或退订。
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/d15b16374d7b47f6b4ed316e798688c2~tplv-goo7wpa0wc-image.image =1644x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/d15b16374d7b47f6b4ed316e798688c2~tplv-goo7wpa0wc-image.image)
 :::warning
 未到期的TPM保障包退订会产生惩罚系数，无法 100%退费。
 :::
@@ -144,12 +127,12 @@ TPM保障包支持叠加购买。您可以在创建推理接入点时购买；�
    * 发布者选项指定账号：`2100444922`
    * 服务选择：`ark`
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/437917a96bb84c02b1a5fafe5a3f2bd1~tplv-goo7wpa0wc-image.image =3792x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/437917a96bb84c02b1a5fafe5a3f2bd1~tplv-goo7wpa0wc-image.image)
 
 3. 在 **云服务事件订阅** 页面创建事件订阅。Topic TRN选择刚刚创建的主题，事件选择`ModelTPMNewFailed`、`ModelTPMScaleUpFailed`。
 4. 在**订阅**页面，订阅前面创建的主题，并配置可接收端地址
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/76693dd573b34176b8ca85cce0c23e30~tplv-goo7wpa0wc-image.image =1889x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/76693dd573b34176b8ca85cce0c23e30~tplv-goo7wpa0wc-image.image)
 
 * 配置完订阅后，SNS 会向接收端发送对应的确认链接，需确认该链接来完成订阅，确认链接demo如下。需要回调下文中SubscribeURL
 
@@ -170,7 +153,7 @@ TPM保障包支持叠加购买。您可以在创建推理接入点时购买；�
 
 * 回调成功后可在 **订阅** 页面看到对应的订阅状态为：已确认，表示订阅已完成。
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/301d7375496f4ac6863e38b360cdb1e0~tplv-goo7wpa0wc-image.image =486x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/301d7375496f4ac6863e38b360cdb1e0~tplv-goo7wpa0wc-image.image)
 ## 订阅信息内容格式
 TPM保障包订阅失败时通知的内容。
 ### ModelTPMNewFailed
@@ -214,7 +197,7 @@ TPM保障包订阅失败时通知的内容。
 
 * 规则一：在下午6点将保障包的值设置为输入 10k TPM， 输出 1 k TPM。
 
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/b48c41af19cb4c918d90b5963df5d8a4~tplv-goo7wpa0wc-image.image" width="1572px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/b48c41af19cb4c918d90b5963df5d8a4~tplv-goo7wpa0wc-image.image)
 
 规则二：在晚上9点 将保障包的输入和输出值都设置为 0
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/fdd85a3ea2b24f058204c7c32427c680~tplv-goo7wpa0wc-image.image" width="1576px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/fdd85a3ea2b24f058204c7c32427c680~tplv-goo7wpa0wc-image.image)

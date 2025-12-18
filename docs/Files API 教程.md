@@ -17,10 +17,10 @@ Files API 作为文件管理接口，提供文件的上传、检索、列表查�
 **Curl**
 
 ```Bash
-curl https://ark.cn-beijing.volces.com/api/v3/files \\
--H "Authorization: Bearer $ARK_API_KEY" \\
--F 'purpose=user_data' \\
--F 'file=@/Users/doc/demo.mp4' \\
+curl https://ark.cn-beijing.volces.com/api/v3/files
+-H "Authorization: Bearer $ARK_API_KEY"
+-F 'purpose=user_data'
+-F 'file=@/Users/doc/demo.mp4'
 -F 'preprocess_configs[video][fps]=0.3'
 ```
 
@@ -72,7 +72,7 @@ func main() {
 
     data, err := os.Open("/Users/doc/demo.mp4")
     if err != nil {
-        fmt.Printf("read file error: %v\
+        fmt.Printf("read file error: %v
 ", err)
         return
     }
@@ -90,7 +90,7 @@ func main() {
         fmt.Printf("upload file error: %v", err)
         return
     }
-    fmt.Printf("file info: %v\
+    fmt.Printf("file info: %v
 ", fileInfo)
 
 }
@@ -170,15 +170,10 @@ print(file)
 #### 文件类型
 Files API 支持多种文件类型，具体如下。
 
-| | | | \
-|文件类型 |文件格式 |MIME类型 |
-|---|---|---|
-| | | | \
-|图片 |.jpg、.jpeg、.png、.gif、.webp、.bmp、.tiff、.ico、.icns、.sgi、.jp2、.heic、.heif |`image/jpeg`、`image/png`、`image/gif`、`image/webp`、`image/bmp`、`image/tiff`、`image/x-icon`、`image/icns`、`image/sgi`、`image/jp2`、`image/heic`、`image/heif` |
-| | | | \
-|视频 |.mp4、.avi、.mov |`video/mp4`、`video/avi`、`video/mov` |
-| | | | \
-|PDF |.pdf |`application/pdf` |
+- 文件类型 | 文件格式 | MIME类型
+- 图片 | .jpg、.jpeg、.png、.gif、.webp、.bmp、.tiff、.ico、.icns、.sgi、.jp2、.heic、.heif | `image/jpeg`、`image/png`、`image/gif`、`image/webp`、`image/bmp`、`image/tiff`、`image/x-icon`、`image/icns`、`image/sgi`、`image/jp2`、`image/heic`、`image/heif`
+- 视频 | .mp4、.avi、.mov | `video/mp4`、`video/avi`、`video/mov`
+- PDF | .pdf | `application/pdf`
 
 ### 检索文件
 通过 File ID 检索文件信息，如文件大小、过期时间、MIME类型及文件处理状态等信息。
@@ -187,7 +182,7 @@ Files API 支持多种文件类型，具体如下。
 **Curl**
 
 ```Bash
-curl https://ark.cn-beijing.volces.com/api/v3/files/file-20251014**** \\
+curl https://ark.cn-beijing.volces.com/api/v3/files/file-20251014****
 -H "Authorization: Bearer $ARK_API_KEY"
 ```
 
@@ -288,7 +283,7 @@ print(response)
 **Curl**
 
 ```Bash
-curl https://ark.cn-beijing.volces.com/api/v3/files \\
+curl https://ark.cn-beijing.volces.com/api/v3/files
 -H "Authorization: Bearer $ARK_API_KEY"
 ```
 
@@ -385,8 +380,8 @@ print(response)
 **Curl**
 
 ```Bash
-curl https://ark.cn-beijing.volces.com/api/v3/files/file-20251014**** \\
--X DELETE \\
+curl https://ark.cn-beijing.volces.com/api/v3/files/file-20251014****
+-X DELETE
 -H "Authorization: Bearer $ARK_API_KEY"
 ```
 
@@ -491,18 +486,18 @@ if __name__ == "__main__":
 
 1. 上传视频文件获取File ID。
    ```Bash
-   curl https://ark.cn-beijing.volces.com/api/v3/files \\
-   -H "Authorization: Bearer $ARK_API_KEY" \\
-   -F 'purpose=user_data' \\
-   -F 'file=@/Users/doc/demo.mp4' \\
+   curl https://ark.cn-beijing.volces.com/api/v3/files
+   -H "Authorization: Bearer $ARK_API_KEY"
+   -F 'purpose=user_data'
+   -F 'file=@/Users/doc/demo.mp4'
    -F 'preprocess_configs[video][fps]=0.3'
    ```
 
 2. 在Responses API中引用File ID。
    ```Bash
-   curl https://ark.cn-beijing.volces.com/api/v3/responses \\
-   -H "Authorization: Bearer $ARK_API_KEY" \\
-   -H 'Content-Type: application/json' \\
+   curl https://ark.cn-beijing.volces.com/api/v3/responses
+   -H "Authorization: Bearer $ARK_API_KEY"
+   -H 'Content-Type: application/json'
    -d '{
        "model": "doubao-seed-1-6-251015",
        "input": [
@@ -585,12 +580,12 @@ async def main():
         if isinstance(event, ResponseReasoningSummaryTextDeltaEvent):
             print(event.delta, end="")
         if isinstance(event, ResponseOutputItemAddedEvent):
-            print("\
+            print("
 outPutItem " + event.type + " start:")
         if isinstance(event, ResponseTextDeltaEvent):
             print(event.delta,end="")
         if isinstance(event, ResponseTextDoneEvent):
-            print("\
+            print("
 outPutTextDone.")
         if isinstance(event, ResponseCompletedEvent):
             print("Response Completed. Usage = " + event.response.usage.model_dump_json())
@@ -628,7 +623,7 @@ func main() {
     fmt.Println("----- upload video data -----")
     data, err := os.Open("/Users/doc/demo.mp4")
     if err != nil {
-        fmt.Printf("read file error: %v\
+        fmt.Printf("read file error: %v
 ", err)
         return
     }
@@ -657,7 +652,7 @@ func main() {
             return
         }
     }
-    fmt.Printf("Video processing completed: %s, status: %s\
+    fmt.Printf("Video processing completed: %s, status: %s
 ", fileInfo.ID, fileInfo.Status)
     inputMessage := &responses.ItemInputMessage{
         Role: responses.MessageRole_user,
@@ -696,7 +691,7 @@ func main() {
 
     resp, err := client.CreateResponsesStream(ctx, createResponsesReq)
     if err != nil {
-        fmt.Printf("stream error: %v\
+        fmt.Printf("stream error: %v
 ", err)
         return
     }
@@ -707,7 +702,7 @@ func main() {
             break
         }
         if err != nil {
-            fmt.Printf("stream error: %v\
+            fmt.Printf("stream error: %v
 ", err)
             return
         }
@@ -724,14 +719,14 @@ func handleEvent(event *responses.Event) {
     case responses.EventType_response_reasoning_summary_text_delta.String():
         print(event.GetReasoningText().GetDelta())
     case responses.EventType_response_reasoning_summary_text_done.String(): // aggregated reasoning text
-        fmt.Printf("\
-Aggregated reasoning text: %s\
+        fmt.Printf("
+Aggregated reasoning text: %s
 ", event.GetReasoningText().GetText())
     case responses.EventType_response_output_text_delta.String():
         print(event.GetText().GetDelta())
     case responses.EventType_response_output_text_done.String(): // aggregated output text
-        fmt.Printf("\
-Aggregated output text: %s\
+        fmt.Printf("
+Aggregated output text: %s
 ", event.GetTextDone().GetText())
     default:
         return
@@ -814,26 +809,26 @@ public class demo {
                         System.out.print(((ReasoningSummaryTextDeltaEvent) event).getDelta());
                     }
                     if (event instanceof OutputItemAddedEvent) {
-                        System.out.println("\
+                        System.out.println("
 OutputItem " + (((OutputItemAddedEvent) event).getItem().getType()) + " Start: ");
                     }
                     if (event instanceof OutputTextDeltaEvent) {
                         System.out.print(((OutputTextDeltaEvent) event).getDelta());
                     }
                     if (event instanceof OutputTextDoneEvent) {
-                        System.out.println("\
+                        System.out.println("
 OutputText End.");
                     }
                     if (event instanceof OutputItemDoneEvent) {
-                        System.out.println("\
+                        System.out.println("
 OutputItem " + ((OutputItemDoneEvent) event).getItem().getType() + " End.");
                     }
                     if (event instanceof FunctionCallArgumentsDoneEvent) {
-                        System.out.println("\
+                        System.out.println("
 FunctionCall Arguments: " + ((FunctionCallArgumentsDoneEvent) event).getArguments());
                     }
                     if (event instanceof ResponseCompletedEvent) {
-                        System.out.println("\
+                        System.out.println("
 Response Completed. Usage = " + ((ResponseCompletedEvent) event).getResponse().getUsage());
                     }
                 });
@@ -891,15 +886,15 @@ for event in response:
     if event.type == "response.reasoning_summary_text.delta":
         print(event.delta, end="")
     if event.type == "response.output_item.added":
-        print("\
+        print("
 outPutItem " + event.type + " start:")
     if event.type == "response.output_text.delta":
         print(event.delta,end="")
     if event.type == "response.output_item.done":
-        print("\
+        print("
 outPutTextDone.")
     if event.type == "response.completed":
-        print("\
+        print("
 Response Completed. Usage = " + event.response.usage.model_dump_json())
 ```
 

@@ -25,9 +25,6 @@ messages=[
 
 ## 模式对比
 
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);">
-
 普通模式
 请求示例
 ```Python
@@ -44,9 +41,6 @@ completion = client.chat.completions.create(
 )
 print(completion.choices[0].message.content)
 ```
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);margin-left: 16px;">
 
 续写模式
 请求示例
@@ -67,20 +61,11 @@ completion = client.chat.completions.create(
 print(completion.choices[0].message.content)
 ```
 
-</div>
-</div>
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);">
-
 返回示例
 输出会按照模型根据问题的完整自然语言回复。
 ```Shell
 1+1等于2。
 ```
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);margin-left: 16px;">
 
 返回示例
 模型根据信息“=”续写，保持对应的格式和行文风格。
@@ -88,17 +73,11 @@ print(completion.choices[0].message.content)
 2
 ```
 
-</div>
-</div>
-
 ---
 
 接下来，对于几种典型使用场景进行举例说明。
 ## 场景：改善输出格式
 由于模型自身会基于自己的理解去响应用户的请求，会导致输出无法直接被其他程序解析。可以通过预填充 `{` 符号，引导模型跳过一些场景回复，直接输出 JSON 对象，会让回答更加简洁和工整，可以被其他程序更好地解析。
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);">
 
 普通模式
 请求示例
@@ -116,9 +95,6 @@ completion = client.chat.completions.create(
 )
 print(completion.choices[0].message.content)
 ```
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);margin-left: 16px;">
 
 续写模式
 请求示例
@@ -139,12 +115,6 @@ completion = client.chat.completions.create(
 print(completion.choices[0].message.content)
 ```
 
-</div>
-</div>
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);">
-
 返回示例
 返回一些说明性语言，无法直接按照 JSON 解析。
 ````Shell
@@ -163,9 +133,6 @@ print(completion.choices[0].message.content)
 ``` 当然，您可以根据更详细和具体的需求来进一步完善和扩展这个 JSON 描述。
 ````
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);margin-left: 16px;">
-
 返回示例
 和前置的`assistant`信息组合成 JSON 格式的内容。
 ```Shell
@@ -178,9 +145,6 @@ print(completion.choices[0].message.content)
     ]
 }
 ```
-
-</div>
-</div>
 
 ### 注意事项
 

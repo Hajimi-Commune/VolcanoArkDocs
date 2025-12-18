@@ -2,15 +2,10 @@
 视觉定位（Visual Grounding，后简称 Grounding）是根据对自然语言的任务要求，在图片中找到对应的目标，并返回目标的坐标，需要模型具备视觉理解以及自然语言理解的能力。
 和目标检测最大的区别在于，输入多了自然语言信息，在对物体进行定位时需要理解自然语言的信息。使用上更加灵活交互更加自然。
 
-| || || \
-|输入 | |输出 | |
-|---|---|---|---|
-| | | | | \
-|原始图片 |提示词 |模型输出坐标 |按坐标绘图 |
-| | | | | \
-|![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/f9a8b28c25ac4d86979de8f52e73def6~tplv-goo7wpa0wc-image.image =1024x) |\
-| |框出中间狼卡通形象的头部的位置，输出 bounding box 的坐标 |`<bbox>175 98 791 476</bbox>` |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/114267ea04e7424a8dc2e168c55b2ae8~tplv-goo7wpa0wc-image.image =1024x) |\
-| | | | |
+- 输入 | 输出
+- 原始图片 | 提示词 | 模型输出坐标 | 按坐标绘图
+- ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/f9a8b28c25ac4d86979de8f52e73def6~tplv-goo7wpa0wc-image.image)
+- 框出中间狼卡通形象的头部的位置，输出 bounding box 的坐标 | `<bbox>175 98 791 476</bbox>` | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/114267ea04e7424a8dc2e168c55b2ae8~tplv-goo7wpa0wc-image.image)
 
 # 支持模型
 请参见[视觉理解能力](/docs/82379/1330310#ff5ef604)。
@@ -99,7 +94,7 @@ except ValueError as e:
 
 ## 5. 在原图上绘制边界框并保存
 转化坐标，`x_min`, `y_min`, `x_max`, `y_max`取值范围是 **0-1000**，是 **归一化到 1000*1000 的比例坐标**，即图片宽高分别等分为1000后，图片左上角为原点绘制坐标系，对应点的坐标位置，原理如下图所示。
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/e247476bb66b4b4f945b48318c18ee9b~tplv-goo7wpa0wc-image.image" width="200px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/e247476bb66b4b4f945b48318c18ee9b~tplv-goo7wpa0wc-image.image)
 
 根据图像实际尺寸缩放边界框坐标，将模型输出的相对坐标映射到绝对坐标，需进行计算，例如左上角坐标横轴绝对值是 `x=x_min/1000*w`，w 是图片的实际宽度。
 ```Python
@@ -124,7 +119,7 @@ print(f"成功保存标注图片: {output_path}")
 
 ## 结果预览
 配置并运行该示例代码，在代码路径下生成绘制后的图片预览。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/114267ea04e7424a8dc2e168c55b2ae8~tplv-goo7wpa0wc-image.image =163x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/114267ea04e7424a8dc2e168c55b2ae8~tplv-goo7wpa0wc-image.image)
 # 使用建议
 
 * 不建议将坐标结果（ bounding box 坐标）放在 json 中。
@@ -132,33 +127,21 @@ print(f"成功保存标注图片: {output_path}")
 
 # 典型场景
 
-| | | | | | \
-|场景 |场景说明 |触发条件 |提示词 |效果图 |
-|---|---|---|---|---|
-| | | | | | \
-|带属性物体检测 |需要定位图像中符合自然语言描述的特定属性的对象 |prompt里需包含关键词： |\
-| | |`<bbox>x1 y1 x2 y2</bbox> 框` |`帮我框选森林里的着火范围，以<bbox>x1 y1 x2 y2</bbox>的形式表示` |\
-| | | | |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/e8140cc3d68240fcaab0a92be13101bd~tplv-goo7wpa0wc-image.image =1151x) |\
-| | | | | |
-| | | | | | \
-|多目标检测 |需要同时检测多个预定义类别的对象 |prompt里需包含关键词： |\
-| | |` [{"category": category, "bbox": "<bbox>x1 y1 x2 y2</bbox>"}, {"category": category, "bbox": "<bbox>x1 y1 x2 y2</bbox>"}] ` |请检测图像中所有属于 "plate（盘子）、photo（照片）、kid（小孩）、cup（杯子）" 类别的物体。对于每个物体，请提供其类别和边界框，格式为：`[{"category": category, "bbox": "<bbox>x1 y1 x2 y2</bbox>"}, {"category": category, "bbox": "<bbox>x1 y1 x2 y2</bbox>"}]` |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/f768fcf0037a4baf80b2d4157898d8a2~tplv-goo7wpa0wc-image.image =1280x) |\
-| | | | | |
-| | | | | | \
-|根据图像信息定位目标 |根据目标的图像信息在另一张图中进行定位 |prompt里需包含关键词： |\
-| | |`<bbox>x1 y1 x2 y2</bbox>` |`请根据第一张图的主要目标，识别第二张图中类似的目标，对于每个物体提供其边界框，格式为：<bbox>x1 y1 x2 y2</bbox>` |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/8ca3750ecfd540f285703e11f3c9edf9~tplv-goo7wpa0wc-image.image =1024x) |
-| | | | | | \
-|计算物体数量 |需要统计特定对象的数量 |prompt里需包含关键词： |\
-| | |`<point>x y</point> 点` |\
-| | | |`定位画面中水面上的所有人，输出 point，格式<point>x1 y1</point>，并计数水面中有多少人？` |\
-| | | | |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/2392404be5034344b31fc99b9e637dac~tplv-goo7wpa0wc-image.image =1151x) |\
-| | | | | |
-| | | | | | \
-|识别图像文本 |需要提取图像中的文字内容及位置 |prompt里需包含关键词： |\
-| | |`<text>text</text><polygon>x1 y1, x2 y2, x3 y3, x4 y4</polygon> ` |标注图中的文字，格式为`<text>text</text><polygon>x1 y1, x2 y2, x3 y3, x4 y4</polygon>` |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/7ef81d129cb34b5a8e3e1c8cc5d67f7e~tplv-goo7wpa0wc-image.image =1280x) |\
-| | | | | |
-| | | | | | \
-|3D物体检测 |检测图像中的3D立体格式的物体 |prompt里需包含关键词： |\
-| | |`图像相机的详细参数以及<3dbbox>x_center y_center z_center x_size y_size z_size pitch yaw roll</3dbbox>` |`以下是该图像的详细相机参数。相机内参：焦距f_x=5545.08, f_y=5545.08。主点坐标位于图像中心附近，因此当图像宽度为4284，高度为5712时，c_x=2142.00且c_y=2856.00。这里我们不考虑畸变参数。因此，内参矩阵K = [[1460.00, 0, 2142.00], [0, 1460.00, 2856.00], [0, 0, 1]]。相机坐标系：X 轴向右，Y 轴向下，Z 轴向前。原点为相机位置。我们将相机坐标系作为世界坐标系，即相机外参矩阵为[[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0]]。请按照以下格式输出每个3D框：<3dbbox>x_center y_center z_center x_size y_size z_size pitch yaw roll</3dbbox> 注意：(1) x_center, y_center, z_center：目标中心在相机坐标系中沿着XYZ轴的位置，单位为米。(2) x_size, y_size, z_size：当旋转角为零时，目标沿XYZ轴的尺寸，单位为米。(3) pitch, yaw, roll：分别为围绕XYZ轴的欧拉角。这里的每个角度值被归一化到（-1,1），需要乘以180转换到实际的角度。在这幅图中检测杯子，并以3D边界框格式展示结果。检测图像中的杯子，并以 3D框形式显示结果` |![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/b8c5fa94a87c4977874c345630e0179e~tplv-goo7wpa0wc-image.image =1280x) |
+- 场景 | 场景说明 | 触发条件 | 提示词 | 效果图
+- 带属性物体检测 | 需要定位图像中符合自然语言描述的特定属性的对象 | prompt里需包含关键词：
+- `<bbox>x1 y1 x2 y2</bbox> 框` | `帮我框选森林里的着火范围，以<bbox>x1 y1 x2 y2</bbox>的形式表示`
+- ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/e8140cc3d68240fcaab0a92be13101bd~tplv-goo7wpa0wc-image.image)
+- 多目标检测 | 需要同时检测多个预定义类别的对象 | prompt里需包含关键词：
+- ` [{"category": category, "bbox": "<bbox>x1 y1 x2 y2</bbox>"}, {"category": category, "bbox": "<bbox>x1 y1 x2 y2</bbox>"}] ` | 请检测图像中所有属于 "plate（盘子）、photo（照片）、kid（小孩）、cup（杯子）" 类别的物体。对于每个物体，请提供其类别和边界框，格式为：`[{"category": category, "bbox": "<bbox>x1 y1 x2 y2</bbox>"}, {"category": category, "bbox": "<bbox>x1 y1 x2 y2</bbox>"}]` | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/f768fcf0037a4baf80b2d4157898d8a2~tplv-goo7wpa0wc-image.image)
+- 根据图像信息定位目标 | 根据目标的图像信息在另一张图中进行定位 | prompt里需包含关键词：
+- `<bbox>x1 y1 x2 y2</bbox>` | `请根据第一张图的主要目标，识别第二张图中类似的目标，对于每个物体提供其边界框，格式为：<bbox>x1 y1 x2 y2</bbox>` | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/8ca3750ecfd540f285703e11f3c9edf9~tplv-goo7wpa0wc-image.image)
+- 计算物体数量 | 需要统计特定对象的数量 | prompt里需包含关键词：
+- `<point>x y</point> 点`
+- `定位画面中水面上的所有人，输出 point，格式<point>x1 y1</point>，并计数水面中有多少人？`
+- ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/2392404be5034344b31fc99b9e637dac~tplv-goo7wpa0wc-image.image)
+- 识别图像文本 | 需要提取图像中的文字内容及位置 | prompt里需包含关键词：
+- `<text>text</text><polygon>x1 y1, x2 y2, x3 y3, x4 y4</polygon> ` | 标注图中的文字，格式为`<text>text</text><polygon>x1 y1, x2 y2, x3 y3, x4 y4</polygon>` | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/7ef81d129cb34b5a8e3e1c8cc5d67f7e~tplv-goo7wpa0wc-image.image)
+- 3D物体检测 | 检测图像中的3D立体格式的物体 | prompt里需包含关键词：
+- `图像相机的详细参数以及<3dbbox>x_center y_center z_center x_size y_size z_size pitch yaw roll</3dbbox>` | `以下是该图像的详细相机参数。相机内参：焦距f_x=5545.08, f_y=5545.08。主点坐标位于图像中心附近，因此当图像宽度为4284，高度为5712时，c_x=2142.00且c_y=2856.00。这里我们不考虑畸变参数。因此，内参矩阵K = [[1460.00, 0, 2142.00], [0, 1460.00, 2856.00], [0, 0, 1]]。相机坐标系：X 轴向右，Y 轴向下，Z 轴向前。原点为相机位置。我们将相机坐标系作为世界坐标系，即相机外参矩阵为[[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0]]。请按照以下格式输出每个3D框：<3dbbox>x_center y_center z_center x_size y_size z_size pitch yaw roll</3dbbox> 注意：(1) x_center, y_center, z_center：目标中心在相机坐标系中沿着XYZ轴的位置，单位为米。(2) x_size, y_size, z_size：当旋转角为零时，目标沿XYZ轴的尺寸，单位为米。(3) pitch, yaw, roll：分别为围绕XYZ轴的欧拉角。这里的每个角度值被归一化到（-1,1），需要乘以180转换到实际的角度。在这幅图中检测杯子，并以3D边界框格式展示结果。检测图像中的杯子，并以 3D框形式显示结果` | ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/b8c5fa94a87c4977874c345630e0179e~tplv-goo7wpa0wc-image.image)
 
 ##

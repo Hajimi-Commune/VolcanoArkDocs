@@ -13,13 +13,9 @@ Prompt engineering 是指设计和优化提示的过程，以使人工智能模�
 **过程：** 首先，需要明确目的，在使用 prompt 之前，明确目的是什么，即准备让模型做什么样的事情。在明确目的之后，然后构造 prompt，构造的过程，主要包括如下关键点：
 ### 提供更多 query 相关的细节，可以获得更准确的答案
 
-| | | \
-|**原始 query** |**更好的 query** |
-|---|---|
-| | | \
-|编写一篇太空探索的文章 |为一群10-15岁的孩子编写一篇介绍太空探索历史的文章。 |
-| | | \
-|请写一篇文章，关于环保的，500字 |请撰写一篇500字的文章，讨论城市绿化对空气质量改善的影响。文章应包括以下方面的内容：城市绿化的定义，如树木和公园的增加，它们如何减少空气中的污染物，以及在城市规划中推广城市绿化的可行性措施。请提供相关数据和案例研究以支持你的论点。 |
+- **原始 query** | **更好的 query**
+- 编写一篇太空探索的文章 | 为一群10-15岁的孩子编写一篇介绍太空探索历史的文章。
+- 请写一篇文章，关于环保的，500字 | 请撰写一篇500字的文章，讨论城市绿化对空气质量改善的影响。文章应包括以下方面的内容：城市绿化的定义，如树木和公园的增加，它们如何减少空气中的污染物，以及在城市规划中推广城市绿化的可行性措施。请提供相关数据和案例研究以支持你的论点。
 
 ### 使用分隔符去更清晰地区分输入的不同部分
 ```Plain Text
@@ -56,12 +52,12 @@ Prompt engineering 是指设计和优化提示的过程，以使人工智能模�
 ### 让模型扮演一个角色
 让模型扮演一个具体的角色，模型的输出会更符合人类的表达方式，从而更容易被人类理解；同时输出也会更加一致。例如，在问答系统中，让模型扮演一个特定领域的专家可以使其回答更符合该领域的知识和语言习惯，从而提高回答的一致性。
 比如下面的案例，让模型分别扮演科学家和玄幻小说家生成一篇文章，文章的主题是：“黑洞是如何形成的”。在科学家的角度下，模型基于科学事实首先解释了黑洞是什么，然后回答了黑洞的形成过程；而在玄幻小说家的角度下，模型此时的输出不再基于科学事实，而是完全虚构，并且给人更多神秘的感觉，勾起读者的兴趣。
-![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_ccf3befc961a6a09afd34885084c602e.png =767x)
-![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_6e6499dc7ecdd9e4afb30cf38f15092d.png =769x)
+![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_ccf3befc961a6a09afd34885084c602e.png)
+![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_6e6499dc7ecdd9e4afb30cf38f15092d.png)
 ### 提供样例
 一般情况下，可以通过加入指令，来优化提示词，但是有时指令可能不容易描述清楚，提供示例会更容易。比如：我们让模型充当一个文本二分类器，对用户的评价进行二分类，分类结果为：正面评价或者负面评价。
-![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_6585b8526d804eb34fb9a4b4cb0b5293.png =763x)
-![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_a9e1aecc488bc83b209f8f71dbccff2e.png =768x)
+![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_6585b8526d804eb34fb9a4b4cb0b5293.png)
+![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_a9e1aecc488bc83b209f8f71dbccff2e.png)
 可以看出，正常情况下，模型暂时对于非绝对负面的评价都是分类为正面评价；而对于完全负面的评价才会分类为负面评价。但是我们希望**模型对用户的评价是绝对正面时，才输出正面评价；否则都输出负面评价**。比如，“我最近在这家餐厅用餐，还行，但也不是特别惊艳”这个 case，我们希望模型输出“负面评价”。此时，可以提供一些示例供模型来参考学习。
 ```plain
 请根据以下分类的方式，帮我分辨用户输入文本的类别是正面评价或是负面评价，请直接输出：正面评价/负面评价。
@@ -182,7 +178,7 @@ CoT（Chain of Thought，CoT）是一种思维工具，通过逐步延伸和拓�
 ### 重复和迭代
 prompt 的生成过程，实际上是一项实验性很强的过程，在这个过程中，需要不断地尝试和调整不同的方法，以找到最优的 prompt。一个典型的迭代路径是：首先完成 prompt 设计，接着基于设计好的 prompt 获取实验结果，分析 bad cases，解 bad cases，并进一步优化 prompt，通过多次的重复和迭代，直到达到一个最优效果。
 prompt 工程迭代过程如下：
-![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_ad43efa221ab096b5ec4cb045b90e632.png =966x)
+![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_ad43efa221ab096b5ec4cb045b90e632.png)
 最后，进一步需要说明的是，获取模型的最佳输出不仅需要优秀的 prompt，同时也取决于用户提供的反馈和修正。prompt 优化完成之后，通过线上持续的反馈和修正，模型才能更顺利地理解并满足用户需求。
 ## 附录
 ### 参数设置

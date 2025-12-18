@@ -22,9 +22,9 @@
 **Curl**
 
 ```Bash
-curl --location "https://ark.cn-beijing.volces.com/api/v3/chat/completions" \\
---header "Authorization: Bearer $ARK_API_KEY" \\
---header "Content-Type: application/json" \\
+curl --location "https://ark.cn-beijing.volces.com/api/v3/chat/completions"
+--header "Authorization: Bearer $ARK_API_KEY"
+--header "Content-Type: application/json"
 --data '{
   "model": "doubao-seed-1-6-250615",
   "messages": [
@@ -259,7 +259,7 @@ func main() {
     // 调用 API
     resp, err := client.CreateChatCompletion(ctx, req)
     if err != nil {
-        fmt.Printf("structured output chat error: %v\
+        fmt.Printf("structured output chat error: %v
 ", err)
         return
     }
@@ -320,57 +320,57 @@ public class ChatCompletionsStructuredOutputsExamplev4 {
                 .build());
 
         // 生成 JSON Schema
-        String schemaJson = "{\
+        String schemaJson = "{
 " +
-                "  \\"type\\": \\"object\\",\
+                "  \\"type\\": \\"object\\",
 " +
-                "  \\"properties\\": {\
+                "  \\"properties\\": {
 " +
-                "    \\"steps\\": {\
+                "    \\"steps\\": {
 " +
-                "      \\"type\\": \\"array\\",\
+                "      \\"type\\": \\"array\\",
 " +
-                "      \\"items\\": {\
+                "      \\"items\\": {
 " +
-                "        \\"$ref\\": \\"#/definitions/Step\\"\
+                "        \\"$ref\\": \\"#/definitions/Step\\"
 " +
-                "      }\
+                "      }
 " +
-                "    },\
+                "    },
 " +
-                "    \\"finalAnswer\\": {\
+                "    \\"finalAnswer\\": {
 " +
-                "      \\"type\\": \\"string\\"\
+                "      \\"type\\": \\"string\\"
 " +
-                "    }\
+                "    }
 " +
-                "  },\
+                "  },
 " +
-                "  \\"definitions\\": {\
+                "  \\"definitions\\": {
 " +
-                "    \\"Step\\": {\
+                "    \\"Step\\": {
 " +
-                "      \\"type\\": \\"object\\",\
+                "      \\"type\\": \\"object\\",
 " +
-                "      \\"properties\\": {\
+                "      \\"properties\\": {
 " +
-                "        \\"explanation\\": {\
+                "        \\"explanation\\": {
 " +
-                "          \\"type\\": \\"string\\"\
+                "          \\"type\\": \\"string\\"
 " +
-                "        },\
+                "        },
 " +
-                "        \\"output\\": {\
+                "        \\"output\\": {
 " +
-                "          \\"type\\": \\"string\\"\
+                "          \\"type\\": \\"string\\"
 " +
-                "        }\
+                "        }
 " +
-                "      }\
+                "      }
 " +
-                "    }\
+                "    }
 " +
-                "  }\
+                "  }
 " +
                 "}";
         JsonNode schemaNode = mapper.readTree(schemaJson);
@@ -439,9 +439,9 @@ public class ChatCompletionsStructuredOutputsExamplev4 {
 **Curl**
 
 ```Bash
-curl https://ark.cn-beijing.volces.com/api/v3/chat/completions \\
--H "Authorization: Bearer $ARK_API_KEY" \\
--H "Content-Type: application/json" \\
+curl https://ark.cn-beijing.volces.com/api/v3/chat/completions
+-H "Authorization: Bearer $ARK_API_KEY"
+-H "Content-Type: application/json"
 -d '{
   "model": "doubao-seed-1-6-251015",
   "messages": [
@@ -562,7 +562,7 @@ func main() {
     // 调用 API
     resp, err := client.CreateChatCompletion(ctx, req)
     if err != nil {
-        fmt.Printf("chat error: %v\
+        fmt.Printf("chat error: %v
 ", err)
         return
     }
@@ -658,39 +658,30 @@ public class ChatCompletionsExample {
 格式化输出可以选择不同类型（**type**），包括`json_schema`、`json_object` 、`text`。除 `text` 是让模型使用自然语言进行回复，`json_schema`  和 `json_object` 均是控制生成 JSON 格式回答，同时 `json_schema` 是 `json_object` 的演进版本，以下是他们的异同点。
 > 当前 `json_schema` 功能还在beta 测试中，请谨慎评估后再在生产环境使用。
 
-| | | | \
-|结构化输出 |`json_schema`  |`json_object` |
-|---|---|---|
-| | | | \
-|生成 JSON 回复 |是 |是 |
-| | | | \
-|可定义 JSON 结构 |是 |否 |\
-| | |仅保障回复是合法 JSON |
-| | | | \
-|是否推荐 |是 |否 |
-| | | | \
-|支持的模型 |见[结构化输出能力](/docs/82379/1330310#25b394c2) |见[结构化输出能力](/docs/82379/1330310#25b394c2) |
-| | | | \
-|严格模式 |\
-|> 严格按照定义的结构生成回复。 |支持 |\
-| |通过设置 **strict** 为 `true` 生效。 |\
-| | |\
-| |* 遵循语法[附1. JSON Schema 语法支持说明](/docs/82379/1568221#07ec5656)，若有不支持的结构会显示报错。 |不涉及 |
-| | | | \
-|配置方式 |..., |\
-| |"response_format": {  |\
-| |  "type": "json_schema",  |\
-| |  "json_schema":{ |\
-| |    "name":"my_schema", |\
-| |    "strict": true,  |\
-| |    "schema": {...} |\
-| |  } |\
-| |}, |\
-| |... | ..., |\
-| | |"response_format": {  |\
-| | |  "type": "json_object" |\
-| | |}, |\
-| | |... |
+- 结构化输出 | `json_schema` | `json_object`
+- 生成 JSON 回复 | 是 | 是
+- 可定义 JSON 结构 | 是 | 否
+- 仅保障回复是合法 JSON
+- 是否推荐 | 是 | 否
+- 支持的模型 | 见[结构化输出能力](/docs/82379/1330310#25b394c2) | 见[结构化输出能力](/docs/82379/1330310#25b394c2)
+- 严格模式
+- > 严格按照定义的结构生成回复。 | 支持
+- 通过设置 **strict** 为 `true` 生效。
+- * 遵循语法[附1. JSON Schema 语法支持说明](/docs/82379/1568221#07ec5656)，若有不支持的结构会显示报错。 | 不涉及
+- 配置方式 | ...,
+- "response_format": {
+- "type": "json_schema",
+- "json_schema":{
+- "name":"my_schema",
+- "strict": true,
+- "schema": {...}
+- }
+- },
+- ... | ...,
+- "response_format": {
+- "type": "json_object"
+- },
+- ...
 
 # 推荐使用步骤
 ## 1.定义结构

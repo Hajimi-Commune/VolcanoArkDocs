@@ -6,25 +6,16 @@
 * 您已注册火山引擎账号并完成实名认证，具体步骤参见[账号注册](https://www.volcengine.com/docs/6261/64925)及[实名认证](https://www.volcengine.com/docs/6261/64935)。
 * 您已在[方舟控制台](https://console.volcengine.com/ark/region:ark+cn-beijing)开通目标模型服务、精调算力计费项及依赖的云产品（TOS-数据存储、KMS-数据及模型加密、TLS-日志及轨迹存储、veFaaS-运行plugin函数）。
 
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);">
+<strong>开通模型服务、精调算力计费项</strong>
 
-<div style="text-align: center"><strong>开通模型服务、精调算力计费项</strong></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/293c40d0f0034556b14b0c58ac0e52c9~tplv-goo7wpa0wc-image.image)
 
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/293c40d0f0034556b14b0c58ac0e52c9~tplv-goo7wpa0wc-image.image" width="421px" /></div>
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);margin-left: 16px;">
-
-<div style="text-align: center"><strong>开通云产品</strong></div>
+<strong>开通云产品</strong>
 
 * 您可以在火山引擎控制台开通对应的云产品。
 * 如果您是首次使用精调功能，建议参考[创建并查看模型精调任务](/docs/82379/1099460) 在控制台创建一个RL精调任务，并在创建页中完成相关云产品的开通。
 
 > 云产品统一开通入口在排期开发中；后续可以一键开通。
-
-</div>
-</div>
 
 * 您已准备好精调数据集，具体格式请参考[模型精调数据集格式说明](/docs/82379/1099461)。
 
@@ -71,42 +62,32 @@ pip install https://ark-public-example-cn-beijing.tos-cn-beijing.volces.com/ark-
 ```
 
 成功执行后将显示：
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/57bdbe63a62c4798951fa5c87cbfc0a3~tplv-goo7wpa0wc-image.image" width="1032px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/57bdbe63a62c4798951fa5c87cbfc0a3~tplv-goo7wpa0wc-image.image)
 
 目前支持的模板如下：
 
-| | | \
-|**template 模版名** |**简介** |
-|---|---|
-| | | \
-|rl_demo |\
-| |该模版具体为通过强化学习，模型能够更清楚地理解何时以及如何使用自定义函数调用天气工具，从而实现更精准、更流畅的 天气问答 功能。可以根据需要扩展为通过强化学习微调大型语言模型(LLM)，使其能够更智能地 通过对话(Chat)API结合自定义工具实现特定功能。 |
-| | | \
-|rl_search_mcp_demo |该模版具体为利用 Arkitect框架 与 MCP，或直接调用外部工具 API ，通过 强化学习微调大型语言模型（LLM） ，使其在深度搜索（Deep Search）场景下表现卓越。 |
+- **template 模版名** | **简介**
+- rl_demo
+- 该模版具体为通过强化学习，模型能够更清楚地理解何时以及如何使用自定义函数调用天气工具，从而实现更精准、更流畅的 天气问答 功能。可以根据需要扩展为通过强化学习微调大型语言模型(LLM)，使其能够更智能地 通过对话(Chat)API结合自定义工具实现特定功能。
+- rl_search_mcp_demo | 该模版具体为利用 Arkitect框架 与 MCP，或直接调用外部工具 API ，通过 强化学习微调大型语言模型（LLM） ，使其在深度搜索（Deep Search）场景下表现卓越。
 
 ### 配置精调参数
 目前支持的模型及训练方式如下，后续更新将同步至本文档：
 
-| || |||||| | \
-|foundation_model | |customization_type | | | | | | |
-|---|---|---|---|---|---|---|---|---|
-| | | | | | | | | | \
-|name |\
-|> 模型名 |model_version |\
-| |> 模型版本 |FinetuneSft |\
-| | |> 全量-SFT |FinetuneLoRA |\
-| | | |> LoRA-SFT |GRPO |\
-| | | | |> 全量-GRPO |GRPOLoRA |\
-| | | | | |> LoRA-GRPO |DPO |\
-| | | | | | |> 全量-DPO |DPOLoRA |\
-| | | | | | | |> LoRA-DPO |PPO |\
-| | | | | | | | |> 全量-PPO |
-| | | | | | | | | | \
-|doubao-seed-1-6 |250615【推荐】 |✅ |✅ |✅ |✅ |✅ |✅ |✅ |
-| | | | | | | | | | \
-|doubao-seed-1-6-flash |250615 |✅ |✅ |✅ |✅ |✅ |✅ |✅ |
-| | | | | | | | | | \
-|doubao-seed-1-6-flash |250828【推荐】 |✅ |✅ |✅ |✅ |✅ |✅ |✅ |
+- foundation_model | customization_type
+- name
+- > 模型名 | model_version
+- > 模型版本 | FinetuneSft
+- > 全量-SFT | FinetuneLoRA
+- > LoRA-SFT | GRPO
+- > 全量-GRPO | GRPOLoRA
+- > LoRA-GRPO | DPO
+- > 全量-DPO | DPOLoRA
+- > LoRA-DPO | PPO
+- > 全量-PPO
+- doubao-seed-1-6 | 250615【推荐】 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅
+- doubao-seed-1-6-flash | 250615 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅
+- doubao-seed-1-6-flash | 250828【推荐】 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅
 
 初始化项目后，通过`cd ark_rl_project`命令进入项目。
 您可以通过 Python 对象 或 yaml文件 来配置精调项目相关参数，包括：
@@ -147,7 +128,7 @@ pip install https://ark-public-example-cn-beijing.tos-cn-beijing.volces.com/ark-
 ark get foundation-model --model doubao-seed-1-6 --version 250615 --fields hyperparameters
 ```
 
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/83c68fcafc9f4e5ea4ee34859ea695c7~tplv-goo7wpa0wc-image.image" width="5042px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/83c68fcafc9f4e5ea4ee34859ea695c7~tplv-goo7wpa0wc-image.image)
 
 #### 1.通过python对象配置元数据
 在初始化项目中，您可以打开初始化项目中的`job.py`文件，通过修改代码中的参数部分信息来配置元数据。具体如下：
@@ -281,13 +262,9 @@ ark create mcj -f job.yaml
 ### 选择强化学习流程
 创建强化学习任务时，需要配置强化学习流程`custom_rl_pipeline`，需要选择pipeline类型，选择pipeline以后需要配置所需的plugin函数，配置plugin 函数也有明确要求，具体如下：
 
-| | | \
-|支持的 pipeline 类型 |`GRPOPipeline `和`PPOPipeline` |
-|---|---|
-| | | \
-|rollout plugin 要求 |仅支持填入 1 个自定义 rollout plugin，不填默认使用单轮模型推理 rollout 逻辑 |
-| | | \
-|grader plugin 要求 |至少需要填入一个 grader plugin，支持填写多个并分别配置权重 |
+- 支持的 pipeline 类型 | `GRPOPipeline `和`PPOPipeline`
+- rollout plugin 要求 | 仅支持填入 1 个自定义 rollout plugin，不填默认使用单轮模型推理 rollout 逻辑
+- grader plugin 要求 | 至少需要填入一个 grader plugin，支持填写多个并分别配置权重
 
 ### 创建强化学习 Plugin 函数
 在强化学习任务中，您需要创建并使用以下两种自定义 Plugin 函数：
@@ -628,145 +605,120 @@ def reward_fn(
 
 **入参**
 
-| | | | | \
-|字段 |类型 |描述 |样例 |
-|---|---|---|---|
-| | | | | \
-|context |\
-| |context: Dict[str, Any] |\
-| | |* 该请求对应的任务信息，包含 |\
-| | |   * 任务 Id |\
-| | |   * 模型名 |\
-| | |   * 模型版本 |\
-| | |   * 训练方式 |\
-| | |   * phase: 样本来自什么阶段，train/test(验证集） |\
-| | |   * 是否是 mock 请求 |\
-| | | |\
-| | | |```JSON |\
-| | | |{ |\
-| | | |  "modle_customization_job_id": "mcj_xxxxxx_xxx", |\
-| | | |  "foundation_model_name": "doubao-1-5-lite-32k", |\
-| | | |  "foundation_model_version": "250115", |\
-| | | |  "customization_type": "GRPO"， |\
-| | | |  "phase":"train", |\
-| | | |  "is_mock": false, |\
-| | | |} |\
-| | | |``` |\
-| | | | |\
-| | | | |
-| | | | | \
-|sample |\
-| |Dict[str, Any] |\
-| | |*  rollout 输入的样本，与数据集内容完全一致 |\
-| | |* **注意，1.6 模型或其他多模态模型，content 字段会转换为 list，如：** |\
-| | | |\
-| | |```JSON |\
-| | |[ |\
-| | |  { |\
-| | |    "type": "text", |\
-| | |    "text": "1+1=？" |\
-| | |  } |\
-| | |] |\
-| | |``` |\
-| | | |\
-| | | |```JSON |\
-| | | |{ |\
-| | | |  "messages": [ |\
-| | | |    { |\
-| | | |      "role": "system", |\
-| | | |      "content": "你是一个擅长数据计算的人工智能助手。" |\
-| | | |    }, |\
-| | | |    { |\
-| | | |      "role": "user", |\
-| | | |      "content": "1+1=？" |\
-| | | |    } |\
-| | | |  ], |\
-| | | |  "tools": [], |\
-| | | |  "extra": { |\
-| | | |    "answer": 1234 |\
-| | | |  } |\
-| | | |} |\
-| | | |``` |\
-| | | | |
-| | | | | \
-|trajectories |\
-| |list[Dict[str,Any]] |\
-| | |* 一条样本的所有 rollout 输出的结果 |\
-| | |* 假设一次 rollout 采样 n 次，trajectory 长度就为 n |\
-| | |* messages 类型为数组，非 agent rl 场景长度固定为 1 |\
-| | | |\
-| | | |\
-| | | |```JSON |\
-| | | |[ |\
-| | | |  { |\
-| | | |    "messages": [ |\
-| | | |      { |\
-| | | |        "content": "等于 2", |\
-| | | |        "role": "assistant" |\
-| | | |      } |\
-| | | |    ], |\
-| | | |    "finish_reason": "stop", |\
-| | | |    "usage": { |\
-| | | |      "completion_tokens": 3, |\
-| | | |      "prompt_tokens:": 20, |\
-| | | |      "total_tokens": 23 |\
-| | | |    } |\
-| | | |  }, |\
-| | | |  { |\
-| | | |    "messages": [ |\
-| | | |      { |\
-| | | |        "reasoning_content": "嗯，用户问的是 1 加 1 等于多少。首先，我需要确认这是一个基本的算术问题。在常规的十进制数学中，1 加 1 的结果是 2。这是最基础的加法运算，应该没有其他复杂的情况需要考虑。用户可能是在测试我的基本计算能力，或者是刚开始学习数学的小朋友。所以直接回答 2 就可以了。", |\
-| | | |        "content": "1 + 1 等于 2。这是基础的算术加法运算，在十进制计数系统中，1 和 1 相加的结果是 2。", |\
-| | | |        "role": "assistant" |\
-| | | |      } |\
-| | | |    ], |\
-| | | |    "finish_reason": "stop", |\
-| | | |    "usage": { |\
-| | | |      "completion_tokens": 109, |\
-| | | |      "prompt_tokens:": 20, |\
-| | | |      "total_tokens": 129 |\
-| | | |    } |\
-| | | |  } |\
-| | | |] |\
-| | | |``` |\
-| | | | |
+- 字段 | 类型 | 描述 | 样例
+- context
+- context: Dict[str, Any]
+- * 该请求对应的任务信息，包含
+- * 任务 Id
+- * 模型名
+- * 模型版本
+- * 训练方式
+- * phase: 样本来自什么阶段，train/test(验证集）
+- * 是否是 mock 请求
+- ```JSON
+- {
+- "modle_customization_job_id": "mcj_xxxxxx_xxx",
+- "foundation_model_name": "doubao-1-5-lite-32k",
+- "foundation_model_version": "250115",
+- "customization_type": "GRPO"，
+- "phase":"train",
+- "is_mock": false,
+- }
+- ```
+- sample
+- Dict[str, Any]
+- *  rollout 输入的样本，与数据集内容完全一致
+- * **注意，1.6 模型或其他多模态模型，content 字段会转换为 list，如：**
+- ```JSON
+- [
+- {
+- "type": "text",
+- "text": "1+1=？"
+- }
+- ]
+- ```
+- ```JSON
+- {
+- "messages": [
+- {
+- "role": "system",
+- "content": "你是一个擅长数据计算的人工智能助手。"
+- },
+- {
+- "role": "user",
+- "content": "1+1=？"
+- }
+- ],
+- "tools": [],
+- "extra": {
+- "answer": 1234
+- }
+- }
+- ```
+- trajectories
+- list[Dict[str,Any]]
+- * 一条样本的所有 rollout 输出的结果
+- * 假设一次 rollout 采样 n 次，trajectory 长度就为 n
+- * messages 类型为数组，非 agent rl 场景长度固定为 1
+- ```JSON
+- [
+- {
+- "messages": [
+- {
+- "content": "等于 2",
+- "role": "assistant"
+- }
+- ],
+- "finish_reason": "stop",
+- "usage": {
+- "completion_tokens": 3,
+- "prompt_tokens:": 20,
+- "total_tokens": 23
+- }
+- },
+- {
+- "messages": [
+- {
+- "reasoning_content": "嗯，用户问的是 1 加 1 等于多少。首先，我需要确认这是一个基本的算术问题。在常规的十进制数学中，1 加 1 的结果是 2。这是最基础的加法运算，应该没有其他复杂的情况需要考虑。用户可能是在测试我的基本计算能力，或者是刚开始学习数学的小朋友。所以直接回答 2 就可以了。",
+- "content": "1 + 1 等于 2。这是基础的算术加法运算，在十进制计数系统中，1 和 1 相加的结果是 2。",
+- "role": "assistant"
+- }
+- ],
+- "finish_reason": "stop",
+- "usage": {
+- "completion_tokens": 109,
+- "prompt_tokens:": 20,
+- "total_tokens": 129
+- }
+- }
+- ]
+- ```
 
 **返回**
 
-| | | | | \
-|参数 |类型 |描述 |样例 |
-|---|---|---|---|
-| | | | | \
-| rewards |\
-| |list[float] |\
-| | |* 按照 trajectories 的顺序返回每个采样的得分 |\
-| | | |\
-| | | |\
-| | | |```JSON |\
-| | | |[ |\
-| | | |  0.0, |\
-| | | |  1.0, |\
-| | | |  0.5 |\
-| | | |] |\
-| | | |``` |\
-| | | | |
-| | | | | \
-|metrics |\
-| |Dict[str, float] |\
-| | |* 支持返回 reward 过程的自定义指标，如计算耗时等。训练框架将把每个 step 的指标按 key 聚合出最大值，最小值和平均值。 |\
-| | | |\
-| | | |```Thrift |\
-| | | |{ |\
-| | | |    "avg_length_reward": 0.49, |\
-| | | |    "avg_formtat_reward": 0.9, |\
-| | | |} |\
-| | | |``` |\
-| | | | |
-| | | | | \
-|status |str |* success/failure/discard | |
-| | | | | \
-|error |str |\
-| | |* 如果status 为 failure，可携带具体失败原因或错误栈信息，会打印到训练日志中 | |
+- 参数 | 类型 | 描述 | 样例
+- rewards
+- list[float]
+- * 按照 trajectories 的顺序返回每个采样的得分
+- ```JSON
+- [
+- 0.0,
+- 1.0,
+- 0.5
+- ]
+- ```
+- metrics
+- Dict[str, float]
+- * 支持返回 reward 过程的自定义指标，如计算耗时等。训练框架将把每个 step 的指标按 key 聚合出最大值，最小值和平均值。
+- ```Thrift
+- {
+- "avg_length_reward": 0.49,
+- "avg_formtat_reward": 0.9,
+- }
+- ```
+- status | str | * success/failure/discard
+- error | str
+- * 如果status 为 failure，可携带具体失败原因或错误栈信息，会打印到训练日志中
 
 **函数模版**
 
@@ -983,14 +935,14 @@ def reward_fn(
 2. **自定义函数日志**：根据用户自定义需求记录Rollout、Reward函数执行中的关键信息，以精准定位问题、提高排查效率。具体实现方面，在`rollout.py`文件内，通过`logger.info`、`logger.error`等方法完成日志记录操作。最终，这些日志将展示于方舟控制台的自定义日志功能模块下。（该功能依赖TLS日志服务开通，需先联系管理员，前往[TLS控制台](https://console.volcengine.com/tls/region:tls+cn-beijing/v2?)开通日志服务配置）
 3. **Tracing** ：为分析模型效果、定位问题，建议使用 Tracing 系统采集样本 rollout 每轮推理和工具调用的输入输出及耗时信息。可选用任意 Tracing 系统，本文以 cozeloop为例介绍使用方法，可参考示例调整。
    **CozeLoop Tracing**
-   1. **配置与环境设置：​**cozeloop配置详情请参考https://loop.coze.cn/open/docs/cozeloop/python-sdk
-      * **本地运行配置：​**在终端中设置以下环境变量：
+   1. **配置与环境设置：**cozeloop配置详情请参考https://loop.coze.cn/open/docs/cozeloop/python-sdk
+      * **本地运行配置：**在终端中设置以下环境变量：
       ```Python
         export COZELOOP_WORKSPACE_ID=xxx 
         export COZELOOP_API_TOKEN=xxx
       ```
 
-      * **训练环境配置：​**需在 faas 的环境变量中添加如下内容：
+      * **训练环境配置：**需在 faas 的环境变量中添加如下内容：
       ```JSON
       rollout=PipelinePluginWrapper(
           plugin=demo_rollout,
@@ -1002,7 +954,7 @@ def reward_fn(
       ```
 
    2. **使用方法：**
-      * **对Rollout函数的输入输出Tracing：​**使用`@coze_monitor`装饰器包装 rollout 函数。该装饰器来自项目中的`plugins/coze_monitor.py`文件，它基于 cozeloop 库进行数据上报，会从`proxy`中取出 rollout 实际的轨迹返回，并以精调任务的 ID 作为`user_id`（本地测试时`user_id`默认为`test_service`），方便在 CozeLoop 平台上进行数据分析和筛选。示例如下：
+      * **对Rollout函数的输入输出Tracing：**使用`@coze_monitor`装饰器包装 rollout 函数。该装饰器来自项目中的`plugins/coze_monitor.py`文件，它基于 cozeloop 库进行数据上报，会从`proxy`中取出 rollout 实际的轨迹返回，并以精调任务的 ID 作为`user_id`（本地测试时`user_id`默认为`test_service`），方便在 CozeLoop 平台上进行数据分析和筛选。示例如下：
       ```Plain Text
       @rollout(
           name="code_sandbox_grader_single_grader",
@@ -1017,31 +969,31 @@ def reward_fn(
           # 函数实现...
       ```
 
-      * **对LLM Chat的输入输出Tracing：​**使用`wrap_inplace_trace`函数包装 LLM 客户端。示例如下：
+      * **对LLM Chat的输入输出Tracing：**使用`wrap_inplace_trace`函数包装 LLM 客户端。示例如下：
       ```Plain Text
       client = AsyncArk(base_url=proxy.url, api_key=proxy.jwt_token)
       wrap_inplace_trace(client)
       ```
 
-      * **对中间过程添加自定义Tracing：​**使用`@observe()`装饰器记录任意函数的输入输出。示例如下：
+      * **对中间过程添加自定义Tracing：**使用`@observe()`装饰器记录任意函数的输入输出。示例如下：
       ```Plain Text
       @observe()  # type: ignore
       async def exec_tool_call(tool_client, name, arguments):
       ```
 
-   3. **Cozeloop 效果：​**若您完成了 cozeloop 配置，运行后可在 Cozeloop 平台观测 Rollout 过程，具体效果如下：
+   3. **Cozeloop 效果：**若您完成了 cozeloop 配置，运行后可在 Cozeloop 平台观测 Rollout 过程，具体效果如下：
       * 分析各阶段耗时优化rollout链路
-      <div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/95bbf7dd2431453f8f26ad6fe04f85c4~tplv-goo7wpa0wc-image.image" width="2588px" />      </div>
+      ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/95bbf7dd2431453f8f26ad6fe04f85c4~tplv-goo7wpa0wc-image.image)
 
       * 指定任务筛选超长模型返回
-      <div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/cd92576d88014de5a9872da4fbcbd644~tplv-goo7wpa0wc-image.image" width="2876px" />      </div>
+      ![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/cd92576d88014de5a9872da4fbcbd644~tplv-goo7wpa0wc-image.image)
 
 ### 测试plugin函数
 在创建`plugin`函数后，为确保其功能符合预期，可通过**本地运行**和**在线运行**两种方式对其进行测试：
 
 1. **本地运行**：`draft_rollout_arkitect.py `文件中的`main` 函数展示了在本地对 `demo_rollout `与` llm_grader `结合使用进行测试。这一过程呈现了 “从单样本调试到批量验证” 的完整链路。
-   * **单样本评估：​**测试时会基于样本，调用 demo_rollout 执行推理，获取模型的回答；将AI模型的回答和原始问题、正确答案一起传递给 llm_grader 进行评估，并打印评估结果。
-   * **批量验证：​**main 函数还展示了如何使用 test_with_dataset 函数对一个数据集中的多个样本进行批量推理和评估，以获取平均奖励分数。代码如下：
+   * **单样本评估：**测试时会基于样本，调用 demo_rollout 执行推理，获取模型的回答；将AI模型的回答和原始问题、正确答案一起传递给 llm_grader 进行评估，并打印评估结果。
+   * **批量验证：**main 函数还展示了如何使用 test_with_dataset 函数对一个数据集中的多个样本进行批量推理和评估，以获取平均奖励分数。代码如下：
    ```Python
    async def main():
        from ark_sdk.core.plugin.rollout.proxy import InferenceProxy, Mode
@@ -1178,7 +1130,7 @@ def reward_fn(
 创建完成的精调任务可以使用控制台和CLI方式进行查看与管理，可以查看**精调任务列表、精调任务详情（基础信息**、**状态、任务及函数日志、效果指标）、产物导出为自定义模型、复制精调任务等。**
 **控制台**
 你可以访问[火山方舟控制台-模型精调](https://console.volcengine.com/ark/region:ark+cn-beijing/finetune)，通过界面化操作管理任务，具体使用详见文档[查看并管理模型精调任务](https://bytedance.larkoffice.com/docx/JXSnd9NLboSqyUxDQ8mcrSfHnYg#JXSnd9NLboSqyUxDQ8mcrSfHnYg)
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/b4e1fd397f544ee795f0f12aa393115c~tplv-goo7wpa0wc-image.image" width="1919px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/b4e1fd397f544ee795f0f12aa393115c~tplv-goo7wpa0wc-image.image)
 
 **CLI 方式**
 整体使用格式为 `ark [verb] [noun] [arguments] [options]` ，常用命令如下：
@@ -1186,7 +1138,7 @@ def reward_fn(
 1. **查看全部精调任务**
 
 使用`ark list mcj `命令可以列举账号下的精调信息，包括精调任务ID，名称，训练方式，基础模型，现处阶段等。
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/bccc21fc31f74f48b205c2aed90826e5~tplv-goo7wpa0wc-image.image" width="4918px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/bccc21fc31f74f48b205c2aed90826e5~tplv-goo7wpa0wc-image.image)
 
 同时可选择以下参数：
 `--page-size/-ps`：单页返回数量，默认为 10
@@ -1222,7 +1174,7 @@ ark pull mcj mcj-xxxxxx-xxxxx --include-data --include-plugin
 可以使用控制台对精调产出的模型进行使用与管理，支持**查看模型信息**、**模型推理、增量训练、在线体验、发起评测**等操作。
 **控制台**
 你可以访问[火山方舟控制台-模型仓库](https://console.volcengine.com/ark/region:ark+cn-beijing/customModel)，界面化使用与管理精调产物，具体使用详见[精调模型的使用与管理](https://www.volcengine.com/docs/82379/1582651)
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/66f2277332844d4bb9937a5d26adb7e6~tplv-goo7wpa0wc-image.image" width="1557px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/66f2277332844d4bb9937a5d26adb7e6~tplv-goo7wpa0wc-image.image)
 
 # 案例分享
 ## Demo-使用**Arkitect框架+MCP实现deep search 强化学习**
@@ -1243,7 +1195,7 @@ ark init workspace sdk --template rl_search_mcp_demo
 
 * 访问<https://www.volcengine.com/mcp-marketplace>搜索框中输入「融合信息搜索」找到该MCP服务，点击云部署生成专属长效URL，获取MCP服务。
 
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/689c8e07436e4ad7b7ff595a8d60ee6f~tplv-goo7wpa0wc-image.image" width="1718px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/689c8e07436e4ad7b7ff595a8d60ee6f~tplv-goo7wpa0wc-image.image)
 
 * 配置`mcp_config.json`文件
 

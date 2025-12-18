@@ -5,39 +5,26 @@ VideoPilot API 套件使用户能够通过提示将参考视频转化为重新�
 根据参考视频和可选的参考图像，按照用户的编辑指令生成新视频。
 ##### **Parameters**
 
-| | | | | \
-|**名称** |**类型** |**是否必填** |**描述** |
-|---|---|---|---|
-| | | | | \
-|RefVideoUrl |string |✅ |参考视频的 URL，用于定义待模仿的运动、节奏或风格 |
-| | | | | \
-|UserMessage |string |✅ |描述期望转换效果或创意概念的用户提示词（例如 “呈现霓虹都市夜景的视觉效果”） |
-| | | | | \
-|RefImages |list<string> |可选（≤1 个） |用于指导外观、色调或主体特征的参考图片 URL（即将扩展至 2 个） |
-| | | | | \
-|Model |string |可选 |生成模型选择，目前支持 doubao-seedance-1-0-pro-250528 和 doubao-seedance-1-0-lite-i2v-250428 |
-| | | | | \
-|TimeBudget |integer |可选（取值 1、2 或 3） |分配的算力或质量等级，数值越高，可生成更长时长或更高质量的结果 |
-| | | | | \
-|VideoRatio |string |可选 |视频宽高比（例如 “1:1”“16:9”） |
-| | | | | \
-|VideoResolution |string |可选 |视频分辨率（例如 “1080p”“720p”） |
-| | | | | \
-|ImitationSetting |string |可选 |模仿策略，例如'imitative' 或 'creative' |
+- **名称** | **类型** | **是否必填** | **描述**
+- RefVideoUrl | string | ✅ | 参考视频的 URL，用于定义待模仿的运动、节奏或风格
+- UserMessage | string | ✅ | 描述期望转换效果或创意概念的用户提示词（例如 “呈现霓虹都市夜景的视觉效果”）
+- RefImages | list<string> | 可选（≤1 个） | 用于指导外观、色调或主体特征的参考图片 URL（即将扩展至 2 个）
+- Model | string | 可选 | 生成模型选择，目前支持 doubao-seedance-1-0-pro-250528 和 doubao-seedance-1-0-lite-i2v-250428
+- TimeBudget | integer | 可选（取值 1、2 或 3） | 分配的算力或质量等级，数值越高，可生成更长时长或更高质量的结果
+- VideoRatio | string | 可选 | 视频宽高比（例如 “1:1”“16:9”）
+- VideoResolution | string | 可选 | 视频分辨率（例如 “1080p”“720p”）
+- ImitationSetting | string | 可选 | 模仿策略，例如'imitative' 或 'creative'
 
 ##### **Response**
 
-| | | | \
-|**字段** |**类型** |**描述** |
-|---|---|---|
-| | | | \
-|TaskId |string |异步视频生成任务的唯一标识 |
+- **字段** | **类型** | **描述**
+- TaskId | string | 异步视频生成任务的唯一标识
 
 Example API Usage
 ```C++
-curl --location "https://prompt-pilot.cn-beijing.volces.com/video-pilot?Version=1.0&Action=ImitateAndGenerateVideo" \
---header "Authorization: Bearer {VIDEO_PILOT_API_KEY}" \
---header "Content-Type: application/json" \
+curl --location "https://prompt-pilot.cn-beijing.volces.com/video-pilot?Version=1.0&Action=ImitateAndGenerateVideo"
+--header "Authorization: Bearer {VIDEO_PILOT_API_KEY}"
+--header "Content-Type: application/json"
 --data '{
     "RequestId": "'$(uuidgen)'",
     "WorkspaceId": "{VIDEO_PILOT_WORKSPACE_ID}",
@@ -60,50 +47,33 @@ Example Return
 检索已完成任务的生成结果。
 ##### **Parameters**
 
-| | | | | \
-|**名称** |**类型** |**是否必填** |**描述** |
-|---|---|---|---|
-| | | | | \
-|TaskId |string |✅ |用于查询任务状态的标识 ID（即 TaskId）。 |
+- **名称** | **类型** | **是否必填** | **描述**
+- TaskId | string | ✅ | 用于查询任务状态的标识 ID（即 TaskId）。
 
 ##### **Response**
 TaskObject:
 
-| | | | \
-|**字段** |**类型** |**描述** |
-|---|---|---|
-| | | | \
-|TaskId |str |查询任务 ID |
-| | | | \
-|VideoSegments |list<VideoSegmentObject> |生成的视频片段列表：所有生成的视频分段集合。 |
-| | | | \
-|FullVideo |str |完整视频的 URL：包含完整视频的网络访问链接。 |
-| | | | \
-|TaskStatus |str |任务状态：当前视频生成任务的进展情况 |
+- **字段** | **类型** | **描述**
+- TaskId | str | 查询任务 ID
+- VideoSegments | list<VideoSegmentObject> | 生成的视频片段列表：所有生成的视频分段集合。
+- FullVideo | str | 完整视频的 URL：包含完整视频的网络访问链接。
+- TaskStatus | str | 任务状态：当前视频生成任务的进展情况
 
 **VideoSegmentObject**
 
-| | | | \
-|**字段** |**类型** |**描述** |
-|---|---|---|
-| | | | \
-|SegmentId |str |唯一标识：用于区分该片段的专属 ID。 |
-| | | | \
-|IndexInVideo |integer |该分段在完整视频时序中的排序位置。 |
-| | | | \
-|VideoURL |string |生成的视频片段 URL |
-| | | | \
-|KeyframeURL |string |该片段的代表性关键帧图片 URL |
-| | | | \
-|ScenePrompt |string |自动生成或优化后的场景描述提示词 |
-| | | | \
-|VersionNum |int |当前片段的版本号 |
+- **字段** | **类型** | **描述**
+- SegmentId | str | 唯一标识：用于区分该片段的专属 ID。
+- IndexInVideo | integer | 该分段在完整视频时序中的排序位置。
+- VideoURL | string | 生成的视频片段 URL
+- KeyframeURL | string | 该片段的代表性关键帧图片 URL
+- ScenePrompt | string | 自动生成或优化后的场景描述提示词
+- VersionNum | int | 当前片段的版本号
 
 Example API Usage
 ```C++
-curl --location "https://prompt-pilot.cn-beijing.volces.com/video-pilot?Version=1.0&Action=GetTaskResult" \
---header "Authorization: Bearer {VIDEO_PILOT_API_KEY}" \
---header "Content-Type: application/json" \
+curl --location "https://prompt-pilot.cn-beijing.volces.com/video-pilot?Version=1.0&Action=GetTaskResult"
+--header "Authorization: Bearer {VIDEO_PILOT_API_KEY}"
+--header "Content-Type: application/json"
 --data '{
     "RequestId": "'$(uuidgen)'",
     "WorkspaceId": "{VIDEO_PILOT_WORKSPACE_ID}",
@@ -150,27 +120,20 @@ Example Return - Finished
 检索特定视频片段的所有历史版本或替代版本，例如通过多次迭代或重新生成所产生的版本。
 ##### **Parameters**
 
-| | | | | \
-|名称 |类型 |是否必填 |描述 |
-|---|---|---|---|
-| | | | | \
-|TaskId |string |✅ |与视频关联的原始任务 ID |
-| | | | | \
-|SegmentIndex |integer |✅ |用于查询版本化片段的索引 |
+- 名称 | 类型 | 是否必填 | 描述
+- TaskId | string | ✅ | 与视频关联的原始任务 ID
+- SegmentIndex | integer | ✅ | 用于查询版本化片段的索引
 
 ##### **Response**
 
-| | | | \
-|字段 |类型 |描述 |
-|---|---|---|
-| | | | \
-|VideoSegments |list<video_segment> |根据索引返回的视频片段列表 |
+- 字段 | 类型 | 描述
+- VideoSegments | list<video_segment> | 根据索引返回的视频片段列表
 
 Example API Usage
 ```C++
-curl --location "https://prompt-pilot.cn-beijing.volces.com/video-pilot?Version=1.0&Action=ListSegmentVersions" \
---header "Authorization: Bearer {VIDEO_PILOT_API_KEY}" \
---header "Content-Type: application/json" \
+curl --location "https://prompt-pilot.cn-beijing.volces.com/video-pilot?Version=1.0&Action=ListSegmentVersions"
+--header "Authorization: Bearer {VIDEO_PILOT_API_KEY}"
+--header "Content-Type: application/json"
 --data '{
     "RequestId": "'$(uuidgen)'",
     "WorkspaceId": "{VIDEO_PILOT_WORKSPACE_ID}",
@@ -212,17 +175,14 @@ Example Return
 None.
 ##### **Response**
 
-| | | | \
-|字段 |类型 |描述 |
-|---|---|---|
-| | | | \
-|Tasks |list<TaskObject> |该用户名下所有的任务标识集合 |
+- 字段 | 类型 | 描述
+- Tasks | list<TaskObject> | 该用户名下所有的任务标识集合
 
 Example API Usage
 ```C++
-curl --location "https://prompt-pilot.cn-beijing.volces.com/video-pilot?Version=1.0&Action=ListTask" \
---header "Authorization: Bearer {VIDEO_PILOT_API_KEY}" \
---header "Content-Type: application/json" \
+curl --location "https://prompt-pilot.cn-beijing.volces.com/video-pilot?Version=1.0&Action=ListTask"
+--header "Authorization: Bearer {VIDEO_PILOT_API_KEY}"
+--header "Content-Type: application/json"
 --data '{
     "RequestId": "'$(uuidgen)'",
     "WorkspaceId": "{VIDEO_PILOT_WORKSPACE_ID}"
@@ -262,29 +222,21 @@ Example Return
 根据用户反馈重新生成特定视频片段，提高质量或使其更符合预期。
 ##### **Parameters**
 
-| | | | | \
-|名称 |类型 |是否必填 |描述 |
-|---|---|---|---|
-| | | | | \
-|TaskId |string |✅ |与视频关联的原始任务 ID |
-| | | | | \
-|SegmentId |integer |✅ |作为重新生成基准版本的片段 ID |
-| | | | | \
-|FeedbackMessage |string |✅ |描述需修改内容的用户反馈（例如 “调柔光线并添加雾气”） |
+- 名称 | 类型 | 是否必填 | 描述
+- TaskId | string | ✅ | 与视频关联的原始任务 ID
+- SegmentId | integer | ✅ | 作为重新生成基准版本的片段 ID
+- FeedbackMessage | string | ✅ | 描述需修改内容的用户反馈（例如 “调柔光线并添加雾气”）
 
 ##### **Response**
 
-| | | | \
-|字段 |类型 |描述 |
-|---|---|---|
-| | | | \
-|TaskId |string |重新生成任务对应的新任务 ID |
+- 字段 | 类型 | 描述
+- TaskId | string | 重新生成任务对应的新任务 ID
 
 Example API Usage
 ```C++
-curl --location "https://prompt-pilot.cn-beijing.volces.com/video-pilot?Version=1.0&Action=RegenerateVideoSegmentFromFeedback" \
---header "Authorization: Bearer {VIDEO_PILOT_API_KEY}" \
---header "Content-Type: application/json" \
+curl --location "https://prompt-pilot.cn-beijing.volces.com/video-pilot?Version=1.0&Action=RegenerateVideoSegmentFromFeedback"
+--header "Authorization: Bearer {VIDEO_PILOT_API_KEY}"
+--header "Content-Type: application/json"
 --data '{
     "RequestId": "'$(uuidgen)'",
     "WorkspaceId": "{VIDEO_PILOT_WORKSPACE_ID}",
@@ -307,50 +259,32 @@ Example Return
 
 ### Response
 
-| | | | | \
-|字段名 |类型 |是否必填 |描述 |
-|---|---|---|---|
-| | | | | \
-|TaskId |string |✅  |用于查询任务状态的任务 ID |
+- 字段名 | 类型 | 是否必填 | 描述
+- TaskId | string | ✅ | 用于查询任务状态的任务 ID
 
 ## GetExtractKeyFramesAndPlotResult
 ### Parameters
 
-| | | | | \
-|字段名 |类型 |是否必填 |描述 |
-|---|---|---|---|
-| | | | | \
-|TaskId |string |✅  |用于查询任务状态的任务 ID |
+- 字段名 | 类型 | 是否必填 | 描述
+- TaskId | string | ✅ | 用于查询任务状态的任务 ID
 
 ### Response
 响应将包含视频各片段的首帧、末帧及对应的场景提示词，结构如下：
 响应将包含视频各片段的首帧、末帧及对应的场景提示词，结构如下：
 
-| | | | \
-|字段名 |类型 |描述 |
-|---|---|---|
-| | | | \
-|VideoSegments |list<RefVideoSegmentObject> |按索引排列的视频片段列表 |
-| | | | \
-|TaskStatus |string |任务状态 |
+- 字段名 | 类型 | 描述
+- VideoSegments | list<RefVideoSegmentObject> | 按索引排列的视频片段列表
+- TaskStatus | string | 任务状态
 
 RefVideoSegmentObject
 
-| | | | \
-|字段名 |类型 |描述 |
-|---|---|---|
-| | | | \
-|SegmentId |string |片段唯一标识 |
-| | | | \
-|IndexInVideo |integer |片段在整个视频中的位置 |
-| | | | \
-|VideoURL |string |生成的视频片段链接 |
-| | | | \
-|KeyframeURL |string |该片段的代表性关键帧图片链接 |
-| | | | \
-|ScenePrompt |string |自动生成或优化的场景描述提示词 |
-| | | | \
-|LastframeURL |string |该片段的末帧图片链接 |
+- 字段名 | 类型 | 描述
+- SegmentId | string | 片段唯一标识
+- IndexInVideo | integer | 片段在整个视频中的位置
+- VideoURL | string | 生成的视频片段链接
+- KeyframeURL | string | 该片段的代表性关键帧图片链接
+- ScenePrompt | string | 自动生成或优化的场景描述提示词
+- LastframeURL | string | 该片段的末帧图片链接
 
 ### 典型用法
 
@@ -369,27 +303,16 @@ RefVideoSegmentObject
 智能短视频生成功能可自动处理多张参考图片，用于视频生成。
 ### Parameters
 
-| | | | | \
-|参数名 |类型 |是否必填 |描述 |
-|---|---|---|---|
-| | | | | \
-|UserMessage |string |✅ |描述期望的转化效果或核心概念的用户提示词（例如：“将其制作成霓虹城市的夜景风格”） |
-| | | | | \
-|RefImages |list<string> |可选（最多 2 张） |最多 2 张参考图片链接，用于指导视频的外观、基调或主体特征（后续将支持更多参考图片） |
-| | | | | \
-|Model |string |可选 |指定用于生成的模型，目前支持 doubao-seedance-1-0-pro-250528 和 doubao-seedance-1-0-lite-i2v-250428 |
-| | | | | \
-|VideoRatio |string |可选 |视频宽高比（例如：“1:1”、“16:9”） |
-| | | | | \
-|VideoResolution |string |可选 |视频分辨率（例如：“1080p”、“720p”） |
-| | | | | \
-|Duration |int |可选（默认 5 秒） |视频时长（单位：秒） |
+- 参数名 | 类型 | 是否必填 | 描述
+- UserMessage | string | ✅ | 描述期望的转化效果或核心概念的用户提示词（例如：“将其制作成霓虹城市的夜景风格”）
+- RefImages | list<string> | 可选（最多 2 张） | 最多 2 张参考图片链接，用于指导视频的外观、基调或主体特征（后续将支持更多参考图片）
+- Model | string | 可选 | 指定用于生成的模型，目前支持 doubao-seedance-1-0-pro-250528 和 doubao-seedance-1-0-lite-i2v-250428
+- VideoRatio | string | 可选 | 视频宽高比（例如：“1:1”、“16:9”）
+- VideoResolution | string | 可选 | 视频分辨率（例如：“1080p”、“720p”）
+- Duration | int | 可选（默认 5 秒） | 视频时长（单位：秒）
 
 ### Response
 响应将包含异步视频生成任务的唯一标识，结构如下：
 
-| | | | \
-|字段名 |类型 |描述 |
-|---|---|---|
-| | | | \
-|TaskId |string |异步视频生成任务的唯一标识 |
+- 字段名 | 类型 | 描述
+- TaskId | string | 异步视频生成任务的唯一标识

@@ -5,90 +5,48 @@ Seedream 4.0-4.5 原生支持文本、单图和多图输入，实现基于主体
 
 ---
 
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333);">
-
 场景
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333);margin-left: 16px;">
 
 输入
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333);margin-left: 16px;">
-
 输出
-
-</div>
-</div>
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3348576323987539);">
 
 多参考图生图
 > 输入多张参考图，融合它们的风格、元素等特征来生成新图像。
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3317423676012461);margin-left: 16px;">
-
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/2198d4bef000400bbfea18025850ed82~tplv-goo7wpa0wc-image.image" width="930px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/2198d4bef000400bbfea18025850ed82~tplv-goo7wpa0wc-image.image)
 
 > 将图1的服装换为图2的服装
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333);margin-left: 16px;">
-
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/461d4bf2a014454fbeda72f27d706ffe~tplv-goo7wpa0wc-image.image" width="1280px" /></div>
-
-</div>
-</div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/461d4bf2a014454fbeda72f27d706ffe~tplv-goo7wpa0wc-image.image)
 
 ---
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3311535974600903);">
 
 组图生成
 > 基于用户输入的文字和图片，生成一组内容关联的图像
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3320553846383162);margin-left: 16px;">
-
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/a215e8241dd94f50901948790da121e1~tplv-goo7wpa0wc-image.image" width="930px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/a215e8241dd94f50901948790da121e1~tplv-goo7wpa0wc-image.image)
 
 > 参考图1，生成四图片，图中人物分别带着墨镜，骑着摩托，带着帽子，拿着棒棒糖
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3366910179015934);margin-left: 16px;">
-
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/98c9e2c30dbb425aa25380c821e289ca~tplv-goo7wpa0wc-image.image" width="1200px" /></div>
-
-</div>
-</div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/98c9e2c30dbb425aa25380c821e289ca~tplv-goo7wpa0wc-image.image)
 
 # 模型选择
 
 * Seedream 4.5 作为字节跳动最新的图像生成模型，能力最强，在编辑一致性（如主体细节与光影色调的保持）、人像美化和小字生成方面体验升级。同时，模型的多图组合能力显著增强，推理能力与画面美学持续优化，能够更精准、更具艺术感地呈现创意。
 * Seedream 4.0 图像生成模型，适用于平衡预算与图片输出质量的场景，能满足一般性的图像生成需求。
 
-| | | | | | | \
-|**模型名称** |\
-|<div style="width:150px"></div> |**版本** |\
-| |<div style="width:150px"></div> |**模型 ID（Model ID）** |\
-| | |<div style="width:150px"></div> |**模型能力** |\
-| | | |<div style="width:200px"></div> |**限流 IPM** |\
-| | | | |> 每分钟生成图片数量上限（张 / 分钟） |\
-| | | | | |\
-| | | | |<div style="width:150px"></div> |**定价** |\
-| | | | | |<div style="width:150px"></div> |
-|---|---|---|---|---|---|
-| | | | | | | \
-|[doubao-seedream-4.5](https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedream-4-5)  |251128`强烈推荐` |doubao-seedream-4-5-251128 |* 文生图 |\
-| | | |* 图生图：单张图生图、多参考图生图 |\
-| | | |* 生成组图：文生组图、单张图生组图、多参考图生组图 |500 |[图片生成模型](/docs/82379/1544106#5e813e2f) |
-| | | |^^| | | \
-|[doubao-seedream-4.0](/docs/82379/1824718) |250828`推荐` |doubao-seedream-4-0-250828 | |500 |[图片生成模型](/docs/82379/1544106#5e813e2f) |
+- **模型名称**
+- **版本**
+- **模型 ID（Model ID）**
+- **模型能力**
+- **限流 IPM**
+- > 每分钟生成图片数量上限（张 / 分钟）
+- **定价**
+- [doubao-seedream-4.5](https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seedream-4-5) | 251128`强烈推荐` | doubao-seedream-4-5-251128 | * 文生图
+- * 图生图：单张图生图、多参考图生图
+- * 生成组图：文生组图、单张图生组图、多参考图生组图 | 500 | [图片生成模型](/docs/82379/1544106#5e813e2f)
+- [doubao-seedream-4.0](/docs/82379/1824718) | 250828`推荐` | doubao-seedream-4-0-250828 | 500 | [图片生成模型](/docs/82379/1544106#5e813e2f)
 
 # 前提条件
 
@@ -107,39 +65,21 @@ Seedream 4.0-4.5 原生支持文本、单图和多图输入，实现基于主体
 
 ---
 
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.6671732522796352);">
-
 提示词
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.33282674772036475);margin-left: 16px;">
 
 输出
 
-</div>
-</div>
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.6656534954407295);">
-
 充满活力的特写编辑肖像，模特眼神犀利，头戴雕塑感帽子，色彩拼接丰富，眼部焦点锐利，景深较浅，具有Vogue杂志封面的美学风格，采用中画幅拍摄，工作室灯光效果强烈。
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.3343465045592705);margin-left: 16px;">
-
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/00fb66006eb84b16965b620b6e1f2d78~tplv-goo7wpa0wc-image.image" width="1280px" /></div>
-
-</div>
-</div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/00fb66006eb84b16965b620b6e1f2d78~tplv-goo7wpa0wc-image.image)
 
 **Curl**
 
 ```Plain
 Text
-curl https://ark.cn-beijing.volces.com/api/v3/images/generations \\
-  -H "Content-Type: application/json" \\
-  -H "Authorization: Bearer $ARK_API_KEY" \\
+curl https://ark.cn-beijing.volces.com/api/v3/images/generations
+  -H "Content-Type: application/json"
+  -H "Authorization: Bearer $ARK_API_KEY"
   -d '{
     "model": "doubao-seedream-4-5-251128",
     "prompt": "充满活力的特写编辑肖像，模特眼神犀利，头戴雕塑感帽子，色彩拼接丰富，眼部焦点锐利，景深较浅，具有Vogue杂志封面的美学风格，采用中画幅拍摄，工作室灯光效果强烈。",
@@ -253,12 +193,12 @@ func main() {
 
     imagesResponse, err := client.GenerateImages(ctx, generateReq)
     if err != nil {
-       fmt.Printf("generate images error: %v\
+       fmt.Printf("generate images error: %v
 ", err)
        return
     }
 
-    fmt.Printf("%s\
+    fmt.Printf("%s
 ", *imagesResponse.Data[0].Url)
 }
 ```
@@ -295,49 +235,25 @@ print(imagesResponse.data[0].url)
 
 ---
 
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333);">
-
 提示词
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333);margin-left: 16px;">
 
 输入图
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333);margin-left: 16px;">
-
 输出
-
-</div>
-</div>
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3344961722488038);">
 
 保持模特姿势和液态服装的流动形状不变。将服装材质从银色金属改为完全透明的清水（或玻璃）。透过液态水流，可以看到模特的皮肤细节。光影从反射变为折射。
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3321038277511962);margin-left: 16px;">
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/816153e67d3c4478886276154d78b22e~tplv-goo7wpa0wc-image.image)
 
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/816153e67d3c4478886276154d78b22e~tplv-goo7wpa0wc-image.image" width="930px" /></div>
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333);margin-left: 16px;">
-
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/0829972712544f95917464b15723b189~tplv-goo7wpa0wc-image.image" width="1280px" /></div>
-
-</div>
-</div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/0829972712544f95917464b15723b189~tplv-goo7wpa0wc-image.image)
 
 **Curl**
 
 ```Plain
 Text
-curl https://ark.cn-beijing.volces.com/api/v3/images/generations \\
-  -H "Content-Type: application/json" \\
-  -H "Authorization: Bearer $ARK_API_KEY" \\
+curl https://ark.cn-beijing.volces.com/api/v3/images/generations
+  -H "Content-Type: application/json"
+  -H "Authorization: Bearer $ARK_API_KEY"
   -d '{
     "model": "doubao-seedream-4-5-251128",
     "prompt": "保持模特姿势和液态服装的流动形状不变。将服装材质从银色金属改为完全透明的清水（或玻璃）。透过液态水流，可以看到模特的皮肤细节。光影从反射变为折射。",
@@ -454,12 +370,12 @@ func main() {
 
     imagesResponse, err := client.GenerateImages(ctx, generateReq)
     if err != nil {
-       fmt.Printf("generate images error: %v\
+       fmt.Printf("generate images error: %v
 ", err)
        return
     }
 
-    fmt.Printf("%s\
+    fmt.Printf("%s
 ", *imagesResponse.Data[0].Url)
 }
 ```
@@ -496,59 +412,29 @@ print(imagesResponse.data[0].url)
 
 ---
 
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 48px) * 0.19634146341463415);">
-
 提示词
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 48px) * 0.2658536585365853);margin-left: 16px;">
 
 输入图1
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 48px) * 0.2695121951219512);margin-left: 16px;">
-
 输入图2
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 48px) * 0.2682926829268293);margin-left: 16px;">
 
 输出
 
-</div>
-</div>
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 48px) * 0.1951219512195122);">
-
 将图1的服装换为图2的服装
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 48px) * 0.2695121951219512);margin-left: 16px;">
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/4b4464161cf3463db6f9463b10939178~tplv-goo7wpa0wc-image.image)
 
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/4b4464161cf3463db6f9463b10939178~tplv-goo7wpa0wc-image.image" width="1024px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/c23d1b0528a14cb08b684307eabdcc9b~tplv-goo7wpa0wc-image.image)
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 48px) * 0.26707317073170733);margin-left: 16px;">
-
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/c23d1b0528a14cb08b684307eabdcc9b~tplv-goo7wpa0wc-image.image" width="2046px" /></div>
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 48px) * 0.2682926829268293);margin-left: 16px;">
-
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/461d4bf2a014454fbeda72f27d706ffe~tplv-goo7wpa0wc-image.image" width="1280px" /></div>
-
-</div>
-</div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/461d4bf2a014454fbeda72f27d706ffe~tplv-goo7wpa0wc-image.image)
 
 **Curl**
 
 ```Plain
 Text
-curl https://ark.cn-beijing.volces.com/api/v3/images/generations \\
-  -H "Content-Type: application/json" \\
-  -H "Authorization: Bearer $ARK_API_KEY" \\
+curl https://ark.cn-beijing.volces.com/api/v3/images/generations
+  -H "Content-Type: application/json"
+  -H "Authorization: Bearer $ARK_API_KEY"
   -d '{
     "model": "doubao-seedream-4-5-251128",
     "prompt": "将图1的服装换为图2的服装",
@@ -671,12 +557,12 @@ func main() {
 
     imagesResponse, err := client.GenerateImages(ctx, generateReq)
     if err != nil {
-       fmt.Printf("generate images error: %v\
+       fmt.Printf("generate images error: %v
 ", err)
        return
     }
 
-    fmt.Printf("%s\
+    fmt.Printf("%s
 ", *imagesResponse.Data[0].Url)
 }
 ```
@@ -717,39 +603,21 @@ print(imagesResponse.data[0].url)
 
 ---
 
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.6702127659574468);">
-
 提示词
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.32978723404255317);margin-left: 16px;">
 
 输出（实际会输出4张图片）
 
-</div>
-</div>
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.6717325227963526);">
-
 生成一组共4张连贯插画，核心为同一庭院一角的四季变迁，以统一风格展现四季独特色彩、元素与氛围
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.3282674772036474);margin-left: 16px;">
-
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/9df00a4f19e84efc9946f7033a4cf80d~tplv-goo7wpa0wc-image.image" width="1728px" /></div>
-
-</div>
-</div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/9df00a4f19e84efc9946f7033a4cf80d~tplv-goo7wpa0wc-image.image)
 
 **Curl**
 
 ```Plain
 Text
-curl https://ark.cn-beijing.volces.com/api/v3/images/generations \\
-  -H "Content-Type: application/json" \\
-  -H "Authorization: Bearer $ARK_API_KEY" \\
+curl https://ark.cn-beijing.volces.com/api/v3/images/generations
+  -H "Content-Type: application/json"
+  -H "Authorization: Bearer $ARK_API_KEY"
   -d '{
     "model": "doubao-seedream-4-5-251128",
     "prompt": "生成一组共4张连贯插画，核心为同一庭院一角的四季变迁，以统一风格展现四季独特色彩、元素与氛围",
@@ -893,19 +761,19 @@ func main() {
 
     resp, err := client.GenerateImages(ctx, generateReq)
     if err != nil {
-        fmt.Printf("call GenerateImages error: %v\
+        fmt.Printf("call GenerateImages error: %v
 ", err)
         return
     }
 
     if resp.Error != nil {
-        fmt.Printf("API returned error: %s - %s\
+        fmt.Printf("API returned error: %s - %s
 ", resp.Error.Code, resp.Error.Message)
         return
     }
 
     // Output the generated image information
-    fmt.Printf("Generated %d images:\
+    fmt.Printf("Generated %d images:
 ", len(resp.Data))
     for i, image := range resp.Data {
         var url string
@@ -914,7 +782,7 @@ func main() {
         } else {
             url = "N/A"
         }
-        fmt.Printf("Image %d: Size: %s, URL: %s\
+        fmt.Printf("Image %d: Size: %s, URL: %s
 ", i+1, image.Size, url)
     }
 }
@@ -957,49 +825,25 @@ for image in imagesResponse.data:
 
 ---
 
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333);">
-
 提示词
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333);margin-left: 16px;">
 
 输入图
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333);margin-left: 16px;">
-
 输出（实际会输出4张图片）
-
-</div>
-</div>
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333);">
 
 参考这个LOGO，做一套户外运动品牌视觉设计，品牌名称为“GREEN"，包括包装袋、帽子、卡片、挂绳等。绿色视觉主色调，趣味、简约现代风格。
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333);margin-left: 16px;">
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/c724450228a94a909580c0400fbf503b~tplv-goo7wpa0wc-image.image)
 
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/c724450228a94a909580c0400fbf503b~tplv-goo7wpa0wc-image.image" width="1280px" /></div>
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 32px) * 0.3333);margin-left: 16px;">
-
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/f2d33219328149f58552dfd095b5f502~tplv-goo7wpa0wc-image.image" width="1200px" /></div>
-
-</div>
-</div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/f2d33219328149f58552dfd095b5f502~tplv-goo7wpa0wc-image.image)
 
 **Curl**
 
 ```Plain
 Text
-curl https://ark.cn-beijing.volces.com/api/v3/images/generations \\
-  -H "Content-Type: application/json" \\
-  -H "Authorization: Bearer $ARK_API_KEY" \\
+curl https://ark.cn-beijing.volces.com/api/v3/images/generations
+  -H "Content-Type: application/json"
+  -H "Authorization: Bearer $ARK_API_KEY"
   -d '{
     "model": "doubao-seedream-4-5-251128",
     "prompt": "参考这个LOGO，做一套户外运动品牌视觉设计，品牌名称为“GREEN"，包括包装袋、帽子、卡片、挂绳等。绿色视觉主色调，趣味、简约现代风格",
@@ -1147,19 +991,19 @@ func main() {
 
     resp, err := client.GenerateImages(ctx, generateReq)
     if err != nil {
-        fmt.Printf("call GenerateImages error: %v\
+        fmt.Printf("call GenerateImages error: %v
 ", err)
         return
     }
 
     if resp.Error != nil {
-        fmt.Printf("API returned error: %s - %s\
+        fmt.Printf("API returned error: %s - %s
 ", resp.Error.Code, resp.Error.Message)
         return
     }
 
     // Output the generated image information
-    fmt.Printf("Generated %d images:\
+    fmt.Printf("Generated %d images:
 ", len(resp.Data))
     for i, image := range resp.Data {
         var url string
@@ -1168,7 +1012,7 @@ func main() {
         } else {
             url = "N/A"
         }
-        fmt.Printf("Image %d: Size: %s, URL: %s\
+        fmt.Printf("Image %d: Size: %s, URL: %s
 ", i+1, image.Size, url)
     }
 }
@@ -1212,59 +1056,29 @@ for image in imagesResponse.data:
 
 ---
 
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 48px) * 0.20121951219512196);">
-
 提示词
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 48px) * 0.2682926829268293);margin-left: 16px;">
 
 输入图1
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 48px) * 0.26265877035767166);margin-left: 16px;">
-
 输入图2
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 48px) * 0.26782903452037715);margin-left: 16px;">
 
 输出（实际会输出3张图片）
 
-</div>
-</div>
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 48px) * 0.19728434504792333);">
-
 生成3张女孩和奶牛玩偶在游乐园开心地坐过山车的图片，涵盖早晨、中午、晚上
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 48px) * 0.26916932907348246);margin-left: 16px;">
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/77024d8e03f24862b066bfc385301120~tplv-goo7wpa0wc-image.image)
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/77024d8e03f24862b066bfc385301120~tplv-goo7wpa0wc-image.image =1446x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/2cbc5cf5a68d44899fc52f177fb9cf51~tplv-goo7wpa0wc-image.image)
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 48px) * 0.2675718849840255);margin-left: 16px;">
-
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/2cbc5cf5a68d44899fc52f177fb9cf51~tplv-goo7wpa0wc-image.image =1446x)
-
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 48px) * 0.2659744408945687);margin-left: 16px;">
-
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/6971832f48384aea82b6009006cd3e56~tplv-goo7wpa0wc-image.image =1200x)
-
-</div>
-</div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/6971832f48384aea82b6009006cd3e56~tplv-goo7wpa0wc-image.image)
 
 **Curl**
 
 ```Plain
 Text
-curl https://ark.cn-beijing.volces.com/api/v3/images/generations \\
-  -H "Content-Type: application/json" \\
-  -H "Authorization: Bearer $ARK_API_KEY" \\
+curl https://ark.cn-beijing.volces.com/api/v3/images/generations
+  -H "Content-Type: application/json"
+  -H "Authorization: Bearer $ARK_API_KEY"
   -d '{
     "model": "doubao-seedream-4-5-251128",
     "prompt": "生成3张女孩和奶牛玩偶在游乐园开心地坐过山车的图片，涵盖早晨、中午、晚上",
@@ -1418,19 +1232,19 @@ func main() {
 
     resp, err := client.GenerateImages(ctx, generateReq)
     if err != nil {
-        fmt.Printf("call GenerateImages error: %v\
+        fmt.Printf("call GenerateImages error: %v
 ", err)
         return
     }
 
     if resp.Error != nil {
-        fmt.Printf("API returned error: %s - %s\
+        fmt.Printf("API returned error: %s - %s
 ", resp.Error.Code, resp.Error.Message)
         return
     }
 
     // Output the generated image information
-    fmt.Printf("Generated %d images:\
+    fmt.Printf("Generated %d images:
 ", len(resp.Data))
     for i, image := range resp.Data {
         var url string
@@ -1439,7 +1253,7 @@ func main() {
         } else {
             url = "N/A"
         }
-        fmt.Printf("Image %d: Size: %s, URL: %s\
+        fmt.Printf("Image %d: Size: %s, URL: %s
 ", i+1, image.Size, url)
     }
 }
@@ -1488,15 +1302,15 @@ for image in imagesResponse.data:
 ## 流式输出
 Seedream 4.5、Seedream 4.0 模型支持流式图像生成，模型生成完任一图片即返回结果，让您能更快浏览到生成的图像，改善等待体验。
 通过设置 **stream** 参数为`true`，即可开启流式输出模式。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/643230864ffc43a8a37ef775cd51ac30~tplv-goo7wpa0wc-image.image =2036x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/643230864ffc43a8a37ef775cd51ac30~tplv-goo7wpa0wc-image.image)
 
 **Curl**
 
 ```Plain
 Text
-curl https://ark.cn-beijing.volces.com/api/v3/images/generations \\
-  -H "Content-Type: application/json" \\
-  -H "Authorization: Bearer $ARK_API_KEY" \\
+curl https://ark.cn-beijing.volces.com/api/v3/images/generations
+  -H "Content-Type: application/json"
+  -H "Authorization: Bearer $ARK_API_KEY"
   -d '{
     "model": "doubao-seedream-4-5-251128",
     "prompt": "参考图1，生成四图片，图中人物分别带着墨镜，骑着摩托，带着帽子，拿着棒棒糖",
@@ -1670,7 +1484,7 @@ func main() {
     
     stream, err := client.GenerateImagesStreaming(ctx, generateReq)
     if err != nil {
-       fmt.Printf("call GenerateImagesStreaming error: %v\
+       fmt.Printf("call GenerateImagesStreaming error: %v
 ", err)
        return
     }
@@ -1681,12 +1495,12 @@ func main() {
           break
        }
        if err != nil {
-          fmt.Printf("Stream generate images error: %v\
+          fmt.Printf("Stream generate images error: %v
 ", err)
           break
        }
        if recv.Type == "image_generation.partial_failed" {
-          fmt.Printf("Stream generate images error: %v\
+          fmt.Printf("Stream generate images error: %v
 ", recv.Error)
           if strings.EqualFold(recv.Error.Code, "InternalServiceError") {
              break
@@ -1694,13 +1508,13 @@ func main() {
        }
        if recv.Type == "image_generation.partial_succeeded" {
           if recv.Error == nil && recv.Url != nil {
-             fmt.Printf("recv.Size: %s, recv.Url: %s\
+             fmt.Printf("recv.Size: %s, recv.Url: %s
 ", recv.Size, *recv.Url)
           }
        }
        if recv.Type == "image_generation.completed" {
           if recv.Error == nil {
-             fmt.Printf("recv.Usage: %v\
+             fmt.Printf("recv.Usage: %v
 ", *recv.Usage)
           }
        }
@@ -1759,9 +1573,9 @@ if __name__ == "__main__":
 
 ```Plain
 Text
-curl https://ark.cn-beijing.volces.com/api/v3/images/generations \\
-  -H "Content-Type: application/json" \\
-  -H "Authorization: Bearer $ARK_API_KEY" \\
+curl https://ark.cn-beijing.volces.com/api/v3/images/generations
+  -H "Content-Type: application/json"
+  -H "Authorization: Bearer $ARK_API_KEY"
   -d '{
     "model": "doubao-seedream-4-0-250828",
     "prompt": "生成一组共4张连贯插画，核心为同一庭院一角的四季变迁，以统一风格展现四季独特色彩、元素与氛围",
@@ -1921,19 +1735,19 @@ func main() {
 
     resp, err := client.GenerateImages(ctx, generateReq)
     if err != nil {
-        fmt.Printf("call GenerateImages error: %v\
+        fmt.Printf("call GenerateImages error: %v
 ", err)
         return
     }
 
     if resp.Error != nil {
-        fmt.Printf("API returned error: %s - %s\
+        fmt.Printf("API returned error: %s - %s
 ", resp.Error.Code, resp.Error.Message)
         return
     }
 
     // Output the generated image information
-    fmt.Printf("Generated %d images:\
+    fmt.Printf("Generated %d images:
 ", len(resp.Data))
     for i, image := range resp.Data {
         var url string
@@ -1942,7 +1756,7 @@ func main() {
         } else {
             url = "N/A"
         }
-        fmt.Printf("Image %d: Size: %s, URL: %s\
+        fmt.Printf("Image %d: Size: %s, URL: %s
 ", i+1, image.Size, url)
     }
 }
@@ -2003,21 +1817,9 @@ for image in imagesResponse.data:
 
 ---
 
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);">
-
 方式1
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);margin-left: 16px;">
-
 方式2
-
-</div>
-</div>
-
-<div style="display: flex;">
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);">
 
 ```JSON
 {
@@ -2026,18 +1828,12 @@ for image in imagesResponse.data:
 }
 ```
 
-</div>
-<div style="flex-shrink: 0;width: calc((100% - 16px) * 0.5000);margin-left: 16px;">
-
 ```JSON
 {
     "prompt": "生成一组共4张连贯插画，核心为同一庭院一角的四季变迁，以统一风格展现四季独特色彩、元素与氛围", 
     "size": "2048x2048"  // 通过参数 size 指定生成图像的宽高像素值
 }
 ```
-
-</div>
-</div>
 
 ### 图片输出方式
 图像 API 返回的图片格式为 jpeg 。通过设置 **response_format** 参数，可以指定生成图像的返回方式：
@@ -2088,7 +1884,7 @@ for image in imagesResponse.data:
 [火山方舟大模型体验中心](https://www.volcengine.com/experience/ark?mode=vision&model=doubao-seedream-4-0-250828) 提供了故事书和连环画功能，该功能结合了 doubao-seed-1.6 模型和 doubao-seedream-4.0 模型，可实现一句话生成动漫、连环画、故事书，满足用户多样化的创作需求。 
 连环画的实现过程与故事书类似，本文以故事书为例，为您介绍生成故事书的工作流和技术实现步骤，方便您在本地快速复现。
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/d590e440ff7447feaed8fa8f4d91e746~tplv-goo7wpa0wc-image.image =1712x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/d590e440ff7447feaed8fa8f4d91e746~tplv-goo7wpa0wc-image.image)
 
 ## 工作流
 故事书生成的工作流如下：

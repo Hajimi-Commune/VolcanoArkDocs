@@ -13,7 +13,7 @@
 
 # 快速开始
 以“将图像设置为Palette - Based模式”任务为例，演示单轮 GUI 任务流程。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/ae7d606574e24c7a98a4eb9b934e2757~tplv-goo7wpa0wc-image.image =689x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/ae7d606574e24c7a98a4eb9b934e2757~tplv-goo7wpa0wc-image.image)
 正式开始前需安装对应的SDK。
 ```Bash
 pip install pillow numpy matplotlib
@@ -337,50 +337,28 @@ print(py_code)  # 输出：pyautogui.click(x=450, y=417)
 下面是模型可能返回的 action 值及对应值的含义。
 ## 电脑 GUI 任务处理场景
 
-| | | | | \
-|Action名称 |动作类型 |参数 |输出示例 |
-|---|---|---|---|
-| | | | | \
-|click |鼠标左键单击 |start_box |`click(start_box='<bbox>859 950 859 950</bbox>')` |
-| | | | | \
-|left_double |鼠标左键双击 |start_box |`left_double(start_box='<bbox>859 950 859 950</bbox>')` |
-| | | | | \
-|right_single |鼠标右键单击 |start_box |`right_single(start_box='<bbox>859 950 859 950</bbox>')` |
-| | | | | \
-|drag |拖拽 |start_box |\
-| | |end_box |`drag(start_box='<bbox>768 150 768 150</bbox>', end_box='<bbox>79 150 79 150</bbox>')` |
-| | | | | \
-|hotkey |热键 |key |`hotkey(key='ctrl a')` |
-| | | | | \
-|type |键盘输入 |content |`type(content='北京天气怎么样')` |
-| | | | | \
-|scroll |滚动屏幕 |start_box |\
-| | |direction |`scroll(direction='up', start_box='<bbox>850 869 850 869</bbox>')` |
-| | | | | \
-|wait |等待 | |`wait()` |
-| | | | | \
-|finished |完成 |content |`finished(content='todo.txt已打开')` |
+- Action名称 | 动作类型 | 参数 | 输出示例
+- click | 鼠标左键单击 | start_box | `click(start_box='<bbox>859 950 859 950</bbox>')`
+- left_double | 鼠标左键双击 | start_box | `left_double(start_box='<bbox>859 950 859 950</bbox>')`
+- right_single | 鼠标右键单击 | start_box | `right_single(start_box='<bbox>859 950 859 950</bbox>')`
+- drag | 拖拽 | start_box
+- end_box | `drag(start_box='<bbox>768 150 768 150</bbox>', end_box='<bbox>79 150 79 150</bbox>')`
+- hotkey | 热键 | key | `hotkey(key='ctrl a')`
+- type | 键盘输入 | content | `type(content='北京天气怎么样')`
+- scroll | 滚动屏幕 | start_box
+- direction | `scroll(direction='up', start_box='<bbox>850 869 850 869</bbox>')`
+- wait | 等待 | `wait()`
+- finished | 完成 | content | `finished(content='todo.txt已打开')`
 
 ## 手机 GUI 任务处理场景
 
-| | | | | \
-|Action 名称 |动作类型 |参数 |输出示例 |
-|---|---|---|---|
-| | | | | \
-|click |点击 |point |`JSON<br>click(point='<point>x1 y1</point>')<br>` |
-| | | | | \
-|long_press |长按 |point |`JSON<br>long_press(point='<point>x1 y1</point>')<br>` |
-| | | | | \
-|type |输入 |content |`JSON<br>type(content='文本内容\\n')<br>` |
-| | | | | \
-|scroll |滚动 |point、direction |`JSON<br>scroll(point='<point>x1 y1</point>', direction='down')<br>` |
-| | | | | \
-|open_app |打开应用 |app_name |`JSON<br>open_app(app_name='微信')<br>` |
-| | | | | \
-|drag |拖拽 |start_point、end_point |`JSON<br>drag(start_point='<point>x1 y1</point>', end_point='<point>x2 y2</point>')<br>` |
-| | | | | \
-|press_home |返回主屏幕 |无 |`JSON<br>press_home()<br>` |
-| | | | | \
-|press_back |返回 |无 |`JSON<br>press_back()<br>` |
-| | | | | \
-|finished |完成 |content |`JSON<br>finished(content='操作完成信息')<br>` |
+- Action 名称 | 动作类型 | 参数 | 输出示例
+- click | 点击 | point | `JSON<br>click(point='<point>x1 y1</point>')<br>`
+- long_press | 长按 | point | `JSON<br>long_press(point='<point>x1 y1</point>')<br>`
+- type | 输入 | content | `JSON<br>type(content='文本内容\\n')<br>`
+- scroll | 滚动 | point、direction | `JSON<br>scroll(point='<point>x1 y1</point>', direction='down')<br>`
+- open_app | 打开应用 | app_name | `JSON<br>open_app(app_name='微信')<br>`
+- drag | 拖拽 | start_point、end_point | `JSON<br>drag(start_point='<point>x1 y1</point>', end_point='<point>x2 y2</point>')<br>`
+- press_home | 返回主屏幕 | 无 | `JSON<br>press_home()<br>`
+- press_back | 返回 | 无 | `JSON<br>press_back()<br>`
+- finished | 完成 | content | `JSON<br>finished(content='操作完成信息')<br>`

@@ -8,21 +8,13 @@
 
 * **功能介绍**
 
-| | | \
-|MCP / 服务 |功能介绍 |
-|---|---|
-| | | \
-|DeepSearch |一款专为处理复杂问题而精心设计的高效工具，集成了联网搜索、知识库、网页解析、Python 代码执行器等丰富的 MCP 服务 |
-| | | \
-|联网搜索 |联网搜索工具，用于实时搜索互联网公开域内容 |
-| | | \
-|知识库 |在知识库内检索内容的工具 |
-| | | \
-|Vevod  |通过对话交互的方式，实现多视频时域拼接、长视频分段截取与拼接、添加转场动画及字幕等剪辑操作 |
-| | | \
-|Seedance-1.0-pro 图生视频模型服务 |通过指定提示词和首帧图的方式，生成视频 |
-| | | \
-|Seedance-1.0-lite-i2v 首尾帧生视频模型服务 |通过指定提示词、首帧图和尾帧图的方式，生成视频 |
+- MCP / 服务 | 功能介绍
+- DeepSearch | 一款专为处理复杂问题而精心设计的高效工具，集成了联网搜索、知识库、网页解析、Python 代码执行器等丰富的 MCP 服务
+- 联网搜索 | 联网搜索工具，用于实时搜索互联网公开域内容
+- 知识库 | 在知识库内检索内容的工具
+- Vevod | 通过对话交互的方式，实现多视频时域拼接、长视频分段截取与拼接、添加转场动画及字幕等剪辑操作
+- Seedance-1.0-pro 图生视频模型服务 | 通过指定提示词和首帧图的方式，生成视频
+- Seedance-1.0-lite-i2v 首尾帧生视频模型服务 | 通过指定提示词、首帧图和尾帧图的方式，生成视频
 
 * **演示视频**：
 
@@ -39,17 +31,17 @@
 1. 进入[火山方舟控制台](https://console.volcengine.com/ark/region:ark+cn-beijing/application)，点击火山方舟控制台右侧导航栏【应用广场】，双击打开“DeepSearch”应用，在应用界面内选择【体验应用】。
    点击直达：[“DeepSearch”应用](https://console.volcengine.com/ark/region:ark+cn-beijing/application/detail?id=bot-20250414112950-6x4km-procode-preset&prev=application)
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/29eb60d4696e42b08769c2b0f030a6f3~tplv-goo7wpa0wc-image.image =3840x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/29eb60d4696e42b08769c2b0f030a6f3~tplv-goo7wpa0wc-image.image)
 
 2. 用户可在页面右侧自主配置“DeepSearch”，“DeepSearch”支持自定义设置问题拆解层数与MCP服务。MCP服务默认全部开启，建议只保留上面三个MCP服务，即联网搜索、知识库、网页解析。 
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/6de063d0949547069e2802f7135338ae~tplv-goo7wpa0wc-image.image =3163x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/6de063d0949547069e2802f7135338ae~tplv-goo7wpa0wc-image.image)
 ### 应用DeepSearch
 #### 输入问题
 在问题输入框输入以下内容：*“我想制作一个营销视频，帮我看看网上各类营销视频热点关键词吧，尤其是各类AI玩具类的营销视频热点词。”*
 #### **输出结果**
 DeepSearch应用返回结果：AI玩偶热点词为多巴胺。注意此处需自行部署DeepSearch，并完成知识库MCP的配置 。
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/65cbbaffdfd34103a24b800cad2eaff5~tplv-goo7wpa0wc-image.image" width="2614px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/65cbbaffdfd34103a24b800cad2eaff5~tplv-goo7wpa0wc-image.image)
 
 ## 获取Prompt提示词
 ### 前置条件
@@ -61,20 +53,20 @@ DeepSearch应用返回结果：AI玩偶热点词为多巴胺。注意此处需�
 
 1. 进入Trae应用，点击右上角的设置按钮打开MCP服务。
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/163fe7729e984ae5b28eba9fdcdbb2e1~tplv-goo7wpa0wc-image.image =2998x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/163fe7729e984ae5b28eba9fdcdbb2e1~tplv-goo7wpa0wc-image.image)
 
 2. 点击添加新的mcp服务，在搜索栏搜索“Vevod mcp”，点击【+】添加Vevod MCP服务。
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/b33369dea65641b0ab2fbd7bbf119614~tplv-goo7wpa0wc-image.image =2998x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/b33369dea65641b0ab2fbd7bbf119614~tplv-goo7wpa0wc-image.image)
 
 3. 点击【获取】“VOLCENGINE_ACCESS_KEY”和“VOLCENGINE_SECRET_KEY”按钮，跳转到“[API访问密钥](https://console.volcengine.com/iam/keymanage/)”界面，获取“Access Key ID”和“Secret Access Key”后分别填入“VOLCENGINE_ACCESS_KEY”和“VOLCENGINE_SECRET_KEY”。
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/94fc56828ad244c39038e9f080f3ff6c~tplv-goo7wpa0wc-image.image =1261x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/94fc56828ad244c39038e9f080f3ff6c~tplv-goo7wpa0wc-image.image)
 ### **配置智能体**
 
 1. 点击右上角的设置，进入智能体界面
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/0218f98a8a1e4ed694b978787f422db4~tplv-goo7wpa0wc-image.image =2998x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/0218f98a8a1e4ed694b978787f422db4~tplv-goo7wpa0wc-image.image)
 
 2. 创建智能体
 
@@ -89,20 +81,20 @@ DeepSearch应用返回结果：AI玩偶热点词为多巴胺。注意此处需�
 ```
 
 工具需要选择刚才配置好的VeVOD MCP
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/e199305857074b66bc4859726f81606a~tplv-goo7wpa0wc-image.image =2998x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/e199305857074b66bc4859726f81606a~tplv-goo7wpa0wc-image.image)
 ### 获取提示词
-在对话框下方智能体中选择“爆款视频智造官”，并在问题输入框输入以下内容：*“请结合当前获取到的热点关键词"多巴胺",以显眼包AI玩偶为主角,生成3个视频生成所需要的提示词”。​*得到智能体的回答。
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/b46a0c969c484a6a857383c9d0cfd63d~tplv-goo7wpa0wc-image.image =2598x)
+在对话框下方智能体中选择“爆款视频智造官”，并在问题输入框输入以下内容：*“请结合当前获取到的热点关键词"多巴胺",以显眼包AI玩偶为主角,生成3个视频生成所需要的提示词”。*得到智能体的回答。
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/b46a0c969c484a6a857383c9d0cfd63d~tplv-goo7wpa0wc-image.image)
 ## 获取视频
 ### **前置条件**
 
 1. 在使用 Seedance 视频生成模型前，需在火山方舟大模型服务平台的[开通管理](https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D&OpenTokenDrawer=false&tab=ComputerVision)页面，选择「视觉大模型」下 Seedance 1.0 lite 和 pro 的开通服务，以完成相应模型的开通操作。详细说明请参考[模型开通管理](https://www.volcengine.com/docs/82379/1159200)文档。
 
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/ec4c44870fe74855b1df6207bfb8d7ea~tplv-goo7wpa0wc-image.image" width="1800px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/ec4c44870fe74855b1df6207bfb8d7ea~tplv-goo7wpa0wc-image.image)
 
 2. 完成视频生成模型开通后，进入火山方舟大模型服务平台的[API Key 管理](https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey?apikey=%7B%7D)页面，在此页面创建并获取 API Key，该 API Key 将用于后续的视频生成调用。
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/3a9cf38c1c7c47b2970d95bb5eac9acc~tplv-goo7wpa0wc-image.image =3840x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/3a9cf38c1c7c47b2970d95bb5eac9acc~tplv-goo7wpa0wc-image.image)
 ### 生成视频
 
 1. **基于Seedance 1.0 lite i2v 模型首尾帧功能**
@@ -111,9 +103,9 @@ DeepSearch应用返回结果：AI玩偶热点词为多巴胺。注意此处需�
 Trae对话框的具体命令如下：
 ```Bash
 帮我用下述命令，生成第1段视频，并打印接口真实响应信息。
-curl -X POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer 16397bb4-c488-4107-b2e6-*********" \
+curl -X POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks
+  -H "Content-Type: application/json"
+  -H "Authorization: Bearer 16397bb4-c488-4107-b2e6-*********"
   -d '{
     "model": "doubao-seedance-1-0-lite-i2v-250428",
     "content": [
@@ -140,7 +132,7 @@ curl -X POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks
 ```
 
 操作展示图如下：
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/1455b400427744ffb8e7208db32ecb88~tplv-goo7wpa0wc-image.image =2880x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/1455b400427744ffb8e7208db32ecb88~tplv-goo7wpa0wc-image.image)
 
 2. **基于Seedance 1.0 pro 模型图生视频功能**
 
@@ -155,9 +147,9 @@ Trae对话框的具体命令如下：
 第3段视频对应的prompt：
 图中坐着热气球的玩偶向上坐着热气球飞出图画，热气球中的黄色火焰自然燃烧，画面中的五彩棉花糖云彩大幅度晃动，保持玩偶形象始终稳定，保持玩偶大小稳定
 第3段视频对应的图片地址 https://video-image-test2025space.tos-cn-beijing.volces.com/%E5%9C%BA%E6%99%AF3-%E5%9B%BE%E7%89%87.png
-curl -X POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer 16397bb4-c488-4107-b2e6-*********" \
+curl -X POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks
+  -H "Content-Type: application/json"
+  -H "Authorization: Bearer 16397bb4-c488-4107-b2e6-*********"
   -d '{
     "model": "doubao-seedance-1-0-pro-250528",
     "content": [
@@ -176,32 +168,32 @@ curl -X POST https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks
 ```
 
 操作图如下：
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/c4e818ffe21b4da1b1a2668ba2880fb2~tplv-goo7wpa0wc-image.image =2880x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/c4e818ffe21b4da1b1a2668ba2880fb2~tplv-goo7wpa0wc-image.image)
 ### **查询进度**
 完成视频生成任务创建后，将内置模型选定为“**Doubao-1.5-thinking-pro**”，在对话框中输入并发送以下命令以进行视频生成结果的查询操作。在此过程中，同样要将`Bearer`之后的API Key替换为之前获取到的API Key。 
 Trae对话框的具体命令如下：
 
 ```Bash
 帮我根据上述3组响应中的id字段，分别用下述命令查询视频生成的进度，并打印真实响应信息
-curl -X GET https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks/{id} \
-  -H "Content-Type: application/json" \
+curl -X GET https://ark.cn-beijing.volces.com/api/v3/contents/generations/tasks/{id}
+  -H "Content-Type: application/json"
   -H "Authorization: Bearer 16397bb4-c488-4107-b2e6-*********"
 ```
 
 效果展示图如下：
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/f5dbfffbfa084a97a0c1791c46dfb9d1~tplv-goo7wpa0wc-image.image =2234x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/f5dbfffbfa084a97a0c1791c46dfb9d1~tplv-goo7wpa0wc-image.image)
 ### 视频拼接
 以下将运用 VeVOD MCP 对上述视频进行拼接，并添加视频转场效果，将内置模型选定为“**Doubao-1.5-thinking-pro**”，在对话框中输入并发送以下命令以进行视频拼接和添加转场操作。在具体操作中，选用的是泛开的转场效果。若需了解和选用更多转场效果，可查阅[转场效果](https://www.volcengine.com/docs/4/102412#%E8%BD%AC%E5%9C%BA-id)说明文档。 
 Trae对话框的具体命令如下：
 > 将上述三个视频下载地址对应的5s视频，依次拼接在一起合成一个新的15s视频，每两段视频之间添加泛开的转场效果，可以用mcp-test-space空间
 
-![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/5f219a67ee23428db1414d342beffc5d~tplv-goo7wpa0wc-image.image =3028x)
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/5f219a67ee23428db1414d342beffc5d~tplv-goo7wpa0wc-image.image)
 ### 视频查看&下载
 完成上述操作后，前往火山引擎-[视频点播界面](https://console.volcengine.com/vod/region:vod+cn-north-1/overview/)，点击然后进入mcp-test-space空间。
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/d8a9eaa5190a456195170cc7458b175e~tplv-goo7wpa0wc-image.image" width="2880px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/d8a9eaa5190a456195170cc7458b175e~tplv-goo7wpa0wc-image.image)
 
 在此查看并可以下载最终制作完成的视频，如下图所示。
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/a2bea790bc214c1a99a4780086314b59~tplv-goo7wpa0wc-image.image" width="2850px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/a2bea790bc214c1a99a4780086314b59~tplv-goo7wpa0wc-image.image)
 
 # 附录：开源应用介绍
 

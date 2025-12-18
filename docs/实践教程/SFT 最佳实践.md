@@ -70,7 +70,7 @@
 * 什么是混入预置数据：
    * 在模型精调页面，可以选择混入预置 SFT 数据，即在客户上传的 SFT 数据集的基础上，额外增加一部分比例的豆包模型基座训练时的 SFT 数据。
 
-![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_88c69e5f3e1abb6662891da927491034.png =1169x)
+![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_88c69e5f3e1abb6662891da927491034.png)
 
 * 为什么要混入预置数据：
    * 一定程度上缓解大模型在某个领域上 SFT 后，通用能力下降的问题。
@@ -80,13 +80,9 @@
 * 混入数据的版本如何选择：
    * 建议选择与模型预训练时相同的数据，具体见下表：
    
-   | | | | \
-   |模型 |推荐混合数据 |备注 |
-   |---|---|---|
-   | | | | \
-   |Doubao-lite-4k/32k/128k |v9_32k |通用能力 SFT 数据 |
-   | | | | \
-   |Doubao-pro-4k/32k/128k |v9_32k |通用能力 SFT 数据 |
+- 模型 | 推荐混合数据 | 备注
+- Doubao-lite-4k/32k/128k | v9_32k | 通用能力 SFT 数据
+- Doubao-pro-4k/32k/128k | v9_32k | 通用能力 SFT 数据
 
 ## 一些建议
 
@@ -105,21 +101,13 @@
 
 * 方舟平台提供多种规格的模型，汇总如下：
 
-| | | | | \
-|模型名称 |最大支持的token长度 |模型参数量 |模型推理耗时 |
-|---|---|---|---|
-| | | | | \
-|Doubao-lite-8k |8k |小 |较短 |
-| | | | | \
-|Doubao-lite-32k |32k |小 |较短 |
-| | | | | \
-|Doubao-lite-128k |128k |小 |较短 |
-| | | | | \
-|Doubao-pro-4k |4k |大 |长 |
-| | | | | \
-|Doubao-pro-32k |32k |大 |长 |
-| | | | | \
-|Doubao-pro-128k |128k |大 |长 |
+- 模型名称 | 最大支持的token长度 | 模型参数量 | 模型推理耗时
+- Doubao-lite-8k | 8k | 小 | 较短
+- Doubao-lite-32k | 32k | 小 | 较短
+- Doubao-lite-128k | 128k | 小 | 较短
+- Doubao-pro-4k | 4k | 大 | 长
+- Doubao-pro-32k | 32k | 大 | 长
+- Doubao-pro-128k | 128k | 大 | 长
 
 * 首先，需要明确我们的模型使用场景是否对延迟比较敏感，如果要求低延迟，且测试过程中pro版本模型无法满足延迟要求时，可以使用lite模型。具体延迟可以到方舟[体验中心](https://console.volcengine.com/ark/region:ark+cn-beijing/experience)进行测试。
 * 其次，需要明确我们的应用场景是否需要长文本能力。如果预期模型的输入和输出加起来超过了4k的 token 数，且删减字数对原有语义影响较大时，推荐使用 Doubao-pro-32k模型（最大支持32k token的输入输出长度和）；如果预期模型的输入和输出总 token 数小于 4k，建议直接选择 4k 版本。
@@ -159,7 +147,7 @@ SFT 任务中，超参的选取会影响精调效果，下面逐一对部分重�
 
 * 确定性任务：在这类任务上，我们主要关注训练集和验证集上的损失是否同步在下降，以及训练多个 epoch 后loss 是否收敛。下图应该算是一个比较良好的训练过程，训练集和校验集损失同步下降，且训练集损失也接近收敛。
 
-![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_5e85597711b799fbb438c7eae4c99090.png =2936x)
+![Image](https://portal.volccdn.com/obj/volcfe/cloud-universal-doc/upload_5e85597711b799fbb438c7eae4c99090.png)
 
 * 生成式任务：在这类任务上，我们还是主要依赖观察训练集上的损失以及真实评估集上的业务指标。因为某些时候，尽管校验集的 loss 损失没有明显的下降，但其实真实评估集上也可能有收益。这是因为，验证集上 loss 计算依赖 token 级别的KL散度损失，而真实评估集上并不需要输出分布和 label 完全一致。所以，对于这类任务，我们建议将训练集损失作为参考，以真实数据集上评估后的结论为准。
 

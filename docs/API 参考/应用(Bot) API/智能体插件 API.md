@@ -13,32 +13,28 @@
 
 Request ( 入参类型为: MaasChatRequest, 关键字段如下 )
 
-| 字段路径 | 类型 | 是否必选 | 默认值 | 描述 |
-| --- | --- | --- | --- | --- |
-| tools | List\[Object\] | 是 | / | Action 参数 |
-| tools\[\*\].type | String | 是 | SearchIntention | 类型 |
-| tools\[\*\].options | List\[Object\] | 是 | / | Action 配置 |
-| tools\[\*\].options\[\*\].keywords | List\[String\] | 否 | / | 关键词 |
-| tools\[\*\].options\[\*\].result\_mapping | Dict\[String, Bool\] | 是 | / | 新鲜度及意图识别结果映射关系定义 (参考下面例子理解) |\
-|||
-| tools\[\*\].message | Object | 是 | / | 用户对话 |
-| tools\[\*\].message.role | String | 是 | / | 用户对话角色, 固定为 user |
-| tools\[\*\].message.content | String | 是 | / | 用户对话内容 |
+- 字段路径 | 类型 | 是否必选 | 默认值 | 描述
+- tools | List\[Object\] | 是 | / | Action 参数
+- tools\[\*\].type | String | 是 | SearchIntention | 类型
+- tools\[\*\].options | List\[Object\] | 是 | / | Action 配置
+- tools\[\*\].options\[\*\].keywords | List\[String\] | 否 | / | 关键词
+- tools\[\*\].options\[\*\].result\_mapping | Dict\[String, Bool\] | 是 | / | 新鲜度及意图识别结果映射关系定义 (参考下面例子理解)
+- tools\[\*\].message | Object | 是 | / | 用户对话
+- tools\[\*\].message.role | String | 是 | / | 用户对话角色, 固定为 user
+- tools\[\*\].message.content | String | 是 | / | 用户对话内容
 
 Response ( 出参类型为: MaasChatResponse, 关键字段如下 )
 
-| 字段路径 | 类型 | 是否必选 | 默认值 | 描述 |
-| --- | --- | --- | --- | --- |
-| choices | List\[Object\] | 是 | / | 意图识别判别结果 |
-| choices\[\*\].message | Object | 是 | / |  |
-| choices\[\*\].message.role | String | 是 | / | 用户对话角色, 固定为 assistant |
-| choices\[\*\].message.content | String | 是 | / | 用户对话返回内容, 一般为 "需要" or "不需要" 等 |
-| choices\[\*\].finish\_reason | String | 是 | / | 对话完成原因 |
-| usage | Object | 是 | / | token 消耗统计 |\
-||||||
-| usage.prompt\_tokens | Number | 是 | / | 提示的 prompt |
-| usage.completion\_tokens | Number | 是 | / | 生成的 token 数量 |
-| usage.total\_tokens | Number | 是 | / | 总的 token 数量 |
+- 字段路径 | 类型 | 是否必选 | 默认值 | 描述
+- choices | List\[Object\] | 是 | / | 意图识别判别结果
+- choices\[\*\].message | Object | 是 | /
+- choices\[\*\].message.role | String | 是 | / | 用户对话角色, 固定为 assistant
+- choices\[\*\].message.content | String | 是 | / | 用户对话返回内容, 一般为 "需要" or "不需要" 等
+- choices\[\*\].finish\_reason | String | 是 | / | 对话完成原因
+- usage | Object | 是 | / | token 消耗统计
+- usage.prompt\_tokens | Number | 是 | / | 提示的 prompt
+- usage.completion\_tokens | Number | 是 | / | 生成的 token 数量
+- usage.total\_tokens | Number | 是 | / | 总的 token 数量
 
 示例
 
@@ -120,18 +116,16 @@ Request ( 入参类型为: MaasChatRequest, 关键字段如下 )
 
 Response ( 出参类型为: MaasChatResponse, 关键字段如下 )
 
-| 字段路径 | 类型 | 是否必选 | 默认值 | 描述 |
-| --- | --- | --- | --- | --- |
-| choices | List\[Object\] | 是 | / | Summary |
-| choices\[\*\].message | Object | 是 | / |  |
-| choices\[\*\].message.role | String | 是 | / | 用户对话角色, 固定为 assistant |
-| choices\[\*\].message.content | String | 是 | / | 用户对话返回内容 |
-| choices\[\*\].finish\_reason | String | 是 | / | 对话完成原因 |
-| usage | Object | 是 | / | token 消耗统计 |\
-||||||
-| usage.prompt\_tokens | Number | 是 | / | 提示的 prompt |
-| usage.completion\_tokens | Number | 是 | / | 生成的 token 数量 |
-| usage.total\_tokens | Number | 是 | / | 总的 token 数量 |
+- 字段路径 | 类型 | 是否必选 | 默认值 | 描述
+- choices | List\[Object\] | 是 | / | Summary
+- choices\[\*\].message | Object | 是 | /
+- choices\[\*\].message.role | String | 是 | / | 用户对话角色, 固定为 assistant
+- choices\[\*\].message.content | String | 是 | / | 用户对话返回内容
+- choices\[\*\].finish\_reason | String | 是 | / | 对话完成原因
+- usage | Object | 是 | / | token 消耗统计
+- usage.prompt\_tokens | Number | 是 | / | 提示的 prompt
+- usage.completion\_tokens | Number | 是 | / | 生成的 token 数量
+- usage.total\_tokens | Number | 是 | / | 总的 token 数量
 
 示例
 

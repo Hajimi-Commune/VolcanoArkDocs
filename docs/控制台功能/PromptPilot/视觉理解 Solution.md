@@ -13,6 +13,6 @@
 2. **Solution自动探索**：平台依托模型能力理解任务，探索任务的解决方案。探索完成后，将展示分析结果、分析步骤以及Solution代码。
 3. **服务快速部署**：点击「部署」按钮。部署完成后，可以调用服务批量解决此类视觉理解任务。
 
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/9a3d039ac4a44343ae850aff0ef52464~tplv-goo7wpa0wc-image.image" width="2480px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/9a3d039ac4a44343ae850aff0ef52464~tplv-goo7wpa0wc-image.image)
 
-<div style="text-align: center"><img src="https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/8c80aed86562475aac0e941497a91840~tplv-goo7wpa0wc-image.image" width="2469px" /></div>
+![Image](https://p9-arcosite.byteimg.com/tos-cn-i-goo7wpa0wc/8c80aed86562475aac0e941497a91840~tplv-goo7wpa0wc-image.image)

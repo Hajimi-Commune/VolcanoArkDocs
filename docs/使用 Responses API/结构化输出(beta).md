@@ -22,9 +22,9 @@
 **Curl**
 
 ```Bash
-curl https://ark.cn-beijing.volces.com/api/v3/responses \\
-  -H "Authorization: Bearer $ARK_API_KEY" \\
-  -H "Content-Type: application/json" \\
+curl https://ark.cn-beijing.volces.com/api/v3/responses
+  -H "Authorization: Bearer $ARK_API_KEY"
+  -H "Content-Type: application/json"
   -d '{
     "model": "doubao-seed-1-6-251015",
     "thinking": { "type": "disabled" },
@@ -112,8 +112,7 @@ func main() {
                                     "返回的 JSON 应该包含以下字段："
                                     "1. 'explanation'：对题目的详细推理和解题步骤，内容应简明易懂。"
                                     "2. 'answer'：最终的纯数值答案或结论。"
-                                    "所有内容均用简体中文。请勿输出 JSON 以外的内容。"\
-
+                                    "所有内容均用简体中文。请勿输出 JSON 以外的内容。"
 **Java**
 
 ```Java
@@ -198,9 +197,9 @@ print(response)
 **Curl**
 
 ```Bash
-curl https://ark.cn-beijing.volces.com/api/v3/responses \\
-  -H "Content-Type: application/json" \\
-  -H "Authorization: Bearer $ARK_API_KEY" \\
+curl https://ark.cn-beijing.volces.com/api/v3/responses
+  -H "Content-Type: application/json"
+  -H "Authorization: Bearer $ARK_API_KEY"
   -d '{
     "model": "doubao-seed-1-6-251015",
     "input": [
@@ -322,61 +321,53 @@ print(response.output_parsed)
 }
 ```
 
-## 模式对比：`json_object` 与 `json_schema` 
+## 模式对比：`json_object` 与 `json_schema`
+
 `json_schema` 是 `json_object` 的演进版本，两种模式都支持 JSON 结构化输出，具体的异同如下。
 
-| | | | \
-|结构化输出 |`json_schema`  |`json_object` |
+| 特性 | `json_schema` | `json_object` |
 |---|---|---|
-| | | | \
-|生成 JSON 回复 |是 |是 |
-| | | | \
-|可定义 JSON 结构 |是 |否 |\
-| | |仅保障回复是合法 JSON |
-| | | | \
-|是否推荐 |是 |否 |
-| | | | \
-|支持的模型 |见[结构化输出能力](/docs/82379/1330310#25b394c2) |见[结构化输出能力](/docs/82379/1330310#25b394c2) |
-| | | | \
-|严格模式 |支持 |\
-| |通过设置 **strict** 为 `true` 生效。 |不涉及 |
-| | | | \
-|配置方式 |```JSON |\
-| |"text": { |\
-| |    "format": { |\
-| |        "type": "json_schema", |\
-| |        "name": "my_schema", |\
-| |        "strict": true, |\
-| |        "schema": { |\
-| |            ... |\
-| |        } |\
-| |    } |\
-| |} |\
-| |``` |\
-| | |\
-| | |```JSON |\
-| | |"text": { |\
-| | |  "format": { |\
-| | |    "type": "json_object" |\
-| | |  } |\
-| | |} |\
-| | |``` |\
-| | | |\
-| | | |
+| 生成 JSON 回复 | 是 | 是 |
+| 可定义 JSON 结构 | 是 | 否（仅保障回复是合法 JSON） |
+| 是否推荐 | 是 | 否 |
+| 支持的模型 | 见[结构化输出能力](/docs/82379/1330310#25b394c2) | 见[结构化输出能力](/docs/82379/1330310#25b394c2) |
+| 严格模式 | 支持（通过设置 **strict** 为 `true` 生效） | 不涉及 |
+
+**配置方式**
+
+`json_schema` 配置：
+
+```json
+"text": {
+    "format": {
+        "type": "json_schema",
+        "name": "my_schema",
+        "strict": true,
+        "schema": {
+            ...
+        }
+    }
+}
+```
+
+`json_object` 配置：
+
+```json
+"text": {
+  "format": {
+    "type": "json_object"
+  }
+}
+```
 
 ## 使用限制
 
 * 使用[TPM保障包](/docs/82379/1510762)或通过[模型单元](/docs/82379/1568332)部署模型进行在线推理时，不支持使用结构化输出能力。
 * Responses API  QPS 限流如下。如果需要提升限流值，请提交[工单](https://console.volcengine.com/workorder/create?step=2&SubProductID=P00001166)。
-   
-   | | | \
-   |接口名称 |账号维度的 QPS 限流 |
-   |---|---|
-   | | | \
-   |创建模型响应 |无 |
-   | | | \
-   |查询模型响应 |20 |
-   | | | \
-   |列出输入项 |20 |
-   | | | \
-   |删除模型响应 |20 |
+
+| 接口名称 | 账号维度的 QPS 限流 |
+|---|---|
+| 创建模型响应 | 无 |
+| 查询模型响应 | 20 |
+| 列出输入项 | 20 |
+| 删除模型响应 | 20 |

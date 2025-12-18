@@ -15,6 +15,13 @@ jobs:
     permissions:
       contents: read
     steps:
+      # 实验性：尝试覆盖 Copilot Agent 超时限制（默认 59 分钟）
+      - name: Attempt to extend Copilot timeout
+        run: |
+          echo "Original COPILOT_AGENT_TIMEOUT_MIN: $COPILOT_AGENT_TIMEOUT_MIN"
+          echo "COPILOT_AGENT_TIMEOUT_MIN=120" >> $GITHUB_ENV
+          echo "Attempted to set timeout to 120 minutes"
+
       - name: Checkout code
         uses: actions/checkout@v5
 

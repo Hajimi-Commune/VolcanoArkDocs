@@ -116,36 +116,38 @@
 
 - [API调用说明](API参考/API调用说明.md) - 费用中心OpenAPI调用方法
 - [API概览](API参考/API概览.md) - 费用中心所有OpenAPI接口列表
+
 #### 账单管理
-- [ListBillDetail](API参考/ListBillDetail.md) - 分页查询账单明细
-- [ListBill](API参考/ListBill.md) - 分页查询账单
-- [ListBillOverviewByCategory](API参考/ListBillOverviewByCategory.md) - 查询账单总览-账号汇总信息
-- [ListBillOverviewByProd](API参考/ListBillOverviewByProd.md) - 分页查询账单总览-产品汇总信息
-- [ListSplitBillDetail](API参考/ListSplitBillDetail.md) - 分页查询分账账单
-- [ListAmortizedCostBillDetail](API参考/ListAmortizedCostBillDetail.md) - 查询成本账单明细
-- [ListAmortizedCostBillMonthly](API参考/ListAmortizedCostBillMonthly.md) - 查询成本账单总览
-- [ListAmortizedCostBillDaily](API参考/ListAmortizedCostBillDaily.md) - 查询成本账单按天
+- [ListBillDetail](API参考/账单管理/ListBillDetail.md) - 分页查询账单明细
+- [ListBill](API参考/账单管理/ListBill.md) - 分页查询账单
+- [ListBillOverviewByCategory](API参考/账单管理/ListBillOverviewByCategory.md) - 查询账单总览-账号汇总信息
+- [ListBillOverviewByProd](API参考/账单管理/ListBillOverviewByProd.md) - 分页查询账单总览-产品汇总信息
+- [ListSplitBillDetail](API参考/账单管理/ListSplitBillDetail.md) - 分页查询分账账单
+- [ListAmortizedCostBillDetail](API参考/账单管理/ListAmortizedCostBillDetail.md) - 查询成本账单明细
+- [ListAmortizedCostBillMonthly](API参考/账单管理/ListAmortizedCostBillMonthly.md) - 查询成本账单总览
+- [ListAmortizedCostBillDaily](API参考/账单管理/ListAmortizedCostBillDaily.md) - 查询成本账单按天
 
 #### 资金账户
-- [QueryBalanceAcct](API参考/QueryBalanceAcct.md) - 查询用户账户余额信息
+- [QueryBalanceAcct](API参考/资金账户/QueryBalanceAcct.md) - 查询用户账户余额信息
 
 #### 实例管理
-- [UnsubscribeInstance](API参考/UnsubscribeInstance.md) - 退订实例
-- [ListAvailableInstances](API参考/ListAvailableInstances.md) - 批量查询可用实例
-- [SetRenewalType](API参考/SetRenewalType.md) - 设置实例续费类型
-- [RenewInstance](API参考/RenewInstance.md) - 实例续费
+- [UnsubscribeInstance](API参考/实例管理/UnsubscribeInstance.md) - 退订实例
+- [ListAvailableInstances](API参考/实例管理/ListAvailableInstances.md) - 批量查询可用实例
+- [SetRenewalType](API参考/实例管理/SetRenewalType.md) - 设置实例续费类型
+- [RenewInstance](API参考/实例管理/RenewInstance.md) - 实例续费
 
 #### 企业财务
-- [CreateFinancialRelation](API参考/CreateFinancialRelation.md) - 建立财务关系
-- [ListFinancialRelation](API参考/ListFinancialRelation.md) - 查询财务关系
-- [CancelInvitation](API参考/CancelInvitation.md) - 取消企业财务邀约
-- [HandleInvitation](API参考/HandleInvitation.md) - 接受/拒绝企业财务邀约
-- [ListInvitation](API参考/ListInvitation.md) - 查询企业财务邀约
-- [DeleteFinancialRelation](API参考/DeleteFinancialRelation.md) - 解除财务关系
-- [UpdateAuth](API参考/UpdateAuth.md) - 变更财务管理授权点
+- [CreateFinancialRelation](API参考/企业财务/CreateFinancialRelation.md) - 建立财务关系
+- [ListFinancialRelation](API参考/企业财务/ListFinancialRelation.md) - 查询财务关系
+- [CancelInvitation](API参考/企业财务/CancelInvitation.md) - 取消企业财务邀约
+- [HandleInvitation](API参考/企业财务/HandleInvitation.md) - 接受/拒绝企业财务邀约
+- [ListInvitation](API参考/企业财务/ListInvitation.md) - 查询企业财务邀约
+- [DeleteFinancialRelation](API参考/企业财务/DeleteFinancialRelation.md) - 解除财务关系
+- [UpdateAuth](API参考/企业财务/UpdateAuth.md) - 变更财务管理授权点
+- CleanUpFinancialRelation - 删除企业财务关联记录
 
 #### 订单
-- [ListOrders](API参考/ListOrders.md) - 批量查询订单信息
+- [ListOrders](API参考/订单/ListOrders.md) - 批量查询订单信息
 - GetOrder - 查询订单详情
 - CancelOrder - 取消订单
 - PayOrder - 支付订单
@@ -153,16 +155,11 @@
 - 支持OpenAPI退订的商品
 
 #### 资源包
-- [ListResourcePackages](API参考/ListResourcePackages.md) - 查询资源包列表
+- [ListResourcePackages](API参考/资源包/ListResourcePackages.md) - 查询资源包列表
 - ListPackageUsageDetails - 查询资源包抵扣明细列表
 
-#### 算价
-- QueryPriceForRenew - 续费询价
-- QueryPriceForPayAsYouGo - 后付费询价
-- QueryPriceForSubscription - 预付费询价
-
 #### 代金券
-- [ListCoupons](API参考/ListCoupons.md) - 查询代金券信息
+- [ListCoupons](API参考/代金券/ListCoupons.md) - 查询代金券信息
 - ListCouponUsageRecords - 查询代金券核销记录
 
 #### 费用管理

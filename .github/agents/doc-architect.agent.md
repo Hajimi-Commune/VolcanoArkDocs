@@ -121,6 +121,20 @@ Playwright 访问失败（被阻断/反爬）
 - 在 Markdown 中使用**相对路径**引用本地图片
 - 下载失败时保留远程 URL
 
+**Playwright 模式下提取图片 URL**：
+
+由于 Playwright 的 `browser_snapshot` 只返回 accessibility tree（不含 img src），需要额外步骤提取图片：
+
+```javascript
+// 使用 browser_evaluate 执行 JavaScript 获取所有图片 URL
+const images = Array.from(document.querySelectorAll('img'))
+  .filter(img => img.src && img.width > 50)
+  .map(img => ({ src: img.src, alt: img.alt }));
+return images;
+```
+
+然后使用 `curl` 或 `bash` 工具下载图片到本地 `assets/images/` 目录。
+
 **链接处理**：
 
 - 站内链接 → 本地相对路径，**保留锚点**（如 `#section-id`）

@@ -160,7 +160,7 @@
 
 #### 代金券
 - [ListCoupons](API参考/代金券/ListCoupons.md) - 查询代金券信息
-- ListCouponUsageRecords - 查询代金券核销记录
+- [ListCouponUsageRecords](API参考/代金券/ListCouponUsageRecords.md) - 查询代金券核销记录
 
 #### 费用管理
 - ListRecipientInformation - 查询报警接收人信息
